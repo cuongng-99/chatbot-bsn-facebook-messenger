@@ -6,15 +6,15 @@ require("dotenv").config
 
 let app = express();
 
+// config body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // config view engine
 viewEngine(app);
 
 // config web routes
 webRoutes(app);
-
-// config body parser
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 let port = process.env.PORT || 1512
 
