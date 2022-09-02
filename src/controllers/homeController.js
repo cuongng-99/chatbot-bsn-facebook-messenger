@@ -1,6 +1,8 @@
 require('dotenv').config();
 import request from "request";
 
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
+
 let getHomepage = (req, res) => {
    return res.render("homePage.ejs")
 };
@@ -123,6 +125,8 @@ function handlePostback(sender_psid, received_postback) {
       response = { "text": "Thanks!" }
    } else if (payload === 'no') {
       response = { "text": "Oops, try sending another image." }
+   } else if (payload === "GET_STARTED") {
+      response = {"text": "Chào cậu"}
    }
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);
@@ -153,6 +157,27 @@ function callSendAPI(sender_psid, response) {
    });
 }
 
+let setupProfile = (req, res) => {
+   // Construct the message body
+   let request_body = {
+      "get_started": {"payload": "GET_STARTED"}
+   }
+
+   // Send the HTTP request to the Messenger Platform
+   request({
+      "uri": `https://graph.facebook.com/v14.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
+      "qs": { "access_token": PAGE_ACCESS_TOKEN },
+      "method": "POST",
+      "json": request_body
+   }, (err, res, body) => {
+      if (!err) {
+         console.log('message sent!')
+      } else {
+         console.error("Unable to send message:" + err);
+      }
+   });
+}
+
 module.exports = {
    getHomepage: getHomepage,
    postWebhook: postWebhook,
@@ -160,4 +185,5 @@ module.exports = {
    handleMessage: handleMessage,
    handlePostback: handlePostback,
    callSendAPI: callSendAPI,
+   setupProfile: setupProfile
 }
