@@ -1,5 +1,6 @@
 require('dotenv').config();
 import request from "request";
+import chatbotService from "../services/chatbotService"
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
@@ -114,7 +115,7 @@ function handleMessage(sender_psid, received_message) {
 }
 
 // Handles messaging_postbacks events
-function handlePostback(sender_psid, received_postback) {
+let handlePostback = async (sender_psid, received_postback) => {
    let response;
 
    // Get the payload for the postback
@@ -126,7 +127,8 @@ function handlePostback(sender_psid, received_postback) {
    } else if (payload === 'no') {
       response = { "text": "Oops, try sending another image." }
    } else if (payload === "GET_STARTED") {
-      response = {"text": "Chào cậu"}
+      let userName = await chatbotService.getUserProfile(sender_psid);
+      await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    }
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);
@@ -160,7 +162,7 @@ function callSendAPI(sender_psid, response) {
 let setupProfile = (req, res) => {
    // Construct the message body
    let request_body = {
-      "get_started": {"payload": "GET_STARTED"}
+      "get_started": { "payload": "GET_STARTED" }
    }
 
    // Send the HTTP request to the Messenger Platform
