@@ -128,7 +128,7 @@ let handlePostback = async (sender_psid, received_postback) => {
       response = { "text": "Oops, try sending another image." }
    } else if (payload === "GET_STARTED") {
       let userName = await chatbotService.getUserProfile(sender_psid);
-      await chatBotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
+      await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    }
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);

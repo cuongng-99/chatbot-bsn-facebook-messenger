@@ -26,7 +26,7 @@ let getUserProfile = async (sender_psid) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
    return new Promise(async (resolve, reject) => {
        try {
-           let response_first = { "text": `Welcome ${username} to HaryPhamDev's Restaurant` };
+           let response_first = { "text": `Xin chào ${username} đã ghé thăm cửa hàng Bánh sinh nhật SAVOR` };
            let response_second = {
                "attachment": {
                    "type": "template",
@@ -34,8 +34,8 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                        "template_type": "generic",
                        "elements": [
                            {
-                               "title": "HaryPhamDev 's restaurant",
-                               "subtitle": "My restaurant is legendary, its classic wine collection equally so.",
+                               "title": "SAVOR",
+                               "subtitle": "Bánh sinh nhật với giá cả cạnh tranh",
                                "image_url": "https://bit.ly/imageToSend",
                                "buttons": [
                                    {
