@@ -18,11 +18,6 @@ let getUserProfile = async (sender_psid) => {
 
                 let userName = `${body.first_name} ${body.last_name}`;
 
-                if (body.gender === "male") {
-                    userName = `Anh ${body.last_name}`
-                } else if (body.gender === "female") {
-                    gender = `Chị ${body.last_name}`
-                }
                 resolve(userName);
                 console.log('get user profile success', userName)
             } else {
@@ -43,23 +38,23 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "template_type": "generic",
                         "elements": [
                             {
-                                "title": "SAVOR",
-                                "subtitle": "Bánh sinh nhật với giá cả cạnh tranh",
-                                "image_url": "https://bit.ly/imageToSend",
+                                "title": "BÁNH SINH NHẬT SAVOR",
+                                "subtitle": "Ăn thì ngon - Giá thì rẻ!",
+                                "image_url": "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/284659568_2930783953879111_183066845177353758_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=7-Z58X1w8AsAX88HKCo&_nc_ht=scontent.fhan14-2.fna&oh=00_AT-WC8Ulpc9ROXWuCyedSHNS7njm1KvXMlX4f45su3X8vQ&oe=631D1B0F",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW MAIN MENU",
+                                        "title": "ĐẶT BÁNH NGAY",
+                                        "payload": "ORDER_NOW",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM MENU",
                                         "payload": "MAIN_MENU",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "RESERVE A TABLE",
-                                        "payload": "RESERVE_TABLE",
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "GUIDE TO USE THIS BOT",
+                                        "title": "HƯỚNG DẪN SỬ DỤNG BOT",
                                         "payload": "GUIDE_BOT",
                                     }
                                 ],
@@ -83,6 +78,80 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
 
     });
 };
+
+let sendMenuGroupCake = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "Danh mục bánh ngon",
+                                "subtitle": "Bộ sưu tập bánh ngon bạn nên thử tại Savor Cakes",
+                                "image_url": "https://www.savor.vn/static/f21768b583d99a0cde5995afeed98392/62c39/red-velvet.webp",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "Bánh vị Đặc biệt",
+                                        "payload": "SPECILA_TASTE",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Bánh kem Dâu tây",
+                                        "payload": "STRAWBERY_TASTE",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Bánh Hè",
+                                        "payload": "SUMMER_CAKE",
+                                    }
+                                ],
+                            },
+
+                            {
+                                "title": "Hours",
+                                "subtitle": "MON-FRI 10AM - 11PM  | SAT 5PM - 10PM | SUN 5PM - 9PM",
+                                "image_url": " https://bit.ly/imageOpening",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "RESERVE A TABLE",
+                                        "payload": "RESERVE_TABLE",
+                                    }
+                                ],
+                            },
+
+                            {
+                                "title": "Banquet Rooms",
+                                "subtitle": "Restaurant accommodates up to 300 seated guests and similar at cocktail receptions",
+                                "image_url": " https://bit.ly/imageShowRooms",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "SHOW ROOMS",
+                                        "payload": "SHOW_ROOMS",
+                                    }
+                                ],
+                            }
+
+
+                        ]
+                    }
+                }
+            };
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+
+};
+
 
 let sendMessage = (sender_psid, response) => {
     return new Promise((resolve, reject) => {
@@ -149,5 +218,6 @@ module.exports = {
     getUserProfile,
     sendResponseWelcomeNewCustomer,
     sendTypingOn,
-    sendMessage
+    sendMessage,
+    sendMenuGroupCake
 }

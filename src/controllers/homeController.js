@@ -129,6 +129,8 @@ let handlePostback = async (sender_psid, received_postback) => {
    } else if (payload === "GET_STARTED") {
       let userName = await chatbotService.getUserProfile(sender_psid);
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
+   } else if (payload == "MAIN_MENU") {
+      await chatbotService.sendMenuGroupCake(sender_psid)
    }
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);
