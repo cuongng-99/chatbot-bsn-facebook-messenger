@@ -21,7 +21,6 @@ let getUserProfile = async (sender_psid) => {
          console.error("Unable to send message:" + err);
       }
    });
-   return userName
 }
 
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
