@@ -15,7 +15,14 @@ let getUserProfile = async (sender_psid) => {
         }, (err, res, body) => {
             if (!err) {
                 body = JSON.parse(body);
-                let userName = `${body.gendder} ${body.firstName} ${body.lastName}`;
+
+                let userName = `${body.first_name} ${body.last_name}`;
+
+                if (body.gender === "male") {
+                    userName = `Anh ${body.last_name}`
+                } else if (body.gender === "female") {
+                    gender = `Chị ${body.last_name}`
+                }
                 resolve(userName);
                 console.log('get user profile success', userName)
             } else {
