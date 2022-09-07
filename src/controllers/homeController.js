@@ -162,7 +162,7 @@ function callSendAPI(sender_psid, response) {
 let setupProfile = (req, res) => {
    // Construct the message body
    let request_body = {
-      "get_started": {"payload": "GET_STARTED"}
+      "get_started": { "payload": "GET_STARTED" }
    }
 
    // Send the HTTP request to the Messenger Platform
