@@ -79,7 +79,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     });
 };
 
-let sendMenuGroupCake = (sender_psid) => {
+let sendMenuType = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response = {
@@ -95,48 +95,24 @@ let sendMenuGroupCake = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "Bánh vị Đặc biệt",
-                                        "payload": "SPECILA_TASTE",
+                                        "title": "Menu Bánh sinh nhật",
+                                        "payload": "MENU_CAKES",
                                     },
-                                    {
-                                        "type": "postback",
-                                        "title": "Bánh kem Dâu tây",
-                                        "payload": "STRAWBERY_TASTE",
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "Bánh Hè",
-                                        "payload": "SUMMER_CAKE",
-                                    }
                                 ],
                             },
 
                             {
-                                "title": "Hours",
-                                "subtitle": "MON-FRI 10AM - 11PM  | SAT 5PM - 10PM | SUN 5PM - 9PM",
-                                "image_url": " https://bit.ly/imageOpening",
+                                "title": "Danh mục phụ kiện",
+                                "subtitle": "Nến và Hoa",
+                                "image_url": " https://target.scene7.com/is/image/Target/GUEST_9cc9cb14-649f-47ac-beef-3abf5c2772b0",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "RESERVE A TABLE",
-                                        "payload": "RESERVE_TABLE",
+                                        "title": "Menu phụ kiện",
+                                        "payload": "MENU_ACCESSORIES",
                                     }
                                 ],
                             },
-
-                            {
-                                "title": "Banquet Rooms",
-                                "subtitle": "Restaurant accommodates up to 300 seated guests and similar at cocktail receptions",
-                                "image_url": " https://bit.ly/imageShowRooms",
-                                "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "SHOW ROOMS",
-                                        "payload": "SHOW_ROOMS",
-                                    }
-                                ],
-                            }
-
 
                         ]
                     }
@@ -219,5 +195,5 @@ module.exports = {
     sendResponseWelcomeNewCustomer,
     sendTypingOn,
     sendMessage,
-    sendMenuGroupCake
+    sendMenuType
 }
