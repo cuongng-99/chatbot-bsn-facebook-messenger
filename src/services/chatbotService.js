@@ -103,7 +103,7 @@ let sendMenuType = (sender_psid) => {
 
                             {
                                 "title": "Danh mục phụ kiện",
-                                "subtitle": "Nến và Hoa",
+                                "subtitle": "Danh mục phụ kiện trang trí kèm theo cho bữa tiệc trở nên hoàn hảo",
                                 "image_url": " https://target.scene7.com/is/image/Target/GUEST_9cc9cb14-649f-47ac-beef-3abf5c2772b0",
                                 "buttons": [
                                     {
@@ -128,6 +128,63 @@ let sendMenuType = (sender_psid) => {
 
 };
 
+let sendMenuCakes = () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "BÁNH VỊ ĐẶC BIỆT",
+                                "subtitle": "Gồm các vị khá đặc biệt",
+                                "image_url": "https://i.postimg.cc/G3NScFny/Screenshot-from-2022-09-08-11-13-11.png",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM MENU",
+                                        "payload": "MENU_SPECIAL_CAKE",
+                                    },
+                                ],
+                            },
+                            {
+                                "title": "BÁNH KEM DÂU TÂY",
+                                "subtitle": "Gồm nhiều dầu tây tươi",
+                                "image_url": "https://i.postimg.cc/tC4PmfMd/Screenshot-from-2022-09-08-11-15-15.png",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM MENU",
+                                        "payload": "MENU_STRAWBERRY_CAKE",
+                                    },
+                                ],
+                            },
+                            {
+                                "title": "BÁNH TRẺ EM",
+                                "subtitle": "Gồm các bánh tạo hình ngộ nghĩnh",
+                                "image_url": "https://i.postimg.cc/tCc1vgPy/Screenshot-from-2022-09-08-11-16-57.png",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM MENU",
+                                        "payload": "MENU_CHILD_CAKE",
+                                    },
+                                ],
+                            },
+                        ]
+                    }
+                }
+            };
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
 
 let sendMessage = (sender_psid, response) => {
     return new Promise((resolve, reject) => {
@@ -195,5 +252,6 @@ module.exports = {
     sendResponseWelcomeNewCustomer,
     sendTypingOn,
     sendMessage,
-    sendMenuType
+    sendMenuType,
+    sendMenuCakes
 }
