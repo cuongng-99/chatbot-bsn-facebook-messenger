@@ -128,7 +128,7 @@ let sendMenuType = (sender_psid) => {
 
 };
 
-let sendMenuCakes = () => {
+let sendMenuCakes = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response = {
