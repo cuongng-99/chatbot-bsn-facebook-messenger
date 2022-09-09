@@ -126,7 +126,7 @@ let handlePostback = async (sender_psid, received_postback) => {
       response = { "text": "Thanks!" }
    } else if (payload === 'no') {
       response = { "text": "Oops, try sending another image." }
-   } else if (payload === "GET_STARTED" | payload === "RESTART_BOT") {
+   } else if (payload === "GET_STARTED" || payload === "RESTART_BOT") {
       let userName = await chatbotService.getUserProfile(sender_psid);
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    } else if (payload === "MAIN_MENU") {
@@ -166,11 +166,12 @@ function callSendAPI(sender_psid, response) {
 let setUpUserFacebookProfile = async (req, res) => {
    // Send the HTTP request to the Messenger Platform
    try {
-      await homepageService.setUpMessengerPlatform(PAGE_ACCESS_TOKEN);
+      await chatbotService.setUpMessengerPlatform(PAGE_ACCESS_TOKEN);
       return res.status(200).json({
          message: "OK"
       });
    } catch (e) {
+      console.log(e)
       return res.status(500).json({
          "message": "Error from the node server"
       })
@@ -184,5 +185,5 @@ module.exports = {
    handleMessage: handleMessage,
    handlePostback: handlePostback,
    callSendAPI: callSendAPI,
-   setUpUserFacebookProfile
+   setUpUserFacebookProfile: setUpUserFacebookProfile
 }
