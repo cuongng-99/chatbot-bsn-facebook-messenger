@@ -242,7 +242,7 @@ let sendMenuCakes = (sender_psid) => {
 let sendMenuSpecialCake = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let response = {
+            let response_1 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
@@ -250,30 +250,36 @@ let sendMenuSpecialCake = (sender_psid) => {
                         "elements": [
                             {
                                 "title": "Bánh kem Red Velvet",
-                                "subtitle": "Size 13x7: 150.000đ\nSize 17x8: 220.000đ\nSize 21x8: 330.000đ",
+                                "subtitle": "Bánh hình trái tim, 2 - 3 lớp cốt Red Velvet. Kết hợp cùng với phần kem vị sữa chua thơm dịu. Mặt bánh và chân bánh được phủ lớp vụn bánh red velvet.",
                                 "image_url": "https://www.savor.vn/static/f21768b583d99a0cde5995afeed98392/62c39/red-velvet.webp",
                             },
                             {
                                 "title": "Bánh kem Triple Choco",
-                                "subtitle": "Size 13x7: 150.000đ\nSize 17x8: 220.000đ\nSize 21x8: 330.000đ",
+                                "subtitle": "Bánh 3 lần vị socola: cốt bánh socola, kem tươi vị socola, trang trí socola chip và socola sệt.",
                                 "image_url": "https://www.savor.vn/static/303297b9ebca00a47327a8a6814935c2/bf99c/triple-choco.webp",
                             },
                             {
                                 "title": "Bánh kem Green Tea",
-                                "subtitle": "Size 13x7: 150.000đ\nSize 17x8: 220.000đ\nSize 21x8: 330.000đ",
+                                "subtitle": "Cốt bánh trà xanh hương nhài và kem tươi vị trà xanh, trang trí socola trắng.",
                                 "image_url": "https://www.savor.vn/static/3340cbb368123c375658053015e3afee/bf99c/green-tea.webp",
                             },
                             {
                                 "title": "Bánh kem Cà phê Cốt dừa",
-                                "subtitle": "Size 13x7: 150.000đ\nSize 17x8: 220.000đ\nSize 21x8: 330.000đ",
+                                "subtitle": "Cốt bánh cafe kết hợp cùng kem dừa vị cafe capuchino, phủ bên trên lớp vụn dừa sấy.",
                                 "image_url": "https://www.savor.vn/static/1b4c6e81814b33abce3853ad675f0575/603fc/caphe-cot-dua.webp",
                             },
                         ]
                     }
                 }
             };
+            let response_2 = { "text": "Nhóm bánh đặc biệt có 3 size:\n\t- Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n\t- Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n\t- Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
+
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response);
+            await sendMessage(sender_psid, response_1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response_2);
+
             resolve("done");
         } catch (e) {
             reject(e);
