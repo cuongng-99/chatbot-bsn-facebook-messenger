@@ -239,6 +239,49 @@ let sendMenuCakes = (sender_psid) => {
     });
 };
 
+let sendMenuSpecialCake = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "Bánh kem Red Velvet",
+                                "subtitle": "Size 13x7: 150.000đ\nSize 17x8: 220.000đ\nSize 21x8: 330.000đ",
+                                "image_url": "https://www.savor.vn/static/f21768b583d99a0cde5995afeed98392/62c39/red-velvet.webp",
+                            },
+                            {
+                                "title": "Bánh kem Triple Choco",
+                                "subtitle": "Size 13x7: 150.000đ\nSize 17x8: 220.000đ\nSize 21x8: 330.000đ",
+                                "image_url": "https://www.savor.vn/static/303297b9ebca00a47327a8a6814935c2/bf99c/triple-choco.webp",
+                            },
+                            {
+                                "title": "Bánh kem Green Tea",
+                                "subtitle": "Size 13x7: 150.000đ\nSize 17x8: 220.000đ\nSize 21x8: 330.000đ",
+                                "image_url": "https://www.savor.vn/static/3340cbb368123c375658053015e3afee/bf99c/green-tea.webp",
+                            },
+                            {
+                                "title": "Bánh kem Cà phê Cốt dừa",
+                                "subtitle": "Size 13x7: 150.000đ\nSize 17x8: 220.000đ\nSize 21x8: 330.000đ",
+                                "image_url": "https://www.savor.vn/static/1b4c6e81814b33abce3853ad675f0575/603fc/caphe-cot-dua.webp",
+                            },
+                        ]
+                    }
+                }
+            };
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+
 let sendMessage = (sender_psid, response) => {
     return new Promise((resolve, reject) => {
         try {
@@ -307,5 +350,6 @@ module.exports = {
     sendMessage,
     sendMenuType,
     sendMenuCakes,
-    setUpMessengerPlatform
+    setUpMessengerPlatform,
+    sendMenuSpecialCake
 }

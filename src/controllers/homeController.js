@@ -133,6 +133,8 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.sendMenuType(sender_psid)
    } else if (payload === "MENU_CAKES") {
       await chatbotService.sendMenuCakes(sender_psid)
+   } else if (payload === "MENU_SPECIAL_CAKE") {
+      await chatbotService.sendMenuSpecialCake(sender_psid)
    }
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);
