@@ -135,6 +135,8 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.sendMenuCakes(sender_psid)
    } else if (payload === "MENU_SPECIAL_CAKE") {
       await chatbotService.sendMenuSpecialCake(sender_psid)
+   } else if (payload === "CARE_HELP") {
+      response = { "text": "Xin quý khách vui lòng đợi trong giây lát <3" }
    }
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);
