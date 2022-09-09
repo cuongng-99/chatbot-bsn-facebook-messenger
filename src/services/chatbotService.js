@@ -27,6 +27,59 @@ let getUserProfile = async (sender_psid) => {
     });
 }
 
+let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
+    return new Promise((resolve, reject) => {
+        try {
+            let data = {
+                "get_started": {
+                    "payload": "GET_STARTED"
+                },
+                "persistent_menu": [
+                    {
+                        "locale": "default",
+                        "composer_input_disabled": false,
+                        "call_to_actions": [
+                            {
+                                "type": "postback",
+                                "title": "Truy cập website",
+                                "url": "https://www.savor.vn/banh-sinh-nhat/",
+                                "webview_height_ratio": "full"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Chat với nhân viên tư vấn",
+                                "payload": "CARE_HELP"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "Khởi động lại Bot",
+                                "payload": "RESTART_BOT"
+                            },
+                        ]
+                    }
+                ]
+            };
+
+            request({
+                "uri": "https://graph.facebook.com/v14.0/me/messenger_profile",
+                "qs": { "access_token": PAGE_ACCESS_TOKEN },
+                "method": "POST",
+                "json": data
+            }, (err, res, body) => {
+                if (!err) {
+                    resolve("setup done!");
+                } else {
+                    reject(err);
+                }
+            });
+
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -253,5 +306,6 @@ module.exports = {
     sendTypingOn,
     sendMessage,
     sendMenuType,
-    sendMenuCakes
+    sendMenuCakes,
+    setUpMessengerPlatform
 }
