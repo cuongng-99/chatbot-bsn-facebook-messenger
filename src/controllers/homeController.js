@@ -184,6 +184,45 @@ let setupProfile = (req, res) => {
    });
 }
 
+let setupPersistentMenu = (req, res) => {
+   // Construct the message body
+   let request_body = {
+      "persistent_menu": [
+         {
+            "locale": "default",
+            "composer_input_disabled": false,
+            "call_to_actions": [
+               {
+                  "type": "postback",
+                  "title": "Truy cập website",
+                  "url": "https://www.savor.vn/banh-sinh-nhat/",
+                  "webview_height_ratio": "full"
+               },
+               {
+                  "type": "postback",
+                  "title": "Chat với nhân viên tư vấn",
+                  "payload": "CARE_HELP"
+               },
+            ]
+         }
+      ]
+   }
+
+   // Send the HTTP request to the Messenger Platform
+   request({
+      "uri": `https://graph.facebook.com/v14.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`,
+      "qs": { "access_token": PAGE_ACCESS_TOKEN },
+      "method": "POST",
+      "json": request_body
+   }, (err, res, body) => {
+      if (!err) {
+         console.log('message sent!')
+      } else {
+         console.error("Unable to send message:" + err);
+      }
+   });
+}
+
 module.exports = {
    getHomepage: getHomepage,
    postWebhook: postWebhook,
@@ -191,5 +230,6 @@ module.exports = {
    handleMessage: handleMessage,
    handlePostback: handlePostback,
    callSendAPI: callSendAPI,
-   setupProfile: setupProfile
+   setupProfile: setupProfile,
+   setupPersistentMenu: setupPersistentMenu
 }
