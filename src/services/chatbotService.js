@@ -121,7 +121,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
             await sendMessage(sender_psid, response_first);
 
             //send a image with button view main menu
-            await sendTypingOn(sender_psid);
+            // await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response_second);
 
             resolve("done!")
