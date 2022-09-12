@@ -92,8 +92,8 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                   "elements": [
                      {
                         "title": "BÁNH SINH NHẬT SAVOR",
-                        "subtitle": "Ăn thì ngon - Giá thì rẻ!",
-                        "image_url": "https://scontent.fhan14-2.fna.fbcdn.net/v/t39.30808-6/284659568_2930783953879111_183066845177353758_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=7-Z58X1w8AsAX88HKCo&_nc_ht=scontent.fhan14-2.fna&oh=00_AT-WC8Ulpc9ROXWuCyedSHNS7njm1KvXMlX4f45su3X8vQ&oe=631D1B0F",
+                        "subtitle": "Bánh sinh nhật giá rẻ kinh thật =)",
+                        "image_url": "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/305188920_3004597833164389_3015519946718434283_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=UN8n2C0tQc4AX8ELZmA&_nc_ht=scontent.fhan2-4.fna&oh=00_AT9Y9RSDc9vzuyEIbIiB8I0xLwvkvjvcqeO7hNBPOuVckw&oe=63239302",
                         "buttons": [
                            {
                               "type": "postback",
