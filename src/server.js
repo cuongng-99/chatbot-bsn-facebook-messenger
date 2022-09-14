@@ -16,7 +16,7 @@ viewEngine(app);
 // config web routes
 webRoutes(app);
 
-let port = process.env.PORT || 1512
+let port = process.env.PORT
 
 app.listen(port, () => {
    console.log(`App is running at port: http://localhost:${port}`);
