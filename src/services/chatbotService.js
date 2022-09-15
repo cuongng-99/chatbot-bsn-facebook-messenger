@@ -103,7 +103,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                               "url": `${process.env.URL_WEB_VIEW_ORDER}`,
                               "title": "Đặt ngay",
                               "webview_height_ratio": "full",
-                              "messenger_extensions": true //false: open the webview in new tab
+                              "messenger_extensions": false //false: open the webview in new tab
                            },
                            {
                               "type": "postback",
