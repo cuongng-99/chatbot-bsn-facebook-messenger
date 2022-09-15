@@ -398,6 +398,56 @@ let askingSizeCakes = (sender_psid) => {
    })
 };
 
+let askingNameCustomer = (sender_psid) => {
+   let request_body = {
+      "recipient": {
+         "id": sender_psid
+      },
+      "message": {
+         "text": "Tên người nhận bánh là gì?",
+      }
+   };
+
+   // Send the HTTP request to the Messenger Platform
+   request({
+      "uri": "https://graph.facebook.com/v6.0/me/messages",
+      "qs": { "access_token": PAGE_ACCESS_TOKEN },
+      "method": "POST",
+      "json": request_body
+   }, (err, res, body) => {
+      if (!err) {
+         console.log('message sent!')
+      } else {
+         console.error("Unable to send message:" + err);
+      }
+   });
+}
+
+let askingAdressCustomer = (sender_psid) => {
+   let request_body = {
+      "recipient": {
+         "id": sender_psid
+      },
+      "message": {
+         "text": "Địa chỉ nhận bánh ở đâu?",
+      }
+   };
+
+   // Send the HTTP request to the Messenger Platform
+   request({
+      "uri": "https://graph.facebook.com/v6.0/me/messages",
+      "qs": { "access_token": PAGE_ACCESS_TOKEN },
+      "method": "POST",
+      "json": request_body
+   }, (err, res, body) => {
+      if (!err) {
+         console.log('message sent!')
+      } else {
+         console.error("Unable to send message:" + err);
+      }
+   });
+}
+
 let askingPhoneNumber = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
@@ -419,8 +469,6 @@ let askingPhoneNumber = (sender_psid) => {
       }
    })
 };
-
-
 
 let sendOrderInformation = (sender_psid, orderAttributes) => {
    return new Promise(async (resolve, reject) => {
@@ -573,5 +621,7 @@ module.exports = {
    backToMenuCakes,
    askingSizeCakes,
    askingPhoneNumber,
-   sendOrderInformation
+   sendOrderInformation,
+   askingNameCustomer,
+   askingAdressCustomer
 }

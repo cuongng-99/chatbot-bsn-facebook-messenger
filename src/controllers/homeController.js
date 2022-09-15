@@ -38,6 +38,7 @@ let postWebhook = (req, res) => {
          // Check if the event is a message or postback and
          // pass the event to the appropriate handler function
          if (webhook_event.message) {
+            console.log(webhook_event.message)
             handleMessage(sender_psid, webhook_event.message);
          } else if (webhook_event.postback) {
             handlePostback(sender_psid, webhook_event.postback);
@@ -96,56 +97,54 @@ let handleMessage = async (sender_psid, message) => {
          await chatbotService.sendTypingOn(sender_psid);
          await chatbotService.askingPhoneNumber(sender_psid);
          return;
-      }
-      // pay load is a phone number
-      if (message.quick_reply.payload !== " ") {
-         //done a reservation
-         // npm install --save moment to use moment
-         orderAttributes.cellphone = message.quick_reply.payload;
-         //send a notification to Telegram Group chat by Telegram bot.
-         await chatbotService.sendTypingOn(sender_psid);
-         await chatbotService.sendOrderInformation(sender_psid, orderAttributes);
+      } else {
+         chatbotService.askingNameCustomer(sender_psid)
+         console.log(message)
+         orderAttributes.customerName = message
+         chatbotService.askingAdressCustomer(sender_psid)
+         console.log(message)
+         orderAttributes.address = message
       }
       return;
    }
 
 
-   // Checks if the message contains text
-   if (message.text) {
-      // Create the payload for a basic text message, which
-      // will be added to the body of our request to the Send API
-      response = {
-         "text": `You sent the message: "${message.text}". Now send me an attachment!`
-      }
-   } else if (message.attachments) {
-      // Get the URL of the message attachment
-      let attachment_url = message.attachments[0].payload.url;
-      response = {
-         "attachment": {
-            "type": "template",
-            "payload": {
-               "template_type": "generic",
-               "elements": [{
-                  "title": "Is this the right picture?",
-                  "subtitle": "Tap a button to answer.",
-                  "image_url": attachment_url,
-                  "buttons": [
-                     {
-                        "type": "postback",
-                        "title": "Yes!",
-                        "payload": "yes",
-                     },
-                     {
-                        "type": "postback",
-                        "title": "No!",
-                        "payload": "no",
-                     }
-                  ],
-               }]
-            }
-         }
-      }
-   }
+   // // Checks if the message contains text
+   // if (message.text) {
+   //    // Create the payload for a basic text message, which
+   //    // will be added to the body of our request to the Send API
+   //    response = {
+   //       "text": `You sent the message: "${message.text}". Now send me an attachment!`
+   //    }
+   // } else if (message.attachments) {
+   //    // Get the URL of the message attachment
+   //    let attachment_url = message.attachments[0].payload.url;
+   //    response = {
+   //       "attachment": {
+   //          "type": "template",
+   //          "payload": {
+   //             "template_type": "generic",
+   //             "elements": [{
+   //                "title": "Is this the right picture?",
+   //                "subtitle": "Tap a button to answer.",
+   //                "image_url": attachment_url,
+   //                "buttons": [
+   //                   {
+   //                      "type": "postback",
+   //                      "title": "Yes!",
+   //                      "payload": "yes",
+   //                   },
+   //                   {
+   //                      "type": "postback",
+   //                      "title": "No!",
+   //                      "payload": "no",
+   //                   }
+   //                ],
+   //             }]
+   //          }
+   //       }
+   //    }
+   // }
 
    // Send the response message
    callSendAPI(sender_psid, response);
