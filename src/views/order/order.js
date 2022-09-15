@@ -49,7 +49,7 @@ function validateInputFields() {
 
 function handleClickButtonFindOrder() {
    $("#btnOrder").on("click", function (e) {
-      let check = validateInputFields();
+      // let check = validateInputFields();
       let data = {
          psid: $("#psid").val(),
          customerName: $("#customerName").val(),

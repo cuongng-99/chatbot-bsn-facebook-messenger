@@ -223,8 +223,6 @@ let handlePostOrderForm = async (req, res) => {
           `
       };
 
-      let response2 = templateMessage.setInfoOrderTemplate();
-
       await chatbotService.sendMessage(req.body.psid, response1);
 
       return res.status(200).json({
@@ -243,6 +241,6 @@ module.exports = {
    handlePostback: handlePostback,
    callSendAPI: callSendAPI,
    setUpUserFacebookProfile: setUpUserFacebookProfile,
-   handleOrderForm,
-   handlePostOrderForm
+   handleOrderForm: handleOrderForm,
+   handlePostOrderForm: handlePostOrderForm
 }
