@@ -15,11 +15,11 @@ window.extAsyncInit = function () {
          // success
          //set psid to input
          $("#psid").val(thread_context.psid);
-         handleClickButtonFindOrder();
+         handleClickButtonOrder();
       },
       function error(err) {
          // error
-         console.log(err);
+         console.log("Lỗi đặt bàn:", err);
       }
    );
 };
@@ -48,36 +48,36 @@ function validateInputFields() {
 }
 
 function handleClickButtonFindOrder() {
-   $("#btnFindOrder").on("click", function (e) {
+   $("#btnOrder").on("click", function (e) {
       let check = validateInputFields();
       let data = {
          psid: $("#psid").val(),
          customerName: $("#customerName").val(),
-         email: $("#email").val(),
-         orderNumber: $("#orderNumber").val()
+         address: $("#address").val(),
+         phoneNumber: $("#phoneNumber").val()
       };
 
-      if (!check) {
-         //close webview
-         MessengerExtensions.requestCloseBrowser(function success() {
-            // webview closed
-         }, function error(err) {
-            // an error occurred
-            console.log(err);
-         });
 
-         //send data to node.js server
-         $.ajax({
-            url: `${window.location.origin}/set-info-order`,
-            method: "POST",
-            data: data,
-            success: function (data) {
-               console.log(data);
-            },
-            error: function (error) {
-               console.log(error);
-            }
-         })
-      }
+      //close webview
+      MessengerExtensions.requestCloseBrowser(function success() {
+         // webview closed
+      }, function error(err) {
+         // an error occurred
+         console.log(err);
+      });
+
+      //send data to node.js server
+      $.ajax({
+         url: `${window.location.origin}/order-form-ajax`,
+         method: "POST",
+         data: data,
+         success: function (data) {
+            console.log(data);
+         },
+         error: function (error) {
+            console.log(error);
+         }
+      })
+
    });
 }

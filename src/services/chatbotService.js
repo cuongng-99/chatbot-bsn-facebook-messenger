@@ -96,9 +96,11 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "image_url": "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/305188920_3004597833164389_3015519946718434283_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=UN8n2C0tQc4AX8ELZmA&_nc_ht=scontent.fhan2-4.fna&oh=00_AT9Y9RSDc9vzuyEIbIiB8I0xLwvkvjvcqeO7hNBPOuVckw&oe=63239302",
                         "buttons": [
                            {
-                              "type": "postback",
-                              "title": "ĐẶT BÁNH NGAY",
-                              "payload": "ORDER_NOW",
+                              "type": "web_url",
+                              "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                              "title": "Đặt ngay",
+                              "webview_height_ratio": "tall",
+                              "messenger_extensions": true //false: open the webview in new tab
                            },
                            {
                               "type": "postback",
@@ -365,7 +367,7 @@ let showDetailRedvelvet = (sender_psid) => {
          await sendMessage(sender_psid, response_5);
 
          await sendTypingOn(sender_psid);
-         await sendQuickReply(sender_psid, response_6);
+         await sendMessage(sender_psid, response_6);
 
          resolve("done");
       } catch (e) {
@@ -375,154 +377,7 @@ let showDetailRedvelvet = (sender_psid) => {
 };
 
 
-let askingSizeCakes = (sender_psid) => {
-   return new Promise(async (resolve, reject) => {
-      try {
-         let response = {
-            "text": "Bạn muốn đặt cỡ bánh nào?",
-            "quick_replies": [
-               {
-                  "content_type": "text",
-                  "title": "13x7cm - 150.000đ",
-                  "payload": "SMALL",
-               }, {
-                  "content_type": "text",
-                  "title": "17x8cm - 220.000đ",
-                  "payload": "MEDIUM",
-               }, {
-                  "content_type": "text",
-                  "title": "21x8cm - 320.000đ",
-                  "payload": "LARGE",
-               },
-            ]
-         }
 
-         await sendTypingOn(sender_psid);
-         await sendQuickReply(sender_psid, response);
-
-         resolve("done")
-      } catch (e) {
-         reject(e)
-      }
-   })
-};
-
-let askingNameCustomer = (sender_psid) => {
-   let request_body = {
-      "recipient": {
-         "id": sender_psid
-      },
-      "message": {
-         "text": "Tên người nhận bánh là gì?",
-      }
-   };
-
-   // Send the HTTP request to the Messenger Platform
-   request({
-      "uri": "https://graph.facebook.com/v6.0/me/messages",
-      "qs": { "access_token": PAGE_ACCESS_TOKEN },
-      "method": "POST",
-      "json": request_body
-   }, (err, res, body) => {
-      if (!err) {
-         console.log('message sent!')
-      } else {
-         console.error("Unable to send message:" + err);
-      }
-   });
-}
-
-let askingAdressCustomer = (sender_psid) => {
-   let request_body = {
-      "recipient": {
-         "id": sender_psid
-      },
-      "message": {
-         "text": "Địa chỉ nhận bánh ở đâu?",
-      }
-   };
-
-   // Send the HTTP request to the Messenger Platform
-   request({
-      "uri": "https://graph.facebook.com/v6.0/me/messages",
-      "qs": { "access_token": PAGE_ACCESS_TOKEN },
-      "method": "POST",
-      "json": request_body
-   }, (err, res, body) => {
-      if (!err) {
-         console.log('message sent!')
-      } else {
-         console.error("Unable to send message:" + err);
-      }
-   });
-}
-
-let askingPhoneNumber = (sender_psid) => {
-   let request_body = {
-      "recipient": {
-         "id": sender_psid
-      },
-      "message": {
-         "text": "Cho xin số điện thoại?",
-      }
-   };
-
-   // Send the HTTP request to the Messenger Platform
-   request({
-      "uri": "https://graph.facebook.com/v6.0/me/messages",
-      "qs": { "access_token": PAGE_ACCESS_TOKEN },
-      "method": "POST",
-      "json": request_body
-   }, (err, res, body) => {
-      if (!err) {
-         console.log('message sent!')
-      } else {
-         console.error("Unable to send message:" + err);
-      }
-   });
-};
-
-let sendOrderInformation = (sender_psid, orderAttributes) => {
-   return new Promise(async (resolve, reject) => {
-      try {
-         let response_1 = {
-            "text": `
-               Thông tin đơn hàng đã chốt:\n
-               ------------------------------------------------\n
-               1. Tên bánh: ${orderAttributes.description}\n
-               2. Kích cỡ: ${orderAttributes.size}\n
-               3. Tên KH: ${orderAttributes.customerName}\n
-               4. Địa chỉ: ${orderAttributes.address}\n
-               5. Điện thoại: ${orderAttributes.cellphone}\n                       
-               `
-         }
-
-         let response_2 = {
-            "text": "Bạn hãy check lại thông tin đã chính xác chưa nha",
-            "quick_replies": [
-               {
-                  "content_type": "text",
-                  "title": "Oke rồi nha",
-                  "payload": "CONFIRMED",
-               }, {
-                  "content_type": "text",
-                  "title": "Tôi muốn điền lại",
-                  "payload": "REWRITE",
-               },
-            ]
-         }
-         await sendTypingOn(sender_psid);
-         await sendMessage(sender_psid, response_1);
-
-         await sendTypingOn(sender_psid);
-         await sendMessage(sender_psid, response_2);
-
-         resolve("done")
-      } catch (e) {
-         reject(e);
-      }
-   });
-};
 
 let backToMenuCakes = (sender_psid) => {
    sendMenuCakes(sender_psid);
@@ -630,10 +485,5 @@ module.exports = {
    setUpMessengerPlatform,
    sendMenuSpecialCake,
    showDetailRedvelvet,
-   backToMenuCakes,
-   askingSizeCakes,
-   askingPhoneNumber,
-   sendOrderInformation,
-   askingNameCustomer,
-   askingAdressCustomer
+   backToMenuCakes
 }

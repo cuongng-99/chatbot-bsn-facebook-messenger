@@ -4,14 +4,6 @@ import chatbotService from "../services/chatbotService"
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
-let orderAttributes = {
-   description: "",
-   size: "",
-   customerName: "",
-   address: "",
-   cellphone: ""
-}
-
 let getHomepage = (req, res) => {
    return res.render("homePage.ejs")
 };
@@ -80,73 +72,43 @@ let getWebhook = (req, res) => {
 let handleMessage = async (sender_psid, message) => {
 
    let response;
-   if (message && message.quick_reply && message.quick_reply.payload) {
-      if (message.quick_reply.payload === "ORDER_RED_VELVET") {
-         //asking about size cakes
-         orderAttributes.description = "Bánh kém red velvet"
-         await chatbotService.sendTypingOn(sender_psid);
-         await chatbotService.askingSizeCakes(sender_psid);
-         return;
-      }
-      if (message.quick_reply.payload === "SMALL" || message.quick_reply.payload === "MEDIUM" || message.quick_reply.payload === "LARGE") {
-         //asking about phone number
-         if (message.quick_reply.payload === "SMALL") orderAttributes.size = "Nhỏ (13x7cm)";
-         if (message.quick_reply.payload === "MEDIUM") orderAttributes.size = "Vừa (17x8cm)";
-         if (message.quick_reply.payload === "LARGE") orderAttributes.size = "Lớn (21x8cm)";
-         await chatbotService.sendTypingOn(sender_psid);
-         await chatbotService.askingPhoneNumber(sender_psid);
-         return;
-      }
 
-      // chatbotService.askingAdressCustomer(sender_psid)
-      // console.log("Tin nhắn phản hồi sau khi hỏi Địa chỉ:", message.text)
-      // orderAttributes.address = message.text
-      console.log("Tin nhắn phản hồi sau khi hỏi SDT:", message.text)
-      orderAttributes.cellphone = message.text
-      return;
-   } else if (message && orderAttributes.cellphone !== "") {
-      chatbotService.askingNameCustomer(sender_psid)
-      console.log("Tin nhắn phản hồi sau khi hỏi Tên:", message.text)
-      orderAttributes.customerName = message.text
+   // Checks if the message contains text
+   if (message.text) {
+      // Create the payload for a basic text message, which
+      // will be added to the body of our request to the Send API
+      response = {
+         "text": `You sent the message: "${message.text}". Now send me an attachment!`
+      }
+   } else if (message.attachments) {
+      // Get the URL of the message attachment
+      let attachment_url = message.attachments[0].payload.url;
+      response = {
+         "attachment": {
+            "type": "template",
+            "payload": {
+               "template_type": "generic",
+               "elements": [{
+                  "title": "Is this the right picture?",
+                  "subtitle": "Tap a button to answer.",
+                  "image_url": attachment_url,
+                  "buttons": [
+                     {
+                        "type": "postback",
+                        "title": "Yes!",
+                        "payload": "yes",
+                     },
+                     {
+                        "type": "postback",
+                        "title": "No!",
+                        "payload": "no",
+                     }
+                  ],
+               }]
+            }
+         }
+      }
    }
-
-
-   // // Checks if the message contains text
-   // if (message.text) {
-   //    // Create the payload for a basic text message, which
-   //    // will be added to the body of our request to the Send API
-   //    response = {
-   //       "text": `You sent the message: "${message.text}". Now send me an attachment!`
-   //    }
-   // } else if (message.attachments) {
-   //    // Get the URL of the message attachment
-   //    let attachment_url = message.attachments[0].payload.url;
-   //    response = {
-   //       "attachment": {
-   //          "type": "template",
-   //          "payload": {
-   //             "template_type": "generic",
-   //             "elements": [{
-   //                "title": "Is this the right picture?",
-   //                "subtitle": "Tap a button to answer.",
-   //                "image_url": attachment_url,
-   //                "buttons": [
-   //                   {
-   //                      "type": "postback",
-   //                      "title": "Yes!",
-   //                      "payload": "yes",
-   //                   },
-   //                   {
-   //                      "type": "postback",
-   //                      "title": "No!",
-   //                      "payload": "no",
-   //                   }
-   //                ],
-   //             }]
-   //          }
-   //       }
-   //    }
-   // }
 
    // Send the response message
    callSendAPI(sender_psid, response);
@@ -245,6 +207,34 @@ let handleOrderForm = (req, res) => {
    return res.render("orderForm.ejs")
 }
 
+let handlePostOrderForm = async (req, res) => {
+   try {
+      let customerName = "";
+      if (req.body.customerName === "") {
+         customerName = "Empty";
+      } else customerName = req.body.customerName;
+
+
+      let response1 = {
+         "text": `---Thông tin đơn hàng đã chốt---
+          \nTên Khách hàng: ${customerName}
+          \nĐịa chỉ: ${req.body.address}
+          \nSố điện thoại: ${req.body.phoneNumber}
+          `
+      };
+
+      let response2 = templateMessage.setInfoOrderTemplate();
+
+      await chatbotService.sendMessage(req.body.psid, response1);
+
+      return res.status(200).json({
+         message: "ok"
+      });
+   } catch (e) {
+      console.log(e);
+   }
+}
+
 module.exports = {
    getHomepage: getHomepage,
    postWebhook: postWebhook,
@@ -253,5 +243,6 @@ module.exports = {
    handlePostback: handlePostback,
    callSendAPI: callSendAPI,
    setUpUserFacebookProfile: setUpUserFacebookProfile,
-   handleOrderForm
+   handleOrderForm,
+   handlePostOrderForm
 }
