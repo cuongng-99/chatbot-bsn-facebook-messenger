@@ -443,7 +443,8 @@ let sendOrderInformation = (sender_psid, orderAttributes) => {
          };
          // Send the HTTP request to the Telegram
          request({
-            "uri": `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
+            "uri": "https://graph.facebook.com/v14.0/me/messages",
+            "qs": { "access_token": PAGE_ACCESS_TOKEN },
             "method": "POST",
             "json": request_body
          }, (err, res, body) => {
