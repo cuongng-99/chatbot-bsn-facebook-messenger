@@ -5,7 +5,9 @@ import chatbotService from "../services/chatbotService"
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
 let getHomepage = (req, res) => {
-   return res.render("homePage.ejs")
+   return res.render("homePage.ejs", {
+      facebookAppId: process.env.FACEBOOK_APP_ID
+   })
 };
 
 let postWebhook = (req, res) => {
@@ -204,7 +206,9 @@ let setUpUserFacebookProfile = async (req, res) => {
 
 
 let handleOrderForm = (req, res) => {
-   return res.render("orderForm.ejs")
+   return res.render("orderForm.ejs", {
+      facebookAppId: process.env.FACEBOOK_APP_ID
+   })
 }
 
 let handlePostOrderForm = async (req, res) => {
