@@ -130,7 +130,7 @@ let handlePostback = async (sender_psid, received_postback) => {
       response = { "text": "Oops, try sending another image." }
    }
 
-   else if (payload === "GET_STARTED" || payload === "RESTART_BOT") {
+   else if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
       let userName = await chatbotService.getUserProfile(sender_psid);
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    }
