@@ -355,7 +355,7 @@ let showDetailRedvelvet = (sender_psid) => {
          await sendMessage(sender_psid, response_5);
 
          await sendTypingOn(sender_psid);
-         await sendMessage(sender_psid, response_6);
+         await sendQuickReply(sender_psid, response_6);
 
          resolve("done");
       } catch (e) {
