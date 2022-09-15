@@ -332,11 +332,11 @@ let showDetailRedvelvet = (sender_psid) => {
                {
                   "content_type": "text",
                   "title": "Đặt bánh",
-                  "payload": "ORDER_NOW",
+                  "payload": "ORDER_RED_VELVET",
                }, {
                   "content_type": "text",
-                  "title": "Quay về Menu",
-                  "payload": "BACK_TO_MENU",
+                  "title": "Quay về Menu Bánh",
+                  "payload": "BACK_TO_MENU_CAKES",
                },
             ]
          }
@@ -365,6 +365,67 @@ let showDetailRedvelvet = (sender_psid) => {
    });
 };
 
+
+let askingSizeCakes = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "text": "Bạn muốn đặt cỡ bánh nào?",
+            "quick_replies": [
+               {
+                  "content_type": "text",
+                  "title": "13x7cm (2-3 người ăn)",
+                  "payload": "SMALL",
+               }, {
+                  "content_type": "text",
+                  "title": "17x8cm (4-6 người ăn)",
+                  "payload": "MEDIUM",
+               }, {
+                  "content_type": "text",
+                  "title": "21x8cm (7-10 người ăn)",
+                  "payload": "LARGE",
+               },
+            ]
+         }
+
+         await sendTypingOn(sender_psid);
+         await sendQuickReply(sender_psid, response);
+
+         resolve("done")
+      } catch (e) {
+         reject(e)
+      }
+   })
+};
+
+let askingPhoneNumber = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "text": "Số điện thoại của bạn là gì",
+            "quick_replies": [
+               {
+                  "content_type": "user_phone_number",
+               }
+            ]
+         }
+
+         await sendTypingOn(sender_psid);
+         await sendQuickReply(sender_psid, response);
+
+         resolve("done")
+      } catch (e) {
+         reject(e)
+      }
+   })
+};
+
+
+let backToMenuCakes = (sender_psid) => {
+   sendMenuCakes(sender_psid);
+};
+
+
 let sendQuickReply = (sender_psid, response) => {
    return new Promise((resolve, reject) => {
       try {
@@ -384,7 +445,7 @@ let sendQuickReply = (sender_psid, response) => {
             "json": request_body
          }, (err, res, body) => {
             if (!err) {
-               console.log("quick reply sent!", res, body);
+               console.log("quick reply sent!");
                resolve('done!')
             } else {
                reject("Unable to send message:" + err);
@@ -465,5 +526,8 @@ module.exports = {
    sendMenuCakes,
    setUpMessengerPlatform,
    sendMenuSpecialCake,
-   showDetailRedvelvet
+   showDetailRedvelvet,
+   backToMenuCakes,
+   askingSizeCakes,
+   askingPhoneNumber
 }

@@ -69,9 +69,39 @@ let getWebhook = (req, res) => {
 }
 
 // Handles messages events
-function handleMessage(sender_psid, received_message) {
+let handleMessage = async (sender_psid, received_message) => {
 
    let response;
+   if (message && message.quick_reply && message.quick_reply.payload) {
+      if (message.quick_reply.payload === "ORDER_RED_VELVET") {
+         //asking about phone number
+         await chatbotService.sendTypingOn(sender_psid);
+         await chatbotService.askingSizeCakes(sender_psid);
+         return;
+      }
+      if (message.quick_reply.payload === "SMALL" || message.quick_reply.payload === "MEDIUM" || message.quick_reply.payload === "LARGE") {
+         //asking about phone number
+         await chatBotService.sendTypingOn(sender_psid);
+         await chatBotService.askingPhoneNumber(sender_psid);
+         return;
+      }
+      // pay load is a phone number
+      if (message.quick_reply.payload !== " ") {
+         // //done a reservation
+         // // npm install --save moment to use moment
+         // user.phoneNumber = message.quick_reply.payload;
+         // user.createdAt = moment(Date.now()).zone("+07:00").format('MM/DD/YYYY h:mm A');
+         // //send a notification to Telegram Group chat by Telegram bot.
+         // await chatBotService.sendNotificationToTelegram(user);
+
+         // // send messages to the user
+         // // await chatBotService.markMessageSeen(sender_psid);
+         // await chatBotService.sendTypingOn(sender_psid);
+         // await chatBotService.sendMessageDoneReserveTable(sender_psid);
+      }
+      return;
+   }
+
 
    // Checks if the message contains text
    if (received_message.text) {
@@ -124,20 +154,38 @@ let handlePostback = async (sender_psid, received_postback) => {
    // Set the response based on the postback payload
    if (payload === 'yes') {
       response = { "text": "Thanks!" }
-   } else if (payload === 'no') {
+   }
+
+   else if (payload === 'no') {
       response = { "text": "Oops, try sending another image." }
-   } else if (payload === "GET_STARTED" || payload === "RESTART_BOT") {
+   }
+
+   else if (payload === "GET_STARTED" || payload === "RESTART_BOT") {
       let userName = await chatbotService.getUserProfile(sender_psid);
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
-   } else if (payload === "MAIN_MENU") {
+   }
+
+   else if (payload === "MAIN_MENU") {
       await chatbotService.sendMenuType(sender_psid)
-   } else if (payload === "MENU_CAKES") {
+   }
+
+   else if (payload === "MENU_CAKES") {
       await chatbotService.sendMenuCakes(sender_psid)
-   } else if (payload === "MENU_SPECIAL_CAKE") {
+   }
+
+   else if (payload === "MENU_SPECIAL_CAKE") {
       await chatbotService.sendMenuSpecialCake(sender_psid)
-   } else if (payload === "SHOW_DETAIL_RED_VELVET") {
+   }
+
+   else if (payload === "SHOW_DETAIL_RED_VELVET") {
       await chatbotService.showDetailRedvelvet(sender_psid)
-   } else if (payload === "CARE_HELP") {
+   }
+
+   else if (payload === "BACK_TO_MENU_CAKES") {
+      await chatbotService.backToMenuCakes(sender_psid)
+   }
+
+   else if (payload === "CARE_HELP") {
       response = { "text": "Xin quý khách vui lòng đợi trong giây lát <3" }
    }
    // Send the message to acknowledge the postback
