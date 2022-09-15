@@ -47,7 +47,7 @@ function validateInputFields() {
    return false;
 }
 
-function handleClickButtonFindOrder() {
+function handleClickButtonOrder() {
    $("#btnOrder").on("click", function (e) {
       // let check = validateInputFields();
       let data = {
