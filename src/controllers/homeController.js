@@ -95,18 +95,19 @@ let handleMessage = async (sender_psid, message) => {
          if (message.quick_reply.payload === "LARGE") orderAttributes.size = "Lớn (21x8cm)";
          await chatbotService.sendTypingOn(sender_psid);
          await chatbotService.askingPhoneNumber(sender_psid);
-         console.log("Tin nhắn phản hồi sau khi hỏi SDT:", message.text)
-         orderAttributes.customerName = message.text
          return;
-      } else {
-         chatbotService.askingNameCustomer(sender_psid)
-         console.log("Tin nhắn phản hồi sau khi hỏi Tên:", message.text)
-         orderAttributes.customerName = message.text
-         // chatbotService.askingAdressCustomer(sender_psid)
-         // console.log("Tin nhắn phản hồi sau khi hỏi Địa chỉ:", message.text)
-         // orderAttributes.address = message.text
       }
+
+      // chatbotService.askingAdressCustomer(sender_psid)
+      // console.log("Tin nhắn phản hồi sau khi hỏi Địa chỉ:", message.text)
+      // orderAttributes.address = message.text
+      console.log("Tin nhắn phản hồi sau khi hỏi SDT:", message.text)
+      orderAttributes.cellphone = message.text
       return;
+   } else if (message && orderAttributes.cellphone !== "") {
+      chatbotService.askingNameCustomer(sender_psid)
+      console.log("Tin nhắn phản hồi sau khi hỏi Tên:", message.text)
+      orderAttributes.customerName = message.text
    }
 
 
