@@ -449,25 +449,28 @@ let askingAdressCustomer = (sender_psid) => {
 }
 
 let askingPhoneNumber = (sender_psid) => {
-   return new Promise(async (resolve, reject) => {
-      try {
-         let response = {
-            "text": "Số điện thoại của bạn là gì",
-            "quick_replies": [
-               {
-                  "content_type": "user_phone_number",
-               }
-            ]
-         }
-
-         await sendTypingOn(sender_psid);
-         await sendQuickReply(sender_psid, response);
-
-         resolve("done")
-      } catch (e) {
-         reject(e)
+   let request_body = {
+      "recipient": {
+         "id": sender_psid
+      },
+      "message": {
+         "text": "Cho xin số điện thoại?",
       }
-   })
+   };
+
+   // Send the HTTP request to the Messenger Platform
+   request({
+      "uri": "https://graph.facebook.com/v6.0/me/messages",
+      "qs": { "access_token": PAGE_ACCESS_TOKEN },
+      "method": "POST",
+      "json": request_body
+   }, (err, res, body) => {
+      if (!err) {
+         console.log('message sent!')
+      } else {
+         console.error("Unable to send message:" + err);
+      }
+   });
 };
 
 let sendOrderInformation = (sender_psid, orderAttributes) => {

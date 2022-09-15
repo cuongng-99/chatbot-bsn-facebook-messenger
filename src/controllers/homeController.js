@@ -7,9 +7,9 @@ const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 let orderAttributes = {
    description: "",
    size: "",
-   customerName: "Bạn Cương",
-   address: "Hà Nội",
-   cellphone: "0322484664"
+   customerName: "",
+   address: "",
+   cellphone: ""
 }
 
 let getHomepage = (req, res) => {
@@ -38,7 +38,6 @@ let postWebhook = (req, res) => {
          // Check if the event is a message or postback and
          // pass the event to the appropriate handler function
          if (webhook_event.message) {
-            console.log(webhook_event.message)
             handleMessage(sender_psid, webhook_event.message);
          } else if (webhook_event.postback) {
             handlePostback(sender_psid, webhook_event.postback);
@@ -96,14 +95,16 @@ let handleMessage = async (sender_psid, message) => {
          if (message.quick_reply.payload === "LARGE") orderAttributes.size = "Lớn (21x8cm)";
          await chatbotService.sendTypingOn(sender_psid);
          await chatbotService.askingPhoneNumber(sender_psid);
+         console.log("Tin nhắn phản hồi sau khi hỏi SDT:", message.text)
+         orderAttributes.customerName = message.text
          return;
       } else {
          chatbotService.askingNameCustomer(sender_psid)
-         console.log(message)
-         orderAttributes.customerName = message
-         chatbotService.askingAdressCustomer(sender_psid)
-         console.log(message)
-         orderAttributes.address = message
+         console.log("Tin nhắn phản hồi sau khi hỏi Tên:", message.text)
+         orderAttributes.customerName = message.text
+         // chatbotService.askingAdressCustomer(sender_psid)
+         // console.log("Tin nhắn phản hồi sau khi hỏi Địa chỉ:", message.text)
+         // orderAttributes.address = message.text
       }
       return;
    }
