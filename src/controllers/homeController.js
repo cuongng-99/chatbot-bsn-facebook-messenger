@@ -5,8 +5,8 @@ import chatbotService from "../services/chatbotService"
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
 let orderAttributes = {
-   description: "Bánh RedVelvet",
-   size: "13x7cm",
+   description: "",
+   size: "",
    customerName: "Bạn Cương",
    address: "Hà Nội",
    cellphone: "0322484664"

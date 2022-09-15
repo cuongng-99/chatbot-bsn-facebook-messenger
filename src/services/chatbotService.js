@@ -421,39 +421,43 @@ let askingPhoneNumber = (sender_psid) => {
 };
 
 
+
 let sendOrderInformation = (sender_psid, orderAttributes) => {
-   return new Promise((resolve, reject) => {
+   return new Promise(async (resolve, reject) => {
       try {
-         let request_body = {
-            "recipient": {
-               "id": sender_psid
-            },
-            "message": {
-               "text": `
-               | --- <b>Thông tin đơn hàng đã chốt</b> --- |
-               | ------------------------------------------------|
-               | 1. Tên bánh: <b>${orderAttributes.description}</b>   |
-               | 2. Kích cỡ: <b>${orderAttributes.size}</b> |
-               | 3. Tên KH: <b>${orderAttributes.customerName}</b> |
-               | 4. Địa chỉ: <b>${orderAttributes.address}</b> |
-               | 5. Số lượng bánh: ${orderAttributes.quantity} |
-               | ------------------------------------------------ |                           
-                    `
-            },
-         };
-         // Send the HTTP request to the Telegram
-         request({
-            "uri": "https://graph.facebook.com/v14.0/me/messages",
-            "qs": { "access_token": PAGE_ACCESS_TOKEN },
-            "method": "POST",
-            "json": request_body
-         }, (err, res, body) => {
-            if (!err) {
-               resolve('done!')
-            } else {
-               reject("Unable to send message:" + err);
-            }
-         });
+         let response_1 = {
+            "text": `
+               Thông tin đơn hàng đã chốt:\n
+               ------------------------------------------------\n
+               1. Tên bánh: ${orderAttributes.description}\n
+               2. Kích cỡ: ${orderAttributes.size}\n
+               3. Tên KH: ${orderAttributes.customerName}\n
+               4. Địa chỉ: ${orderAttributes.address}\n
+               5. Điện thoại: ${orderAttributes.cellphone}\n                       
+               `
+         }
+
+         let response_2 = {
+            "text": "Bạn hãy check lại thông tin đã chính xác chưa nha",
+            "quick_replies": [
+               {
+                  "content_type": "text",
+                  "title": "Oke rồi nha",
+                  "payload": "CONFIRMED",
+               }, {
+                  "content_type": "text",
+                  "title": "Tôi muốn điền lại",
+                  "payload": "REWRITE",
+               },
+            ]
+         }
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_1);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_2);
+
+         resolve("done")
       } catch (e) {
          reject(e);
       }
