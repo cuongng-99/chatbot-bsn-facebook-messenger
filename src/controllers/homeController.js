@@ -4,6 +4,14 @@ import chatbotService from "../services/chatbotService"
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
+let orderAttributes = {
+   description: "Bánh RedVelvet",
+   size: "13x7cm",
+   customerName: "Bạn Cương",
+   address: "Hà Nội",
+   cellphone: "0322484664"
+}
+
 let getHomepage = (req, res) => {
    return res.render("homePage.ejs")
 };
@@ -75,29 +83,28 @@ let handleMessage = async (sender_psid, message) => {
    if (message && message.quick_reply && message.quick_reply.payload) {
       if (message.quick_reply.payload === "ORDER_RED_VELVET") {
          //asking about size cakes
+         orderAttributes.description = "Bánh kém red velvet"
          await chatbotService.sendTypingOn(sender_psid);
          await chatbotService.askingSizeCakes(sender_psid);
          return;
       }
       if (message.quick_reply.payload === "SMALL" || message.quick_reply.payload === "MEDIUM" || message.quick_reply.payload === "LARGE") {
          //asking about phone number
+         if (message.quick_reply.payload === "SMALL") orderAttributes.size = "Nhỏ (13x7cm)";
+         if (message.quick_reply.payload === "MEDIUM") orderAttributes.size = "Vừa (17x8cm)";
+         if (message.quick_reply.payload === "LARGE") orderAttributes.size = "Lớn (21x8cm)";
          await chatbotService.sendTypingOn(sender_psid);
          await chatbotService.askingPhoneNumber(sender_psid);
          return;
       }
       // pay load is a phone number
       if (message.quick_reply.payload !== " ") {
-         // //done a reservation
-         // // npm install --save moment to use moment
-         // user.phoneNumber = message.quick_reply.payload;
-         // user.createdAt = moment(Date.now()).zone("+07:00").format('MM/DD/YYYY h:mm A');
-         // //send a notification to Telegram Group chat by Telegram bot.
-         // await chatBotService.sendNotificationToTelegram(user);
-
-         // // send messages to the user
-         // // await chatBotService.markMessageSeen(sender_psid);
-         // await chatBotService.sendTypingOn(sender_psid);
-         // await chatBotService.sendMessageDoneReserveTable(sender_psid);
+         //done a reservation
+         // npm install --save moment to use moment
+         orderAttributes.cellphone = message.quick_reply.payload;
+         //send a notification to Telegram Group chat by Telegram bot.
+         await chatbotService.sendTypingOn(sender_psid);
+         await chatbotService.sendOrderInformation(sender_psid, orderAttributes);
       }
       return;
    }
@@ -161,8 +168,8 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    else if (payload === "GET_STARTED" || payload === "RESTART_BOT") {
-      let userName = await chatbotService.getUserProfile(sender_psid);
-      await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
+      let orderAttributesName = await chatbotService.getorderAttributesProfile(sender_psid);
+      await chatbotService.sendResponseWelcomeNewCustomer(orderAttributesName, sender_psid);
    }
 
    else if (payload === "MAIN_MENU") {
@@ -217,7 +224,7 @@ function callSendAPI(sender_psid, response) {
    });
 }
 
-let setUpUserFacebookProfile = async (req, res) => {
+let setUporderAttributesFacebookProfile = async (req, res) => {
    // Send the HTTP request to the Messenger Platform
    try {
       await chatbotService.setUpMessengerPlatform(PAGE_ACCESS_TOKEN);
@@ -239,5 +246,5 @@ module.exports = {
    handleMessage: handleMessage,
    handlePostback: handlePostback,
    callSendAPI: callSendAPI,
-   setUpUserFacebookProfile: setUpUserFacebookProfile
+   setUporderAttributesFacebookProfile: setUporderAttributesFacebookProfile
 }

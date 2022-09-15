@@ -421,6 +421,44 @@ let askingPhoneNumber = (sender_psid) => {
 };
 
 
+let sendOrderInformation = (sender_psid, orderAttributes) => {
+   return new Promise((resolve, reject) => {
+      try {
+         let request_body = {
+            "recipient": {
+               "id": sender_psid
+            },
+            "message": {
+               "text": `
+               | --- <b>Thông tin đơn hàng đã chốt</b> --- |
+               | ------------------------------------------------|
+               | 1. Tên bánh: <b>${orderAttributes.description}</b>   |
+               | 2. Kích cỡ: <b>${orderAttributes.size}</b> |
+               | 3. Tên KH: <b>${orderAttributes.customerName}</b> |
+               | 4. Địa chỉ: <b>${orderAttributes.address}</b> |
+               | 5. Số lượng bánh: ${orderAttributes.quantity} |
+               | ------------------------------------------------ |                           
+                    `
+            },
+         };
+         // Send the HTTP request to the Telegram
+         request({
+            "uri": `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
+            "method": "POST",
+            "json": request_body
+         }, (err, res, body) => {
+            if (!err) {
+               resolve('done!')
+            } else {
+               reject("Unable to send message:" + err);
+            }
+         });
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
 let backToMenuCakes = (sender_psid) => {
    sendMenuCakes(sender_psid);
 };
@@ -529,5 +567,6 @@ module.exports = {
    showDetailRedvelvet,
    backToMenuCakes,
    askingSizeCakes,
-   askingPhoneNumber
+   askingPhoneNumber,
+   sendOrderInformation
 }
