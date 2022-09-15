@@ -325,6 +325,20 @@ let showDetailRedvelvet = (sender_psid) => {
             }
          };
          let response_5 = { "text": "Nhóm bánh đặc biệt có 3 size:\n\t- Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n\t- Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n\t- Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
+
+         let response_6 = {
+            "quick_replies": [
+               {
+                  "content_type": "text",
+                  "title": "Đặt bánh",
+                  "payload": "ORDER_NOW",
+               }, {
+                  "content_type": "text",
+                  "title": "Quay về Menu",
+                  "payload": "BACK_TO_MENU",
+               },
+            ]
+         }
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_1);
 
@@ -333,10 +347,15 @@ let showDetailRedvelvet = (sender_psid) => {
 
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_3);
+
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_4);
+
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_5);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_6);
 
          resolve("done");
       } catch (e) {
@@ -344,6 +363,38 @@ let showDetailRedvelvet = (sender_psid) => {
       }
    });
 };
+
+let sendQuickReply = (sender_psid, response) => {
+   return new Promise((resolve, reject) => {
+      try {
+         let request_body = {
+            "recipient": {
+               "id": sender_psid
+            },
+            "messaging_type": "RESPONSE",
+            "message": response
+         };
+
+         // Send the HTTP request to the Messenger Platform
+         request({
+            "uri": "https://graph.facebook.com/v14.0/me/messages",
+            "qs": { "access_token": PAGE_ACCESS_TOKEN },
+            "method": "POST",
+            "json": request_body
+         }, (err, res, body) => {
+            if (!err) {
+               console.log("message sent!");
+               resolve('done!')
+            } else {
+               reject("Unable to send message:" + err);
+            }
+         });
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
 
 let sendMessage = (sender_psid, response) => {
    return new Promise((resolve, reject) => {
@@ -362,8 +413,6 @@ let sendMessage = (sender_psid, response) => {
             "method": "POST",
             "json": request_body
          }, (err, res, body) => {
-            console.log(res)
-            console.log(body)
             if (!err) {
                console.log("message sent!");
                resolve('done!')
