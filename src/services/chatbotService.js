@@ -335,13 +335,13 @@ let showDetailRedvelvet = (sender_psid) => {
                   "template_type": "button",
                   "text": "Bạn có muốn đặt bánh này ko?",
                   "buttons": [
-                     {
-                        "type": "web_url",
-                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
-                        "title": "Đặt ngay",
-                        "webview_height_ratio": "tall",
-                        "messenger_extensions": true //false: open the webview in new tab
-                     },
+                     // {
+                     //    "type": "web_url",
+                     //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                     //    "title": "Đặt ngay",
+                     //    "webview_height_ratio": "tall",
+                     //    "messenger_extensions": true //false: open the webview in new tab
+                     // },
                      {
                         "type": "postback",
                         "title": "Không, Quay về menu",
@@ -373,7 +373,6 @@ let showDetailRedvelvet = (sender_psid) => {
          console.log("Send webview done")
       } catch (e) {
          reject(e);
-         console.log("Lỗi gửi webview:", e)
       }
    });
 };
