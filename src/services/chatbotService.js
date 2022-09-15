@@ -332,9 +332,17 @@ let showDetailRedvelvet = (sender_psid) => {
             "attachment": {
                "type": "template",
                "payload": {
+
+
                   "template_type": "button",
                   "text": "Bạn có muốn đặt bánh này ko?",
                   "buttons": [
+                     {
+                        "type": "web_url",
+                        "url": "https://www.messenger.com/",
+                        "title": "URL Button",
+                        "webview_height_ratio": "full"
+                     },
                      // {
                      //    "type": "web_url",
                      //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
