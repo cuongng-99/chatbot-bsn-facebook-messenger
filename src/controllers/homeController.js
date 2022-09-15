@@ -240,6 +240,11 @@ let setUpUserFacebookProfile = async (req, res) => {
    }
 };
 
+
+let handleOrderForm = (req, res) => {
+   return res.render("orderForm.ejs")
+}
+
 module.exports = {
    getHomepage: getHomepage,
    postWebhook: postWebhook,
@@ -247,5 +252,6 @@ module.exports = {
    handleMessage: handleMessage,
    handlePostback: handlePostback,
    callSendAPI: callSendAPI,
-   setUpUserFacebookProfile: setUpUserFacebookProfile
+   setUpUserFacebookProfile: setUpUserFacebookProfile,
+   handleOrderForm
 }

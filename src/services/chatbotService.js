@@ -324,21 +324,30 @@ let showDetailRedvelvet = (sender_psid) => {
                }
             }
          };
-         let response_5 = { "text": "Nhóm bánh đặc biệt có 3 size:\n\t- Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n\t- Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n\t- Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
+         let response_5 = { "text": "Nhóm bánh đặc biệt có 3 size:\n - Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n - Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n - Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
 
          let response_6 = {
-            "text": "Bạn có muốn đặt bánh này?",
-            "quick_replies": [
-               {
-                  "content_type": "text",
-                  "title": "Đặt bánh",
-                  "payload": "ORDER_RED_VELVET",
-               }, {
-                  "content_type": "text",
-                  "title": "Quay về Menu Bánh",
-                  "payload": "BACK_TO_MENU_CAKES",
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "button",
+                  "text": "Bạn có muốn đặt bánh này ko?",
+                  "buttons": [
+                     {
+                        "type": "web_url",
+                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                        "title": "Đặt ngay",
+                        "webview_height_ratio": "tall",
+                        "messenger_extensions": true //false: open the webview in new tab
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Không, Quay về menu",
+                        "payload": "BACK_TO_MENU_CAKES",
+                     }
+                  ],
                },
-            ]
+            }
          }
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_1);
