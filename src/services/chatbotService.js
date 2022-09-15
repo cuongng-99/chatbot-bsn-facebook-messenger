@@ -57,6 +57,9 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                      },
                   ]
                }
+            ],
+            "whitelisted_domains": [
+               "https://chatbot-bsn.herokuapp.com/"
             ]
          };
 
