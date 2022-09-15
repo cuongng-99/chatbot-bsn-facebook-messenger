@@ -168,8 +168,8 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    else if (payload === "GET_STARTED" || payload === "RESTART_BOT") {
-      let orderAttributesName = await chatbotService.getorderAttributesProfile(sender_psid);
-      await chatbotService.sendResponseWelcomeNewCustomer(orderAttributesName, sender_psid);
+      let userName = await chatbotService.getUserProfile(sender_psid);
+      await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    }
 
    else if (payload === "MAIN_MENU") {
@@ -224,7 +224,7 @@ function callSendAPI(sender_psid, response) {
    });
 }
 
-let setUporderAttributesFacebookProfile = async (req, res) => {
+let setUpUserFacebookProfile = async (req, res) => {
    // Send the HTTP request to the Messenger Platform
    try {
       await chatbotService.setUpMessengerPlatform(PAGE_ACCESS_TOKEN);
@@ -246,5 +246,5 @@ module.exports = {
    handleMessage: handleMessage,
    handlePostback: handlePostback,
    callSendAPI: callSendAPI,
-   setUporderAttributesFacebookProfile: setUporderAttributesFacebookProfile
+   setUpUserFacebookProfile: setUpUserFacebookProfile
 }
