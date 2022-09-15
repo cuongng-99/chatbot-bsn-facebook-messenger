@@ -297,28 +297,34 @@ let showDetailRedvelvet = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response_1 = { "text": "Bánh hình trái tim, 2 - 3 lớp cốt Red Velvet. Kết hợp cùng với phần kem vị sữa chua thơm dịu. Mặt bánh và chân bánh được phủ lớp vụn bánh red velvet." }
-         let response_2 = { "text": "Nhóm bánh đặc biệt có 3 size:\n\t- Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n\t- Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n\t- Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
-         let response_3 = {
+         let response_2 = {
             "attachment": {
-               "type": "template",
+               "type": "image",
                "payload": {
-                  "template_type": "generic",
-                  "elements": [
-                     {
-                        "image_url": "https://www.savor.vn/static/f21768b583d99a0cde5995afeed98392/62c39/red-velvet.webp",
-                     },
-                     {
-                        "image_url": "https://i.postimg.cc/7hhvV5ms/Screenshot-from-2022-09-15-09-39-20.png",
-                     },
-                     {
-                        "image_url": "https://i.postimg.cc/FFBwvsPv/Screenshot-from-2022-09-15-09-40-48.png",
-                     },
-                  ]
+                  "url": "https://www.savor.vn/static/f21768b583d99a0cde5995afeed98392/62c39/red-velvet.webp",
+                  "is_reusable": true
                }
             }
          };
-
-
+         let response_3 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": "https://i.postimg.cc/7hhvV5ms/Screenshot-from-2022-09-15-09-39-20.png",
+                  "is_reusable": true
+               }
+            }
+         };
+         let response_4 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": "https://i.postimg.cc/FFBwvsPv/Screenshot-from-2022-09-15-09-40-48.png",
+                  "is_reusable": true
+               }
+            }
+         };
+         let response_5 = { "text": "Nhóm bánh đặc biệt có 3 size:\n\t- Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n\t- Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n\t- Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_1);
 
@@ -327,6 +333,10 @@ let showDetailRedvelvet = (sender_psid) => {
 
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_3);
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_4);
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_5);
 
          resolve("done");
       } catch (e) {
@@ -334,7 +344,6 @@ let showDetailRedvelvet = (sender_psid) => {
       }
    });
 };
-
 
 let sendMessage = (sender_psid, response) => {
    return new Promise((resolve, reject) => {
