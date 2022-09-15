@@ -135,6 +135,8 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.sendMenuCakes(sender_psid)
    } else if (payload === "MENU_SPECIAL_CAKE") {
       await chatbotService.sendMenuSpecialCake(sender_psid)
+   } else if (payload === "SHOW_DETAIL_RED_VELVET") {
+      await chatbotService.showDetailRedvelvet(sender_psid)
    } else if (payload === "CARE_HELP") {
       response = { "text": "Xin quý khách vui lòng đợi trong giây lát <3" }
    }
