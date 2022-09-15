@@ -99,8 +99,8 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                               "type": "web_url",
                               "url": "https://chatbot-bsn.herokuapp.com/order-form",
                               "title": "Đặt ngay",
-                              "webview_height_ratio": "tall",
-                              "messenger_extensions": true //false: open the webview in new tab
+                              "webview_height_ratio": "full",
+                              // "messenger_extensions": true //false: open the webview in new tab
                            },
                            {
                               "type": "postback",
@@ -347,8 +347,8 @@ let showDetailRedvelvet = (sender_psid) => {
                         "type": "web_url",
                         "url": "https://chatbot-bsn.herokuapp.com/order-form",
                         "title": "Đặt ngay",
-                        "webview_height_ratio": "tall",
-                        "messenger_extensions": true //false: open the webview in new tab
+                        "webview_height_ratio": "full",
+                        // "messenger_extensions": true //false: open the webview in new tab
                      },
                      {
                         "type": "postback",
