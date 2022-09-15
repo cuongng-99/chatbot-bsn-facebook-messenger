@@ -327,6 +327,7 @@ let showDetailRedvelvet = (sender_psid) => {
          let response_5 = { "text": "Nhóm bánh đặc biệt có 3 size:\n\t- Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n\t- Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n\t- Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
 
          let response_6 = {
+            "text": "Bạn có muốn đặt bánh này?",
             "quick_replies": [
                {
                   "content_type": "text",
@@ -383,7 +384,7 @@ let sendQuickReply = (sender_psid, response) => {
             "json": request_body
          }, (err, res, body) => {
             if (!err) {
-               console.log("message sent!");
+               console.log("quick reply sent!", res, body);
                resolve('done!')
             } else {
                reject("Unable to send message:" + err);
