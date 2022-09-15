@@ -374,15 +374,15 @@ let askingSizeCakes = (sender_psid) => {
             "quick_replies": [
                {
                   "content_type": "text",
-                  "title": "13x7cm (2-3 người ăn)",
+                  "title": "13x7cm - 150.000đ",
                   "payload": "SMALL",
                }, {
                   "content_type": "text",
-                  "title": "17x8cm (4-6 người ăn)",
+                  "title": "17x8cm - 220.000đ",
                   "payload": "MEDIUM",
                }, {
                   "content_type": "text",
-                  "title": "21x8cm (7-10 người ăn)",
+                  "title": "21x8cm - 320.000đ",
                   "payload": "LARGE",
                },
             ]

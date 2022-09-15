@@ -74,15 +74,15 @@ let handleMessage = async (sender_psid, message) => {
    let response;
    if (message && message.quick_reply && message.quick_reply.payload) {
       if (message.quick_reply.payload === "ORDER_RED_VELVET") {
-         //asking about phone number
+         //asking about size cakes
          await chatbotService.sendTypingOn(sender_psid);
          await chatbotService.askingSizeCakes(sender_psid);
          return;
       }
       if (message.quick_reply.payload === "SMALL" || message.quick_reply.payload === "MEDIUM" || message.quick_reply.payload === "LARGE") {
          //asking about phone number
-         await chatBotService.sendTypingOn(sender_psid);
-         await chatBotService.askingPhoneNumber(sender_psid);
+         await chatbotService.sendTypingOn(sender_psid);
+         await chatbotService.askingPhoneNumber(sender_psid);
          return;
       }
       // pay load is a phone number
