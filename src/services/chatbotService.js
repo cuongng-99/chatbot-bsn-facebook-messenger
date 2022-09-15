@@ -370,8 +370,10 @@ let showDetailRedvelvet = (sender_psid) => {
          await sendMessage(sender_psid, response_6);
 
          resolve("done");
+         console.log("Send webview done")
       } catch (e) {
          reject(e);
+         console.log("Lỗi gửi webview:", e)
       }
    });
 };
