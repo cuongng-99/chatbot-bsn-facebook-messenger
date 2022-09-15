@@ -10,7 +10,7 @@
 window.extAsyncInit = function () {
    // the Messenger Extensions JS SDK is done loading
 
-   MessengerExtensions.getContext(process.env.FACEBOOK_APP_ID,
+   MessengerExtensions.getContext(facebookAppId,
       function success(thread_context) {
          // success
          //set psid to input
@@ -19,7 +19,7 @@ window.extAsyncInit = function () {
       },
       function error(err) {
          // error
-         console.log("Lỗi đặt bàn:", err);
+         console.log(err);
       }
    );
 };
