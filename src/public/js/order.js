@@ -70,7 +70,7 @@ function handleClickButtonReserveTable() {
 
          //send data to node.js server 
          $.ajax({
-            url: `${window.location.origin}/reserve-table-ajax`,
+            url: 'https://chatbot-bsn.herokuapp.com/order-form-ajax',
             method: "POST",
             data: data,
             success: function (data) {
