@@ -69,7 +69,7 @@ function handleClickButtonOrder() {
 
       //send data to node.js server
       $.ajax({
-         url: `${window.location.origin}/order-form-ajax`,
+         url: "https://chatbot-bsn.herokuapp.com/order-form-ajax",
          method: "POST",
          data: data,
          success: function (data) {
