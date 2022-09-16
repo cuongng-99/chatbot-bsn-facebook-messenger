@@ -57,6 +57,9 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                      },
                   ]
                }
+            ],
+            "whitelisted_domains": [
+               "https://chatbot-bsn.herokuapp.com/"
             ]
          };
 
@@ -93,12 +96,14 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                      {
                         "title": "BÁNH SINH NHẬT SAVOR",
                         "subtitle": "Bánh sinh nhật giá rẻ kinh thật =)",
-                        "image_url": "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/305188920_3004597833164389_3015519946718434283_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=UN8n2C0tQc4AX8ELZmA&_nc_ht=scontent.fhan2-4.fna&oh=00_AT9Y9RSDc9vzuyEIbIiB8I0xLwvkvjvcqeO7hNBPOuVckw&oe=63239302",
+                        "image_url": "	https://www.savor.vn/static/2f60d7a25f1eb7b7b76bbe3ff9cfc2ec/36bd1/banh-sinh-nhat-2022-09-07.webp",
                         "buttons": [
                            {
-                              "type": "postback",
-                              "title": "ĐẶT BÁNH NGAY",
-                              "payload": "ORDER_NOW",
+                              "type": "web_url",
+                              "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                              "title": "ĐẶT NGAY",
+                              "webview_height_ratio": "full",
+                              "messenger_extensions": true //false: open the webview in new tab
                            },
                            {
                               "type": "postback",
@@ -235,37 +240,181 @@ let sendMenuSpecialCake = (sender_psid) => {
                   "elements": [
                      {
                         "title": "Bánh kem Red Velvet",
-                        "subtitle": "Bánh hình trái tim, 2 - 3 lớp cốt Red Velvet. Kết hợp cùng với phần kem vị sữa chua thơm dịu. Mặt bánh và chân bánh được phủ lớp vụn bánh red velvet.",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM CHI TIẾT",
+                              "payload": "SHOW_DETAIL_RED_VELVET",
+                           },
+                        ],
                         "image_url": "https://www.savor.vn/static/f21768b583d99a0cde5995afeed98392/62c39/red-velvet.webp",
                      },
                      {
                         "title": "Bánh kem Triple Choco",
-                        "subtitle": "Bánh 3 lần vị socola: cốt bánh socola, kem tươi vị socola, trang trí socola chip và socola sệt.",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM CHI TIẾT",
+                              "payload": "SHOW_DETAIL_TRIPLE_CHOCO",
+                           },
+                        ],
                         "image_url": "https://www.savor.vn/static/303297b9ebca00a47327a8a6814935c2/bf99c/triple-choco.webp",
                      },
                      {
                         "title": "Bánh kem Green Tea",
-                        "subtitle": "Cốt bánh trà xanh hương nhài và kem tươi vị trà xanh, trang trí socola trắng.",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM CHI TIẾT",
+                              "payload": "SHOW_DETAIL_GREEN_TEA",
+                           },
+                        ],
                         "image_url": "https://www.savor.vn/static/3340cbb368123c375658053015e3afee/bf99c/green-tea.webp",
                      },
                      {
                         "title": "Bánh kem Cà phê Cốt dừa",
-                        "subtitle": "Cốt bánh cafe kết hợp cùng kem dừa vị cafe capuchino, phủ bên trên lớp vụn dừa sấy.",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM CHI TIẾT",
+                              "payload": "SHOW_DETAIL_COFFEE_COCONUT",
+                           },
+                        ],
                         "image_url": "https://www.savor.vn/static/1b4c6e81814b33abce3853ad675f0575/603fc/caphe-cot-dua.webp",
                      },
                   ]
                }
             }
          };
-         let response_2 = { "text": "Nhóm bánh đặc biệt có 3 size:\n\t- Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n\t- Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n\t- Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
 
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_1);
+
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
+
+let showDetailRedvelvet = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response_1 = { "text": "Bánh hình trái tim, 2 - 3 lớp cốt Red Velvet. Kết hợp cùng với phần kem vị sữa chua thơm dịu. Mặt bánh và chân bánh được phủ lớp vụn bánh red velvet." }
+         let response_2 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": "https://www.savor.vn/static/f21768b583d99a0cde5995afeed98392/62c39/red-velvet.webp",
+                  "is_reusable": true
+               }
+            }
+         };
+         let response_3 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": "https://i.postimg.cc/7hhvV5ms/Screenshot-from-2022-09-15-09-39-20.png",
+                  "is_reusable": true
+               }
+            }
+         };
+         let response_4 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": "https://i.postimg.cc/FFBwvsPv/Screenshot-from-2022-09-15-09-40-48.png",
+                  "is_reusable": true
+               }
+            }
+         };
+         let response_5 = { "text": "Nhóm bánh đặc biệt có 3 size:\n - Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n - Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n - Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
+
+         let response_6 = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+
+
+                  "template_type": "button",
+                  "text": "Bạn có muốn đặt bánh này ko?",
+                  "buttons": [
+                     {
+                        "type": "web_url",
+                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                        "title": "Đặt ngay",
+                        "webview_height_ratio": "full",
+                        "messenger_extensions": true //false: open the webview in new tab
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Không, Quay về menu",
+                        "payload": "BACK_TO_MENU_CAKES",
+                     }
+                  ],
+               },
+            }
+         }
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_1);
 
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_2);
 
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_3);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_4);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_5);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_6);
+
          resolve("done");
+         console.log("Send webview done")
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
+
+
+
+let backToMenuCakes = (sender_psid) => {
+   sendMenuCakes(sender_psid);
+};
+
+
+let sendQuickReply = (sender_psid, response) => {
+   return new Promise((resolve, reject) => {
+      try {
+         let request_body = {
+            "recipient": {
+               "id": sender_psid
+            },
+            "messaging_type": "RESPONSE",
+            "message": response
+         };
+
+         // Send the HTTP request to the Messenger Platform
+         request({
+            "uri": "https://graph.facebook.com/v14.0/me/messages",
+            "qs": { "access_token": PAGE_ACCESS_TOKEN },
+            "method": "POST",
+            "json": request_body
+         }, (err, res, body) => {
+            if (!err) {
+               console.log("quick reply sent!");
+               resolve('done!')
+            } else {
+               reject("Unable to send message:" + err);
+            }
+         });
       } catch (e) {
          reject(e);
       }
@@ -290,8 +439,6 @@ let sendMessage = (sender_psid, response) => {
             "method": "POST",
             "json": request_body
          }, (err, res, body) => {
-            console.log(res)
-            console.log(body)
             if (!err) {
                console.log("message sent!");
                resolve('done!')
@@ -342,5 +489,7 @@ module.exports = {
    sendMenuType,
    sendMenuCakes,
    setUpMessengerPlatform,
-   sendMenuSpecialCake
+   sendMenuSpecialCake,
+   showDetailRedvelvet,
+   backToMenuCakes
 }

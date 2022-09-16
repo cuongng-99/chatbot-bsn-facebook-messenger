@@ -10,6 +10,10 @@ let initWebRoutes = (app) => {
 
    router.post("/webhook", homeController.postWebhook);
    router.get("/webhook", homeController.getWebhook);
+
+   router.get("/order-form", homeController.handleOrderForm)
+   router.post("/post-order-form", homeController.handlePostOrderForm)
+
    return app.use("/", router);
 };
 

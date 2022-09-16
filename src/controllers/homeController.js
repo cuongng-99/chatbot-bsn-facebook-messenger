@@ -5,7 +5,9 @@ import chatbotService from "../services/chatbotService"
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
 let getHomepage = (req, res) => {
-   return res.render("homePage.ejs")
+   return res.render("homePage.ejs", {
+      facebookAppId: process.env.FACEBOOK_APP_ID
+   })
 };
 
 let postWebhook = (req, res) => {
@@ -69,20 +71,20 @@ let getWebhook = (req, res) => {
 }
 
 // Handles messages events
-function handleMessage(sender_psid, received_message) {
+let handleMessage = async (sender_psid, message) => {
 
    let response;
 
    // Checks if the message contains text
-   if (received_message.text) {
+   if (message.text) {
       // Create the payload for a basic text message, which
       // will be added to the body of our request to the Send API
       response = {
-         "text": `You sent the message: "${received_message.text}". Now send me an attachment!`
+         "text": `You sent the message: "${message.text}". Now send me an attachment!`
       }
-   } else if (received_message.attachments) {
+   } else if (message.attachments) {
       // Get the URL of the message attachment
-      let attachment_url = received_message.attachments[0].payload.url;
+      let attachment_url = message.attachments[0].payload.url;
       response = {
          "attachment": {
             "type": "template",
@@ -124,18 +126,38 @@ let handlePostback = async (sender_psid, received_postback) => {
    // Set the response based on the postback payload
    if (payload === 'yes') {
       response = { "text": "Thanks!" }
-   } else if (payload === 'no') {
+   }
+
+   else if (payload === 'no') {
       response = { "text": "Oops, try sending another image." }
-   } else if (payload === "GET_STARTED" || payload === "RESTART_BOT") {
+   }
+
+   else if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
       let userName = await chatbotService.getUserProfile(sender_psid);
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
-   } else if (payload === "MAIN_MENU") {
+   }
+
+   else if (payload === "MAIN_MENU") {
       await chatbotService.sendMenuType(sender_psid)
-   } else if (payload === "MENU_CAKES") {
+   }
+
+   else if (payload === "MENU_CAKES") {
       await chatbotService.sendMenuCakes(sender_psid)
-   } else if (payload === "MENU_SPECIAL_CAKE") {
+   }
+
+   else if (payload === "MENU_SPECIAL_CAKE") {
       await chatbotService.sendMenuSpecialCake(sender_psid)
-   } else if (payload === "CARE_HELP") {
+   }
+
+   else if (payload === "SHOW_DETAIL_RED_VELVET") {
+      await chatbotService.showDetailRedvelvet(sender_psid)
+   }
+
+   else if (payload === "BACK_TO_MENU_CAKES") {
+      await chatbotService.backToMenuCakes(sender_psid)
+   }
+
+   else if (payload === "CARE_HELP") {
       response = { "text": "Xin quý khách vui lòng đợi trong giây lát <3" }
    }
    // Send the message to acknowledge the postback
@@ -182,6 +204,38 @@ let setUpUserFacebookProfile = async (req, res) => {
    }
 };
 
+
+let handleOrderForm = (req, res) => {
+   return res.render("orderForm.ejs", {
+      facebookAppId: process.env.FACEBOOK_APP_ID
+   })
+}
+
+let handlePostOrderForm = async (req, res) => {
+   try {
+
+      let response1 = {
+         "text": `---Thông tin đơn hàng đã chốt---
+          \nTên Khách hàng: ${req.body.customerName}
+          \nĐịa chỉ: ${req.body.address}
+          \nSố điện thoại: ${req.body.phoneNumber}
+          \nThời gian nhận hàng: ${req.body.receivedTime}
+          `
+      };
+
+      await chatbotService.sendMessage(req.body.psid, response1);
+
+      return res.status(200).json({
+         message: "ok"
+      });
+   } catch (e) {
+      console.log("Lỗi post order form:", e)
+      return res.status(500).json({
+         message: "Lỗi server"
+      });
+   }
+}
+
 module.exports = {
    getHomepage: getHomepage,
    postWebhook: postWebhook,
@@ -189,5 +243,7 @@ module.exports = {
    handleMessage: handleMessage,
    handlePostback: handlePostback,
    callSendAPI: callSendAPI,
-   setUpUserFacebookProfile: setUpUserFacebookProfile
+   setUpUserFacebookProfile: setUpUserFacebookProfile,
+   handleOrderForm: handleOrderForm,
+   handlePostOrderForm: handlePostOrderForm
 }
