@@ -138,12 +138,12 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    else if (payload === "MAIN_MENU") {
-      await chatbotService.sendMenuType(sender_psid)
-   }
-
-   else if (payload === "MENU_CAKES") {
       await chatbotService.sendMenuCakes(sender_psid)
    }
+
+   // else if (payload === "MENU_CAKES") {
+   //    await chatbotService.sendMenuCakes(sender_psid)
+   // }
 
    else if (payload === "MENU_SPECIAL_CAKE") {
       await chatbotService.sendMenuSpecialCake(sender_psid)

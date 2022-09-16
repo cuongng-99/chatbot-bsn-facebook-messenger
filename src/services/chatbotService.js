@@ -138,39 +138,39 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
    });
 };
 
-let sendMenuType = (sender_psid) => {
-   return new Promise(async (resolve, reject) => {
-      try {
-         let response = {
-            "attachment": {
-               "type": "template",
-               "payload": {
-                  "template_type": "button",
-                  "text": "Dưới đây là 2 lựa chọn cho bạn",
-                  "buttons": [
-                     {
-                        "type": "postback",
-                        "title": "Menu Bánh sinh nhật",
-                        "payload": "MENU_CAKES",
-                     },
-                     {
-                        "type": "postback",
-                        "title": "Menu phụ kiện",
-                        "payload": "MENU_ACCESSORIES",
-                     }
-                  ],
-               },
-            }
-         };
-         await sendTypingOn(sender_psid);
-         await sendMessage(sender_psid, response);
-         resolve("done");
-      } catch (e) {
-         reject(e);
-      }
-   });
+// let sendMenuType = (sender_psid) => {
+//    return new Promise(async (resolve, reject) => {
+//       try {
+//          let response = {
+//             "attachment": {
+//                "type": "template",
+//                "payload": {
+//                   "template_type": "button",
+//                   "text": "Dưới đây là 2 lựa chọn cho bạn",
+//                   "buttons": [
+//                      {
+//                         "type": "postback",
+//                         "title": "Menu Bánh sinh nhật",
+//                         "payload": "MENU_CAKES",
+//                      },
+//                      {
+//                         "type": "postback",
+//                         "title": "Menu phụ kiện",
+//                         "payload": "MENU_ACCESSORIES",
+//                      }
+//                   ],
+//                },
+//             }
+//          };
+//          await sendTypingOn(sender_psid);
+//          await sendMessage(sender_psid, response);
+//          resolve("done");
+//       } catch (e) {
+//          reject(e);
+//       }
+//    });
 
-};
+// };
 
 let sendMenuCakes = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
@@ -183,7 +183,7 @@ let sendMenuCakes = (sender_psid) => {
                   "elements": [
                      {
                         "title": "BÁNH VỊ ĐẶC BIỆT",
-                        "subtitle": "Gồm các vị khá đặc biệt",
+                        "subtitle": "Gồm các hương vị đặc biệt đặc biệt như xoài, dừa, cà phê,...",
                         "image_url": "https://i.postimg.cc/G3NScFny/Screenshot-from-2022-09-08-11-13-11.png",
                         "buttons": [
                            {
@@ -195,7 +195,7 @@ let sendMenuCakes = (sender_psid) => {
                      },
                      {
                         "title": "BÁNH KEM DÂU TÂY",
-                        "subtitle": "Gồm nhiều dầu tây tươi",
+                        "subtitle": "Mỗi chiếc bánh gồm nhiều dâu tươi nguyên chất ở vùng Đà Lạt",
                         "image_url": "https://i.postimg.cc/tC4PmfMd/Screenshot-from-2022-09-08-11-15-15.png",
                         "buttons": [
                            {
@@ -207,13 +207,25 @@ let sendMenuCakes = (sender_psid) => {
                      },
                      {
                         "title": "BÁNH TRẺ EM",
-                        "subtitle": "Gồm các bánh tạo hình ngộ nghĩnh",
+                        "subtitle": "Gồm các bánh tạo hình ngộ nghĩnh, đáng yêu",
                         "image_url": "https://i.postimg.cc/tCc1vgPy/Screenshot-from-2022-09-08-11-16-57.png",
                         "buttons": [
                            {
                               "type": "postback",
                               "title": "XEM MENU",
                               "payload": "MENU_CHILD_CAKE",
+                           },
+                        ],
+                     },
+                     {
+                        "title": "BÁNH NAM GIỚI",
+                        "subtitle": "Gồm các bánh mạnh mẽ, nam tính",
+                        "image_url": "https://i.postimg.cc/G2hhkBJf/Screenshot-from-2022-09-16-12-11-40.png",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM MENU",
+                              "payload": "MENU_MEN_CAKE",
                            },
                         ],
                      },
@@ -241,6 +253,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                   "elements": [
                      {
                         "title": "Bánh kem Red Velvet",
+                        "subtitle": "Có 3 cỡ bán, giá dao động từ 180-320k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -252,6 +265,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Triple Choco",
+                        "subtitle": "Có 3 cỡ bán, giá dao động từ 180-320k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -263,6 +277,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Green Tea",
+                        "subtitle": "Có 3 cỡ bán, giá dao động từ 180-320k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -274,6 +289,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Cà phê Cốt dừa",
+                        "subtitle": "Có 2 cỡ bán, giá dao động từ 180-250k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -330,14 +346,12 @@ let showDetailRedvelvet = (sender_psid) => {
                }
             }
          };
-         let response_5 = { "text": "Nhóm bánh đặc biệt có 3 size:\n - Size 13x7cm: 150.000đ (Phù hợp 2-3 người)\n - Size 17x8cm: 220.000đ (Phù hợp 4-6 người)\n - Size 21x8cm: 330.000đ (Phù hợp 6-10 người)" }
+         let response_5 = { "text": "Bánh có 3 size:\n - Size 13x7cm: Giá sale 150k (giá gốc 190k) (Phù hợp 2-3 người)\n - Size 17x8cm: Giá sale 220k (giá gốc 275k) (Phù hợp 4-6 người)\n - Size 21x8cm: giá sale 320k (giá gốc 400k)(Phù hợp 6-10 người)" }
 
          let response_6 = {
             "attachment": {
                "type": "template",
                "payload": {
-
-
                   "template_type": "button",
                   "text": "Bạn có muốn đặt bánh này ko?",
                   "buttons": [
@@ -384,6 +398,78 @@ let showDetailRedvelvet = (sender_psid) => {
 };
 
 
+let showDetailTripleChoco = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response_1 = { "text": "Bánh 3 lần vị socola: cốt bánh socola, kem tươi vị socola, trang trí socola chip và socola sệt." }
+         let response_2 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": "https://i.postimg.cc/tT2d5x0n/Screenshot-from-2022-09-16-12-18-36.png",
+                  "is_reusable": true
+               }
+            }
+         };
+         let response_3 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": "https://i.postimg.cc/yxDRypX2/Screenshot-from-2022-09-16-12-19-17.png",
+                  "is_reusable": true
+               }
+            }
+         };
+         let response_5 = { "text": "Bánh có 3 size:\n - Size 13x7cm: Giá sale 150k (giá gốc 190k) (Phù hợp 2-3 người)\n - Size 17x8cm: Giá sale 220k (giá gốc 275k) (Phù hợp 4-6 người)\n - Size 21x8cm: giá sale 320k (giá gốc 400k)(Phù hợp 6-10 người)" }
+
+         let response_6 = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "button",
+                  "text": "Bạn có muốn đặt bánh này ko?",
+                  "buttons": [
+                     {
+                        "type": "web_url",
+                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                        "title": "Đặt ngay",
+                        "webview_height_ratio": "full",
+                        "messenger_extensions": true //false: open the webview in new tab
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Không, Quay về menu",
+                        "payload": "BACK_TO_MENU_CAKES",
+                     }
+                  ],
+               },
+            }
+         }
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_1);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_2);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_3);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_4);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_5);
+
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response_6);
+
+         resolve("done");
+         console.log("Send webview done")
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
 
 
 let backToMenuCakes = (sender_psid) => {
