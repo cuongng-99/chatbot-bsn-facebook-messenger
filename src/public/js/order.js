@@ -45,17 +45,16 @@ function handleClickButtonOrder() {
 
       //send data to node.js server 
 
-      axios({
-         method: 'post',
-         url: "https://chatbot-bsn.herokuapp.com/post-order-form",
-         data: data
-      })
-         .then(function (response) {
-            console.log(response);
-         })
-         .catch(function (error) {
+      $.ajax({
+         url: `${window.location.origin}/post-order-form`,
+         type: "POST",
+         data: data,
+         success: function (data) {
+            console.log(data);
+         },
+         error: function (error) {
             console.log(error);
-         });
-
+         }
+      })
    });
 }
