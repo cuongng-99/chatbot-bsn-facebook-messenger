@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Đặt bàn nhà hàng Eric</title>
+   <title>Đặt bánh</title>
    <!-- Latest compiled and minified CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -28,7 +28,7 @@
       <div class="row">
          <div class="col-12">
             <div class="text-center mt-3">
-               <span class="title">Thông tin khách hàng</span>
+               <span class="title">Thông tin đơn hàng</span>
             </div>
             <input type="text" id="psid" hidden>
             <div class="form-group">
@@ -36,16 +36,20 @@
                <input type="text" id="customerName" class="form-control " placeholder="Họ và tên...">
             </div>
             <div class="form-group">
-               <label for="email">Địa chỉ email (<span style="color: red">*</span>):</label>
-               <input type="email" id="email" class="form-control" placeholder="Địa chỉ email...">
-               <div class="invalid-feedback">Địa chỉ email không hợp lệ.</div>
+               <label for="address">Địa chỉ:(<span style="color: red">*</span>):</label>
+               <input type="text" id="address" class="form-control" placeholder="Địa chỉ...">
             </div>
             <div class="form-group">
-               <label for="phoneNumber">Số điện thoại (<span style="color: red">*</span>):</label>
+               <label for="phoneNumber">Số điện thoại: (<span style="color: red">*</span>):</label>
                <input type="text" id="phoneNumber" class="form-control" placeholder="Số điện thoại...">
                <div class="invalid-feedback">Số điện thoại không hợp lệ.</div>
             </div>
-            <button class="btn btn-primary" id="btnReserveTable"> ĐẶT BÀN </button>
+            <div class="form-group">
+               <label for="receivedTime">Thời gian nhận: (<span style="color: red">*</span>):</label>
+               <input type="text" id="receivedTime" class="form-control" placeholder="Thời gian...">
+               <div class="invalid-feedback">Thời gian không hợp lệ.</div>
+            </div>
+            <button class="btn btn-primary" id="btnOrderNow"> ĐẶT HÀNG </button>
          </div>
 
       </div>

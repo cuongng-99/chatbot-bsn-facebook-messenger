@@ -217,8 +217,9 @@ let handlePostOrderForm = async (req, res) => {
       let response1 = {
          "text": `---Thông tin đơn hàng đã chốt---
           \nTên Khách hàng: ${req.body.customerName}
-          \nEmail: ${req.body.email}
+          \nĐịa chỉ: ${req.body.address}
           \nSố điện thoại: ${req.body.phoneNumber}
+          \nThời gian nhận hàng: ${req.body.receivedTime}
           `
       };
 
