@@ -157,6 +157,10 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.showDetailRedvelvet(sender_psid)
    }
 
+   else if (payload === "ORDER_NOW") {
+      await chatbotService.sendSizeOption(sender_psid)
+   }
+
    else if (payload === "BACK_TO_MENU_CAKES") {
       await chatbotService.backToMenuCakes(sender_psid)
    }

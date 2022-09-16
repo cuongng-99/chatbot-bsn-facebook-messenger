@@ -364,7 +364,7 @@ let showDetailRedvelvet = (sender_psid) => {
                      },
                      {
                         "type": "postback",
-                        "title": "Không, Quay về menu",
+                        "title": "Không, Về Menu",
                         "payload": "BACK_TO_MENU_CAKES",
                      }
                   ],
@@ -429,16 +429,21 @@ let showDetailTripleChoco = (sender_psid) => {
                   "template_type": "button",
                   "text": "Bạn có muốn đặt bánh này ko?",
                   "buttons": [
+                     // {
+                     //    "type": "web_url",
+                     //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                     //    "title": "Đặt ngay",
+                     //    "webview_height_ratio": "full",
+                     //    "messenger_extensions": true //false: open the webview in new tab
+                     // },
                      {
-                        "type": "web_url",
-                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
-                        "title": "Đặt ngay",
-                        "webview_height_ratio": "full",
-                        "messenger_extensions": true //false: open the webview in new tab
+                        "type": "postback",
+                        "title": "Đặt bánh này",
+                        "payload": "ORDER_NOW",
                      },
                      {
                         "type": "postback",
-                        "title": "Không, Quay về menu",
+                        "title": "Không, Về Menu",
                         "payload": "BACK_TO_MENU_CAKES",
                      }
                   ],
@@ -454,8 +459,8 @@ let showDetailTripleChoco = (sender_psid) => {
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_3);
 
-         await sendTypingOn(sender_psid);
-         await sendMessage(sender_psid, response_4);
+         // await sendTypingOn(sender_psid);
+         // await sendMessage(sender_psid, response_4);
 
          await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_5);
@@ -471,6 +476,35 @@ let showDetailTripleChoco = (sender_psid) => {
    });
 };
 
+let sendSizeOption = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "text": "Bạn muốn chọn cỡ nào:",
+            "quick_replies": [
+               {
+                  "content_type": "text",
+                  "title": "Nhỏ 13x7cm",
+                  "payload": "SMALL",
+               }, {
+                  "content_type": "text",
+                  "title": "Vừa 17x8cm",
+                  "payload": "MEDIUM",
+               }, {
+                  "content_type": "text",
+                  "title": "To 21x8cm",
+                  "payload": "LARGE",
+               }
+            ]
+         }
+         await sendTypingOn(sender_psid);
+         await sendQuickReply(sender_psid, response);
+      } catch (e) {
+         reject(e);
+      }
+
+   });
+};
 
 let backToMenuCakes = (sender_psid) => {
    sendMenuCakes(sender_psid);
@@ -578,5 +612,6 @@ module.exports = {
    sendMenuSpecialCake,
    showDetailRedvelvet,
    showDetailTripleChoco,
-   backToMenuCakes
+   backToMenuCakes,
+   sendSizeOption
 }
