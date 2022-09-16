@@ -24,6 +24,7 @@ window.extAsyncInit = function () {
 };
 
 
+
 function handleClickButtonOrder() {
    $("#btnOrderNow").on("click", function (e) {
       let data = {
