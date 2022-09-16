@@ -14,17 +14,17 @@ window.extAsyncInit = function () {
          // success
          //set psid to input
          $("#psid").val(thread_context.psid);
-         handleClickButtonReserveTable();
+         handleClickButtonOrder();
       },
       function error(err) {
          // error
-         console.log("Lỗi đặt bàn:", err);
+         console.log("Lỗi đặt hàng:", err);
       }
    );
 };
 
 
-function handleClickButtonReserveTable() {
+function handleClickButtonOrder() {
    $("#btnOrderNow").on("click", function (e) {
       let data = {
          psid: $("#psid").val(),
@@ -45,7 +45,7 @@ function handleClickButtonReserveTable() {
 
       //send data to node.js server 
       $.ajax({
-         url: 'https://chatbot-bsn.herokuapp.com/order-form-ajax',
+         url: `${window.location.origin}/order-form-ajax`,
          type: "POST",
          data: data,
          success: function (data) {

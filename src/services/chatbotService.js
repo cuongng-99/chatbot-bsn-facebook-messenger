@@ -96,7 +96,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                      {
                         "title": "BÁNH SINH NHẬT SAVOR",
                         "subtitle": "Bánh sinh nhật giá rẻ kinh thật =)",
-                        "image_url": "https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/305188920_3004597833164389_3015519946718434283_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=e3f864&_nc_ohc=UN8n2C0tQc4AX8ELZmA&_nc_ht=scontent.fhan2-4.fna&oh=00_AT9Y9RSDc9vzuyEIbIiB8I0xLwvkvjvcqeO7hNBPOuVckw&oe=63239302",
+                        "image_url": "	https://www.savor.vn/static/2f60d7a25f1eb7b7b76bbe3ff9cfc2ec/36bd1/banh-sinh-nhat-2022-09-07.webp",
                         "buttons": [
                            {
                               "type": "web_url",
