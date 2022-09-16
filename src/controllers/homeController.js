@@ -213,15 +213,10 @@ let handleOrderForm = (req, res) => {
 
 let handlePostOrderForm = async (req, res) => {
    try {
-      let customerName = "";
-      if (req.body.customerName === "") {
-         customerName = "Empty";
-      } else customerName = req.body.customerName;
-
 
       let response1 = {
          "text": `---Thông tin đơn hàng đã chốt---
-          \nTên Khách hàng: ${customerName}
+          \nTên Khách hàng: ${req.body.customerName}
           \nĐịa chỉ: ${req.body.address}
           \nSố điện thoại: ${req.body.phoneNumber}
           `
@@ -233,7 +228,10 @@ let handlePostOrderForm = async (req, res) => {
          message: "ok"
       });
    } catch (e) {
-      console.log(e);
+      console.log("Lỗi post order form:", e)
+      return res.status(500).json({
+         message: "Lỗi server"
+      });
    }
 }
 

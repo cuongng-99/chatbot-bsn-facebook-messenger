@@ -19,7 +19,7 @@ window.extAsyncInit = function () {
       },
       function error(err) {
          // error
-         console.log(err);
+         console.log("Lỗi đặt bàn:", err);
       }
    );
 };
@@ -61,9 +61,10 @@ function handleClickButtonOrder() {
       //close webview
       MessengerExtensions.requestCloseBrowser(function success() {
          // webview closed
+         console.log("Tắt thành công")
       }, function error(err) {
          // an error occurred
-         console.log(err);
+         console.log("Lỗi tắt webview:", err);
       });
 
       //send data to node.js server
@@ -75,7 +76,7 @@ function handleClickButtonOrder() {
             console.log(data);
          },
          error: function (error) {
-            console.log(error);
+            console.log("Lỗi gửi data đến server:", error);
          }
       })
 
