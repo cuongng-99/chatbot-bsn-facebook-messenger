@@ -138,39 +138,41 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
    });
 };
 
-// let sendMenuType = (sender_psid) => {
-//    return new Promise(async (resolve, reject) => {
-//       try {
-//          let response = {
-//             "attachment": {
-//                "type": "template",
-//                "payload": {
-//                   "template_type": "button",
-//                   "text": "Dưới đây là 2 lựa chọn cho bạn",
-//                   "buttons": [
-//                      {
-//                         "type": "postback",
-//                         "title": "Menu Bánh sinh nhật",
-//                         "payload": "MENU_CAKES",
-//                      },
-//                      {
-//                         "type": "postback",
-//                         "title": "Menu phụ kiện",
-//                         "payload": "MENU_ACCESSORIES",
-//                      }
-//                   ],
-//                },
-//             }
-//          };
-//          await sendTypingOn(sender_psid);
-//          await sendMessage(sender_psid, response);
-//          resolve("done");
-//       } catch (e) {
-//          reject(e);
-//       }
-//    });
+let requestOpenForm = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "button",
+                  "text": "Để hoàn thành đơn đơn hàng, bạn hãy cho Savor biết thêm các thông tin nha:",
+                  "buttons": [
+                     {
+                        "type": "web_url",
+                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                        "title": "Oke Shop",
+                        "webview_height_ratio": "full",
+                        "messenger_extensions": true //false: open the webview in new tab
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Tôi muốn xem thêm",
+                        "payload": "BACK_TO_MENU_CAKES",
+                     }
+                  ],
+               },
+            }
+         };
+         await sendTypingOn(sender_psid);
+         await sendMessage(sender_psid, response);
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
 
-// };
+};
 
 let sendMenuCakes = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
@@ -613,5 +615,6 @@ module.exports = {
    showDetailRedvelvet,
    showDetailTripleChoco,
    backToMenuCakes,
-   sendSizeOption
+   sendSizeOption,
+   requestOpenForm
 }

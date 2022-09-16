@@ -74,6 +74,15 @@ let getWebhook = (req, res) => {
 let handleMessage = async (sender_psid, message) => {
 
    let response;
+   if (message && message.quick_reply && message.quick_reply.payload) {
+      if (message.quick_reply.payload === "SMALL" || message.quick_reply.payload === "MEDIUM" || message.quick_reply.payload === "LARGE") {
+         await chatbotService.sendTypingOn(sender_psid);
+         await chatbotService.requestOpenForm(sender_psid);
+         return;
+      }
+
+      return;
+   }
 
    // Checks if the message contains text
    if (message.text) {
