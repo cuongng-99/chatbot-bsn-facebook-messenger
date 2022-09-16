@@ -44,17 +44,18 @@ function handleClickButtonOrder() {
       });
 
       //send data to node.js server 
-      $.ajax({
-         url: `${window.location.origin}/order-form-ajax`,
-         type: "POST",
-         data: data,
-         success: function (data) {
-            console.log(data);
-         },
-         error: function (error) {
-            console.log(error);
-         }
+
+      axios({
+         method: 'post',
+         url: "https://chatbot-bsn.herokuapp.com/post-order-form",
+         data: data
       })
+         .then(function (response) {
+            console.log(response);
+         })
+         .catch(function (error) {
+            console.log(error);
+         });
 
    });
 }
