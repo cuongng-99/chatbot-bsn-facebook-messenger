@@ -573,10 +573,10 @@ module.exports = {
    sendResponseWelcomeNewCustomer,
    sendTypingOn,
    sendMessage,
-   sendMenuType,
    sendMenuCakes,
    setUpMessengerPlatform,
    sendMenuSpecialCake,
    showDetailRedvelvet,
+   showDetailTripleChoco,
    backToMenuCakes
 }

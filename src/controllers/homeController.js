@@ -149,6 +149,10 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.sendMenuSpecialCake(sender_psid)
    }
 
+   else if (payload === "SHOW_DETAIL_TRIPLE_CHOCO") {
+      await chatbotService.showDetailTripleChoco(sender_psid)
+   }
+
    else if (payload === "SHOW_DETAIL_RED_VELVET") {
       await chatbotService.showDetailRedvelvet(sender_psid)
    }
