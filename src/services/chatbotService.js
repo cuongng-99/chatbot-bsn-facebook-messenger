@@ -280,7 +280,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                               "payload": "SHOW_DETAIL_RED_VELVET",
                            },
                         ],
-                        "image_url": "https://i.postimg.cc/284sv7W9/t-2-1.jpg",
+                        "image_url": "https://i.postimg.cc/76G0ygfk/g-2.jpg",
                      },
                      {
                         "title": "Bánh kem Triple Choco",
