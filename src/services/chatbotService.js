@@ -98,14 +98,14 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "subtitle": "Bánh tươi mỗi ngày - Freeship - Làm theo yêu cầu",
                         "image_url": "https://i.postimg.cc/fLmxgfG3/image.png",
                         "buttons": [
-                           {
-                              "type": "web_url",
-                              "url": `${process.env.URL_WEB_VIEW_ORDER}`,
-                              "title": "ĐẶT NGAY",
-                              "webview_height_ratio": "full",
-                              "messenger_extensions": true,
-                              "fallback_url": `${process.env.URL_WEB_VIEW_ORDER}`
-                           },
+                           // {
+                           //    "type": "web_url",
+                           //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                           //    "title": "Đặt ngay",
+                           //    "webview_height_ratio": "full",
+                           //    "messenger_extensions": true,
+                           //    "fallback_url": `${process.env.URL_WEB_VIEW_ORDER}`
+                           // },
                            {
                               "type": "postback",
                               "title": "Xem thêm mẫu bánh",
