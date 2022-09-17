@@ -45,11 +45,11 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                         "url": "https://www.savor.vn/banh-sinh-nhat/",
                         "webview_height_ratio": "full"
                      },
-                     {
-                        "type": "postback",
-                        "title": "Chat với nhân viên tư vấn",
-                        "payload": "CARE_HELP"
-                     },
+                     // {
+                     //    "type": "postback",
+                     //    "title": "Chat với nhân viên tư vấn",
+                     //    "payload": "CARE_HELP"
+                     // },
                      {
                         "type": "postback",
                         "title": "Khởi động lại Bot",
@@ -86,7 +86,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_first = { "text": `Xin chào ${username} đã ghé thăm cửa hàng Bánh sinh nhật SAVOR` };
+         let response_first = { "text": `Cảm ơn ${username} đã quan tâm đến Bánh sinh nhật Savor Cakes` };
          let response_second = {
             "attachment": {
                "type": "template",
@@ -94,9 +94,9 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                   "template_type": "generic",
                   "elements": [
                      {
-                        "title": "BÁNH SINH NHẬT SAVOR",
-                        "subtitle": "Bánh sinh nhật giá rẻ kinh thật =)",
-                        "image_url": "	https://www.savor.vn/static/2f60d7a25f1eb7b7b76bbe3ff9cfc2ec/36bd1/banh-sinh-nhat-2022-09-07.webp",
+                        "title": "Bánh sinh nhật Savor Cakes",
+                        "subtitle": "Bánh tươi mỗi ngày - Freeship - Làm theo yêu cầu",
+                        "image_url": "https://i.postimg.cc/fLmxgfG3/image.png",
                         "buttons": [
                            {
                               "type": "web_url",
@@ -108,13 +108,18 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                            },
                            {
                               "type": "postback",
-                              "title": "XEM MENU",
+                              "title": "Xem thêm mẫu bánh",
                               "payload": "MAIN_MENU",
                            },
                            {
                               "type": "postback",
-                              "title": "HƯỚNG DẪN SỬ DỤNG BOT",
-                              "payload": "GUIDE_BOT",
+                              "title": "Thông tin cửa hàng, ship hàng",
+                              "payload": "STORE_LOCATION_SHIPPING",
+                           },
+                           {
+                              "type": "postback",
+                              "title": "Chat với Nhân viên",
+                              "payload": "CARE_HELP",
                            }
                         ],
                      }]
@@ -123,11 +128,11 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
          };
 
          //send a welcome message
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_first);
 
          //send a image with button view main menu
-         // await sendTypingOn(sender_psid);
+         // // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_second);
 
          resolve("done!")
@@ -137,6 +142,18 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
 
    });
 };
+
+let sendCareHelp = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response_1 = { "text": "Dạ :heart:  Savor xin nghe ạ" }
+         let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ :heart:" }
+
+      } catch (e) {
+         reject(e)
+      }
+   })
+}
 
 let requestOpenForm = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
@@ -164,7 +181,7 @@ let requestOpenForm = (sender_psid) => {
                },
             }
          };
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {
@@ -235,7 +252,7 @@ let sendMenuCakes = (sender_psid) => {
                }
             }
          };
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {
@@ -263,7 +280,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                               "payload": "SHOW_DETAIL_RED_VELVET",
                            },
                         ],
-                        "image_url": "https://www.savor.vn/static/f21768b583d99a0cde5995afeed98392/62c39/red-velvet.webp",
+                        "image_url": "restock_expected",
                      },
                      {
                         "title": "Bánh kem Triple Choco",
@@ -306,7 +323,7 @@ let sendMenuSpecialCake = (sender_psid) => {
             }
          };
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_1);
 
          resolve("done");
@@ -373,22 +390,22 @@ let showDetailRedvelvet = (sender_psid) => {
                },
             }
          }
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_1);
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_2);
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_3);
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_4);
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_5);
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_6);
 
          resolve("done");
@@ -452,22 +469,22 @@ let showDetailTripleChoco = (sender_psid) => {
                },
             }
          }
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_1);
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_2);
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_3);
 
-         // await sendTypingOn(sender_psid);
+         // // await sendTypingOn(sender_psid);
          // await sendMessage(sender_psid, response_4);
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_5);
 
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_6);
 
          resolve("done");
@@ -499,7 +516,7 @@ let sendSizeOption = (sender_psid) => {
                }
             ]
          }
-         await sendTypingOn(sender_psid);
+         // await sendTypingOn(sender_psid);
          await sendQuickReply(sender_psid, response);
       } catch (e) {
          reject(e);
