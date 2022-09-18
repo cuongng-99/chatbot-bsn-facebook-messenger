@@ -167,7 +167,7 @@ let handlePostback = async (sender_psid, received_postback) => {
 
    // BÁNH ĐẶC BIỆT
    else if (payload === "MENU_SPECIAL_CAKE") {
-      await cakeDetail.sendMenuSpecialCake(sender_psid)
+      await categoryDetail.sendMenuSpecialCake(sender_psid)
    }
 
    else if (payload === "SHOW_DETAIL_TRIPLE_CHOCO") {

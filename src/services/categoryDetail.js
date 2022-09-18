@@ -61,7 +61,7 @@ let sendMenuKoreaCake = (sender_psid) => {
                   "elements": [
                      {
                         "title": "Bánh kem Galaxy Blue",
-                        "subtitle": "2 cỡ bánh, giá sale từ 120-190k",
+                        "subtitle": "2 cỡ bánh, giá chỉ từ 120k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -73,7 +73,7 @@ let sendMenuKoreaCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem 3 Màu Pastel",
-                        "subtitle": "2 cỡ bánh, giá sale từ 120-190k",
+                        "subtitle": "2 cỡ bánh, giá chỉ từ 120k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -110,7 +110,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                   "elements": [
                      {
                         "title": "Bánh kem Red Velvet sữa chua",
-                        "subtitle": "3 cỡ bánh, giá sale từ 150k-320k",
+                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -122,7 +122,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Triple Choco",
-                        "subtitle": "3 cỡ bánh, giá sale từ 150k-320k",
+                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -134,7 +134,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Mousse Socola",
-                        "subtitle": "2 cỡ bánh, giá sale 180-270k",
+                        "subtitle": "2 cỡ bánh, giá chỉ 180k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -146,7 +146,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Xoài Dừa",
-                        "subtitle": "3 cỡ bánh, giá sale 180-270k",
+                        "subtitle": "3 cỡ bánh, giá chỉ 180k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -158,7 +158,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Green Tea",
-                        "subtitle": "3 cỡ bánh, giá sale 180-270k",
+                        "subtitle": "3 cỡ bánh, giá chỉ 180k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -170,7 +170,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Cà Phê",
-                        "subtitle": "3 cỡ bánh, giá sale 180-270k",
+                        "subtitle": "3 cỡ bánh, giá chỉ 180k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -182,7 +182,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Cà Phê Cốt Dừa",
-                        "subtitle": "3 cỡ bánh, giá sale 180-270k",
+                        "subtitle": "3 cỡ bánh, giá chỉ 180k",
                         "buttons": [
                            {
                               "type": "postback",

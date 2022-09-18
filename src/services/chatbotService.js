@@ -113,7 +113,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                            },
                            {
                               "type": "postback",
-                              "title": "Thông tin cửa hàng, ship hàng",
+                              "title": "Xem cửa hàng, ship hàng",
                               "payload": "STORE_LOCATION_SHIPPING",
                            },
                            {
