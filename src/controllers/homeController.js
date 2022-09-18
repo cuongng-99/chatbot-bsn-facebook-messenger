@@ -1,6 +1,8 @@
 require('dotenv').config();
 import request from "request";
 import chatbotService from "../services/chatbotService"
+import categoryDetail from "../services/categoryDetail"
+import cakeDetail from "../services/cakeDetail"
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
@@ -150,12 +152,22 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.sendMenuCakes(sender_psid)
    }
 
-   // else if (payload === "MENU_CAKES") {
-   //    await chatbotService.sendMenuCakes(sender_psid)
-   // }
+   // BÁNH HÀN QUỐC
+   else if (payload === "MENU_KOREA_CAKE") {
+      await categoryDetail.sendMenuKoreaCake(sender_psid)
+   }
 
+   else if (payload === "SHOW_GALAXY_BLUE") {
+      await cakeDetail.showDetailGalaxyBlue(sender_psid)
+   }
+
+   else if (payload === "SHOW_3_MAU_PASTEL") {
+      await cakeDetail.showDetail3MauPastel(sender_psid)
+   }
+
+   // BÁNH ĐẶC BIỆT
    else if (payload === "MENU_SPECIAL_CAKE") {
-      await chatbotService.sendMenuSpecialCake(sender_psid)
+      await cakeDetail.sendMenuSpecialCake(sender_psid)
    }
 
    else if (payload === "SHOW_DETAIL_TRIPLE_CHOCO") {

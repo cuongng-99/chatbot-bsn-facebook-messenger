@@ -146,8 +146,8 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
 let sendCareHelp = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Dạ :heart:  Savor xin nghe ạ" }
-         let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ :heart:" }
+         let response_1 = { "text": "Dạ <3 Savor xin nghe ạ" }
+         let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ <3" }
 
          await sendMessage(sender_psid, response_1);
          await sendMessage(sender_psid, response_2);
@@ -292,78 +292,6 @@ let sendMenuCakes = (sender_psid) => {
          };
          await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response);
-         resolve("done");
-      } catch (e) {
-         reject(e);
-      }
-   });
-};
-
-let sendMenuSpecialCake = (sender_psid) => {
-   return new Promise(async (resolve, reject) => {
-      try {
-         let response_1 = {
-            "attachment": {
-               "type": "template",
-               "payload": {
-                  "template_type": "generic",
-                  "elements": [
-                     {
-                        "title": "Bánh kem Red Velvet",
-                        "subtitle": "Có 3 cỡ bán, giá dao động từ 180-320k",
-                        "buttons": [
-                           {
-                              "type": "postback",
-                              "title": "XEM CHI TIẾT",
-                              "payload": "SHOW_DETAIL_RED_VELVET",
-                           },
-                        ],
-                        "image_url": "https://i.postimg.cc/76G0ygfk/g-2.jpg",
-                     },
-                     {
-                        "title": "Bánh kem Triple Choco",
-                        "subtitle": "Có 3 cỡ bán, giá dao động từ 180-320k",
-                        "buttons": [
-                           {
-                              "type": "postback",
-                              "title": "XEM CHI TIẾT",
-                              "payload": "SHOW_DETAIL_TRIPLE_CHOCO",
-                           },
-                        ],
-                        "image_url": "https://www.savor.vn/static/303297b9ebca00a47327a8a6814935c2/bf99c/triple-choco.webp",
-                     },
-                     {
-                        "title": "Bánh kem Green Tea",
-                        "subtitle": "Có 3 cỡ bán, giá dao động từ 180-320k",
-                        "buttons": [
-                           {
-                              "type": "postback",
-                              "title": "XEM CHI TIẾT",
-                              "payload": "SHOW_DETAIL_GREEN_TEA",
-                           },
-                        ],
-                        "image_url": "https://www.savor.vn/static/3340cbb368123c375658053015e3afee/bf99c/green-tea.webp",
-                     },
-                     {
-                        "title": "Bánh kem Cà phê Cốt dừa",
-                        "subtitle": "Có 2 cỡ bán, giá dao động từ 180-250k",
-                        "buttons": [
-                           {
-                              "type": "postback",
-                              "title": "XEM CHI TIẾT",
-                              "payload": "SHOW_DETAIL_COFFEE_COCONUT",
-                           },
-                        ],
-                        "image_url": "https://www.savor.vn/static/1b4c6e81814b33abce3853ad675f0575/603fc/caphe-cot-dua.webp",
-                     },
-                  ]
-               }
-            }
-         };
-
-         await markMessageRead(sender_psid);
-         await sendMessage(sender_psid, response_1);
-
          resolve("done");
       } catch (e) {
          reject(e);
