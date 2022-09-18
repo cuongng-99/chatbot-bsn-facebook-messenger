@@ -96,7 +96,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                      {
                         "title": "Bánh sinh nhật Savor Cakes",
                         "subtitle": "Bánh tươi mỗi ngày - Freeship - Làm theo yêu cầu",
-                        "image_url": "https://i.postimg.cc/fLmxgfG3/image.png",
+                        "image_url": "https://www.savor.vn/static/2f60d7a25f1eb7b7b76bbe3ff9cfc2ec/36bd1/banh-sinh-nhat-2022-09-07.webp",
                         "buttons": [
                            // {
                            //    "type": "web_url",
@@ -128,11 +128,11 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
          };
 
          //send a welcome message
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_first);
 
          //send a image with button view main menu
-         // // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_second);
 
          resolve("done!")
@@ -149,6 +149,8 @@ let sendCareHelp = (sender_psid) => {
          let response_1 = { "text": "Dạ :heart:  Savor xin nghe ạ" }
          let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ :heart:" }
 
+         await sendMessage(sender_psid, response_1);
+         await sendMessage(sender_psid, response_2);
       } catch (e) {
          reject(e)
       }
@@ -181,7 +183,7 @@ let requestOpenForm = (sender_psid) => {
                },
             }
          };
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {
@@ -201,50 +203,86 @@ let sendMenuCakes = (sender_psid) => {
                   "template_type": "generic",
                   "elements": [
                      {
+                        "title": "BÁNH KEM HÀN QUỐC",
+                        "subtitle": "Xịn xò hơn, nhỉnh hơn bánh bento, trang trí xinh xẻo, tối giản, tiết kiệm",
+                        "image_url": "https://i.postimg.cc/wBDGbbf6/Screenshot-from-2022-09-18-18-00-57.png",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "Xem Bánh Hàn Quốc",
+                              "payload": "MENU_KOREA_CAKE",
+                           },
+                        ],
+                     },
+                     {
                         "title": "BÁNH VỊ ĐẶC BIỆT",
-                        "subtitle": "Gồm các hương vị đặc biệt đặc biệt như xoài, dừa, cà phê,...",
+                        "subtitle": "Đa dạng các hương vị từ phổ thông đến độc lạ, phù hợp mọi độ tuổi, giới tính",
                         "image_url": "https://i.postimg.cc/G3NScFny/Screenshot-from-2022-09-08-11-13-11.png",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM MENU",
+                              "title": "Xem Bánh Đặc Biệt",
                               "payload": "MENU_SPECIAL_CAKE",
                            },
                         ],
                      },
                      {
-                        "title": "BÁNH KEM DÂU TÂY",
-                        "subtitle": "Mỗi chiếc bánh gồm nhiều dâu tươi nguyên chất ở vùng Đà Lạt",
+                        "title": "BÁNH HOA QUẢ",
+                        "subtitle": "Sử dụng dâu tây tươi Đà Lạt, chanh leo, hoa quả nhiệt đới kết hợp kem sữa chua ngon lạ",
                         "image_url": "https://i.postimg.cc/tC4PmfMd/Screenshot-from-2022-09-08-11-15-15.png",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM MENU",
-                              "payload": "MENU_STRAWBERRY_CAKE",
+                              "title": "Xem Bánh Hoa Quả",
+                              "payload": "MENU_FRUIT_CAKE",
                            },
                         ],
                      },
                      {
                         "title": "BÁNH TRẺ EM",
-                        "subtitle": "Gồm các bánh tạo hình ngộ nghĩnh, đáng yêu",
+                        "subtitle": "Các bánh tạo hình ngộ nghĩnh, có 3 size phù hợp cho mọi cuộc vui gia đình",
                         "image_url": "https://i.postimg.cc/tCc1vgPy/Screenshot-from-2022-09-08-11-16-57.png",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM MENU",
+                              "title": "XEM Bánh trẻ em",
                               "payload": "MENU_CHILD_CAKE",
                            },
                         ],
                      },
                      {
-                        "title": "BÁNH NAM GIỚI",
-                        "subtitle": "Gồm các bánh mạnh mẽ, nam tính",
-                        "image_url": "https://i.postimg.cc/G2hhkBJf/Screenshot-from-2022-09-16-12-11-40.png",
+                        "title": "BÁNH BÔNG HOA",
+                        "subtitle": "Bánh kem bắt hoa màu sắc trang nhã, sang trọng",
+                        "image_url": "https://i.postimg.cc/bJkSn1wV/Screenshot-from-2022-09-18-18-04-53.png",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM MENU",
-                              "payload": "MENU_MEN_CAKE",
+                              "title": "Xem Bánh Bông Hoa",
+                              "payload": "MENU_FLOWER_CAKE",
+                           },
+                        ],
+                     },
+                     {
+                        "title": "BÁNH SỰ KIỆN",
+                        "subtitle": "Phù hợp cho các bữa tiệc công ty, hội nhóm",
+                        "image_url": "https://i.postimg.cc/fbXRqDQJ/Screenshot-from-2022-09-18-18-06-43.png",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "Xem Bánh Sự kiện",
+                              "payload": "MENU_EVENT_CAKE",
+                           },
+                        ],
+                     },
+                     {
+                        "title": "BÁNH VẼ, BÁNH ORDER",
+                        "subtitle": "Gửi gắm những hình ảnh, thông điệp ý nghĩa riêng tư. Được chọn vị bánh",
+                        "image_url": "https://i.postimg.cc/KzGh72GX/Screenshot-from-2022-09-18-18-08-25.png",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "Xem Bánh Vẽ, Order",
+                              "payload": "MENU_ORDER_CAKE",
                            },
                         ],
                      },
@@ -252,7 +290,7 @@ let sendMenuCakes = (sender_psid) => {
                }
             }
          };
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {
@@ -323,7 +361,7 @@ let sendMenuSpecialCake = (sender_psid) => {
             }
          };
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_1);
 
          resolve("done");
@@ -390,22 +428,22 @@ let showDetailRedvelvet = (sender_psid) => {
                },
             }
          }
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_1);
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_2);
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_3);
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_4);
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_5);
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_6);
 
          resolve("done");
@@ -469,22 +507,22 @@ let showDetailTripleChoco = (sender_psid) => {
                },
             }
          }
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_1);
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_2);
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_3);
 
-         // // await sendTypingOn(sender_psid);
+         // await markMessageRead(sender_psid);
          // await sendMessage(sender_psid, response_4);
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_5);
 
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_6);
 
          resolve("done");
@@ -516,7 +554,7 @@ let sendSizeOption = (sender_psid) => {
                }
             ]
          }
-         // await sendTypingOn(sender_psid);
+         await markMessageRead(sender_psid);
          await sendQuickReply(sender_psid, response);
       } catch (e) {
          reject(e);
@@ -592,6 +630,35 @@ let sendMessage = (sender_psid, response) => {
    });
 };
 
+let markMessageRead = (sender_psid) => {
+   return new Promise((resolve, reject) => {
+      try {
+         let request_body = {
+            "recipient": {
+               "id": sender_psid
+            },
+            "sender_action": "mark_seen"
+         };
+
+         let url = `https://graph.facebook.com/v6.0/me/messages?access_token=${PAGE_ACCESS_TOKEN}`;
+         request({
+            "uri": url,
+            "method": "POST",
+            "json": request_body
+
+         }, (err, res, body) => {
+            if (!err) {
+               resolve("done!");
+            } else {
+               reject("Unable to send message:" + err);
+            }
+         });
+      } catch (e) {
+         reject(e);
+      }
+   })
+};
+
 let sendTypingOn = (sender_psid) => {
    return new Promise((resolve, reject) => {
       try {
@@ -625,6 +692,7 @@ module.exports = {
    getUserProfile,
    sendResponseWelcomeNewCustomer,
    sendTypingOn,
+   markMessageRead,
    sendMessage,
    sendMenuCakes,
    setUpMessengerPlatform,
@@ -633,5 +701,6 @@ module.exports = {
    showDetailTripleChoco,
    backToMenuCakes,
    sendSizeOption,
-   requestOpenForm
+   requestOpenForm,
+   sendCareHelp
 }

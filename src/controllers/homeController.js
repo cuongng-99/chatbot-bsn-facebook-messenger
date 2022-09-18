@@ -175,7 +175,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    else if (payload === "CARE_HELP") {
-      response = { "text": "Xin quý khách vui lòng đợi trong giây lát <3" }
+      await chatbotService.sendCareHelp(sender_psid)
    }
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);
