@@ -45,11 +45,11 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                         "url": "https://www.savor.vn/banh-sinh-nhat/",
                         "webview_height_ratio": "full"
                      },
-                     // {
-                     //    "type": "postback",
-                     //    "title": "Chat với nhân viên tư vấn",
-                     //    "payload": "CARE_HELP"
-                     // },
+                     {
+                        "type": "postback",
+                        "title": "Chat với nhân viên tư vấn",
+                        "payload": "CARE_HELP"
+                     },
                      {
                         "type": "postback",
                         "title": "Khởi động lại Bot",
@@ -624,7 +624,6 @@ module.exports = {
    sendMessage,
    sendMenuCakes,
    setUpMessengerPlatform,
-   sendMenuSpecialCake,
    showDetailRedvelvet,
    showDetailTripleChoco,
    backToMenuCakes,
