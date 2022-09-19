@@ -3,14 +3,14 @@ require("dotenv").config()
 
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
-const banner_chatbot = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-019-1663560324474.jpeg'
+const banner_chatbot = 'https://i.postimg.cc/QMCzP3PP/Banner-chat-bot.jpg'
 const thumbnail_banh_han_quoc = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0180-1663560317767.jpeg'
 const thumbnail_banh_dac_biet = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0147-1663560317732.jpeg'
 const thumbnail_banh_hoa_qua = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0189-1663560317813.jpeg'
 const thumbnail_banh_tre_em = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0120-1663560317563.jpeg'
 const thumbnail_banh_bong_hoa = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0151-1663560317408.jpeg'
 const thumbnail_banh_su_kien = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0180-1663560317372.jpeg'
-const thumbnail_banh_order = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0176-1663560317179.jpeg'
+const thumbnail_banh_order = 'https://i.postimg.cc/yY6k2p19/B-nh-v.jpg'
 
 
 // Get user's profile
