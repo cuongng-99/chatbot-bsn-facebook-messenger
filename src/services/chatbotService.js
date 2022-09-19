@@ -207,14 +207,14 @@ let sendListStore = (sender_psid) => {
       try {
          let response = {
             "text": `Dạ hiện tại Savor có 8 địa chỉ bán bánh sinh nhật nhé ạ:
-          - Số 342 Lạc Trung, Hai Bà Trưng
-          - Số 126 Hồ Tùng Mậu, Cầu Giấy
-          - Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
-          - Số 207 Giảng Võ, Đống Đa
-          - Số 18, Đặng Xuân Bảng, Hoàng Mai
-          - NO-09, Liền Kề 05 Hà Trì, Hà Cầu, Hà Đông (Ngõ 133 Tô Hiệu đi vào 50m)
-          - Số 37 Nguyễn Sơn, Ngọc Lâm, Long Biên
-          - 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy`
+         - Số 342 Lạc Trung, Hai Bà Trưng
+         - Số 126 Hồ Tùng Mậu, Cầu Giấy
+         - Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
+         - Số 207 Giảng Võ, Đống Đa
+         - Số 18, Đặng Xuân Bảng, Hoàng Mai
+         - NO-09, Liền Kề 05 Hà Trì, Hà Cầu, Hà Đông (Ngõ 133 Tô Hiệu đi vào 50m)
+         - Số 37 Nguyễn Sơn, Ngọc Lâm, Long Biên
+         - 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy`
          }
 
          await markMessageRead(sender_psid);

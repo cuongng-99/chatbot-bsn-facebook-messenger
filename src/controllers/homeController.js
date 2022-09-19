@@ -225,7 +225,25 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
 
-   // 
+   // BÁNH TRẺ EM
+   else if (payload === "MENU_CHILD_CAKE") {
+      await categoryDetail.sendMenuChildCake(sender_psid)
+   }
+   else if (payload == "SHOW_MANGO_CHICK") {
+      await cakeDetail.showDetailMangoChick(sender_psid)
+   }
+   else if (payload == "SHOW_RED_CAR") {
+      await cakeDetail.showDetailRedCar(sender_psid)
+   }
+   else if (payload == "SHOW_CHOCO_BEAR") {
+      await cakeDetail.showDetailChocoBear(sender_psid)
+   }
+   else if (payload == "SHOW_PINKY_PRINCESS") {
+      await cakeDetail.showDetailPinkyPrincess(sender_psid)
+   }
+
+
+
    else if (payload === "ORDER_NOW") {
       await chatbotService.sendSizeOption(sender_psid)
    }

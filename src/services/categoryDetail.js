@@ -1,49 +1,49 @@
 import chatbotService from "./chatbotService"
 
 // BÁNH KEM HÀN QUỐC
-const banh_galaxy_blue_image = 'https://i.postimg.cc/rpw1FSrH/B-nh-Galaxy-blue-2.jpg'
-const banh_3_mau_pastel_image = 'https://i.postimg.cc/jq7z5qDR/B-nh-pastel-2-2.jpg'
+const banh_galaxy_blue_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0183-1663560834737.jpeg'
+const banh_3_mau_pastel_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0198-1663560834767.jpeg'
 
 // BÁNH VỊ ĐẶC BIỆT
-const banh_red_velvet_image = 'https://i.postimg.cc/gJ66n4kg/Red-ve.jpg'
-const banh_triple_choco_image = 'https://i.postimg.cc/7ZsC9j5B/Triple-choco.jpg'
-const banh_moouse_socola_image = 'https://i.postimg.cc/R0WWDGfv/B-nh-mousse-scl.jpg'
-const banh_xoai_dua_image = 'https://i.postimg.cc/WbStpxw2/B-nh-xo-i-d-a-2.jpg'
-const banh_green_tea_image = 'https://i.postimg.cc/ZRF47yfT/B-nh-Green-tea-2.jpg'
-const banh_ca_phe_image = 'https://i.postimg.cc/2SzchLWQ/c-ph.jpg'
-const banh_ca_phe_cot_dua_image = 'https://i.postimg.cc/TYPf01n6/B-nh-Cafe-2.jpg'
+const banh_red_velvet_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0155-1663560810781.jpeg'
+const banh_triple_choco_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0116-1663560810555.jpeg'
+const banh_moouse_socola_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0191-1663560810581.jpeg'
+const banh_xoai_dua_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-019-1663560810588.jpeg'
+const banh_green_tea_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0113-1663560810615.jpeg'
+const banh_ca_phe_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0111-1663560810561.jpeg'
+const banh_ca_phe_cot_dua_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0157-1663560810612.jpeg'
 
 // BÁNH HOA QUẢ
-const mousse_chanh_leo_image = 'https://i.postimg.cc/59LnrSq5/Chanh-leo.jpg'
-const banh_sua_chua_hoa_qua_image = 'https://i.postimg.cc/K8HPj1Dv/kem-sua-chua.jpg'
-const banh_sua_chua_dau_da_lat_image = 'https://i.postimg.cc/Dw8G923V/B-nh-s-a-chua-d-u-t-y-2.jpg'
-const banh_socola_dau_da_lat_image = 'https://i.postimg.cc/9fyD20xk/B-nh-socola-d-u-t-y-2.jpg'
-const banh_hong_kem_chay_dau_da_lat_image = 'https://i.postimg.cc/1Xdmw1C6/B-nh-h-ng-kem-tr-ng-2.jpg'
-const banh_kem_mau_loang_dau_da_lat_image = 'https://i.postimg.cc/hG0KMdZK/B-nh-d-u-m-u-loang-2.jpg'
+const mousse_chanh_leo_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0112-1663560654000.jpeg'
+const banh_sua_chua_hoa_qua_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0197-1663560654266.jpeg'
+const banh_sua_chua_dau_da_lat_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-013-1663560654059.jpeg'
+const banh_socola_dau_da_lat_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0198-1663560654081.jpeg'
+const banh_hong_kem_chay_dau_da_lat_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0116-1663560654105.jpeg'
+const banh_kem_mau_loang_dau_da_lat_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0158-1663560654112.jpeg'
 
 // BÁNH TRẺ EM
-const banh_mango_chick_image = 'https://i.postimg.cc/HnrHpPYL/g-2.jpg'
-const banh_red_car_image = 'https://i.postimg.cc/jS0KbXGs/t-2.jpg'
-const banh_choco_bear_image = 'https://i.postimg.cc/cHby5MRG/g-u-2.jpg'
-const banh_pinky_princess_image = 'https://i.postimg.cc/8PWcMjGz/Pinky-2.jpg'
+const banh_mango_chick_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0196-1663560682745.jpeg'
+const banh_red_car_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0189-1663560682783.jpeg'
+const banh_choco_bear_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0157-1663560682746.jpeg'
+const banh_pinky_princess_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-014-1663560682767.jpeg'
 
 // BÁNH BÔNG HOA
-const banh_bong_lan_trung_muoi_bong_hoa_image = 'https://i.postimg.cc/FFkHX77V/BLTM.jpg'
-const banh_hoa_hong_image = 'https://i.postimg.cc/fTxWkp73/hoa-h-ng.jpg'
-const banh_hoa_tim_image = 'https://i.postimg.cc/W3FTVHb1/hoa-t-m.jpg'
+const banh_bong_lan_trung_muoi_bong_hoa_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0198-1663560640543.jpeg'
+const banh_hoa_hong_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0127-1663560640562.jpeg'
+const banh_hoa_tim_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0161-1663560640535.jpeg'
 
 // BÁNH SỰ KIỆN
-const banh_hu_vang_image = 'https://i.postimg.cc/Wb6jsrjg/Hu-vang.jpg'
-const banh_choco_forest_image = 'https://i.postimg.cc/9X9CNKnx/vuong.jpg'
+const banh_hu_vang_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0136-1663560698777.jpeg'
+const banh_choco_forest_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0135-1663560698772.jpeg'
 
 // BÁNH VẼ, BÁNH ORDER
-const banh_thong_diep_image = 'https://www.savor.vn/static/8aee2f714c511d08708f694d731c01f1/3cd29/banh-galaxy-blue.webp'
-const banh_2_nguoi_image = 'https://www.savor.vn/static/8aee2f714c511d08708f694d731c01f1/3cd29/banh-galaxy-blue.webp'
-const banh_coc_bia_image = 'https://www.savor.vn/static/8aee2f714c511d08708f694d731c01f1/3cd29/banh-galaxy-blue.webp'
-const banh_con_ho_image = 'https://www.savor.vn/static/8aee2f714c511d08708f694d731c01f1/3cd29/banh-galaxy-blue.webp'
-const banh_tot_nghiep_image = 'https://www.savor.vn/static/8aee2f714c511d08708f694d731c01f1/3cd29/banh-galaxy-blue.webp'
-const banh_ve_me_image = 'https://www.savor.vn/static/8aee2f714c511d08708f694d731c01f1/3cd29/banh-galaxy-blue.webp'
-const combo_2_banh_image = 'https://www.savor.vn/static/8aee2f714c511d08708f694d731c01f1/3cd29/banh-galaxy-blue.webp'
+const banh_thong_diep_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0158-1663560672670.jpeg'
+const banh_coc_bia_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0125-1663560672648.jpeg'
+const banh_2_nguoi_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0125-1663560672626.jpeg'
+const banh_con_ho_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0165-1663560672636.jpeg'
+const banh_tot_nghiep_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0193-1663560672627.jpeg'
+const banh_ve_me_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0170-1663560672576.jpeg'
+const combo_2_banh_image = ''
 
 
 let sendMenuKoreaCake = (sender_psid) => {
@@ -300,11 +300,84 @@ let sendMenuFruitCake = (sender_psid) => {
    });
 };
 
+let sendMenuChildCake = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "generic",
+                  "elements": [
+                     {
+                        "title": "Bánh kem Mango Chick",
+                        "subtitle": "Giá chỉ từ 150k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM BÁNH MANGO CHICK",
+                              "payload": "SHOW_MANGO_CHICK",
+                           },
+                        ],
+                        "image_url": banh_mango_chick_image,
+                     },
+                     {
+                        "title": "Bánh kem Red Car",
+                        "subtitle": "2 cỡ bánh, giá chỉ từ 180k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM BÁNH RED CAR",
+                              "payload": "SHOW_RED_CAR",
+                           },
+                        ],
+                        "image_url": banh_red_car_image,
+                     },
+                     {
+                        "title": "Bánh kem Choco Bear",
+                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM BÁNH CHOCO BEAR",
+                              "payload": "SHOW_CHOCO_BEAR",
+                           },
+                        ],
+                        "image_url": banh_choco_bear_image,
+                     },
+                     {
+                        "title": "Bánh kem Pinky princess",
+                        "subtitle": "Giá chỉ 180k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM BÁNH PINKY PRINCESS",
+                              "payload": "SHOW_PINKY_PRINCESS",
+                           },
+                        ],
+                        "image_url": banh_pinky_princess_image,
+                     },
+                  ]
+               }
+            }
+         };
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response);
+
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
 
 
 
 module.exports = {
    sendMenuSpecialCake,
    sendMenuKoreaCake,
-   sendMenuFruitCake
+   sendMenuFruitCake,
+   sendMenuChildCake
 }

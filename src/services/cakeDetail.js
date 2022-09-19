@@ -183,7 +183,6 @@ const choco_forest_info = {
 let showDetailGalaxyBlue = (sender_psid) => {
    return showDetailCake(sender_psid, galaxy_blue_info.text_description, galaxy_blue_info.image_1, galaxy_blue_info.text_size_price)
 }
-
 let showDetail3MauPastel = (sender_psid) => {
    return showDetailCake(sender_psid, pastel_3_mau_info.text_description, pastel_3_mau_info.image_1, pastel_3_mau_info.text_size_price)
 };
@@ -193,27 +192,21 @@ let showDetail3MauPastel = (sender_psid) => {
 let showDetailRedvelvet = (sender_psid) => {
    return showDetailCake(sender_psid, red_velet_info.text_description, red_velet_info.image_1, red_velet_info.text_size_price)
 };
-
 let showDetailTripleChoco = (sender_psid) => {
    return showDetailCake(sender_psid, triple_choco_info.text_description, triple_choco_info.image_1, triple_choco_info.text_size_price)
 };
-
 let showDetailMousseSocola = (sender_psid) => {
    return showDetailCake(sender_psid, mousse_socola_info.text_description, mousse_socola_info.image_1, mousse_socola_info.text_size_price)
 };
-
 let showDetailXoaiDua = (sender_psid) => {
    return showDetailCake(sender_psid, xoai_dua_info.text_description, xoai_dua_info.image_1, xoai_dua_info.text_size_price)
 };
-
 let showDetailGreenTea = (sender_psid) => {
    return showDetailCake(sender_psid, green_tea_info.text_description, green_tea_info.image_1, green_tea_info.text_size_price)
 };
-
 let showDetailCaPhe = (sender_psid) => {
    return showDetailCake(sender_psid, ca_phe_info.text_description, ca_phe_info.image_1, ca_phe_info.text_size_price)
 };
-
 let showDetailCaPheCotDua = (sender_psid) => {
    return showDetailCake(sender_psid, ca_phe_cot_dua_info.text_description, ca_phe_cot_dua_info.image_1, ca_phe_cot_dua_info.text_size_price)
 };
@@ -223,23 +216,18 @@ let showDetailCaPheCotDua = (sender_psid) => {
 let showDetailMousseChanhLeo = (sender_psid) => {
    return showDetailCake(sender_psid, mousse_chanh_leo_info.text_description, mousse_chanh_leo_info.image_1, mousse_chanh_leo_info.text_size_price)
 };
-
 let showDetailSuaChuaHoaQua = (sender_psid) => {
    return showDetailCake(sender_psid, sua_chua_hoa_qua_info.text_description, sua_chua_hoa_qua_info.image_1, sua_chua_hoa_qua_info.text_size_price)
 };
-
 let showDetailSuaChuaDauDaLat = (sender_psid) => {
    return showDetailCake(sender_psid, sua_chua_dau_dalat_info.text_description, sua_chua_dau_dalat_info.image_1, sua_chua_dau_dalat_info.text_size_price)
 };
-
 let showDetailSocolaDauDaLat = (sender_psid) => {
    return showDetailCake(sender_psid, socola_dau_dalat_info.text_description, socola_dau_dalat_info.image_1, socola_dau_dalat_info.text_size_price)
 };
-
 let showDetailHongKemDauDaLat = (sender_psid) => {
    return showDetailCake(sender_psid, hong_kem_trang_dau_dalat_info.text_description, hong_kem_trang_dau_dalat_info.image_1, hong_kem_trang_dau_dalat_info.text_size_price)
 };
-
 let showDetailLoangDauDaLat = (sender_psid) => {
    return showDetailCake(sender_psid, loang_dau_dalat_info.text_description, loang_dau_dalat_info.image_1, loang_dau_dalat_info.text_size_price)
 };
@@ -249,15 +237,12 @@ let showDetailLoangDauDaLat = (sender_psid) => {
 let showDetailMangoChick = (sender_psid) => {
    return showDetailCake(sender_psid, mango_chick_info.text_description, mango_chick_info.image_1, mango_chick_info.text_size_price)
 };
-
 let showDetailRedCar = (sender_psid) => {
    return showDetailCake(sender_psid, red_car_info.text_description, red_car_info.image_1, red_car_info.text_size_price)
 };
-
 let showDetailChocoBear = (sender_psid) => {
    return showDetailCake(sender_psid, choco_bear_info.text_description, choco_bear_info.image_1, choco_bear_info.text_size_price)
 };
-
 let showDetailPinkyPrincess = (sender_psid) => {
    return showDetailCake(sender_psid, pinky_princess_info.text_description, pinky_princess_info.image_1, pinky_princess_info.text_size_price)
 };
@@ -267,11 +252,9 @@ let showDetailPinkyPrincess = (sender_psid) => {
 let showDetailBongLanTrungMuoi = (sender_psid) => {
    return showDetailCake(sender_psid, bong_lan_trung_muoi_hoa_info.text_description, bong_lan_trung_muoi_hoa_info.image_1, bong_lan_trung_muoi_hoa_info.text_size_price)
 };
-
 let showDetailBanhHoaHong = (sender_psid) => {
    return showDetailCake(sender_psid, banh_hoa_hong_info.text_description, banh_hoa_hong_info.image_1, banh_hoa_hong_info.text_size_price)
 };
-
 let showDetailBanhHoaTim = (sender_psid) => {
    return showDetailCake(sender_psid, banh_hoa_tim_info.text_description, banh_hoa_tim_info.image_1, banh_hoa_tim_info.text_size_price)
 };
