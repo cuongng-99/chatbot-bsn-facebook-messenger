@@ -170,13 +170,31 @@ let handlePostback = async (sender_psid, received_postback) => {
       await categoryDetail.sendMenuSpecialCake(sender_psid)
    }
 
-   else if (payload === "SHOW_DETAIL_TRIPLE_CHOCO") {
-      await chatbotService.showDetailTripleChoco(sender_psid)
+   else if (payload === "SHOW_RED_VELVET") {
+      await cakeDetail.showDetailRedvelvet(sender_psid)
+   }
+   else if (payload === "SHOW_TRIPLE_CHOCO") {
+      await cakeDetail.showDetailTripleChoco(sender_psid)
+   }
+   else if (payload === "SHOW_MOUSSE_SOCOLA") {
+      await cakeDetail.showDetailMousseSocola(sender_psid)
+   }
+   else if (payload === "SHOW_XOAI_DUA") {
+      await cakeDetail.showDetailXoaiDua(sender_psid)
+   }
+   else if (payload === "SHOW_GREEN_TEA") {
+      await cakeDetail.showDetailGreenTea(sender_psid)
+   }
+   else if (payload === "SHOW_CA_PHE") {
+      await cakeDetail.showDetailCaPhe(sender_psid)
+   }
+   else if (payload === "SHOW_CA_PHE_COT_DUA") {
+      await cakeDetail.showDetailCaPheCotDua(sender_psid)
    }
 
-   else if (payload === "SHOW_DETAIL_RED_VELVET") {
-      await chatbotService.showDetailRedvelvet(sender_psid)
-   }
+   // BÁNH HOA QUẢ
+
+
 
    else if (payload === "ORDER_NOW") {
       await chatbotService.sendSizeOption(sender_psid)
