@@ -243,6 +243,38 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
 
+   // BÁNH BÔNG HOA
+   else if (payload === "MENU_FLOWER_CAKE") {
+      await categoryDetail.sendMenuFlowerCake(sender_psid)
+   }
+   else if (payload === "SHOW_BANH_BLTM") {
+      await cakeDetail.showDetailBongLanTrungMuoi(sender_psid)
+   }
+   else if (payload === "SHOW_BANH_HOA_HONG") {
+      await cakeDetail.showDetailBanhHoaHong(sender_psid)
+   }
+   else if (payload === "SHOW_BANH_HOA_TIM") {
+      await cakeDetail.showDetailBanhHoaTim(sender_psid)
+   }
+
+
+   // BÁNH SỰ KIỆN
+   else if (payload === "MENU_EVENT_CAKE") {
+      await categoryDetail.sendMenuFlowerCake(sender_psid)
+   }
+   else if (payload === "SHOW_BANH_BLTM") {
+      await cakeDetail.showDetailBongLanTrungMuoi(sender_psid)
+   }
+   else if (payload === "SHOW_BANH_HOA_HONG") {
+      await cakeDetail.showDetailBanhHoaHong(sender_psid)
+   }
+
+
+   // BÁNH ORDER
+   else if (payload === "MENU_ORDER_CAKE") {
+      await categoryDetail.sendMenuOrderCake(sender_psid)
+   }
+
 
    else if (payload === "ORDER_NOW") {
       await chatbotService.sendSizeOption(sender_psid)

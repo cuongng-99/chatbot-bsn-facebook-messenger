@@ -94,7 +94,6 @@ let sendMenuKoreaCake = (sender_psid) => {
    });
 };
 
-
 let sendMenuSpecialCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
@@ -372,12 +371,217 @@ let sendMenuChildCake = (sender_psid) => {
    });
 };
 
+let sendMenuFlowerCake = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "generic",
+                  "elements": [
+                     {
+                        "title": "Bánh bông lan trứng muối Bông Hoa",
+                        "subtitle": "3 cỡ bánh, giá chỉ từ 180k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM BÁNH BLTM",
+                              "payload": "SHOW_BANH_BLTM",
+                           },
+                        ],
+                        "image_url": banh_bong_lan_trung_muoi_bong_hoa_image,
+                     },
+                     {
+                        "title": "Bánh kem hoa hồng",
+                        "subtitle": "Giá chỉ từ 220k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM BÁNH KEM HOA HỒNG",
+                              "payload": "SHOW_BANH_HOA_HONG",
+                           },
+                        ],
+                        "image_url": banh_hoa_hong_image,
+                     },
+                     {
+                        "title": "Bánh kem hoa tím",
+                        "subtitle": "Giá chỉ từ 220k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM BÁNH CHOCO BEAR",
+                              "payload": "SHOW_BANH_HOA_TIM",
+                           },
+                        ],
+                        "image_url": banh_hoa_tim_image,
+                     },
+                  ]
+               }
+            }
+         };
 
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response);
+
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
+let sendMenuEventCake = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "generic",
+                  "elements": [
+                     {
+                        "title": "Bánh hũ vàng",
+                        "subtitle": "Giá chỉ từ 270k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM BÁNH HŨ VÀNG",
+                              "payload": "SHOW_BANH_HU_VANG",
+                           },
+                        ],
+                        "image_url": banh_hu_vang_image,
+                     },
+                     {
+                        "title": "Bánh choco forest",
+                        "subtitle": "Giá chỉ từ 390k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "XEM BÁNH CHOCO FOREST",
+                              "payload": "SHOW_CHOCO_FOREST",
+                           },
+                        ],
+                        "image_url": banh_choco_forest_image,
+                     },
+                  ]
+               }
+            }
+         };
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response);
+
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
+let sendMenuOrderCake = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "generic",
+                  "elements": [
+                     {
+                        "title": "Bánh Thông điệp",
+                        //"subtitle": "Giá chỉ từ 270k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "ĐẶT BÁNH VẼ THÔNG ĐIỆP",
+                              "payload": "ORDER_BANH_THONG_DIEP",
+                           },
+                        ],
+                        "image_url": banh_thong_diep_image,
+                     },
+                     {
+                        "title": "Bánh hai người",
+                        //"subtitle": "Giá chỉ từ 270k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "ĐẶT BÁNH VẼ 2 NGƯỜI",
+                              "payload": "SHOW_BANH_2_NGUOI",
+                           },
+                        ],
+                        "image_url": banh_2_nguoi_image,
+                     },
+                     {
+                        "title": "Bánh Cốc bia",
+                        //"subtitle": "Giá chỉ từ 270k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "ĐẶT BÁNH VẼ CỐC BIA",
+                              "payload": "SHOW_BANH_COC_BIA",
+                           },
+                        ],
+                        "image_url": banh_coc_bia_image,
+                     },
+                     {
+                        "title": "Bánh Con hổ",
+                        //"subtitle": "Giá chỉ từ 270k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "ĐẶT BÁNH VẼ CON HỔ",
+                              "payload": "SHOW_BANH_CON_HO",
+                           },
+                        ],
+                        "image_url": banh_con_ho_image,
+                     },
+                     {
+                        "title": "Bánh Tốt nghiệp",
+                        //"subtitle": "Giá chỉ từ 270k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "ĐẶT BÁNH VẼ TỐT NGHIỆP",
+                              "payload": "SHOW_BANH_TOT_NGHIEP",
+                           },
+                        ],
+                        "image_url": banh_tot_nghiep_image,
+                     },
+                     {
+                        "title": "Bánh Vẽ mẹ",
+                        //"subtitle": "Giá chỉ từ 270k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "ĐẶT BÁNH VẼ MẸ",
+                              "payload": "SHOW_BANH_CON_HO",
+                           },
+                        ],
+                        "image_url": banh_ve_me_image,
+                     },
+                  ]
+               }
+            }
+         };
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response);
+
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
 
 
 module.exports = {
    sendMenuSpecialCake,
    sendMenuKoreaCake,
    sendMenuFruitCake,
-   sendMenuChildCake
+   sendMenuChildCake,
+   sendMenuFlowerCake,
+   sendMenuEventCake,
+   sendMenuOrderCake
 }
