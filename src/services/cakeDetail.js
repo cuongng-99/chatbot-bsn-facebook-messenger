@@ -7,6 +7,7 @@ const galaxy_blue_info = {
    image_1: 'https://i.postimg.cc/4NMX4f73/Screenshot-from-2022-09-18-22-50-38.png',
    text_size_price: "Bánh có 2 size:\n - Size 13x7cm: Giá sale 120k (giá gốc 150k) (Phù hợp 2-3 người)\n - Size 17x8cm: Giá sale 190k (giá gốc 240k) (Phù hợp 4-6 người)"
 }
+
 // const galaxy_blue_1 = 'https://i.postimg.cc/4NMX4f73/Screenshot-from-2022-09-18-22-50-38.png'
 // const galaxy_blue_2 = 'https://i.postimg.cc/t4NZsnh5/Screenshot-from-2022-09-18-22-54-30.png'
 
@@ -76,7 +77,9 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) =
    });
 }
 
-let showDetailGalaxyBlue = showDetailCake(sender_psid, galaxy_blue_info.text_description, galaxy_blue_info.image_1, galaxy_blue_info.text_size_price)
+let showDetailGalaxyBlue = (sender_psid) => {
+   return showDetailCake(sender_psid, galaxy_blue_info.text_description, galaxy_blue_info.image_1, galaxy_blue_info.text_size_price)
+}
 
 let showDetail3MauPastel = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
