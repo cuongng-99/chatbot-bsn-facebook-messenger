@@ -96,7 +96,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                      {
                         "title": "Bánh sinh nhật Savor Cakes",
                         "subtitle": "Bánh tươi mỗi ngày - Freeship - Làm theo yêu cầu",
-                        "image_url": "https://www.savor.vn/static/2f60d7a25f1eb7b7b76bbe3ff9cfc2ec/36bd1/banh-sinh-nhat-2022-09-07.webp",
+                        "image_url": "https://i.postimg.cc/9QDttXrg/Banner-chat-bot.jpg",
                         "buttons": [
                            // {
                            //    "type": "web_url",
@@ -143,13 +143,17 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
    });
 };
 
+
 let sendCareHelp = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response_1 = { "text": "Dạ <3 Savor xin nghe ạ" }
          let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ <3" }
 
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_1);
+
+         await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_2);
       } catch (e) {
          reject(e)
@@ -157,7 +161,7 @@ let sendCareHelp = (sender_psid) => {
    })
 }
 
-let requestOpenForm = (sender_psid) => {
+let sendStoreLocationAndShipping = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
@@ -165,19 +169,17 @@ let requestOpenForm = (sender_psid) => {
                "type": "template",
                "payload": {
                   "template_type": "button",
-                  "text": "Để hoàn thành đơn đơn hàng, bạn hãy cho Savor biết thêm các thông tin nha:",
+                  "text": "Danh sách cửa hàng và Thông tin ship hàng",
                   "buttons": [
                      {
-                        "type": "web_url",
-                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
-                        "title": "Oke Shop",
-                        "webview_height_ratio": "full",
-                        "messenger_extensions": true //false: open the webview in new tab
+                        "type": "postback",
+                        "title": "Danh sách cửa hàng",
+                        "payload": "SHOW_LIST_STORE",
                      },
                      {
                         "type": "postback",
-                        "title": "Tôi muốn xem thêm",
-                        "payload": "BACK_TO_MENU_CAKES",
+                        "title": "Chi phí ship hàng",
+                        "payload": "SEND_SHIPPING_FEE",
                      }
                   ],
                },
@@ -190,8 +192,48 @@ let requestOpenForm = (sender_psid) => {
          reject(e);
       }
    });
-
 };
+
+let sendListStore = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "text": `Dạ hiện tại Savor có 8 địa chỉ bán bánh sinh nhật nhé ạ:
+         \n - Số 342 Lạc Trung, Hai Bà Trưng
+         \n - Số 126 Hồ Tùng Mậu, Cầu Giấy
+         \n - Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
+         \n - Số 207 Giảng Võ, Đống Đa
+         \n - Số 18, Đặng Xuân Bảng, Hoàng Mai
+         \n - NO-09, Liền Kề 05 Hà Trì, Hà Cầu, Hà Đông (Ngõ 133 Tô Hiệu đi vào 50m)
+         \n - Số 37 Nguyễn Sơn, Ngọc Lâm, Long Biên
+         \n - 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy` }
+
+         await markMessageRead(sender_psid);
+         await sendMessage(sender_psid, response);
+      } catch (e) {
+         reject(e)
+      }
+   })
+}
+
+let sendShippingFee = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response_1 = {
+            "text": "Hiện Savor đang có chương trình miễn phí ship với đơn hàng từ 220k trở lên (tối đa 50k) và thu phí ship đồng giá 20k đối với đơn hàng dưới 220k."
+         }
+         let response_2 = { "text": "Chương trình áp dụng cho 12 quận nội thành Hà Nội, nên mình không cần lo về phí shipping nha ^^" }
+
+         await markMessageRead(sender_psid);
+         await sendMessage(sender_psid, response_1);
+
+         await markMessageRead(sender_psid);
+         await sendMessage(sender_psid, response_2);
+      } catch (e) {
+         reject(e)
+      }
+   })
+}
 
 let sendMenuCakes = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
@@ -205,7 +247,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH KEM HÀN QUỐC",
                         "subtitle": "Xịn xò hơn, nhỉnh hơn bánh bento, trang trí xinh xẻo, tối giản, tiết kiệm",
-                        "image_url": "https://i.postimg.cc/wBDGbbf6/Screenshot-from-2022-09-18-18-00-57.png",
+                        "image_url": "https://i.postimg.cc/RV7QgpRK/B-nh-h-n-qu-c.jpg",
                         "buttons": [
                            {
                               "type": "postback",
@@ -217,7 +259,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH VỊ ĐẶC BIỆT",
                         "subtitle": "Đa dạng các hương vị từ phổ thông đến độc lạ, phù hợp mọi độ tuổi, giới tính",
-                        "image_url": "https://i.postimg.cc/G3NScFny/Screenshot-from-2022-09-08-11-13-11.png",
+                        "image_url": "https://i.postimg.cc/ZKxp8BbL/B-nh-v-c-bi-t.jpg",
                         "buttons": [
                            {
                               "type": "postback",
@@ -229,7 +271,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH HOA QUẢ",
                         "subtitle": "Sử dụng dâu tây tươi Đà Lạt, chanh leo, hoa quả nhiệt đới kết hợp kem sữa chua ngon lạ",
-                        "image_url": "https://i.postimg.cc/tC4PmfMd/Screenshot-from-2022-09-08-11-15-15.png",
+                        "image_url": "https://i.postimg.cc/T2rDxLDX/B-nh-hoa-qu-2.jpg",
                         "buttons": [
                            {
                               "type": "postback",
@@ -241,7 +283,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH TRẺ EM",
                         "subtitle": "Các bánh tạo hình ngộ nghĩnh, có 3 size phù hợp cho mọi cuộc vui gia đình",
-                        "image_url": "https://i.postimg.cc/tCc1vgPy/Screenshot-from-2022-09-08-11-16-57.png",
+                        "image_url": "https://i.postimg.cc/43DYks4d/B-nh-tr-em.jpg",
                         "buttons": [
                            {
                               "type": "postback",
@@ -253,7 +295,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH BÔNG HOA",
                         "subtitle": "Bánh kem bắt hoa màu sắc trang nhã, sang trọng",
-                        "image_url": "https://i.postimg.cc/bJkSn1wV/Screenshot-from-2022-09-18-18-04-53.png",
+                        "image_url": "https://i.postimg.cc/jj7jhm6r/B-nh-b-ng-hoa.jpg",
                         "buttons": [
                            {
                               "type": "postback",
@@ -265,7 +307,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH SỰ KIỆN",
                         "subtitle": "Phù hợp cho các bữa tiệc công ty, hội nhóm",
-                        "image_url": "https://i.postimg.cc/fbXRqDQJ/Screenshot-from-2022-09-18-18-06-43.png",
+                        "image_url": "https://i.postimg.cc/1zw9F6Pm/B-nh-s-ki-n.jpg",
                         "buttons": [
                            {
                               "type": "postback",
@@ -277,7 +319,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH VẼ, BÁNH ORDER",
                         "subtitle": "Gửi gắm những hình ảnh, thông điệp ý nghĩa riêng tư. Được chọn vị bánh",
-                        "image_url": "https://i.postimg.cc/KzGh72GX/Screenshot-from-2022-09-18-18-08-25.png",
+                        "image_url": "https://i.postimg.cc/SRTq4fLr/B-nh-v.jpg",
                         "buttons": [
                            {
                               "type": "postback",
@@ -329,6 +371,46 @@ let sendSizeOption = (sender_psid) => {
 
    });
 };
+
+
+
+let requestOpenForm = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "button",
+                  "text": "Để hoàn thành đơn đơn hàng, bạn hãy cho Savor biết thêm các thông tin nha:",
+                  "buttons": [
+                     {
+                        "type": "web_url",
+                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                        "title": "Oke Shop",
+                        "webview_height_ratio": "full",
+                        "messenger_extensions": true //false: open the webview in new tab
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Tôi muốn xem thêm",
+                        "payload": "BACK_TO_MENU_CAKES",
+                     }
+                  ],
+               },
+            }
+         };
+         await markMessageRead(sender_psid);
+         await sendMessage(sender_psid, response);
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
+
+};
+
+
 
 let backToMenuCakes = (sender_psid) => {
    sendMenuCakes(sender_psid);
@@ -466,5 +548,8 @@ module.exports = {
    backToMenuCakes,
    sendSizeOption,
    requestOpenForm,
-   sendCareHelp
+   sendCareHelp,
+   sendStoreLocationAndShipping,
+   sendListStore,
+   sendShippingFee
 }

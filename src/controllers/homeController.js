@@ -135,15 +135,8 @@ let handlePostback = async (sender_psid, received_postback) => {
    let payload = received_postback.payload;
 
    // Set the response based on the postback payload
-   if (payload === 'yes') {
-      response = { "text": "Thanks!" }
-   }
 
-   else if (payload === 'no') {
-      response = { "text": "Oops, try sending another image." }
-   }
-
-   else if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
+   if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
       let userName = await chatbotService.getUserProfile(sender_psid);
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    }
@@ -152,15 +145,32 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.sendMenuCakes(sender_psid)
    }
 
+   else if (payload === "CARE_HELP") {
+      await chatbotService.sendCareHelp(sender_psid)
+   }
+
+   else if (payload === "STORE_LOCATION_SHIPPING") {
+      await chatbotService.sendStoreLocationAndShipping(sender_psid)
+   }
+
+
+   // THÔNG TIN CỬA HÀNG, SHIP HÀNG
+   else if (payload === "SHOW_LIST_STORE") {
+      await chatbotService.sendListStore(sender_psid)
+   }
+
+   else if (payload === "SEND_SHIPPING_FEE") {
+      await chatbotService.sendShippingFee(sender_psid)
+   }
+
+
    // BÁNH HÀN QUỐC
    else if (payload === "MENU_KOREA_CAKE") {
       await categoryDetail.sendMenuKoreaCake(sender_psid)
    }
-
    else if (payload === "SHOW_GALAXY_BLUE") {
       await cakeDetail.showDetailGalaxyBlue(sender_psid)
    }
-
    else if (payload === "SHOW_3_MAU_PASTEL") {
       await cakeDetail.showDetail3MauPastel(sender_psid)
    }
@@ -169,7 +179,6 @@ let handlePostback = async (sender_psid, received_postback) => {
    else if (payload === "MENU_SPECIAL_CAKE") {
       await categoryDetail.sendMenuSpecialCake(sender_psid)
    }
-
    else if (payload === "SHOW_RED_VELVET") {
       await cakeDetail.showDetailRedvelvet(sender_psid)
    }
@@ -204,9 +213,6 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.backToMenuCakes(sender_psid)
    }
 
-   else if (payload === "CARE_HELP") {
-      await chatbotService.sendCareHelp(sender_psid)
-   }
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);
 }
