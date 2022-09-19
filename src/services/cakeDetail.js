@@ -273,16 +273,21 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) =
                   "template_type": "button",
                   "text": "Bạn có muốn đặt bánh này ko?",
                   "buttons": [
+                     // {
+                     //    "type": "web_url",
+                     //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                     //    "title": "Đặt ngay",
+                     //    "webview_height_ratio": "tall",
+                     //    "messenger_extensions": true //false: open the webview in new tab
+                     // },
                      {
-                        "type": "web_url",
-                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
-                        "title": "Đặt ngay",
-                        "webview_height_ratio": "tall",
-                        "messenger_extensions": true //false: open the webview in new tab
+                        "type": "postback",
+                        "title": "Đặt bánh này",
+                        "payload": "ORDER_NOW",
                      },
                      {
                         "type": "postback",
-                        "title": "Không, Về Menu",
+                        "title": "Xem nhóm bánh khác",
                         "payload": "BACK_TO_MENU_CAKES",
                      }
                   ],

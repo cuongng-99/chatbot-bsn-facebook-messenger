@@ -142,7 +142,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Xoài Dừa",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 180k",
+                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -154,7 +154,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Green Tea",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 180k",
+                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -166,7 +166,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Cà Phê",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 180k",
+                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -178,7 +178,7 @@ let sendMenuSpecialCake = (sender_psid) => {
                      },
                      {
                         "title": "Bánh kem Cà Phê Cốt Dừa",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 180k",
+                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
                         "buttons": [
                            {
                               "type": "postback",
