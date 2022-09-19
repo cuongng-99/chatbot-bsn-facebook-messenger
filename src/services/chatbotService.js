@@ -207,14 +207,14 @@ let sendListStore = (sender_psid) => {
       try {
          let response = {
             "text": `Dạ hiện tại Savor có 8 địa chỉ bán bánh sinh nhật nhé ạ:
-         - Số 342 Lạc Trung, Hai Bà Trưng
-         - Số 126 Hồ Tùng Mậu, Cầu Giấy
-         - Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
-         - Số 207 Giảng Võ, Đống Đa
-         - Số 18, Đặng Xuân Bảng, Hoàng Mai
-         - NO-09, Liền Kề 05 Hà Trì, Hà Cầu, Hà Đông (Ngõ 133 Tô Hiệu đi vào 50m)
-         - Số 37 Nguyễn Sơn, Ngọc Lâm, Long Biên
-         - 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy`
+- Số 342 Lạc Trung, Hai Bà Trưng
+- Số 126 Hồ Tùng Mậu, Cầu Giấy
+- Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
+- Số 207 Giảng Võ, Đống Đa
+- Số 18, Đặng Xuân Bảng, Hoàng Mai
+- NO-09, Liền Kề 05 Hà Trì, Hà Cầu, Hà Đông (Ngõ 133 Tô Hiệu đi vào 50m)
+- Số 37 Nguyễn Sơn, Ngọc Lâm, Long Biên
+- 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy`
          }
 
          await markMessageRead(sender_psid);
@@ -234,9 +234,11 @@ let sendShippingFee = (sender_psid) => {
          let response_2 = { "text": "Chương trình áp dụng cho 12 quận nội thành Hà Nội, nên mình không cần lo về phí ship nha ^^" }
 
          await markMessageRead(sender_psid);
+         await delay(2000)
          await sendMessage(sender_psid, response_1);
 
          await markMessageRead(sender_psid);
+         await delay(2000)
          await sendMessage(sender_psid, response_2);
       } catch (e) {
          reject(e)
@@ -342,6 +344,7 @@ let sendMenuCakes = (sender_psid) => {
             }
          };
          await markMessageRead(sender_psid);
+         await delay(2000)
          await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {
@@ -545,6 +548,9 @@ let sendTypingOn = (sender_psid) => {
       }
    });
 };
+
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 module.exports = {
    getUserProfile,
