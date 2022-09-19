@@ -96,7 +96,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                      {
                         "title": "Bánh sinh nhật Savor Cakes",
                         "subtitle": "Bánh tươi mỗi ngày - Freeship - Làm theo yêu cầu",
-                        "image_url": "https://i.postimg.cc/9QDttXrg/Banner-chat-bot.jpg",
+                        "image_url": "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-019-1663560324474.jpeg",
                         "buttons": [
                            // {
                            //    "type": "web_url",
@@ -199,14 +199,15 @@ let sendListStore = (sender_psid) => {
       try {
          let response = {
             "text": `Dạ hiện tại Savor có 8 địa chỉ bán bánh sinh nhật nhé ạ:
-         \n - Số 342 Lạc Trung, Hai Bà Trưng
-         \n - Số 126 Hồ Tùng Mậu, Cầu Giấy
-         \n - Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
-         \n - Số 207 Giảng Võ, Đống Đa
-         \n - Số 18, Đặng Xuân Bảng, Hoàng Mai
-         \n - NO-09, Liền Kề 05 Hà Trì, Hà Cầu, Hà Đông (Ngõ 133 Tô Hiệu đi vào 50m)
-         \n - Số 37 Nguyễn Sơn, Ngọc Lâm, Long Biên
-         \n - 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy` }
+          - Số 342 Lạc Trung, Hai Bà Trưng
+          - Số 126 Hồ Tùng Mậu, Cầu Giấy
+          - Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
+          - Số 207 Giảng Võ, Đống Đa
+          - Số 18, Đặng Xuân Bảng, Hoàng Mai
+          - NO-09, Liền Kề 05 Hà Trì, Hà Cầu, Hà Đông (Ngõ 133 Tô Hiệu đi vào 50m)
+          - Số 37 Nguyễn Sơn, Ngọc Lâm, Long Biên
+          - 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy`
+         }
 
          await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response);
