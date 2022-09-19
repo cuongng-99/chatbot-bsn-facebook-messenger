@@ -3,6 +3,14 @@ require("dotenv").config()
 
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
+const banner_chatbot = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-019-1663560324474.jpeg'
+const thumbnail_banh_han_quoc = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0180-1663560317767.jpeg'
+const thumbnail_banh_dac_biet = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0147-1663560317732.jpeg'
+const thumbnail_banh_hoa_qua = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0189-1663560317813.jpeg'
+const thumbnail_banh_tre_em = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0120-1663560317563.jpeg'
+const thumbnail_banh_bong_hoa = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0151-1663560317408.jpeg'
+const thumbnail_banh_su_kien = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0180-1663560317372.jpeg'
+const thumbnail_banh_order = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0176-1663560317179.jpeg'
 
 
 // Get user's profile
@@ -96,7 +104,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                      {
                         "title": "Bánh sinh nhật Savor Cakes",
                         "subtitle": "Bánh tươi mỗi ngày - Freeship - Làm theo yêu cầu",
-                        "image_url": "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-019-1663560324474.jpeg",
+                        "image_url": banner_image,
                         "buttons": [
                            // {
                            //    "type": "web_url",
@@ -248,7 +256,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH KEM HÀN QUỐC",
                         "subtitle": "Xịn xò hơn, nhỉnh hơn bánh bento, trang trí xinh xẻo, tối giản, tiết kiệm",
-                        "image_url": "https://i.postimg.cc/RV7QgpRK/B-nh-h-n-qu-c.jpg",
+                        "image_url": thumbnail_banh_han_quoc,
                         "buttons": [
                            {
                               "type": "postback",
@@ -260,7 +268,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH VỊ ĐẶC BIỆT",
                         "subtitle": "Đa dạng các hương vị từ phổ thông đến độc lạ, phù hợp mọi độ tuổi, giới tính",
-                        "image_url": "https://i.postimg.cc/ZKxp8BbL/B-nh-v-c-bi-t.jpg",
+                        "image_url": thumbnail_banh_dac_biet,
                         "buttons": [
                            {
                               "type": "postback",
@@ -272,7 +280,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH HOA QUẢ",
                         "subtitle": "Sử dụng dâu tây tươi Đà Lạt, chanh leo, hoa quả nhiệt đới kết hợp kem sữa chua ngon lạ",
-                        "image_url": "https://i.postimg.cc/T2rDxLDX/B-nh-hoa-qu-2.jpg",
+                        "image_url": thumbnail_banh_hoa_qua,
                         "buttons": [
                            {
                               "type": "postback",
@@ -284,7 +292,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH TRẺ EM",
                         "subtitle": "Các bánh tạo hình ngộ nghĩnh, có 3 size phù hợp cho mọi cuộc vui gia đình",
-                        "image_url": "https://i.postimg.cc/43DYks4d/B-nh-tr-em.jpg",
+                        "image_url": thumbnail_banh_tre_em,
                         "buttons": [
                            {
                               "type": "postback",
@@ -296,7 +304,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH BÔNG HOA",
                         "subtitle": "Bánh kem bắt hoa màu sắc trang nhã, sang trọng",
-                        "image_url": "https://i.postimg.cc/jj7jhm6r/B-nh-b-ng-hoa.jpg",
+                        "image_url": thumbnail_banh_bong_hoa,
                         "buttons": [
                            {
                               "type": "postback",
@@ -308,7 +316,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH SỰ KIỆN",
                         "subtitle": "Phù hợp cho các bữa tiệc công ty, hội nhóm",
-                        "image_url": "https://i.postimg.cc/1zw9F6Pm/B-nh-s-ki-n.jpg",
+                        "image_url": thumbnail_banh_su_kien,
                         "buttons": [
                            {
                               "type": "postback",
@@ -320,7 +328,7 @@ let sendMenuCakes = (sender_psid) => {
                      {
                         "title": "BÁNH VẼ, BÁNH ORDER",
                         "subtitle": "Gửi gắm những hình ảnh, thông điệp ý nghĩa riêng tư. Được chọn vị bánh",
-                        "image_url": "https://i.postimg.cc/SRTq4fLr/B-nh-v.jpg",
+                        "image_url": thumbnail_banh_order,
                         "buttons": [
                            {
                               "type": "postback",
