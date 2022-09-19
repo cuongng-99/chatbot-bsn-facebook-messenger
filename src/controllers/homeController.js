@@ -274,10 +274,13 @@ let handlePostback = async (sender_psid, received_postback) => {
    else if (payload === "MENU_ORDER_CAKE") {
       await categoryDetail.sendMenuOrderCake(sender_psid)
    }
+   else if (payload === "ORDER_BANH_VE") {
+      response = { "text": "Dạ mình gửi Savor hình ảnh mẫu bánh bạn muốn đặt nha ạ" }
+   }
 
 
    else if (payload === "ORDER_NOW") {
-      response = { "text": "Dạ, Savor sẽ lên đơn giúp bạn nhé ạ ^^" }
+      response = { "text": "Dạ, mình chờ Savor lên đơn nha ạ^^" }
       // await chatbotService.sendSizeOption(sender_psid)
    }
 

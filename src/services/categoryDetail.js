@@ -43,7 +43,8 @@ const banh_2_nguoi_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/
 const banh_con_ho_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0165-1663560672636.jpeg'
 const banh_tot_nghiep_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0193-1663560672627.jpeg'
 const banh_ve_me_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0170-1663560672576.jpeg'
-const combo_2_banh_image = ''
+const banh_ve_de_to = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0159-1663587991914.jpeg'
+const combo_banh_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0139-1663587991897.jpeg'
 
 
 let sendMenuKoreaCake = (sender_psid) => {
@@ -491,75 +492,99 @@ let sendMenuOrderCake = (sender_psid) => {
                   "elements": [
                      {
                         "title": "Bánh Thông điệp",
-                        //"subtitle": "Giá chỉ từ 270k",
+                        "subtitle": "Giá chỉ từ 150k",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ THÔNG ĐIỆP",
-                              "payload": "ORDER_BANH_THONG_DIEP",
+                              "title": "ĐẶT BÁNH VẼ",
+                              "payload": "ORDER_BANH_VE",
                            },
                         ],
                         "image_url": banh_thong_diep_image,
                      },
                      {
                         "title": "Bánh hai người",
-                        //"subtitle": "Giá chỉ từ 270k",
+                        "subtitle": "Giá chỉ từ 180k",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ 2 NGƯỜI",
-                              "payload": "SHOW_BANH_2_NGUOI",
+                              "title": "ĐẶT BÁNH VẼ",
+                              "payload": "ORDER_BANH_VE",
                            },
                         ],
                         "image_url": banh_2_nguoi_image,
                      },
                      {
                         "title": "Bánh Cốc bia",
-                        //"subtitle": "Giá chỉ từ 270k",
+                        "subtitle": "Giá chỉ từ 180k",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ CỐC BIA",
-                              "payload": "SHOW_BANH_COC_BIA",
+                              "title": "ĐẶT BÁNH VẼ",
+                              "payload": "ORDER_BANH_VE",
                            },
                         ],
                         "image_url": banh_coc_bia_image,
                      },
                      {
                         "title": "Bánh Con hổ",
-                        //"subtitle": "Giá chỉ từ 270k",
+                        "subtitle": "Giá chỉ từ 180k",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ CON HỔ",
-                              "payload": "SHOW_BANH_CON_HO",
+                              "title": "ĐẶT BÁNH VẼ",
+                              "payload": "ORDER_BANH_VE",
                            },
                         ],
                         "image_url": banh_con_ho_image,
                      },
                      {
                         "title": "Bánh Tốt nghiệp",
-                        //"subtitle": "Giá chỉ từ 270k",
+                        "subtitle": "Giá chỉ từ 180k",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ TỐT NGHIỆP",
-                              "payload": "SHOW_BANH_TOT_NGHIEP",
+                              "title": "ĐẶT BÁNH VẼ",
+                              "payload": "ORDER_BANH_VE",
                            },
                         ],
                         "image_url": banh_tot_nghiep_image,
                      },
                      {
                         "title": "Bánh Vẽ mẹ",
-                        //"subtitle": "Giá chỉ từ 270k",
+                        "subtitle": "Giá chỉ từ 180k",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ MẸ",
-                              "payload": "SHOW_BANH_CON_HO",
+                              "title": "ĐẶT BÁNH VẼ",
+                              "payload": "ORDER_BANH_VE",
                            },
                         ],
                         "image_url": banh_ve_me_image,
+                     },
+                     {
+                        "title": "Bánh Vẽ đế to",
+                        "subtitle": "Giá chỉ từ 180k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "ĐẶT BÁNH VẼ",
+                              "payload": "ORDER_BANH_VE",
+                           },
+                        ],
+                        "image_url": banh_ve_de_to,
+                     },
+                     {
+                        "title": "Combo 2 bánh",
+                        "subtitle": "Giá chỉ từ 255k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "ĐẶT BÁNH VẼ",
+                              "payload": "ORDER_BANH_VE",
+                           },
+                        ],
+                        "image_url": combo_banh_image,
                      },
                   ]
                }
