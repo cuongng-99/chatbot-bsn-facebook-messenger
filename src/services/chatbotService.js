@@ -350,24 +350,26 @@ let sendMenuCakes = (sender_psid) => {
 };
 
 
-let sendSizeOption = (sender_psid) => {
+let requestFillInfo = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": "Bạn muốn chọn cỡ nào:",
+            "text": `Dạ mình gửi giúp Savor các thông tin sau để hoàn thiện đơn order nhé ạ:\n
+- Tên bánh, Cỡ bánh:
+- Tên và số điện thoại người nhận:
+- Địa chỉ nhận hàng:
+- Thời gian nhận hàng:
+- Chữ viết trên đế bánh:
+- Hình thức thanh toán: Nếu được mình chọn chuyển khoản trước nhé. Hoặc mình chọn nhận hàng rồi thanh toán ạ`,
             "quick_replies": [
                {
                   "content_type": "text",
-                  "title": "Nhỏ 13x7cm",
-                  "payload": "SMALL",
+                  "title": "Xem phí ship",
+                  "payload": "SHIPING_FEE",
                }, {
                   "content_type": "text",
-                  "title": "Vừa 17x8cm",
-                  "payload": "MEDIUM",
-               }, {
-                  "content_type": "text",
-                  "title": "To 21x8cm",
-                  "payload": "LARGE",
+                  "title": "Xem cửa hàng",
+                  "payload": "STORE_LOCALTION",
                }
             ]
          }
@@ -557,7 +559,7 @@ module.exports = {
    sendMenuCakes,
    setUpMessengerPlatform,
    backToMenuCakes,
-   sendSizeOption,
+   requestFillInfo,
    requestOpenForm,
    sendCareHelp,
    sendStoreLocationAndShipping,

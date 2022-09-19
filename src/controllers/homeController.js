@@ -77,9 +77,12 @@ let handleMessage = async (sender_psid, message) => {
 
    let response;
    if (message && message.quick_reply && message.quick_reply.payload) {
-      if (message.quick_reply.payload === "SMALL" || message.quick_reply.payload === "MEDIUM" || message.quick_reply.payload === "LARGE") {
-         await chatbotService.sendTypingOn(sender_psid);
-         await chatbotService.requestOpenForm(sender_psid);
+      if (message.quick_reply.payload === "SHIPING_FEE") {
+         await chatbotService.sendShippingFee(sender_psid)
+         return;
+      }
+      else if (message.quick_reply.payload === "STORE_LOCALTION") {
+         await chatbotService.sendListStore(sender_psid)
          return;
       }
 
@@ -87,41 +90,41 @@ let handleMessage = async (sender_psid, message) => {
    }
 
    // Checks if the message contains text
-   if (message.text) {
-      // Create the payload for a basic text message, which
-      // will be added to the body of our request to the Send API
-      response = {
-         "text": `You sent the message: "${message.text}". Now send me an attachment!`
-      }
-   } else if (message.attachments) {
-      // Get the URL of the message attachment
-      let attachment_url = message.attachments[0].payload.url;
-      response = {
-         "attachment": {
-            "type": "template",
-            "payload": {
-               "template_type": "generic",
-               "elements": [{
-                  "title": "Is this the right picture?",
-                  "subtitle": "Tap a button to answer.",
-                  "image_url": attachment_url,
-                  "buttons": [
-                     {
-                        "type": "postback",
-                        "title": "Yes!",
-                        "payload": "yes",
-                     },
-                     {
-                        "type": "postback",
-                        "title": "No!",
-                        "payload": "no",
-                     }
-                  ],
-               }]
-            }
-         }
-      }
-   }
+   // if (message.text) {
+   //    // Create the payload for a basic text message, which
+   //    // will be added to the body of our request to the Send API
+   //    response = {
+   //       "text": `You sent the message: "${message.text}". Now send me an attachment!`
+   //    }
+   // } else if (message.attachments) {
+   //    // Get the URL of the message attachment
+   //    let attachment_url = message.attachments[0].payload.url;
+   //    response = {
+   //       "attachment": {
+   //          "type": "template",
+   //          "payload": {
+   //             "template_type": "generic",
+   //             "elements": [{
+   //                "title": "Is this the right picture?",
+   //                "subtitle": "Tap a button to answer.",
+   //                "image_url": attachment_url,
+   //                "buttons": [
+   //                   {
+   //                      "type": "postback",
+   //                      "title": "Yes!",
+   //                      "payload": "yes",
+   //                   },
+   //                   {
+   //                      "type": "postback",
+   //                      "title": "No!",
+   //                      "payload": "no",
+   //                   }
+   //                ],
+   //             }]
+   //          }
+   //       }
+   //    }
+   // }
 
    // Send the response message
    callSendAPI(sender_psid, response);
@@ -280,15 +283,7 @@ let handlePostback = async (sender_psid, received_postback) => {
 
 
    else if (payload === "ORDER_NOW") {
-      response = {
-         "text": `Mình gửi giúp Savor các thông tin sau để hoàn thiện đơn order nhé:\n
-      - Tên bánh, Cỡ bánh:
-      - Tên và số điện thoại người nhận:
-      - Địa chỉ nhận hàng:
-      - Thời gian nhận hàng:
-      - Chữ viết trên đế bánh:
-      - Hình thức thanh toán: Nếu được mình chọn chuyển khoản trước nhé. Hoặc mình chọn nhận hàng rồi thanh toán ạ` }
-      // await chatbotService.sendSizeOption(sender_psid)
+      await chatbotService.requestFillInfo(sender_psid)
    }
 
    else if (payload === "BACK_TO_MENU_CAKES") {
