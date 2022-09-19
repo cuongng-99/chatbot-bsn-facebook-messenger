@@ -104,7 +104,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                      {
                         "title": "Bánh sinh nhật Savor Cakes",
                         "subtitle": "Bánh tươi mỗi ngày - Freeship - Làm theo yêu cầu",
-                        "image_url": banner_image,
+                        "image_url": banner_chatbot,
                         "buttons": [
                            // {
                            //    "type": "web_url",
