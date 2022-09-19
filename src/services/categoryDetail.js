@@ -580,7 +580,7 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ",
+                              "title": "ĐẶT COMBO 2 BÁNH",
                               "payload": "ORDER_BANH_VE",
                            },
                         ],
