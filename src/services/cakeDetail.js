@@ -277,7 +277,7 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) =
                         "type": "web_url",
                         "url": `${process.env.URL_WEB_VIEW_ORDER}`,
                         "title": "Đặt ngay",
-                        "webview_height_ratio": "full",
+                        "webview_height_ratio": "tall",
                         "messenger_extensions": true //false: open the webview in new tab
                      },
                      {

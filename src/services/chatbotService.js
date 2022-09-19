@@ -159,9 +159,11 @@ let sendCareHelp = (sender_psid) => {
          let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ <3" }
 
          await markMessageRead(sender_psid);
+         await delay(2000)
          await sendMessage(sender_psid, response_1);
 
          await markMessageRead(sender_psid);
+         await delay(2000)
          await sendMessage(sender_psid, response_2);
       } catch (e) {
          reject(e)
@@ -206,7 +208,7 @@ let sendListStore = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": `Dạ hiện tại Savor có 8 địa chỉ bán bánh sinh nhật nhé ạ:
+            "text": `Dạ hiện tại Savor đang có 8 địa chỉ bán bánh sinh nhật, mình tham khảo nha:
 - Số 342 Lạc Trung, Hai Bà Trưng
 - Số 126 Hồ Tùng Mậu, Cầu Giấy
 - Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
