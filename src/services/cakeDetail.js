@@ -102,7 +102,7 @@ const loang_dau_dalat_info = {
 const mango_chick_info = {
    text_description: "Cốt bánh vani 2 tầng, kết hợp với mứt xoài, kem tươi vị xoài, tạo hình gà con.",
    image_1: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0196-1663560682745.jpeg',
-   text_size_price: "Bánh có kich thước 13x7cm: Giá sale 150k (giá gốc 190k) (phù hợp 2-4 người)"
+   text_size_price: "Bánh có kích thước 13x7cm: Giá sale 150k (giá gốc 190k) (phù hợp 2-4 người)"
 }
 
 const red_car_info = {
@@ -120,7 +120,7 @@ const choco_bear_info = {
 const pinky_princess_info = {
    text_description: "Bánh kem 3 lớp cốt vani 13x18cm, kêt hợp với mứt dâu và kem vị dâu tây, bánh trang trí búp bê công chúa, sở thích của các bé gái.",
    image_1: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-014-1663560682767.jpeg',
-   text_size_price: "Bánh có kich thước 13x8cm: Giá sale 180k (giá gốc 230k) (phù hợp 2-4 người)"
+   text_size_price: "Bánh có kích thước 13x8cm: Giá sale 180k (giá gốc 230k) (phù hợp 2-4 người)"
 }
 
 
@@ -134,13 +134,13 @@ const bong_lan_trung_muoi_hoa_info = {
 const banh_hoa_hong_info = {
    text_description: "3 lớp cốt bánh vani, xen kẽ là lớp mứt dâu. Trang trí hoa hồng trên mặt bánh.",
    image_1: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0127-1663560640562.jpeg',
-   text_size_price: "Bánh có kich thước 17x8cm: Giá sale 220k (giá gốc 275k) (phù hợp 3-5 người)"
+   text_size_price: "Bánh có kích thước 17x8cm: Giá sale 220k (giá gốc 275k) (phù hợp 3-5 người)"
 }
 
 const banh_hoa_tim_info = {
    text_description: "3 lớp cốt bánh vani, xen kẽ là lớp mứt việt quất. Trang trí hoa tím xung quanh thành bánh.",
    image_1: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0161-1663560640535.jpeg',
-   text_size_price: "Bánh có kich thước 13x12cm: Giá sale 220k (giá gốc 275k) (phù hợp 3-5 người)"
+   text_size_price: "Bánh có kích thước 13x12cm: Giá sale 220k (giá gốc 275k) (phù hợp 3-5 người)"
 }
 
 
@@ -148,13 +148,13 @@ const banh_hoa_tim_info = {
 const banh_hu_vang_info = {
    text_description: "Bánh gồm 3 lớp cốt vani, mứt dâu tây tạo hình hũ vàng, đường kính 16cm cao 10cm phù hợp để tặng nhân dịp khai trương",
    image_1: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0136-1663560698777.jpeg',
-   text_size_price: "Bánh có kich thước 16x10cm: Giá sale 270k (giá gốc 350k) (phù hợp 4-6 người)"
+   text_size_price: "Bánh có kích thước 16x10cm: Giá sale 270k (giá gốc 350k) (phù hợp 4-6 người)"
 }
 
 const choco_forest_info = {
    text_description: "Bánh hình vuông, kích thước 18x18x8cm, cồm 3 lớp cốt socola kết hợp kem socola, trang trí bằng dâu tây và socola bào",
    image_1: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0135-1663560698772.jpeg',
-   text_size_price: "Bánh có kich thước 18x18x8cm: Giá sale 390k (giá gốc 490k) (phù hợp 6-10 người)"
+   text_size_price: "Bánh có kích thước 18x18x8cm: Giá sale 390k (giá gốc 490k) (phù hợp 6-10 người)"
 }
 
 
@@ -289,6 +289,11 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) =
                         "type": "postback",
                         "title": "Xem nhóm bánh khác",
                         "payload": "BACK_TO_MENU_CAKES",
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Chat với Nhân viên",
+                        "payload": "CARE_HELP",
                      }
                   ],
                },

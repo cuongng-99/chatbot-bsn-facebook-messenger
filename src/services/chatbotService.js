@@ -202,7 +202,7 @@ let sendListStore = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": `Dạ hiện tại Savor đang có 8 địa chỉ bán bánh sinh nhật, mình tham khảo nha:
+            "text": `Dạ hiện tại Savor đang có 8 địa chỉ bán bánh sinh nhật, mình tham khảo nha:\n
 - Số 342 Lạc Trung, Hai Bà Trưng
 - Số 126 Hồ Tùng Mậu, Cầu Giấy
 - Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
