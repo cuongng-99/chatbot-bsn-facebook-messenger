@@ -222,7 +222,7 @@ let sendShippingFee = (sender_psid) => {
          let response_1 = {
             "text": "Hiện Savor đang có chương trình miễn phí ship với đơn hàng từ 220k trở lên (tối đa 50k) và thu phí ship đồng giá 20k đối với đơn hàng dưới 220k."
          }
-         let response_2 = { "text": "Chương trình áp dụng cho 12 quận nội thành Hà Nội, nên mình không cần lo về phí shipping nha ^^" }
+         let response_2 = { "text": "Chương trình áp dụng cho 12 quận nội thành Hà Nội, nên mình không cần lo về phí ship nha ^^" }
 
          await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response_1);

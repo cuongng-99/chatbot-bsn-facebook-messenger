@@ -202,9 +202,30 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    // BÁNH HOA QUẢ
+   else if (payload === "MENU_FRUIT_CAKE") {
+      await categoryDetail.sendMenuFruitCake(sender_psid)
+   }
+   else if (payload == "SHOW_MOUSSE_CHANH_LEO") {
+      await cakeDetail.showDetailMousseChanhLeo(sender_psid)
+   }
+   else if (payload == "SHOW_KEM_SC_HOA_QUA") {
+      await cakeDetail.showDetailSuaChuaHoaQua(sender_psid)
+   }
+   else if (payload == "SHOW_SC_DAU_DALAT") {
+      await cakeDetail.showDetailSuaChuaDauDaLat(sender_psid)
+   }
+   else if (payload == "SHOW_SOCOLA_DAU_DALAT") {
+      await cakeDetail.showDetailSocolaDauDaLat(sender_psid)
+   }
+   else if (payload == "SHOW_HONG_KEM_CHAY_DAU") {
+      await cakeDetail.showDetailHongKemDauDaLat(sender_psid)
+   }
+   else if (payload == "SHOW_BANH_LOANG_DAU") {
+      await cakeDetail.showDetailLoangDauDaLat(sender_psid)
+   }
 
 
-
+   // 
    else if (payload === "ORDER_NOW") {
       await chatbotService.sendSizeOption(sender_psid)
    }
