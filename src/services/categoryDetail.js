@@ -412,7 +412,7 @@ let sendMenuFlowerCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH CHOCO BEAR",
+                              "title": "XEM BÁNH KEM HOA TÍM",
                               "payload": "SHOW_BANH_HOA_TIM",
                            },
                         ],
