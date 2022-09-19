@@ -307,7 +307,7 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) =
          await chatbotService.sendMessage(sender_psid, response_2);
 
          await chatbotService.markMessageRead(sender_psid);
-         await delay(2000)
+         await delay(3000)
          await chatbotService.sendMessage(sender_psid, response_3);
 
          await chatbotService.markMessageRead(sender_psid);

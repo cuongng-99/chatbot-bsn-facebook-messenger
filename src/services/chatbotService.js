@@ -214,6 +214,7 @@ let sendListStore = (sender_psid) => {
          }
 
          await markMessageRead(sender_psid);
+         await delay(1500)
          await sendMessage(sender_psid, response);
       } catch (e) {
          reject(e)
@@ -294,7 +295,7 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM Bánh trẻ em",
+                              "title": "Xem Bánh trẻ em",
                               "payload": "MENU_CHILD_CAKE",
                            },
                         ],
