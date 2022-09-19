@@ -1,3 +1,4 @@
+import { del } from "request"
 import chatbotService from "./chatbotService"
 
 // BÁNH HÀN QUỐC
@@ -289,12 +290,15 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) =
             }
          }
          await chatbotService.markMessageRead(sender_psid);
+         await delay(2000)
          await chatbotService.sendMessage(sender_psid, response_1);
 
          await chatbotService.markMessageRead(sender_psid);
+         await delay(2000)
          await chatbotService.sendMessage(sender_psid, response_2);
 
          await chatbotService.markMessageRead(sender_psid);
+         await delay(2000)
          await chatbotService.sendMessage(sender_psid, response_3);
 
          await chatbotService.markMessageRead(sender_psid);
@@ -306,6 +310,8 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) =
       }
    });
 }
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 module.exports = {
    showDetailGalaxyBlue,

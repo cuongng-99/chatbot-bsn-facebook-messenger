@@ -85,6 +85,7 @@ let sendMenuKoreaCake = (sender_psid) => {
          };
 
          await chatbotService.markMessageRead(sender_psid);
+         await delay(3000)
          await chatbotService.sendMessage(sender_psid, response);
 
          resolve("done");
@@ -575,6 +576,7 @@ let sendMenuOrderCake = (sender_psid) => {
    });
 };
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 module.exports = {
    sendMenuSpecialCake,

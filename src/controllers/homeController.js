@@ -260,13 +260,13 @@ let handlePostback = async (sender_psid, received_postback) => {
 
    // BÁNH SỰ KIỆN
    else if (payload === "MENU_EVENT_CAKE") {
-      await categoryDetail.sendMenuFlowerCake(sender_psid)
+      await categoryDetail.sendMenuEventCake(sender_psid)
    }
-   else if (payload === "SHOW_BANH_BLTM") {
-      await cakeDetail.showDetailBongLanTrungMuoi(sender_psid)
+   else if (payload === "SHOW_BANH_HU_VANG") {
+      await cakeDetail.showDetailBanhHuVang(sender_psid)
    }
-   else if (payload === "SHOW_BANH_HOA_HONG") {
-      await cakeDetail.showDetailBanhHoaHong(sender_psid)
+   else if (payload === "SHOW_CHOCO_FOREST") {
+      await cakeDetail.showDetailChocoForest(sender_psid)
    }
 
 
