@@ -210,7 +210,14 @@ let sendListStore = (sender_psid) => {
 - Số 18, Đặng Xuân Bảng, Hoàng Mai
 - NO-09, Liền Kề 05 Hà Trì, Hà Cầu, Hà Đông (Ngõ 133 Tô Hiệu đi vào 50m)
 - Số 37 Nguyễn Sơn, Ngọc Lâm, Long Biên
-- 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy`
+- 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy`,
+            "quick_replies": [
+               {
+                  "content_type": "text",
+                  "title": "Xem phí ship",
+                  "payload": "SHIPING_FEE",
+               }
+            ]
          }
 
          await markMessageRead(sender_psid);
@@ -228,7 +235,16 @@ let sendShippingFee = (sender_psid) => {
          let response_1 = {
             "text": "Hiện Savor đang có chương trình miễn phí ship với đơn hàng từ 220k trở lên (tối đa 50k) và thu phí ship đồng giá 20k đối với đơn hàng dưới 220k."
          }
-         let response_2 = { "text": "Chương trình áp dụng cho 12 quận nội thành Hà Nội, nên mình không cần lo về phí ship nha ^^" }
+         let response_2 = {
+            "text": "Chương trình áp dụng cho 12 quận nội thành Hà Nội, nên mình không cần lo về phí ship nha ^^",
+            "quick_replies": [
+               {
+                  "content_type": "text",
+                  "title": "Xem cửa hàng",
+                  "payload": "STORE_LOCALTION",
+               },
+            ]
+         }
 
          await markMessageRead(sender_psid);
          await delay(2000)

@@ -484,7 +484,8 @@ let sendMenuEventCake = (sender_psid) => {
 let sendMenuOrderCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response = {
+         let response_1 = { "text": "Dạ Savor gửi các mẫu bánh vẽ minh họa, mình tham khảo nha" }
+         let response_2 = {
             "attachment": {
                "type": "template",
                "payload": {
@@ -592,7 +593,10 @@ let sendMenuOrderCake = (sender_psid) => {
          };
 
          await chatbotService.markMessageRead(sender_psid);
-         await chatbotService.sendMessage(sender_psid, response);
+         await chatbotService.sendMessage(sender_psid, response_1);
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_2);
 
          resolve("done");
       } catch (e) {
