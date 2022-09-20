@@ -50,7 +50,7 @@ const combo_banh_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cu
 let sendMenuKoreaCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Nhóm bánh Hàn Quốc gồm các bánh xịn xò hơn, nhỉnh hơn bánh bento, trang trí xinh xẻo, tối giản, tiết kiệm" }
+         let response_1 = { "text": "Xịn xò hơn, nhỉnh hơn bánh bento, Savor xin giới thiệu 2 bánh Hàn Quốc được trang trí xinh xẻo, tối giản, tiết kiệm" }
          let response = {
             "attachment": {
                "type": "template",
@@ -454,7 +454,7 @@ let sendMenuFlowerCake = (sender_psid) => {
 let sendMenuEventCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Phù hợp cho các bữa tiệc công ty, hội nhóm", }
+         let response_1 = { "text": "Những chiếc bánh cao cấp, phù hợp cho các bữa tiệc công ty, hội nhóm", }
          let response = {
             "attachment": {
                "type": "template",

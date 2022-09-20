@@ -374,7 +374,7 @@ let requestFillInfo = (sender_psid) => {
             "quick_replies": [
                {
                   "content_type": "text",
-                  "title": "Xem phụ kiện sinh nhật",
+                  "title": "Phụ kiện sinh nhật",
                   "payload": "MENU_ACCESSORIES",
                },
                {
@@ -398,7 +398,7 @@ let sendMenuAccessories = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response_1 = {
-            "text": `"Dạ ngoài 01 bộ dao, đĩa, dĩa tặng kèm bánh (miễn phí), Savor có bán thêm:\n
+            "text": `Dạ ngoài 01 bộ dao, đĩa, dĩa tặng kèm bánh (miễn phí), Savor có bán thêm:\n
 - Nến sinh nhật nhũ vàng 8cm (10 chiếc) - 10k
 - Nến số (1 chiếc) - 8k
 - Que cắm Happy Birthday - 6k
