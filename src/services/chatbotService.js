@@ -11,7 +11,7 @@ const thumbnail_banh_tre_em = 'https://web-work.s3.kstorage.vn/uploads/user-phot
 const thumbnail_banh_bong_hoa = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0116-1663587838516.jpeg'
 const thumbnail_banh_su_kien = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0125-1663587838149.jpeg'
 const thumbnail_banh_order = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0120-1663587838519.jpeg'
-
+const menu_accessories = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0128-1663665497163.png'
 
 // Get user's profile
 let getUserProfile = async (sender_psid) => {
@@ -374,8 +374,8 @@ let requestFillInfo = (sender_psid) => {
             "quick_replies": [
                {
                   "content_type": "text",
-                  "title": "Xem cửa hàng",
-                  "payload": "STORE_LOCALTION",
+                  "title": "Xem phụ kiện sinh nhật",
+                  "payload": "MENU_ACCESSORIES",
                },
                {
                   "content_type": "text",
@@ -394,6 +394,39 @@ let requestFillInfo = (sender_psid) => {
 };
 
 
+let sendMenuAccessories = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response_1 = {
+            "text": `"Dạ ngoài 01 bộ dao, đĩa, dĩa tặng kèm bánh (miễn phí), Savor có bán thêm:\n
+- Nến sinh nhật nhũ vàng 8cm (10 chiếc) - 10k
+- Nến số (1 chiếc) - 8k
+- Que cắm Happy Birthday - 6k
+- Que cắm Happy Anniversary - 6k
+- Bộ dao dĩa đĩa (6 người) - 10k
+- Mũ sinh nhật (1 chiếc)- 5k
+- Nến pháo bông sinh nhật (1 chiếc) - 10k
+
+Mình mua thêm món nào thì nhắn Savor nha ^^`}
+         let response_2 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": menu_accessories,
+                  "is_reusable": true
+               }
+            }
+         };
+         await markMessageRead(sender_psid);
+         await sendQuickReply(sender_psid, response_1);
+
+         await markMessageRead(sender_psid);
+         await sendQuickReply(sender_psid, response_2);
+      } catch (e) {
+         reject(e)
+      }
+   })
+}
 
 let requestOpenForm = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
@@ -568,6 +601,7 @@ module.exports = {
    markMessageRead,
    sendMessage,
    sendMenuCakes,
+   sendMenuAccessories,
    setUpMessengerPlatform,
    backToMenuCakes,
    requestFillInfo,

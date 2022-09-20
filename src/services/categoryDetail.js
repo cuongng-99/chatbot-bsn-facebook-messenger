@@ -50,6 +50,7 @@ const combo_banh_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cu
 let sendMenuKoreaCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
+         let response_1 = { "text": "Nhóm bánh Hàn Quốc gồm các bánh xịn xò hơn, nhỉnh hơn bánh bento, trang trí xinh xẻo, tối giản, tiết kiệm" }
          let response = {
             "attachment": {
                "type": "template",
@@ -84,6 +85,8 @@ let sendMenuKoreaCake = (sender_psid) => {
                }
             }
          };
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_1);
 
          await chatbotService.markMessageRead(sender_psid);
          await delay(3000)
@@ -99,6 +102,7 @@ let sendMenuKoreaCake = (sender_psid) => {
 let sendMenuSpecialCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
+         let response_1 = { "text": "Các bánh có hương vị đa dạng từ phổ thông đến độc lạ, phù hợp mọi độ tuổi, giới tính" }
          let response = {
             "attachment": {
                "type": "template",
@@ -196,6 +200,9 @@ let sendMenuSpecialCake = (sender_psid) => {
          };
 
          await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_1);
+
+         await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response);
 
          resolve("done");
@@ -208,6 +215,7 @@ let sendMenuSpecialCake = (sender_psid) => {
 let sendMenuFruitCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
+         let response_1 = { "text": "Nhóm bánh Hoa Quả sử dụng dâu tây tươi Đà Lạt, chanh leo, hoa quả nhiệt đới kết hợp kem sữa chua cho hương vị ngon lạ" }
          let response = {
             "attachment": {
                "type": "template",
@@ -292,6 +300,9 @@ let sendMenuFruitCake = (sender_psid) => {
          };
 
          await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_1);
+
+         await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response);
 
          resolve("done");
@@ -304,6 +315,7 @@ let sendMenuFruitCake = (sender_psid) => {
 let sendMenuChildCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
+         let response_1 = { "text": "Bánh Trẻ em, Savor xin giới thiệu các bánh tạo hình ngộ nghĩnh, có 3 size phù hợp cho mọi cuộc vui gia đình" }
          let response = {
             "attachment": {
                "type": "template",
@@ -362,6 +374,8 @@ let sendMenuChildCake = (sender_psid) => {
                }
             }
          };
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_1);
 
          await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response);
@@ -376,6 +390,7 @@ let sendMenuChildCake = (sender_psid) => {
 let sendMenuFlowerCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
+         let response_1 = { "text": "Bánh bông hoa gồm Bánh kem bắt hoa kết hợp màu sắc trang nhã, sang trọng", }
          let response = {
             "attachment": {
                "type": "template",
@@ -424,6 +439,9 @@ let sendMenuFlowerCake = (sender_psid) => {
          };
 
          await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_1);
+
+         await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response);
 
          resolve("done");
@@ -436,6 +454,7 @@ let sendMenuFlowerCake = (sender_psid) => {
 let sendMenuEventCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
+         let response_1 = { "text": "Phù hợp cho các bữa tiệc công ty, hội nhóm", }
          let response = {
             "attachment": {
                "type": "template",
@@ -470,6 +489,8 @@ let sendMenuEventCake = (sender_psid) => {
                }
             }
          };
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_1);
 
          await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response);
@@ -504,24 +525,12 @@ let sendMenuOrderCake = (sender_psid) => {
                         "image_url": banh_thong_diep_image,
                      },
                      {
-                        "title": "Bánh hai người",
-                        "subtitle": "Giá chỉ từ 180k",
-                        "buttons": [
-                           {
-                              "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ",
-                              "payload": "ORDER_BANH_VE",
-                           },
-                        ],
-                        "image_url": banh_2_nguoi_image,
-                     },
-                     {
                         "title": "Bánh Cốc bia",
                         "subtitle": "Giá chỉ từ 180k",
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ",
+                              "title": "ĐẶT BÁNH ORDER",
                               "payload": "ORDER_BANH_VE",
                            },
                         ],
@@ -533,7 +542,7 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ",
+                              "title": "ĐẶT BÁNH ORDER",
                               "payload": "ORDER_BANH_VE",
                            },
                         ],
@@ -545,7 +554,7 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ",
+                              "title": "ĐẶT BÁNH ORDER",
                               "payload": "ORDER_BANH_VE",
                            },
                         ],
@@ -557,15 +566,15 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ",
+                              "title": "ĐẶT BÁNH ORDER",
                               "payload": "ORDER_BANH_VE",
                            },
                         ],
                         "image_url": banh_ve_me_image,
                      },
                      {
-                        "title": "Bánh Vẽ đế to",
-                        "subtitle": "Giá chỉ từ 180k",
+                        "title": "Viết thông điệp trên đế to",
+                        "subtitle": "Đế to, Hộp to: Thêm 20k",
                         "buttons": [
                            {
                               "type": "postback",
@@ -576,8 +585,20 @@ let sendMenuOrderCake = (sender_psid) => {
                         "image_url": banh_ve_de_to,
                      },
                      {
+                        "title": "Bánh hai người",
+                        "subtitle": "Giá chỉ từ 180k",
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "ĐẶT BÁNH ORDER",
+                              "payload": "ORDER_BANH_VE",
+                           },
+                        ],
+                        "image_url": banh_2_nguoi_image,
+                     },
+                     {
                         "title": "Combo 2 bánh",
-                        "subtitle": "Giá chỉ từ 255k",
+                        "subtitle": "Giảm 25% so với giá gốc",
                         "buttons": [
                            {
                               "type": "postback",

@@ -85,7 +85,9 @@ let handleMessage = async (sender_psid, message) => {
          await chatbotService.sendListStore(sender_psid)
          return;
       }
-
+      else if (message.quick_reply.payload === "MENU_ACCESSORIES") {
+         await chatbotService.sendMenuAccessories(sender_psid)
+      }
       return;
    }
 
