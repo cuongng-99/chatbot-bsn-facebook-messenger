@@ -1,6 +1,8 @@
 require('dotenv').config();
 import request from "request";
 import chatbotService from "../services/chatbotService"
+import categoryDetail from "../services/categoryDetail"
+import cakeDetail from "../services/cakeDetail"
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
@@ -74,43 +76,57 @@ let getWebhook = (req, res) => {
 let handleMessage = async (sender_psid, message) => {
 
    let response;
+   if (message && message.quick_reply && message.quick_reply.payload) {
+      if (message.quick_reply.payload === "SHIPING_FEE") {
+         await chatbotService.sendShippingFee(sender_psid)
+         return;
+      }
+      else if (message.quick_reply.payload === "STORE_LOCALTION") {
+         await chatbotService.sendListStore(sender_psid)
+         return;
+      }
+      else if (message.quick_reply.payload === "MENU_ACCESSORIES") {
+         await chatbotService.sendMenuAccessories(sender_psid)
+      }
+      return;
+   }
 
    // Checks if the message contains text
-   if (message.text) {
-      // Create the payload for a basic text message, which
-      // will be added to the body of our request to the Send API
-      response = {
-         "text": `You sent the message: "${message.text}". Now send me an attachment!`
-      }
-   } else if (message.attachments) {
-      // Get the URL of the message attachment
-      let attachment_url = message.attachments[0].payload.url;
-      response = {
-         "attachment": {
-            "type": "template",
-            "payload": {
-               "template_type": "generic",
-               "elements": [{
-                  "title": "Is this the right picture?",
-                  "subtitle": "Tap a button to answer.",
-                  "image_url": attachment_url,
-                  "buttons": [
-                     {
-                        "type": "postback",
-                        "title": "Yes!",
-                        "payload": "yes",
-                     },
-                     {
-                        "type": "postback",
-                        "title": "No!",
-                        "payload": "no",
-                     }
-                  ],
-               }]
-            }
-         }
-      }
-   }
+   // if (message.text) {
+   //    // Create the payload for a basic text message, which
+   //    // will be added to the body of our request to the Send API
+   //    response = {
+   //       "text": `You sent the message: "${message.text}". Now send me an attachment!`
+   //    }
+   // } else if (message.attachments) {
+   //    // Get the URL of the message attachment
+   //    let attachment_url = message.attachments[0].payload.url;
+   //    response = {
+   //       "attachment": {
+   //          "type": "template",
+   //          "payload": {
+   //             "template_type": "generic",
+   //             "elements": [{
+   //                "title": "Is this the right picture?",
+   //                "subtitle": "Tap a button to answer.",
+   //                "image_url": attachment_url,
+   //                "buttons": [
+   //                   {
+   //                      "type": "postback",
+   //                      "title": "Yes!",
+   //                      "payload": "yes",
+   //                   },
+   //                   {
+   //                      "type": "postback",
+   //                      "title": "No!",
+   //                      "payload": "no",
+   //                   }
+   //                ],
+   //             }]
+   //          }
+   //       }
+   //    }
+   // }
 
    // Send the response message
    callSendAPI(sender_psid, response);
@@ -124,42 +140,158 @@ let handlePostback = async (sender_psid, received_postback) => {
    let payload = received_postback.payload;
 
    // Set the response based on the postback payload
-   if (payload === 'yes') {
-      response = { "text": "Thanks!" }
-   }
 
-   else if (payload === 'no') {
-      response = { "text": "Oops, try sending another image." }
-   }
-
-   else if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
+   if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
       let userName = await chatbotService.getUserProfile(sender_psid);
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    }
 
    else if (payload === "MAIN_MENU") {
-      await chatbotService.sendMenuType(sender_psid)
-   }
-
-   else if (payload === "MENU_CAKES") {
       await chatbotService.sendMenuCakes(sender_psid)
    }
 
-   else if (payload === "MENU_SPECIAL_CAKE") {
-      await chatbotService.sendMenuSpecialCake(sender_psid)
+   else if (payload === "CARE_HELP") {
+      await chatbotService.sendCareHelp(sender_psid)
    }
 
-   else if (payload === "SHOW_DETAIL_RED_VELVET") {
-      await chatbotService.showDetailRedvelvet(sender_psid)
+   else if (payload === "STORE_LOCATION_SHIPPING") {
+      await chatbotService.sendStoreLocationAndShipping(sender_psid)
+   }
+
+
+   // THÔNG TIN CỬA HÀNG, SHIP HÀNG
+   else if (payload === "SHOW_LIST_STORE") {
+      await chatbotService.sendListStore(sender_psid)
+   }
+
+   else if (payload === "SEND_SHIPPING_FEE") {
+      await chatbotService.sendShippingFee(sender_psid)
+   }
+
+
+   // BÁNH HÀN QUỐC
+   else if (payload === "MENU_KOREA_CAKE") {
+      await categoryDetail.sendMenuKoreaCake(sender_psid)
+   }
+   else if (payload === "SHOW_GALAXY_BLUE") {
+      await cakeDetail.showDetailGalaxyBlue(sender_psid)
+   }
+   else if (payload === "SHOW_3_MAU_PASTEL") {
+      await cakeDetail.showDetail3MauPastel(sender_psid)
+   }
+
+   // BÁNH ĐẶC BIỆT
+   else if (payload === "MENU_SPECIAL_CAKE") {
+      await categoryDetail.sendMenuSpecialCake(sender_psid)
+   }
+   else if (payload === "SHOW_RED_VELVET") {
+      await cakeDetail.showDetailRedvelvet(sender_psid)
+   }
+   else if (payload === "SHOW_TRIPLE_CHOCO") {
+      await cakeDetail.showDetailTripleChoco(sender_psid)
+   }
+   else if (payload === "SHOW_MOUSSE_SOCOLA") {
+      await cakeDetail.showDetailMousseSocola(sender_psid)
+   }
+   else if (payload === "SHOW_XOAI_DUA") {
+      await cakeDetail.showDetailXoaiDua(sender_psid)
+   }
+   else if (payload === "SHOW_GREEN_TEA") {
+      await cakeDetail.showDetailGreenTea(sender_psid)
+   }
+   else if (payload === "SHOW_CA_PHE") {
+      await cakeDetail.showDetailCaPhe(sender_psid)
+   }
+   else if (payload === "SHOW_CA_PHE_COT_DUA") {
+      await cakeDetail.showDetailCaPheCotDua(sender_psid)
+   }
+
+   // BÁNH HOA QUẢ
+   else if (payload === "MENU_FRUIT_CAKE") {
+      await categoryDetail.sendMenuFruitCake(sender_psid)
+   }
+   else if (payload == "SHOW_MOUSSE_CHANH_LEO") {
+      await cakeDetail.showDetailMousseChanhLeo(sender_psid)
+   }
+   else if (payload == "SHOW_KEM_SC_HOA_QUA") {
+      await cakeDetail.showDetailSuaChuaHoaQua(sender_psid)
+   }
+   else if (payload == "SHOW_SC_DAU_DALAT") {
+      await cakeDetail.showDetailSuaChuaDauDaLat(sender_psid)
+   }
+   else if (payload == "SHOW_SOCOLA_DAU_DALAT") {
+      await cakeDetail.showDetailSocolaDauDaLat(sender_psid)
+   }
+   else if (payload == "SHOW_HONG_KEM_CHAY_DAU") {
+      await cakeDetail.showDetailHongKemDauDaLat(sender_psid)
+   }
+   else if (payload == "SHOW_BANH_LOANG_DAU") {
+      await cakeDetail.showDetailLoangDauDaLat(sender_psid)
+   }
+
+
+   // BÁNH TRẺ EM
+   else if (payload === "MENU_CHILD_CAKE") {
+      await categoryDetail.sendMenuChildCake(sender_psid)
+   }
+   else if (payload == "SHOW_MANGO_CHICK") {
+      await cakeDetail.showDetailMangoChick(sender_psid)
+   }
+   else if (payload == "SHOW_RED_CAR") {
+      await cakeDetail.showDetailRedCar(sender_psid)
+   }
+   else if (payload == "SHOW_CHOCO_BEAR") {
+      await cakeDetail.showDetailChocoBear(sender_psid)
+   }
+   else if (payload == "SHOW_PINKY_PRINCESS") {
+      await cakeDetail.showDetailPinkyPrincess(sender_psid)
+   }
+
+
+   // BÁNH BÔNG HOA
+   else if (payload === "MENU_FLOWER_CAKE") {
+      await categoryDetail.sendMenuFlowerCake(sender_psid)
+   }
+   else if (payload === "SHOW_BANH_BLTM") {
+      await cakeDetail.showDetailBongLanTrungMuoi(sender_psid)
+   }
+   else if (payload === "SHOW_BANH_HOA_HONG") {
+      await cakeDetail.showDetailBanhHoaHong(sender_psid)
+   }
+   else if (payload === "SHOW_BANH_HOA_TIM") {
+      await cakeDetail.showDetailBanhHoaTim(sender_psid)
+   }
+
+
+   // BÁNH SỰ KIỆN
+   else if (payload === "MENU_EVENT_CAKE") {
+      await categoryDetail.sendMenuEventCake(sender_psid)
+   }
+   else if (payload === "SHOW_BANH_HU_VANG") {
+      await cakeDetail.showDetailBanhHuVang(sender_psid)
+   }
+   else if (payload === "SHOW_CHOCO_FOREST") {
+      await cakeDetail.showDetailChocoForest(sender_psid)
+   }
+
+
+   // BÁNH ORDER
+   else if (payload === "MENU_ORDER_CAKE") {
+      await categoryDetail.sendMenuOrderCake(sender_psid)
+   }
+   else if (payload === "ORDER_BANH_VE") {
+      response = { "text": "Dạ mình gửi Savor hình ảnh mẫu bánh bạn muốn đặt nha ạ" }
+   }
+
+
+   else if (payload === "ORDER_NOW") {
+      await chatbotService.requestFillInfo(sender_psid)
    }
 
    else if (payload === "BACK_TO_MENU_CAKES") {
       await chatbotService.backToMenuCakes(sender_psid)
    }
 
-   else if (payload === "CARE_HELP") {
-      response = { "text": "Xin quý khách vui lòng đợi trong giây lát <3" }
-   }
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);
 }
@@ -223,7 +355,7 @@ let handlePostOrderForm = async (req, res) => {
           `
       };
 
-      await chatbotService.sendMessage(req.body.psid, response1);
+      await chatbotService.sendMessage("7963952796979199", response1);
 
       return res.status(200).json({
          message: "ok"
