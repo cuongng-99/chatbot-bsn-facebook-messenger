@@ -54,12 +54,17 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                         "webview_height_ratio": "full"
                      },
                      {
-                        "type": "web_url",
-                        "url": `${process.env.URL_WEB_VIEW_ORDER}`,
-                        "title": "Đặt ngay",
-                        "webview_height_ratio": "full",
-                        "messenger_extensions": true,
+                        "type": "postback",
+                        "title": "Chat với Nhân viên tư vấn",
+                        "payload": "CARE_HELP",
                      },
+                     // {
+                     //    "type": "web_url",
+                     //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                     //    "title": "Đặt ngay",
+                     //    "webview_height_ratio": "full",
+                     //    "messenger_extensions": true,
+                     // },
                      {
                         "type": "postback",
                         "title": "Khởi động lại Bot",
