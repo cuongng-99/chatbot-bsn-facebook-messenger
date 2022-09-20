@@ -237,13 +237,6 @@ let sendShippingFee = (sender_psid) => {
          }
          let response_2 = {
             "text": "Chương trình áp dụng cho 12 quận nội thành Hà Nội, nên mình không cần lo về phí ship nha ^^",
-            "quick_replies": [
-               {
-                  "content_type": "text",
-                  "title": "Xem cửa hàng",
-                  "payload": "STORE_LOCALTION",
-               },
-            ]
          }
 
          await markMessageRead(sender_psid);
@@ -381,12 +374,13 @@ let requestFillInfo = (sender_psid) => {
             "quick_replies": [
                {
                   "content_type": "text",
-                  "title": "Xem phí ship",
-                  "payload": "SHIPING_FEE",
-               }, {
-                  "content_type": "text",
                   "title": "Xem cửa hàng",
                   "payload": "STORE_LOCALTION",
+               },
+               {
+                  "content_type": "text",
+                  "title": "Xem phí ship",
+                  "payload": "SHIPING_FEE",
                }
             ]
          }
