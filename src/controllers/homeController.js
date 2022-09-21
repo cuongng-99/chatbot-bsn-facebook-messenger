@@ -92,12 +92,10 @@ let handleMessage = async (sender_psid, message) => {
    }
 
    // Checks if the message contains text
-   // if (message.text) {
-   //    // Create the payload for a basic text message, which
-   //    // will be added to the body of our request to the Send API
-   //    response = {
-   //       "text": `You sent the message: "${message.text}". Now send me an attachment!`
-   //    }
+   if (message.text) {
+      // Create persistent after user's message
+      //await postPersistentMenu(sender_psid);
+   }
    // } else if (message.attachments) {
    //    // Get the URL of the message attachment
    //    let attachment_url = message.attachments[0].payload.url;
@@ -143,7 +141,7 @@ let handlePostback = async (sender_psid, received_postback) => {
 
    if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
       let userName = await chatbotService.getUserProfile(sender_psid);
-      await postPersistentMenu(sender_psid);
+      //await postPersistentMenu(sender_psid);
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    }
 
