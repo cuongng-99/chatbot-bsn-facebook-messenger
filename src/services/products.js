@@ -9,7 +9,8 @@ const banh_han_quoc = {
          originalImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0156-1663587838246.jpeg",
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0162-1663572627813.png",
          sizeAndPrice: [
-            { size: "17x8cm", price: "120k" }
+            { size: "17x8cm", price: "120k" },
+            { size: "21x8cm", price: "220k" }
          ]
       }
    ]
