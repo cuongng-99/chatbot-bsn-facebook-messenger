@@ -593,6 +593,35 @@ let sendTypingOn = (sender_psid) => {
    });
 };
 
+let sendTypingOff = (sender_psid) => {
+   return new Promise((resolve, reject) => {
+      try {
+         let request_body = {
+            "recipient": {
+               "id": sender_psid
+            },
+            "sender_action": "typing_off"
+         };
+
+         // Send the HTTP request to the Messenger Platform
+         request({
+            "uri": "https://graph.facebook.com/v14.0/me/messages",
+            "qs": { "access_token": PAGE_ACCESS_TOKEN },
+            "method": "POST",
+            "json": request_body
+         }, (err, res, body) => {
+            if (!err) {
+               resolve('done!')
+            } else {
+               reject("Unable to send message:" + err);
+            }
+         });
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -600,6 +629,7 @@ module.exports = {
    getUserProfile,
    sendResponseWelcomeNewCustomer,
    sendTypingOn,
+   sendTypingOff,
    markMessageRead,
    sendMessage,
    sendMenuCakes,
