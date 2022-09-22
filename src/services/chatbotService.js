@@ -56,7 +56,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                      {
                         "type": "postback",
                         "title": "Chat với Nhân viên tư vấn",
-                        "payload": "CARE_HELP",
+                        "payload": "CARE_HELP"
                      },
                      // {
                      //    "type": "web_url",
@@ -69,7 +69,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                         "type": "postback",
                         "title": "Khởi động lại Bot",
                         "payload": "RESTART_BOT"
-                     },
+                     }
                   ]
                }
             ],
@@ -101,7 +101,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_first = { "text": `Cảm ơn ${username} đã quan tâm đến Bánh sinh nhật Savor Cakes` };
+         let response_first = { "text": `Cảm ơn quý khách đã quan tâm đến Bánh sinh nhật Savor Cakes` };
          let response_second = {
             "attachment": {
                "type": "template",

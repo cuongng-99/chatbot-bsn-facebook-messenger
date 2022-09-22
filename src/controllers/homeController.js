@@ -92,12 +92,10 @@ let handleMessage = async (sender_psid, message) => {
    }
 
    // Checks if the message contains text
-   // if (message.text) {
-   //    // Create the payload for a basic text message, which
-   //    // will be added to the body of our request to the Send API
-   //    response = {
-   //       "text": `You sent the message: "${message.text}". Now send me an attachment!`
-   //    }
+   if (message.text) {
+      // Create persistent after user's message
+      await postPersistentMenu(sender_psid);
+   }
    // } else if (message.attachments) {
    //    // Get the URL of the message attachment
    //    let attachment_url = message.attachments[0].payload.url;
@@ -143,6 +141,7 @@ let handlePostback = async (sender_psid, received_postback) => {
 
    if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
       let userName = await chatbotService.getUserProfile(sender_psid);
+      await postPersistentMenu(sender_psid);
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    }
 
@@ -294,6 +293,58 @@ let handlePostback = async (sender_psid, received_postback) => {
 
    // Send the message to acknowledge the postback
    callSendAPI(sender_psid, response);
+}
+
+let postPersistentMenu = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let data = {
+            "psid": sender_psid,
+            "persistent_menu": [
+               {
+                  "locale": "default",
+                  "composer_input_disabled": false,
+                  "call_to_actions": [
+                     {
+                        "type": "web_url",
+                        "title": "Truy cập website",
+                        "url": "https://www.savor.vn/banh-sinh-nhat/",
+                        "webview_height_ratio": "full"
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Chat với Nhân viên tư vấn",
+                        "payload": "CARE_HELP"
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Khởi động lại Bot",
+                        "payload": "RESTART_BOT"
+                     }
+                  ]
+               }
+            ],
+         };
+
+         request({
+            "uri": "https://graph.facebook.com/v14.0/me/custom_user_settings",
+            "qs": { "access_token": PAGE_ACCESS_TOKEN },
+            "method": "POST",
+            "json": data
+         }, (err, res, body) => {
+            if (!err) {
+               console.log("Setup persistent menu oke")
+               resolve("setup done!");
+            } else {
+               console.log("Lỗi set persistent menu: ", err)
+               reject(err);
+            }
+         });
+
+      } catch (e) {
+         reject(e);
+      }
+   });
 }
 
 // Sends response messages via the Send API
