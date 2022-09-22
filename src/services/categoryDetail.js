@@ -89,7 +89,7 @@ let sendMenuKoreaCake = (sender_psid) => {
          await chatbotService.sendMessage(sender_psid, response_1);
 
          await chatbotService.markMessageRead(sender_psid);
-         await delay(3000)
+         // await delay(3000)
          await chatbotService.sendMessage(sender_psid, response);
 
          resolve("done");

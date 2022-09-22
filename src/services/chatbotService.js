@@ -158,11 +158,11 @@ let sendCareHelp = (sender_psid) => {
          let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ <3" }
 
          await markMessageRead(sender_psid);
-         await delay(2000)
+         await delay(1000)
          await sendMessage(sender_psid, response_1);
 
          await markMessageRead(sender_psid);
-         await delay(2000)
+         await delay(1000)
          await sendMessage(sender_psid, response_2);
       } catch (e) {
          reject(e)
@@ -226,7 +226,6 @@ let sendListStore = (sender_psid) => {
          }
 
          await markMessageRead(sender_psid);
-         await delay(1500)
          await sendMessage(sender_psid, response);
       } catch (e) {
          reject(e)
@@ -245,11 +244,10 @@ let sendShippingFee = (sender_psid) => {
          }
 
          await markMessageRead(sender_psid);
-         await delay(2000)
          await sendMessage(sender_psid, response_1);
 
          await markMessageRead(sender_psid);
-         await delay(2000)
+         await delay(1000)
          await sendMessage(sender_psid, response_2);
       } catch (e) {
          reject(e)
@@ -355,7 +353,6 @@ let sendMenuCakes = (sender_psid) => {
             }
          };
          await markMessageRead(sender_psid);
-         await delay(2000)
          await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {
