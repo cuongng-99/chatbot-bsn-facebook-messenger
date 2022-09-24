@@ -1,4 +1,3 @@
-import { del } from "request"
 import chatbotService from "./chatbotService"
 
 // BÁNH HÀN QUỐC

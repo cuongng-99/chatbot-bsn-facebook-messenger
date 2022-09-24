@@ -1,4 +1,5 @@
 import chatbotService from "./chatbotService"
+const { banh_han_quoc } = require("./products")
 
 // BÁNH KEM HÀN QUỐC
 const banh_galaxy_blue_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0183-1663560834737.jpeg'
@@ -50,7 +51,7 @@ const combo_banh_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cu
 let sendMenuKoreaCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Xịn xò hơn, nhỉnh hơn bánh bento, Savor xin giới thiệu 2 bánh Hàn Quốc được trang trí xinh xẻo, tối giản, tiết kiệm" }
+         let response_1 = { "text": banh_han_quoc.sortDescription }
          let response = {
             "attachment": {
                "type": "template",
@@ -58,8 +59,8 @@ let sendMenuKoreaCake = (sender_psid) => {
                   "template_type": "generic",
                   "elements": [
                      {
-                        "title": "Bánh kem Galaxy Blue",
-                        "subtitle": "2 cỡ bánh, giá chỉ từ 120k",
+                        "title": banh_han_quoc.listCakes[0].name,
+                        "subtitle": banh_han_quoc.listCakes[0].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
@@ -67,11 +68,11 @@ let sendMenuKoreaCake = (sender_psid) => {
                               "payload": "SHOW_GALAXY_BLUE",
                            },
                         ],
-                        "image_url": banh_galaxy_blue_image,
+                        "image_url": banh_han_quoc.listCakes[0].sampleImage,
                      },
                      {
-                        "title": "Bánh kem 3 Màu Pastel",
-                        "subtitle": "2 cỡ bánh, giá chỉ từ 120k",
+                        "title": banh_han_quoc.listCakes[1].name,
+                        "subtitle": banh_han_quoc.listCakes[1].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
@@ -79,7 +80,7 @@ let sendMenuKoreaCake = (sender_psid) => {
                               "payload": "SHOW_3_MAU_PASTEL",
                            },
                         ],
-                        "image_url": banh_3_mau_pastel_image,
+                        "image_url": banh_han_quoc.listCakes[1].sampleImage,
                      }
                   ]
                }
