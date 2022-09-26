@@ -78,8 +78,9 @@ let sendMenuKoreaCake = (sender_psid) => {
          await chatbotService.sendMessage(sender_psid, response_1);
 
          await chatbotService.markMessageRead(sender_psid);
-         await delay(3000)
+         await chatbotService.sendTypingOn(sender_psid);
          await chatbotService.sendMessage(sender_psid, response);
+         await chatbotService.sendTypingOff(sender_psid)
 
          resolve("done");
       } catch (e) {
@@ -178,8 +179,10 @@ let sendMenuSpecialCake = (sender_psid) => {
          await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response_1);
 
+         await chatbotService.sendTypingOn(sender_psid);
          await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response);
+         await chatbotService.sendTypingOff(sender_psid);
 
          resolve("done");
       } catch (e) {

@@ -158,7 +158,6 @@ let sendCareHelp = (sender_psid) => {
          let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ <3" }
 
          await markMessageRead(sender_psid);
-         await delay(2000)
          await sendMessage(sender_psid, response_1);
 
          await markMessageRead(sender_psid);
@@ -226,8 +225,9 @@ let sendListStore = (sender_psid) => {
          }
 
          await markMessageRead(sender_psid);
-         await delay(1500)
+         await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response);
+         await sendTypingOff(sender_psid);
       } catch (e) {
          reject(e)
       }
@@ -245,12 +245,12 @@ let sendShippingFee = (sender_psid) => {
          }
 
          await markMessageRead(sender_psid);
-         await delay(2000)
+         await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_1);
 
          await markMessageRead(sender_psid);
-         await delay(2000)
          await sendMessage(sender_psid, response_2);
+         await sendTypingOff(sender_psid)
       } catch (e) {
          reject(e)
       }
@@ -596,6 +596,35 @@ let sendTypingOn = (sender_psid) => {
    });
 };
 
+let sendTypingOff = (sender_psid) => {
+   return new Promise((resolve, reject) => {
+      try {
+         let request_body = {
+            "recipient": {
+               "id": sender_psid
+            },
+            "sender_action": "typing_off"
+         };
+
+         // Send the HTTP request to the Messenger Platform
+         request({
+            "uri": "https://graph.facebook.com/v14.0/me/messages",
+            "qs": { "access_token": PAGE_ACCESS_TOKEN },
+            "method": "POST",
+            "json": request_body
+         }, (err, res, body) => {
+            if (!err) {
+               resolve('done!')
+            } else {
+               reject("Unable to send message:" + err);
+            }
+         });
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -603,6 +632,7 @@ module.exports = {
    getUserProfile,
    sendResponseWelcomeNewCustomer,
    sendTypingOn,
+   sendTypingOff,
    markMessageRead,
    sendMessage,
    sendMenuCakes,
