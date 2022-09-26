@@ -1,18 +1,6 @@
 import chatbotService from "./chatbotService"
 const { banh_han_quoc } = require("./products")
-
-// BÁNH KEM HÀN QUỐC
-const banh_galaxy_blue_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0183-1663560834737.jpeg'
-const banh_3_mau_pastel_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0198-1663560834767.jpeg'
-
-// BÁNH VỊ ĐẶC BIỆT
-const banh_red_velvet_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0155-1663560810781.jpeg'
-const banh_triple_choco_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0116-1663560810555.jpeg'
-const banh_moouse_socola_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0191-1663560810581.jpeg'
-const banh_xoai_dua_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-019-1663560810588.jpeg'
-const banh_green_tea_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0113-1663560810615.jpeg'
-const banh_ca_phe_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0111-1663560810561.jpeg'
-const banh_ca_phe_cot_dua_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0157-1663560810612.jpeg'
+const { banh_vi_dac_biet } = require("./products")
 
 // BÁNH HOA QUẢ
 const mousse_chanh_leo_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0112-1663560654000.jpeg'
@@ -64,8 +52,8 @@ let sendMenuKoreaCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH GALAXY BLUE",
-                              "payload": "SHOW_GALAXY_BLUE",
+                              "title": banh_han_quoc.listCakes[0].buttonTitle,
+                              "payload": banh_han_quoc.listCakes[0].buttonPayload,
                            },
                         ],
                         "image_url": banh_han_quoc.listCakes[0].sampleImage,
@@ -76,8 +64,8 @@ let sendMenuKoreaCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH 3 MÀU PASTEL",
-                              "payload": "SHOW_3_MAU_PASTEL",
+                              "title": banh_han_quoc.listCakes[1].buttonTitle,
+                              "payload": banh_han_quoc.listCakes[1].buttonPayload,
                            },
                         ],
                         "image_url": banh_han_quoc.listCakes[1].sampleImage,
@@ -103,7 +91,7 @@ let sendMenuKoreaCake = (sender_psid) => {
 let sendMenuSpecialCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Các bánh có hương vị đa dạng từ phổ thông đến độc lạ, phù hợp mọi độ tuổi, giới tính" }
+         let response_1 = { "text": banh_vi_dac_biet.sortDescription }
          let response = {
             "attachment": {
                "type": "template",
@@ -111,90 +99,77 @@ let sendMenuSpecialCake = (sender_psid) => {
                   "template_type": "generic",
                   "elements": [
                      {
-                        "title": "Bánh kem Red Velvet sữa chua",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
+                        "title": banh_vi_dac_biet.listCakes[0].name,
+                        "subtitle": banh_vi_dac_biet.listCakes[0].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH RED VELVET",
-                              "payload": "SHOW_RED_VELVET",
+                              "title": banh_vi_dac_biet.listCakes[0].buttonTitle,
+                              "payload": banh_vi_dac_biet.listCakes[0].buttonPayload,
                            },
                         ],
-                        "image_url": banh_red_velvet_image,
+                        "image_url": banh_vi_dac_biet.listCakes[0].sampleImage,
                      },
                      {
-                        "title": "Bánh kem Triple Choco",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
+                        "title": banh_vi_dac_biet.listCakes[1].name,
+                        "subtitle": banh_vi_dac_biet.listCakes[1].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH TRIPLE CHOCO",
-                              "payload": "SHOW_TRIPLE_CHOCO",
+                              "title": banh_vi_dac_biet.listCakes[1].buttonTitle,
+                              "payload": banh_vi_dac_biet.listCakes[1].buttonPayload,
                            },
                         ],
-                        "image_url": banh_triple_choco_image,
+                        "image_url": banh_vi_dac_biet.listCakes[1].sampleImage,
                      },
                      {
-                        "title": "Mousse Socola",
-                        "subtitle": "2 cỡ bánh, giá chỉ từ 180k",
+                        "title": banh_vi_dac_biet.listCakes[2].name,
+                        "subtitle": banh_vi_dac_biet.listCakes[2].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM MOUSSE SOCOLA",
-                              "payload": "SHOW_MOUSSE_SOCOLA",
+                              "title": banh_vi_dac_biet.listCakes[2].buttonTitle,
+                              "payload": banh_vi_dac_biet.listCakes[2].buttonPayload,
                            },
                         ],
-                        "image_url": banh_moouse_socola_image,
+                        "image_url": banh_vi_dac_biet.listCakes[2].sampleImage,
                      },
                      {
-                        "title": "Bánh kem Xoài Dừa",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
+                        "title": banh_vi_dac_biet.listCakes[3].name,
+                        "subtitle": banh_vi_dac_biet.listCakes[3].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH XOÀI DỪA",
-                              "payload": "SHOW_XOAI_DUA",
+                              "title": banh_vi_dac_biet.listCakes[3].buttonTitle,
+                              "payload": banh_vi_dac_biet.listCakes[3].buttonPayload,
                            },
                         ],
-                        "image_url": banh_xoai_dua_image,
+                        "image_url": banh_vi_dac_biet.listCakes[3].sampleImage,
                      },
                      {
-                        "title": "Bánh kem Green Tea",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
+                        "title": banh_vi_dac_biet.listCakes[4].name,
+                        "subtitle": banh_vi_dac_biet.listCakes[4].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH GREEN TEA",
-                              "payload": "SHOW_GREEN_TEA",
+                              "title": banh_vi_dac_biet.listCakes[4].buttonTitle,
+                              "payload": banh_vi_dac_biet.listCakes[4].buttonPayload,
                            },
                         ],
-                        "image_url": banh_green_tea_image,
+                        "image_url": banh_vi_dac_biet.listCakes[4].sampleImage,
                      },
                      {
-                        "title": "Bánh kem Cà Phê",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
+                        "title": banh_vi_dac_biet.listCakes[5].name,
+                        "subtitle": banh_vi_dac_biet.listCakes[5].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH CÀ PHÊ",
-                              "payload": "SHOW_CA_PHE",
+                              "title": banh_vi_dac_biet.listCakes[5].buttonTitle,
+                              "payload": banh_vi_dac_biet.listCakes[5].buttonPayload,
                            },
                         ],
-                        "image_url": banh_ca_phe_image,
+                        "image_url": banh_vi_dac_biet.listCakes[5].sampleImage,
                      },
-                     {
-                        "title": "Bánh kem Cà Phê Cốt Dừa",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
-                        "buttons": [
-                           {
-                              "type": "postback",
-                              "title": "XEM BÁNH CÀ PHÊ CỐT DỪA",
-                              "payload": "SHOW_CA_PHE_COT_DUA",
-                           },
-                        ],
-                        "image_url": banh_ca_phe_cot_dua_image,
-                     },
-
                   ]
                }
             }
