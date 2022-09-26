@@ -626,7 +626,7 @@ let sendMenuImageCake = (sender_psid) => {
                               "payload": banh_in_anh.listCakes[0].buttonPayload,
                            },
                         ],
-                        "image_url": buttonTitle.listCakes[0].sampleImage,
+                        "image_url": banh_in_anh.listCakes[0].sampleImage,
                      },
                      {
                         "title": banh_in_anh.listCakes[1].name,
@@ -638,7 +638,7 @@ let sendMenuImageCake = (sender_psid) => {
                               "payload": banh_in_anh.listCakes[1].buttonPayload,
                            },
                         ],
-                        "image_url": buttonTitle.listCakes[1].sampleImage,
+                        "image_url": banh_in_anh.listCakes[1].sampleImage,
                      },
                      {
                         "title": banh_in_anh.listCakes[2].name,
@@ -650,7 +650,7 @@ let sendMenuImageCake = (sender_psid) => {
                               "payload": banh_in_anh.listCakes[2].buttonPayload,
                            },
                         ],
-                        "image_url": buttonTitle.listCakes[2].sampleImage,
+                        "image_url": banh_in_anh.listCakes[2].sampleImage,
                      },
                      {
                         "title": banh_in_anh.listCakes[3].name,
@@ -662,7 +662,7 @@ let sendMenuImageCake = (sender_psid) => {
                               "payload": banh_in_anh.listCakes[3].buttonPayload,
                            },
                         ],
-                        "image_url": buttonTitle.listCakes[3].sampleImage,
+                        "image_url": banh_in_anh.listCakes[3].sampleImage,
                      },
                   ]
                }
