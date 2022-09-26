@@ -1,6 +1,6 @@
 import request from "request";
 require("dotenv").config()
-
+const { banh_in_anh } = require("./products")
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 const banner_chatbot = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0196-1663587838149.jpeg'
@@ -350,12 +350,23 @@ let sendMenuCakes = (sender_psid) => {
                            },
                         ],
                      },
+                     {
+                        "title": "BÁNH IN ẢNH",
+                        "subtitle": banh_in_anh.sortDescription,
+                        "image_url": banh_in_anh.thumbnail,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "Xem Bánh in ảnh",
+                              "payload": "MENU_IMAGE_CAKE",
+                           },
+                        ],
+                     },
                   ]
                }
             }
          };
          await markMessageRead(sender_psid);
-         await delay(2000)
          await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {

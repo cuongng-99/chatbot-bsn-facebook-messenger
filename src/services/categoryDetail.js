@@ -1,6 +1,7 @@
 import chatbotService from "./chatbotService"
 const { banh_han_quoc } = require("./products")
 const { banh_vi_dac_biet } = require("./products")
+const { banh_in_anh } = require("./products")
 
 // BÁNH HOA QUẢ
 const mousse_chanh_leo_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0112-1663560654000.jpeg'
@@ -605,6 +606,82 @@ let sendMenuOrderCake = (sender_psid) => {
    });
 };
 
+let sendMenuImageCake = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response_1 = { "text": "Dạ Savor gửi các mẫu bánh in ảnh minh họa, mình tham khảo nha" }
+         let response_2 = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "generic",
+                  "elements": [
+                     {
+                        "title": banh_in_anh.listCakes[0].name,
+                        "subtitle": banh_in_anh.listCakes[0].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_in_anh.listCakes[0].buttonTitle,
+                              "payload": banh_in_anh.listCakes[0].buttonPayload,
+                           },
+                        ],
+                        "image_url": buttonTitle.listCakes[0].sampleImage,
+                     },
+                     {
+                        "title": banh_in_anh.listCakes[1].name,
+                        "subtitle": banh_in_anh.listCakes[1].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_in_anh.listCakes[1].buttonTitle,
+                              "payload": banh_in_anh.listCakes[1].buttonPayload,
+                           },
+                        ],
+                        "image_url": buttonTitle.listCakes[1].sampleImage,
+                     },
+                     {
+                        "title": banh_in_anh.listCakes[2].name,
+                        "subtitle": banh_in_anh.listCakes[2].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_in_anh.listCakes[2].buttonTitle,
+                              "payload": banh_in_anh.listCakes[2].buttonPayload,
+                           },
+                        ],
+                        "image_url": buttonTitle.listCakes[2].sampleImage,
+                     },
+                     {
+                        "title": banh_in_anh.listCakes[3].name,
+                        "subtitle": banh_in_anh.listCakes[3].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_in_anh.listCakes[3].buttonTitle,
+                              "payload": banh_in_anh.listCakes[3].buttonPayload,
+                           },
+                        ],
+                        "image_url": buttonTitle.listCakes[3].sampleImage,
+                     },
+                  ]
+               }
+            }
+         };
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_1);
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_2);
+
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 module.exports = {
@@ -614,5 +691,6 @@ module.exports = {
    sendMenuChildCake,
    sendMenuFlowerCake,
    sendMenuEventCake,
-   sendMenuOrderCake
+   sendMenuOrderCake,
+   sendMenuImageCake
 }
