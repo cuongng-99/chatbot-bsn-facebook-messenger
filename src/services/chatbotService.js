@@ -1,5 +1,6 @@
 import request from "request";
 require("dotenv").config()
+const { banh_in_anh } = require("./products")
 
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
@@ -345,6 +346,18 @@ let sendMenuCakes = (sender_psid) => {
                               "type": "postback",
                               "title": "Xem Bánh Vẽ, Order",
                               "payload": "MENU_ORDER_CAKE",
+                           },
+                        ],
+                     },
+                     {
+                        "title": "BÁNH IN ẢNH",
+                        "subtitle": banh_in_anh.sortDescription,
+                        "image_url": banh_in_anh.thumbnail,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "Xem Bánh in ảnh",
+                              "payload": "MENU_IMAGE_CAKE",
                            },
                         ],
                      },

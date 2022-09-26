@@ -282,6 +282,15 @@ let handlePostback = async (sender_psid, received_postback) => {
       response = { "text": "Dạ mình gửi Savor hình ảnh mẫu bánh bạn muốn đặt nha ạ" }
    }
 
+   // BÁNH IN ẢNH
+   else if (payload === "MENU_IMAGE_CAKE") {
+      await categoryDetail.sendMenuImageCake(sender_psid)
+   }
+   else if (payload === "ORDER_BANH_IN_ANH") {
+      response = { "text": "Dạ mình gửi giúp Savor hình ảnh muốn in lên mặt bánh nha ạ" }
+   }
+
+
 
    else if (payload === "ORDER_NOW") {
       await chatbotService.requestFillInfo(sender_psid)
