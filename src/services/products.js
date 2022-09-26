@@ -149,28 +149,28 @@ const banh_in_anh = {
          subTitle: "In thêm ảnh giá chỉ từ 170k, tùy chọn vị bánh",
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0148-1664175955612.jpeg",
          buttonTitle: "ĐẶT BÁNH IN ẢNH",
-         buttonPayload: "ORDER_IMAGE_CAKE",
+         buttonPayload: "ORDER_BANH_IN_ANH",
       },
       {
          name: "Bánh in ảnh tròn tặng bé",
          subTitle: "In thêm ảnh giá chỉ từ 170k, tùy chọn vị bánh",
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0189-1664175955547.jpeg",
          buttonTitle: "ĐẶT BÁNH IN ẢNH",
-         buttonPayload: "ORDER_IMAGE_CAKE",
+         buttonPayload: "ORDER_BANH_IN_ANH",
       },
       {
          name: "Bánh in ảnh tròn tặng mẹ",
          subTitle: "In thêm ảnh giá chỉ từ 170k, tùy chọn vị bánh",
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0184-1664175955639.jpeg",
          buttonTitle: "ĐẶT BÁNH IN ẢNH",
-         buttonPayload: "ORDER_IMAGE_CAKE",
+         buttonPayload: "ORDER_BANH_IN_ANH",
       },
       {
          name: "Bánh in ảnh hình chữ nhật",
          subTitle: "In thêm ảnh giá chỉ từ 500k, tùy chọn vị bánh",
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0113-1664175955632.jpeg",
          buttonTitle: "ĐẶT BÁNH IN ẢNH",
-         buttonPayload: "ORDER_IMAGE_CAKE",
+         buttonPayload: "ORDER_BANH_IN_ANH",
       },
    ]
 }
