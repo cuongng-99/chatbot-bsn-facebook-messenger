@@ -92,10 +92,10 @@ let handleMessage = async (sender_psid, message) => {
    }
 
    // Checks if the message contains text
-   // if (message.text) {
-   //    // Create persistent after user's message
-   //    await postPersistentMenu(sender_psid);
-   // }
+   if (message.text) {
+      // Create persistent after user's message
+      await postPersistentMenu(sender_psid);
+   }
    // } else if (message.attachments) {
    //    // Get the URL of the message attachment
    //    let attachment_url = message.attachments[0].payload.url;
