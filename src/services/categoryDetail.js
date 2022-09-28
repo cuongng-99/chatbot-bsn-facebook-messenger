@@ -376,7 +376,7 @@ let sendMenuFlowerCake = (sender_psid) => {
                      },
                      {
                         "title": banh_bong_hoa.listCakes[1].name,
-                        "subtitle": banh_banh_bong_hoatre_em.listCakes[1].subTitle,
+                        "subtitle": banh_bong_hoa.listCakes[1].subTitle,
                         "buttons": [
                            {
                               "type": "postback",

@@ -159,11 +159,12 @@ let sendCareHelp = (sender_psid) => {
          let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ <3" }
 
          await markMessageRead(sender_psid);
+         await sendTypingOn(sender_psid);
          await sendMessage(sender_psid, response_1);
-
          await markMessageRead(sender_psid);
-         await delay(2000)
+         await delay(2000);
          await sendMessage(sender_psid, response_2);
+         await sendTypingOff(sender_psid);
       } catch (e) {
          reject(e)
       }

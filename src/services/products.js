@@ -129,7 +129,7 @@ const banh_vi_dac_biet = {
          name: "Bánh kem Cà Phê Cốt Dừa",
          subTitle: "3 cỡ bánh, giá chỉ từ 150k",
          description: "BÁNH KEM CÀ PHÊ CỐT DỪA: Cốt bánh cafe kết hợp cùng kem dừa vị cafe capuchino, phủ bên trên lớp vụn dừa sấy.",
-         sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0163-1663572628509.png",
+         sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0157-1663560810612.jpeg",
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0127-1663572628648.jpeg",
          buttonTitle: "XEM BÁNH CÀ PHÊ CỐT DỪA",
          buttonPayload: "SHOW_CA_PHE_COT_DUA",
