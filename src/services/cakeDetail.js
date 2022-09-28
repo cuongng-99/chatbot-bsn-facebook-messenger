@@ -302,7 +302,9 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) =
          await chatbotService.sendMessage(sender_psid, response_1);
 
          await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendTypingOn(sender_psid)
          await chatbotService.sendMessage(sender_psid, response_2);
+         await chatbotService.sendTypingOff(sender_psid)
 
          await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response_3);

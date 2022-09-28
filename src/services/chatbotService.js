@@ -1,15 +1,16 @@
 import request from "request";
 require("dotenv").config()
+const { banh_han_quoc } = require("./products")
+const { banh_vi_dac_biet } = require("./products")
+const { banh_hoa_qua } = require("./products")
+const { banh_tre_em } = require("./products")
+const { banh_bong_hoa } = require("./products")
+const { banh_su_kien } = require("./products")
 const { banh_in_anh } = require("./products")
+
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 const banner_chatbot = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0196-1663587838149.jpeg'
-const thumbnail_banh_han_quoc = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0156-1663587838246.jpeg'
-const thumbnail_banh_dac_biet = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-011-1663587838150.jpeg'
-const thumbnail_banh_hoa_qua = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0164-1663587838237.jpeg'
-const thumbnail_banh_tre_em = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0140-1663587838102.jpeg'
-const thumbnail_banh_bong_hoa = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0116-1663587838516.jpeg'
-const thumbnail_banh_su_kien = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0125-1663587838149.jpeg'
 const thumbnail_banh_order = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0120-1663587838519.jpeg'
 const menu_accessories = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0128-1663665497163.png'
 
@@ -268,73 +269,73 @@ let sendMenuCakes = (sender_psid) => {
                   "elements": [
                      {
                         "title": "BÁNH KEM HÀN QUỐC",
-                        "subtitle": "Xịn xò hơn, nhỉnh hơn bánh bento, trang trí xinh xẻo, tối giản, tiết kiệm",
-                        "image_url": thumbnail_banh_han_quoc,
+                        "subtitle": banh_han_quoc.sortDescription,
+                        "image_url": banh_han_quoc.thumbnail,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "Xem Bánh Hàn Quốc",
-                              "payload": "MENU_KOREA_CAKE",
+                              "title": banh_han_quoc.buttonTitle,
+                              "payload": banh_han_quoc.buttonPayload,
                            },
                         ],
                      },
                      {
                         "title": "BÁNH VỊ ĐẶC BIỆT",
-                        "subtitle": "Đa dạng các hương vị từ phổ thông đến độc lạ, phù hợp mọi độ tuổi, giới tính",
-                        "image_url": thumbnail_banh_dac_biet,
+                        "subtitle": banh_vi_dac_biet.sortDescription,
+                        "image_url": banh_vi_dac_biet.thumbnail,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "Xem Bánh Đặc Biệt",
-                              "payload": "MENU_SPECIAL_CAKE",
+                              "title": banh_vi_dac_biet.buttonTitle,
+                              "payload": banh_vi_dac_biet.buttonPayload,
                            },
                         ],
                      },
                      {
                         "title": "BÁNH HOA QUẢ",
-                        "subtitle": "Sử dụng dâu tây tươi Đà Lạt, chanh leo, hoa quả nhiệt đới kết hợp kem sữa chua ngon lạ",
-                        "image_url": thumbnail_banh_hoa_qua,
+                        "subtitle": banh_hoa_qua.sortDescription,
+                        "image_url": banh_hoa_qua.thumbnail,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "Xem Bánh Hoa Quả",
-                              "payload": "MENU_FRUIT_CAKE",
+                              "title": banh_hoa_qua.buttonTitle,
+                              "payload": banh_hoa_qua.buttonPayload,
                            },
                         ],
                      },
                      {
                         "title": "BÁNH TRẺ EM",
-                        "subtitle": "Các bánh tạo hình ngộ nghĩnh, có 3 size phù hợp cho mọi cuộc vui gia đình",
-                        "image_url": thumbnail_banh_tre_em,
+                        "subtitle": banh_tre_em.sortDescription,
+                        "image_url": banh_tre_em.thumbnail,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "Xem Bánh trẻ em",
-                              "payload": "MENU_CHILD_CAKE",
+                              "title": banh_tre_em.buttonTitle,
+                              "payload": banh_tre_em.buttonPayload,
                            },
                         ],
                      },
                      {
                         "title": "BÁNH BÔNG HOA",
-                        "subtitle": "Bánh kem bắt hoa màu sắc trang nhã, sang trọng",
-                        "image_url": thumbnail_banh_bong_hoa,
+                        "subtitle": banh_bong_hoa.sortDescription,
+                        "image_url": banh_bong_hoa.thumbnail,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "Xem Bánh Bông Hoa",
-                              "payload": "MENU_FLOWER_CAKE",
+                              "title": banh_bong_hoa.buttonTitle,
+                              "payload": banh_bong_hoa.buttonPayload,
                            },
                         ],
                      },
                      {
                         "title": "BÁNH SỰ KIỆN",
-                        "subtitle": "Phù hợp cho các bữa tiệc công ty, hội nhóm",
-                        "image_url": thumbnail_banh_su_kien,
+                        "subtitle": banh_su_kien.sortDescription,
+                        "image_url": banh_su_kien.thumbnail,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "Xem Bánh Sự kiện",
-                              "payload": "MENU_EVENT_CAKE",
+                              "title": banh_su_kien.buttonTitle,
+                              "payload": banh_su_kien.buttonPayload,
                            },
                         ],
                      },
@@ -357,8 +358,8 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "Xem Bánh in ảnh",
-                              "payload": "MENU_IMAGE_CAKE",
+                              "title": banh_in_anh.buttonTitle,
+                              "payload": banh_in_anh.buttonPayload,
                            },
                         ],
                      },
