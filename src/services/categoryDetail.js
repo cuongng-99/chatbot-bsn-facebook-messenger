@@ -26,8 +26,8 @@ let sendMenuKoreaCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_han_quoc.listCakes[0].buttonTitle,
-                              "payload": banh_han_quoc.listCakes[0].buttonPayload,
+                              "title": banh_han_quoc.listCakes[0].buttonTitleShowCake,
+                              "payload": banh_han_quoc.listCakes[0].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_han_quoc.listCakes[0].sampleImage,
@@ -38,8 +38,8 @@ let sendMenuKoreaCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_han_quoc.listCakes[1].buttonTitle,
-                              "payload": banh_han_quoc.listCakes[1].buttonPayload,
+                              "title": banh_han_quoc.listCakes[1].buttonTitleShowCake,
+                              "payload": banh_han_quoc.listCakes[1].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_han_quoc.listCakes[1].sampleImage,
@@ -79,8 +79,8 @@ let sendMenuSpecialCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_vi_dac_biet.listCakes[0].buttonTitle,
-                              "payload": banh_vi_dac_biet.listCakes[0].buttonPayload,
+                              "title": banh_vi_dac_biet.listCakes[0].buttonTitleShowCake,
+                              "payload": banh_vi_dac_biet.listCakes[0].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_vi_dac_biet.listCakes[0].sampleImage,
@@ -91,8 +91,8 @@ let sendMenuSpecialCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_vi_dac_biet.listCakes[1].buttonTitle,
-                              "payload": banh_vi_dac_biet.listCakes[1].buttonPayload,
+                              "title": banh_vi_dac_biet.listCakes[1].buttonTitleShowCake,
+                              "payload": banh_vi_dac_biet.listCakes[1].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_vi_dac_biet.listCakes[1].sampleImage,
@@ -103,8 +103,8 @@ let sendMenuSpecialCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_vi_dac_biet.listCakes[2].buttonTitle,
-                              "payload": banh_vi_dac_biet.listCakes[2].buttonPayload,
+                              "title": banh_vi_dac_biet.listCakes[2].buttonTitleShowCake,
+                              "payload": banh_vi_dac_biet.listCakes[2].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_vi_dac_biet.listCakes[2].sampleImage,
@@ -115,8 +115,8 @@ let sendMenuSpecialCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_vi_dac_biet.listCakes[3].buttonTitle,
-                              "payload": banh_vi_dac_biet.listCakes[3].buttonPayload,
+                              "title": banh_vi_dac_biet.listCakes[3].buttonTitleShowCake,
+                              "payload": banh_vi_dac_biet.listCakes[3].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_vi_dac_biet.listCakes[3].sampleImage,
@@ -127,8 +127,8 @@ let sendMenuSpecialCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_vi_dac_biet.listCakes[4].buttonTitle,
-                              "payload": banh_vi_dac_biet.listCakes[4].buttonPayload,
+                              "title": banh_vi_dac_biet.listCakes[4].buttonTitleShowCake,
+                              "payload": banh_vi_dac_biet.listCakes[4].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_vi_dac_biet.listCakes[4].sampleImage,
@@ -139,8 +139,8 @@ let sendMenuSpecialCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_vi_dac_biet.listCakes[5].buttonTitle,
-                              "payload": banh_vi_dac_biet.listCakes[5].buttonPayload,
+                              "title": banh_vi_dac_biet.listCakes[5].buttonTitleShowCake,
+                              "payload": banh_vi_dac_biet.listCakes[5].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_vi_dac_biet.listCakes[5].sampleImage,
@@ -151,8 +151,8 @@ let sendMenuSpecialCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_vi_dac_biet.listCakes[6].buttonTitle,
-                              "payload": banh_vi_dac_biet.listCakes[6].buttonPayload,
+                              "title": banh_vi_dac_biet.listCakes[6].buttonTitleShowCake,
+                              "payload": banh_vi_dac_biet.listCakes[6].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_vi_dac_biet.listCakes[6].sampleImage,
@@ -193,8 +193,8 @@ let sendMenuFruitCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_hoa_qua.listCakes[0].buttonTitle,
-                              "payload": banh_hoa_qua.listCakes[0].buttonPayload,
+                              "title": banh_hoa_qua.listCakes[0].buttonTitleShowCake,
+                              "payload": banh_hoa_qua.listCakes[0].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_hoa_qua.listCakes[0].sampleImage,
@@ -205,8 +205,8 @@ let sendMenuFruitCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_hoa_qua.listCakes[1].buttonTitle,
-                              "payload": banh_hoa_qua.listCakes[1].buttonPayload,
+                              "title": banh_hoa_qua.listCakes[1].buttonTitleShowCake,
+                              "payload": banh_hoa_qua.listCakes[1].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_hoa_qua.listCakes[1].sampleImage,
@@ -217,8 +217,8 @@ let sendMenuFruitCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_hoa_qua.listCakes[2].buttonTitle,
-                              "payload": banh_hoa_qua.listCakes[2].buttonPayload,
+                              "title": banh_hoa_qua.listCakes[2].buttonTitleShowCake,
+                              "payload": banh_hoa_qua.listCakes[2].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_hoa_qua.listCakes[2].sampleImage,
@@ -229,8 +229,8 @@ let sendMenuFruitCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_hoa_qua.listCakes[3].buttonTitle,
-                              "payload": banh_hoa_qua.listCakes[3].buttonPayload,
+                              "title": banh_hoa_qua.listCakes[3].buttonTitleShowCake,
+                              "payload": banh_hoa_qua.listCakes[3].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_hoa_qua.listCakes[3].sampleImage,
@@ -241,8 +241,8 @@ let sendMenuFruitCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_hoa_qua.listCakes[4].buttonTitle,
-                              "payload": banh_hoa_qua.listCakes[4].buttonPayload,
+                              "title": banh_hoa_qua.listCakes[4].buttonTitleShowCake,
+                              "payload": banh_hoa_qua.listCakes[4].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_hoa_qua.listCakes[4].sampleImage,
@@ -253,8 +253,8 @@ let sendMenuFruitCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_hoa_qua.listCakes[5].buttonTitle,
-                              "payload": banh_hoa_qua.listCakes[5].buttonPayload,
+                              "title": banh_hoa_qua.listCakes[5].buttonTitleShowCake,
+                              "payload": banh_hoa_qua.listCakes[5].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_hoa_qua.listCakes[5].sampleImage,
@@ -293,8 +293,8 @@ let sendMenuChildCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_tre_em.listCakes[0].buttonTitle,
-                              "payload": banh_tre_em.listCakes[0].buttonPayload,
+                              "title": banh_tre_em.listCakes[0].buttonTitleShowCake,
+                              "payload": banh_tre_em.listCakes[0].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_tre_em.listCakes[0].sampleImage,
@@ -305,8 +305,8 @@ let sendMenuChildCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_tre_em.listCakes[1].buttonTitle,
-                              "payload": banh_tre_em.listCakes[1].buttonPayload,
+                              "title": banh_tre_em.listCakes[1].buttonTitleShowCake,
+                              "payload": banh_tre_em.listCakes[1].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_tre_em.listCakes[1].sampleImage,
@@ -317,8 +317,8 @@ let sendMenuChildCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_tre_em.listCakes[2].buttonTitle,
-                              "payload": banh_tre_em.listCakes[2].buttonPayload,
+                              "title": banh_tre_em.listCakes[2].buttonTitleShowCake,
+                              "payload": banh_tre_em.listCakes[2].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_tre_em.listCakes[2].sampleImage,
@@ -329,8 +329,8 @@ let sendMenuChildCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_tre_em.listCakes[3].buttonTitle,
-                              "payload": banh_tre_em.listCakes[3].buttonPayload,
+                              "title": banh_tre_em.listCakes[3].buttonTitleShowCake,
+                              "payload": banh_tre_em.listCakes[3].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_tre_em.listCakes[3].sampleImage,
@@ -368,8 +368,8 @@ let sendMenuFlowerCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_bong_hoa.listCakes[0].buttonTitle,
-                              "payload": banh_bong_hoa.listCakes[0].buttonPayload,
+                              "title": banh_bong_hoa.listCakes[0].buttonTitleShowCake,
+                              "payload": banh_bong_hoa.listCakes[0].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_bong_hoa.listCakes[0].sampleImage,
@@ -380,8 +380,8 @@ let sendMenuFlowerCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_bong_hoa.listCakes[1].buttonTitle,
-                              "payload": banh_bong_hoa.listCakes[1].buttonPayload,
+                              "title": banh_bong_hoa.listCakes[1].buttonTitleShowCake,
+                              "payload": banh_bong_hoa.listCakes[1].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_bong_hoa.listCakes[1].sampleImage,
@@ -392,8 +392,8 @@ let sendMenuFlowerCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_bong_hoa.listCakes[2].buttonTitle,
-                              "payload": banh_bong_hoa.listCakes[2].buttonPayload,
+                              "title": banh_bong_hoa.listCakes[2].buttonTitleShowCake,
+                              "payload": banh_bong_hoa.listCakes[2].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_bong_hoa.listCakes[2].sampleImage,
@@ -432,8 +432,8 @@ let sendMenuEventCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_su_kien.listCakes[0].buttonTitle,
-                              "payload": banh_su_kien.listCakes[0].buttonPayload,
+                              "title": banh_su_kien.listCakes[0].buttonTitleShowCake,
+                              "payload": banh_su_kien.listCakes[0].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_su_kien.listCakes[0].sampleImage,
@@ -444,8 +444,8 @@ let sendMenuEventCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_su_kien.listCakes[1].buttonTitle,
-                              "payload": banh_su_kien.listCakes[1].buttonPayload,
+                              "title": banh_su_kien.listCakes[1].buttonTitleShowCake,
+                              "payload": banh_su_kien.listCakes[1].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_su_kien.listCakes[1].sampleImage,
@@ -483,8 +483,8 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_ve_order.listCakes[0].buttonTitle,
-                              "payload": banh_ve_order.listCakes[0].buttonPayload,
+                              "title": banh_ve_order.listCakes[0].buttonTitleShowCake,
+                              "payload": banh_ve_order.listCakes[0].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_ve_order.listCakes[0].sampleImage,
@@ -495,8 +495,8 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_ve_order.listCakes[1].buttonTitle,
-                              "payload": banh_ve_order.listCakes[1].buttonPayload,
+                              "title": banh_ve_order.listCakes[1].buttonTitleShowCake,
+                              "payload": banh_ve_order.listCakes[1].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_ve_order.listCakes[1].sampleImage,
@@ -507,8 +507,8 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_ve_order.listCakes[2].buttonTitle,
-                              "payload": banh_ve_order.listCakes[2].buttonPayload,
+                              "title": banh_ve_order.listCakes[2].buttonTitleShowCake,
+                              "payload": banh_ve_order.listCakes[2].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_ve_order.listCakes[2].sampleImage,
@@ -519,8 +519,8 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_ve_order.listCakes[3].buttonTitle,
-                              "payload": banh_ve_order.listCakes[3].buttonPayload,
+                              "title": banh_ve_order.listCakes[3].buttonTitleShowCake,
+                              "payload": banh_ve_order.listCakes[3].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_ve_order.listCakes[3].sampleImage,
@@ -531,8 +531,8 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_ve_order.listCakes[4].buttonTitle,
-                              "payload": banh_ve_order.listCakes[4].buttonPayload,
+                              "title": banh_ve_order.listCakes[4].buttonTitleShowCake,
+                              "payload": banh_ve_order.listCakes[4].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_ve_order.listCakes[4].sampleImage,
@@ -543,8 +543,8 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_ve_order.listCakes[5].buttonTitle,
-                              "payload": banh_ve_order.listCakes[5].buttonPayload,
+                              "title": banh_ve_order.listCakes[5].buttonTitleShowCake,
+                              "payload": banh_ve_order.listCakes[5].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_ve_order.listCakes[5].sampleImage,
@@ -555,8 +555,8 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_ve_order.listCakes[6].buttonTitle,
-                              "payload": banh_ve_order.listCakes[6].buttonPayload,
+                              "title": banh_ve_order.listCakes[6].buttonTitleShowCake,
+                              "payload": banh_ve_order.listCakes[6].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_ve_order.listCakes[6].sampleImage,
@@ -567,8 +567,8 @@ let sendMenuOrderCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_ve_order.listCakes[7].buttonTitle,
-                              "payload": banh_ve_order.listCakes[7].buttonPayload,
+                              "title": banh_ve_order.listCakes[7].buttonTitleShowCake,
+                              "payload": banh_ve_order.listCakes[7].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_ve_order.listCakes[7].sampleImage,
@@ -607,8 +607,8 @@ let sendMenuImageCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_in_anh.listCakes[0].buttonTitle,
-                              "payload": banh_in_anh.listCakes[0].buttonPayload,
+                              "title": banh_in_anh.listCakes[0].buttonTitleShowCake,
+                              "payload": banh_in_anh.listCakes[0].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_in_anh.listCakes[0].sampleImage,
@@ -619,8 +619,8 @@ let sendMenuImageCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_in_anh.listCakes[1].buttonTitle,
-                              "payload": banh_in_anh.listCakes[1].buttonPayload,
+                              "title": banh_in_anh.listCakes[1].buttonTitleShowCake,
+                              "payload": banh_in_anh.listCakes[1].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_in_anh.listCakes[1].sampleImage,
@@ -631,8 +631,8 @@ let sendMenuImageCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_in_anh.listCakes[2].buttonTitle,
-                              "payload": banh_in_anh.listCakes[2].buttonPayload,
+                              "title": banh_in_anh.listCakes[2].buttonTitleShowCake,
+                              "payload": banh_in_anh.listCakes[2].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_in_anh.listCakes[2].sampleImage,
@@ -643,8 +643,8 @@ let sendMenuImageCake = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_in_anh.listCakes[3].buttonTitle,
-                              "payload": banh_in_anh.listCakes[3].buttonPayload,
+                              "title": banh_in_anh.listCakes[3].buttonTitleShowCake,
+                              "payload": banh_in_anh.listCakes[3].buttonPayloadShowCake,
                            },
                         ],
                         "image_url": banh_in_anh.listCakes[3].sampleImage,

@@ -3,6 +3,7 @@ import request from "request";
 import chatbotService from "../services/chatbotService"
 import categoryDetail from "../services/categoryDetail"
 import cakeDetail from "../services/cakeDetail"
+const { mapPayloadOrder } = require("../services/products")
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
@@ -290,8 +291,9 @@ let handlePostback = async (sender_psid, received_postback) => {
       response = { "text": "Dạ mình gửi giúp Savor hình ảnh muốn in lên mặt bánh nha ạ" }
    }
 
-   else if (payload === "ORDER_NOW") {
-      await chatbotService.requestFillInfo(sender_psid)
+   else if (payload === "ORDER_GALAXY_BLUE") {
+      let nameCake = mapPayloadOrder[payload]
+      await chatbotService.requestFillInfo(nameCake, sender_psid)
    }
 
    else if (payload === "BACK_TO_MENU_CAKES") {

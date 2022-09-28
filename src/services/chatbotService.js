@@ -275,8 +275,8 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_han_quoc.buttonTitle,
-                              "payload": banh_han_quoc.buttonPayload,
+                              "title": banh_han_quoc.buttonTitleShowCake,
+                              "payload": banh_han_quoc.buttonPayloadShowCake,
                            },
                         ],
                      },
@@ -287,8 +287,8 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_vi_dac_biet.buttonTitle,
-                              "payload": banh_vi_dac_biet.buttonPayload,
+                              "title": banh_vi_dac_biet.buttonTitleShowCake,
+                              "payload": banh_vi_dac_biet.buttonPayloadShowCake,
                            },
                         ],
                      },
@@ -299,8 +299,8 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_hoa_qua.buttonTitle,
-                              "payload": banh_hoa_qua.buttonPayload,
+                              "title": banh_hoa_qua.buttonTitleShowCake,
+                              "payload": banh_hoa_qua.buttonPayloadShowCake,
                            },
                         ],
                      },
@@ -311,8 +311,8 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_tre_em.buttonTitle,
-                              "payload": banh_tre_em.buttonPayload,
+                              "title": banh_tre_em.buttonTitleShowCake,
+                              "payload": banh_tre_em.buttonPayloadShowCake,
                            },
                         ],
                      },
@@ -323,8 +323,8 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_bong_hoa.buttonTitle,
-                              "payload": banh_bong_hoa.buttonPayload,
+                              "title": banh_bong_hoa.buttonTitleShowCake,
+                              "payload": banh_bong_hoa.buttonPayloadShowCake,
                            },
                         ],
                      },
@@ -335,8 +335,8 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_su_kien.buttonTitle,
-                              "payload": banh_su_kien.buttonPayload,
+                              "title": banh_su_kien.buttonTitleShowCake,
+                              "payload": banh_su_kien.buttonPayloadShowCake,
                            },
                         ],
                      },
@@ -347,8 +347,8 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_ve_order.buttonTitle,
-                              "payload": banh_ve_order.buttonPayload,
+                              "title": banh_ve_order.buttonTitleShowCake,
+                              "payload": banh_ve_order.buttonPayloadShowCake,
                            },
                         ],
                      },
@@ -359,8 +359,8 @@ let sendMenuCakes = (sender_psid) => {
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": banh_in_anh.buttonTitle,
-                              "payload": banh_in_anh.buttonPayload,
+                              "title": banh_in_anh.buttonTitleShowCake,
+                              "payload": banh_in_anh.buttonPayloadShowCake,
                            },
                         ],
                      },
@@ -378,12 +378,12 @@ let sendMenuCakes = (sender_psid) => {
 };
 
 
-let requestFillInfo = (sender_psid) => {
+let requestFillInfo = (nameCake, sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": `Dạ mình gửi giúp Savor các thông tin sau để hoàn thiện đơn order nhé ạ:\n
-- Tên bánh, Cỡ bánh:
+            "text": `Dạ mình gửi giúp Savor các thông tin sau để hoàn thiện đơn đặt ${nameCake} nhé ạ:\n
+- Cỡ bánh:
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
 - Thời gian nhận hàng:
