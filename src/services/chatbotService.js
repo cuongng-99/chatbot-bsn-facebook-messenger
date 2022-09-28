@@ -383,7 +383,7 @@ let requestFillInfo = (nameCake, sender_psid) => {
       try {
          let response = {
             "text": `Dạ mình gửi giúp Savor các thông tin sau để hoàn thiện đơn đặt hàng nhé ạ:\n
-- Tên bánh: ${nameCake}
+- Tên bánh: *${nameCake}*
 - Cỡ bánh:
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:

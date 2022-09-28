@@ -174,6 +174,8 @@ const banh_hoa_qua = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0112-1663560654000.jpeg",
          buttonTitleShowCake: "Xem mousse Chanh Leo",
          buttonPayloadShowCake: "SHOW_MOUSSE_CHANH_LEO",
+         buttonTitleOrderCake: "Đặt mousse Chanh Leo",
+         buttonPayloadOrderCake: "ORDER_MOUSSE_CHANH_LEO",
          sizeAndPrice: [
             { size: "14x6cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "18x6cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" }
@@ -186,6 +188,8 @@ const banh_hoa_qua = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0197-1663560654266.jpeg",
          buttonTitleShowCake: "Xem bánh SC Hoa Quả",
          buttonPayloadShowCake: "SHOW_BANH_SC_HOA_QUA",
+         buttonTitleOrderCake: "Đặt bánh SC Hoa Quả",
+         buttonPayloadOrderCake: "ORDER_BANH_SC_HOA_QUA",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -199,6 +203,8 @@ const banh_hoa_qua = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-013-1663560654059.jpeg",
          buttonTitleShowCake: "Xem bánh SC Dâu",
          buttonPayloadShowCake: "SHOW_SC_DAU_DALAT",
+         buttonTitleOrderCake: "Đặt bánh SC Dâu",
+         buttonPayloadOrderCake: "ORDER_SC_DAU_DALAT",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -212,6 +218,8 @@ const banh_hoa_qua = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0198-1663560654081.jpeg",
          buttonTitleShowCake: "Xem bánh Socola Dâu",
          buttonPayloadShowCake: "SHOW_SOCOLA_DAU_DALAT",
+         buttonTitleOrderCake: "Đặt bánh Socola Dâu",
+         buttonPayloadOrderCake: "ORDER_SOCOLA_DAU_DALAT",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -225,6 +233,8 @@ const banh_hoa_qua = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0116-1663560654105.jpeg",
          buttonTitleShowCake: "Xem bánh Hồng Kem Chảy",
          buttonPayloadShowCake: "SHOW_HONG_KEM_CHAY_DAU",
+         buttonTitleOrderCake: "Đặt bánh Hồng Kem Chảy",
+         buttonPayloadOrderCake: "ORDER_HONG_KEM_CHAY_DAU",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -238,6 +248,8 @@ const banh_hoa_qua = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0158-1663560654112.jpeg",
          buttonTitleShowCake: "Xem bánh Màu Loang Dâu",
          buttonPayloadShowCake: "SHOW_BANH_LOANG_DAU",
+         buttonTitleOrderCake: "Đặt bánh Màu Loang Dâu",
+         buttonPayloadOrderCake: "ORDER_BANH_LOANG_DAU",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -262,6 +274,8 @@ const banh_tre_em = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0196-1663560682745.jpeg",
          buttonTitleShowCake: "Xem bánh Mango Chick",
          buttonPayloadShowCake: "SHOW_MANGO_CHICK",
+         buttonTitleOrderCake: "Đặt bánh Mango Chick",
+         buttonPayloadOrderCake: "ORDER_MANGO_CHICK",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
          ]
@@ -273,6 +287,8 @@ const banh_tre_em = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0189-1663560682783.jpeg",
          buttonTitleShowCake: "Xem bánh Red Car",
          buttonPayloadShowCake: "SHOW_RED_CAR",
+         buttonTitleOrderCake: "Đặt bánh Red Car",
+         buttonPayloadOrderCake: "ORDER_RED_CAR",
          sizeAndPrice: [
             { size: "16x10x18cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 3-5 người" },
             { size: "21x13x10cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 6-10 người" },
@@ -285,6 +301,8 @@ const banh_tre_em = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0157-1663560682746.jpeg",
          buttonTitleShowCake: "Xem bánh Choco Bear",
          buttonPayloadShowCake: "SHOW_CHOCO_BEAR",
+         buttonTitleOrderCake: "Đặt bánh Choco Bear",
+         buttonPayloadOrderCake: "ORDER_CHOCO_BEAR",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -298,6 +316,8 @@ const banh_tre_em = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-014-1663560682767.jpeg",
          buttonTitleShowCake: "Xem bánh Pinky Princess",
          buttonPayloadShowCake: "SHOW_PINKY_PRINCESS",
+         buttonTitleOrderCake: "Đặt bánh Pinky Princess",
+         buttonPayloadOrderCake: "ORDER_PINKY_PRINCESS",
          sizeAndPrice: [
             { size: "13x18cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 3-5 người" },
          ]
@@ -320,6 +340,8 @@ const banh_bong_hoa = {
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0154-1663574205776.png",
          buttonTitleShowCake: "Xem bánh BLTM",
          buttonPayloadShowCake: "SHOW_BANH_BLTM",
+         buttonTitleOrderCake: "Đặt bánh BLTM",
+         buttonPayloadOrderCake: "ORDER_BANH_BLTM",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -333,6 +355,8 @@ const banh_bong_hoa = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0127-1663560640562.jpeg",
          buttonTitleShowCake: "Xem bánh Kem Hoa Hồng",
          buttonPayloadShowCake: "SHOW_BANH_HOA_HONG",
+         buttonTitleOrderCake: "Đặt bánh Kem Hoa Hồng",
+         buttonPayloadOrderCake: "ORDER_BANH_HOA_HONG",
          sizeAndPrice: [
             { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
          ]
@@ -344,6 +368,8 @@ const banh_bong_hoa = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0161-1663560640535.jpeg",
          buttonTitleShowCake: "Xem bánh Kem Hoa Tím",
          buttonPayloadShowCake: "SHOW_BANH_HOA_TIM",
+         buttonTitleOrderCake: "Đặt bánh Kem Hoa Tím",
+         buttonPayloadOrderCake: "ORDER_BANH_HOA_TIM",
          sizeAndPrice: [
             { size: "13x12cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
          ]
@@ -366,6 +392,8 @@ const banh_su_kien = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0136-1663560698777.jpeg",
          buttonTitleShowCake: "Xem bánh Hũ Vàng",
          buttonPayloadShowCake: "SHOW_BANH_HU_VANG",
+         buttonTitleOrderCake: "Đặt bánh Hũ Vàng",
+         buttonPayloadOrderCake: "ORDER_BANH_HU_VANG",
          sizeAndPrice: [
             { size: "16x10cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người ăn" },
          ]
@@ -377,6 +405,8 @@ const banh_su_kien = {
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0135-1663560698772.jpeg",
          buttonTitleShowCake: "Xem bánh Choco Forest",
          buttonPayloadShowCake: "SHOW_CHOCO_FOREST",
+         buttonTitleOrderCake: "Đặt bánh Choco Forest",
+         buttonPayloadOrderCake: "ORDER_CHOCO_FOREST",
          sizeAndPrice: [
             { size: "18x18x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 6-10 người ăn" },
          ]
@@ -492,7 +522,8 @@ const banh_in_anh = {
 
 const allCategories = [banh_han_quoc, banh_vi_dac_biet, banh_hoa_qua, banh_tre_em, banh_bong_hoa, banh_su_kien]
 let mapPayloadOrder = {}
-allCategories.forEach(c => c.listCakes.forEach(d => mapPayloadOrder[d.buttonPayloadOrderCake] = d.name))
+allCategories.forEach(category => category.listCakes.forEach(cake => mapPayloadOrder[cake.buttonPayloadOrderCake] = cake.name))
+
 
 module.exports = {
    banh_han_quoc,
