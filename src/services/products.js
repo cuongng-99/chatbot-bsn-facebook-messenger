@@ -70,6 +70,8 @@ const banh_vi_dac_biet = {
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0127-1663572628648.jpeg",
          buttonTitleShowCake: "Xem bánh Triple Choco",
          buttonPayloadShowCake: "SHOW_TRIPLE_CHOCO",
+         buttonTitleOrderCake: "Đặt bánh Triple Choco",
+         buttonPayloadOrderCake: "ORDER_TRIPLE_CHOCO",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -84,6 +86,8 @@ const banh_vi_dac_biet = {
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0191-1663560810581.jpeg",
          buttonTitleShowCake: "Xem mousse Socola",
          buttonPayloadShowCake: "SHOW_MOUSSE_SOCOLA",
+         buttonTitleOrderCake: "Đặt mousse Socola",
+         buttonPayloadOrderCake: "ORDER_MOUSSE_SOCOLA",
          sizeAndPrice: [
             { size: "14x6cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "18x6cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" }
@@ -97,6 +101,8 @@ const banh_vi_dac_biet = {
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0147-1663574205768.png",
          buttonTitleShowCake: "Xem bánh Xoài Dừa",
          buttonPayloadShowCake: "SHOW_XOAI_DUA",
+         buttonTitleOrderCake: "Đặt bánh Xoài Dừa",
+         buttonPayloadOrderCake: "ORDER_XOAI_DUA",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -111,6 +117,8 @@ const banh_vi_dac_biet = {
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0154-1663572628600.png",
          buttonTitleShowCake: "Xem bánh Green Tea",
          buttonPayloadShowCake: "SHOW_GREEN_TEA",
+         buttonTitleOrderCake: "Đặt bánh Green Tea",
+         buttonPayloadOrderCake: "ORDER_GREEN_TEA",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -125,6 +133,8 @@ const banh_vi_dac_biet = {
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0111-1663560810561.jpeg",
          buttonTitleShowCake: "Xem bánh Cà Phê",
          buttonPayloadShowCake: "SHOW_CA_PHE",
+         buttonTitleOrderCake: "Đặt bánh Cà Phê",
+         buttonPayloadOrderCake: "ORDER_CA_PHE",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
@@ -139,6 +149,8 @@ const banh_vi_dac_biet = {
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0127-1663572628648.jpeg",
          buttonTitleShowCake: "Xem bánh Cà Phê Cốt Dừa",
          buttonPayloadShowCake: "SHOW_CA_PHE_COT_DUA",
+         buttonTitleOrderCake: "Đặt bánh Cà Phê Cốt Dừa",
+         buttonPayloadOrderCake: "ORDER_CA_PHE_COT_DUA",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },

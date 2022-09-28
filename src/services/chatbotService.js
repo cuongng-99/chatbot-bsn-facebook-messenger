@@ -382,7 +382,8 @@ let requestFillInfo = (nameCake, sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": `Dạ mình gửi giúp Savor các thông tin sau để hoàn thiện đơn đặt ${nameCake} nhé ạ:\n
+            "text": `Dạ mình gửi giúp Savor các thông tin sau để hoàn thiện đơn đặt hàng nhé ạ:\n
+- Tên bánh: ${nameCake}
 - Cỡ bánh:
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:

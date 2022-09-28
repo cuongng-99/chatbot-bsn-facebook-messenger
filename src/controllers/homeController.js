@@ -291,7 +291,7 @@ let handlePostback = async (sender_psid, received_postback) => {
       response = { "text": "Dạ mình gửi giúp Savor hình ảnh muốn in lên mặt bánh nha ạ" }
    }
 
-   else if (payload === "ORDER_GALAXY_BLUE") {
+   else if (payload.includes("ORDER")) {
       let nameCake = mapPayloadOrder[payload]
       await chatbotService.requestFillInfo(nameCake, sender_psid)
    }
