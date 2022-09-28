@@ -278,8 +278,8 @@ const banh_tre_em = {
          subTitle: "Giá chỉ 180k",
          description: "BÁNH KEM PINKY PRINCESS: Bánh kem 3 lớp cốt vani 13x18cm, kêt hợp với mứt dâu và kem vị dâu tây, bánh trang trí búp bê công chúa, sở thích của các bé gái.",
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-014-1663560682767.jpeg",
-         buttonTitle: "XEM BÁNH CHOCO BEAR",
-         buttonPayload: "SHOW_CHOCO_BEAR",
+         buttonTitle: "XEM BÁNH PINKY PRINCESS",
+         buttonPayload: "SHOW_PINKY_PRINCESS",
          sizeAndPrice: [
             { size: "13x18cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 3-5 người" },
          ]

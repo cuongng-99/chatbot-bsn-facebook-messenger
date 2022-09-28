@@ -1,11 +1,24 @@
+const _ = require('lodash');
 import chatbotService from "./chatbotService"
 
+const { banh_han_quoc } = require("./products")
+const { banh_vi_dac_biet } = require("./products")
+const { banh_hoa_qua } = require("./products")
+const { banh_tre_em } = require("./products")
+const { banh_bong_hoa } = require("./products")
+const { banh_su_kien } = require("./products")
+const { banh_ve_order } = require("./products")
+const { banh_in_anh } = require("./products")
+
+
 // BÁNH HÀN QUỐC
-const galaxy_blue_info = {
-   text_description: "BÁNH KEM GALAXY BLUE: Bánh kem tươi cốt vani, xen giữa các lớp bánh là mứt việt quất, trang trí phong cách Hàn Quốc.",
-   image_1: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0162-1663572627813.png',
-   text_size_price: "Bánh có 2 size:\n - Size 13x7cm: Giá sale 120k (giá gốc 150k) (Phù hợp 2-3 người)\n - Size 17x8cm: Giá sale 190k (giá gốc 240k) (Phù hợp 4-6 người)"
-}
+const galaxy_blue_info = _.filter(banh_han_quoc.listCakes, { name: "Bánh kem Galaxy Blue" })[0]
+
+// const galaxy_blue_info = {
+//    text_description: "BÁNH KEM GALAXY BLUE: Bánh kem tươi cốt vani, xen giữa các lớp bánh là mứt việt quất, trang trí phong cách Hàn Quốc.",
+//    image_1: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0162-1663572627813.png',
+//    text_size_price: "Bánh có 2 size:\n - Size 13x7cm: Giá sale 120k (giá gốc 150k) (Phù hợp 2-3 người)\n - Size 17x8cm: Giá sale 190k (giá gốc 240k) (Phù hợp 4-6 người)"
+// }
 
 const pastel_3_mau_info = {
    text_description: "BÁNH KEM 3 MÀU PASTEL: Bánh kem tươi cốt vani, kết hợp mứt dâu tây, trang trí phong cách Hàn Quốc màu pastel hồng - cam - xanh.",
@@ -160,7 +173,11 @@ const choco_forest_info = {
 
 // BÁNH HÀN QUỐC
 let showDetailGalaxyBlue = (sender_psid) => {
-   return showDetailCake(sender_psid, galaxy_blue_info.text_description, galaxy_blue_info.image_1, galaxy_blue_info.text_size_price)
+   return showDetailCake(
+      sender_psid, galaxy_blue_info.description,
+      galaxy_blue_info.feedbackImage || galaxy_blue_info.sampleImage,
+      getSizeAndPrice(galaxy_blue_info)
+   )
 }
 let showDetail3MauPastel = (sender_psid) => {
    return showDetailCake(sender_psid, pastel_3_mau_info.text_description, pastel_3_mau_info.image_1, pastel_3_mau_info.text_size_price)
@@ -249,6 +266,12 @@ let showDetailChocoForest = (sender_psid) => {
 };
 
 
+let getSizeAndPrice = (cake) => {
+   let numSize = cake.sizeAndPrice.length
+   let text = []
+   cake.sizeAndPrice.forEach(c => text.push(`Size: ${c.size}: Giá sale ${c.salePrice} (giá gốc ${c.originalPrice}) (${c.forNumberUsers})`))
+   console.log(`Bánh có ${numSize} size:\n - ${text.join("\n - ")}`)
+}
 
 let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) => {
    return new Promise(async (resolve, reject) => {
