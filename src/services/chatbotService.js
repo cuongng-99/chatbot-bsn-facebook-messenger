@@ -6,6 +6,7 @@ const { banh_hoa_qua } = require("./products")
 const { banh_tre_em } = require("./products")
 const { banh_bong_hoa } = require("./products")
 const { banh_su_kien } = require("./products")
+const { banh_ve_order } = require("./products")
 const { banh_in_anh } = require("./products")
 
 
@@ -340,13 +341,13 @@ let sendMenuCakes = (sender_psid) => {
                      },
                      {
                         "title": "BÁNH VẼ, BÁNH ORDER",
-                        "subtitle": "Gửi gắm những hình ảnh, thông điệp ý nghĩa riêng tư. Được chọn vị bánh",
-                        "image_url": thumbnail_banh_order,
+                        "subtitle": banh_ve_order.sortDescription,
+                        "image_url": banh_ve_order.thumbnail,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "Xem Bánh Vẽ, Order",
-                              "payload": "MENU_ORDER_CAKE",
+                              "title": banh_ve_order.buttonTitle,
+                              "payload": banh_ve_order.buttonPayload,
                            },
                         ],
                      },
