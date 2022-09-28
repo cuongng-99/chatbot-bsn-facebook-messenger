@@ -3,7 +3,7 @@ const banh_han_quoc = {
    thumbnail: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0156-1663587838246.jpeg',
    sortDescription: 'Xịn xò hơn, nhỉnh hơn bánh bento, trang trí xinh xẻo, tối giản, tiết kiệm',
    buttonTitle: "Xem Bánh Hàn Quốc",
-   buttonPayload: "SHOW_KOREA_CAKE",
+   buttonPayload: "MENU_KOREA_CAKE",
    listCakes: [
       {
          name: "Bánh kem Galaxy Blue",
@@ -40,7 +40,7 @@ const banh_vi_dac_biet = {
    thumbnail: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-011-1663587838150.jpeg',
    sortDescription: 'Các bánh có hương vị đa dạng từ phổ thông đến độc lạ, phù hợp mọi độ tuổi, giới tính',
    buttonTitle: "Xem Bánh Vị Đặc Biệt",
-   buttonPayload: "SHOW_SPECIAL_CAKE",
+   buttonPayload: "MENU_SPECIAL_CAKE",
    listCakes: [
       {
          name: "Bánh kem Red Velvet sữa chua",
@@ -147,7 +147,7 @@ const banh_hoa_qua = {
    thumbnail: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0164-1663587838237.jpeg',
    sortDescription: 'Sử dụng dâu tây tươi Đà Lạt, chanh leo, hoa quả nhiệt đới kết hợp kem sữa chua ngon lạ',
    buttonTitle: "Xem Bánh Hoa Quả",
-   buttonPayload: "SHOW_FRUIT_CAKE",
+   buttonPayload: "MENU_FRUIT_CAKE",
    listCakes: [
       {
          name: "Mousse Chanh Leo",
@@ -235,7 +235,7 @@ const banh_tre_em = {
    thumbnail: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0140-1663587838102.jpeg",
    sortDescription: "Gồm các bánh tạo hình ngộ nghĩnh, có 3 size phù hợp cho mọi cuộc vui gia đình",
    buttonTitle: "Xem Bánh Trẻ em",
-   buttonPayload: "SHOW_CHILD_CAKE",
+   buttonPayload: "MENU_CHILD_CAKE",
    listCakes: [
       {
          name: "Bánh kem Mango Chick",
@@ -292,7 +292,7 @@ const banh_bong_hoa = {
    thumbnail: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0116-1663587838516.jpeg",
    sortDescription: "Bánh bông hoa gồm Bánh kem bắt hoa kết hợp màu sắc trang nhã, sang trọng",
    buttonTitle: "Xem Bánh Bông Hoa",
-   buttonPayload: "SHOW_FLOWER_CAKE",
+   buttonPayload: "MENU_FLOWER_CAKE",
    listCakes: [
       {
          name: "Bánh bông lan trứng muối Bông Hoa",
@@ -339,7 +339,7 @@ const banh_su_kien = {
    thumbnail: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0125-1663587838149.jpeg",
    sortDescription: "Những chiếc bánh cao cấp, phù hợp cho các bữa tiệc công ty, hội nhóm",
    buttonTitle: "Xem Bánh Sự Kiện",
-   buttonPayload: "SHOW_EVENT_CAKE",
+   buttonPayload: "MENU_EVENT_CAKE",
    listCakes: [
       {
          name: "Bánh hũ vàng",
@@ -372,7 +372,7 @@ const banh_in_anh = {
    thumbnail: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0195-1664175955728.jpeg',
    sortDescription: 'Gửi gắm các thông điệp ý nghĩa qua những tấm ảnh của riêng bạn',
    buttonTitle: "Xem Bánh In Ảnh",
-   buttonPayload: "SHOW_PHOTO_CAKE",
+   buttonPayload: "MENU_PHOTO_CAKE",
    listCakes: [
       {
          name: "Bánh in ảnh tròn tặng bạn bè",

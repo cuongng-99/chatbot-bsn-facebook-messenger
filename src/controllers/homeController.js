@@ -283,7 +283,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    // BÁNH IN ẢNH
-   else if (payload === "MENU_IMAGE_CAKE") {
+   else if (payload === "MENU_PHOTO_CAKE") {
       await categoryDetail.sendMenuImageCake(sender_psid)
    }
    else if (payload === "ORDER_BANH_IN_ANH") {
