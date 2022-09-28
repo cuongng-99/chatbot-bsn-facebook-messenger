@@ -270,7 +270,7 @@ let getSizeAndPrice = (cake) => {
    let numSize = cake.sizeAndPrice.length
    let text = []
    cake.sizeAndPrice.forEach(c => text.push(`Size: ${c.size}: Giá sale ${c.salePrice} (giá gốc ${c.originalPrice}) (${c.forNumberUsers})`))
-   console.log(`Bánh có ${numSize} size:\n - ${text.join("\n - ")}`)
+   return `Bánh có ${numSize} size:\n - ${text.join("\n - ")}`
 }
 
 let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) => {
