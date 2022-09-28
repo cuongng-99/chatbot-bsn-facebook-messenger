@@ -212,7 +212,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    else if (payload == "SHOW_MOUSSE_CHANH_LEO") {
       await cakeDetail.showDetailMousseChanhLeo(sender_psid)
    }
-   else if (payload == "SHOW_KEM_SC_HOA_QUA") {
+   else if (payload == "SHOW_BANH_SC_HOA_QUA") {
       await cakeDetail.showDetailSuaChuaHoaQua(sender_psid)
    }
    else if (payload == "SHOW_SC_DAU_DALAT") {
