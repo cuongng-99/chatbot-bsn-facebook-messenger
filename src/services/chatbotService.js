@@ -11,7 +11,6 @@ const { banh_in_anh } = require("./products")
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 const banner_chatbot = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0196-1663587838149.jpeg'
-const thumbnail_banh_order = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0120-1663587838519.jpeg'
 const menu_accessories = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0128-1663665497163.png'
 
 // Get user's profile
@@ -436,9 +435,10 @@ Mình mua thêm món nào thì nhắn Savor nha ^^`}
          };
          await markMessageRead(sender_psid);
          await sendQuickReply(sender_psid, response_1);
-
+         await sendTypingOn(sender_psid);
          await markMessageRead(sender_psid);
          await sendQuickReply(sender_psid, response_2);
+         await sendTypingOff(sender_psid)
       } catch (e) {
          reject(e)
       }

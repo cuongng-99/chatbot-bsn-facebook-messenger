@@ -367,6 +367,73 @@ const banh_su_kien = {
 }
 
 
+// BÁNH VẼ, BÁNH ORDER
+const banh_ve_order = {
+   thumbnail: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0120-1663587838519.jpeg',
+   sortDescription: "Gửi gắm những hình ảnh, thông điệp ý nghĩa riêng tư. Được chọn vị bánh",
+   buttonTitle: "Xem Bánh Vẽ, Order",
+   buttonPayload: "MENU_ORDER_CAKE",
+   listCakes: [
+      {
+         name: "Bánh Thông điệp",
+         subTitle: "Giá chỉ từ 150k",
+         sampleImage: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0158-1663560672670.jpeg',
+         buttonTitle: "ĐẶT BÁNH VẼ",
+         buttonPayload: "ORDER_BANH_VE",
+      },
+      {
+         name: "Bánh Cốc bia",
+         subTitle: "Giá chỉ từ 180k",
+         sampleImage: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0125-1663560672648.jpeg',
+         buttonTitle: "ĐẶT BÁNH ORDER",
+         buttonPayload: "ORDER_BANH_VE",
+      },
+      {
+         name: "Bánh Con hổ",
+         subTitle: "Giá chỉ từ 180k",
+         sampleImage: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0165-1663560672636.jpeg',
+         buttonTitle: "ĐẶT BÁNH ORDER",
+         buttonPayload: "ORDER_BANH_VE",
+      },
+      {
+         name: "Bánh Tốt nghiệp",
+         subTitle: "Giá chỉ từ 180k",
+         sampleImage: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0193-1663560672627.jpeg',
+         buttonTitle: "ĐẶT BÁNH ORDER",
+         buttonPayload: "ORDER_BANH_VE",
+      },
+      {
+         name: "Bánh Vẽ Mẹ",
+         subTitle: "Giá chỉ từ 180k",
+         sampleImage: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0170-1663560672576.jpeg',
+         buttonTitle: "ĐẶT BÁNH ORDER",
+         buttonPayload: "ORDER_BANH_VE",
+      },
+      {
+         name: "Viết thông điệp trên đế to",
+         subTitle: "Đế to, Hộp to: Thêm 20k",
+         sampleImage: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0159-1663587991914.jpeg',
+         buttonTitle: "ĐẶT BÁNH VẼ",
+         buttonPayload: "ORDER_BANH_VE",
+      },
+      {
+         name: "Bánh hai người",
+         subTitle: "Giá chỉ từ 180k",
+         sampleImage: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0125-1663560672626.jpeg',
+         buttonTitle: "ĐẶT BÁNH ORDER",
+         buttonPayload: "ORDER_BANH_VE",
+      },
+      {
+         name: "Combo 2 bánh",
+         subTitle: "Giảm 25% so với giá gốc",
+         sampleImage: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0139-1663587991897.jpeg',
+         buttonTitle: "ĐẶT COMBO 2 BÁNH",
+         buttonPayload: "ORDER_BANH_VE",
+      },
+   ]
+}
+
+
 // BÁNH IN ẢNH
 const banh_in_anh = {
    thumbnail: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0195-1664175955728.jpeg',
@@ -412,5 +479,6 @@ module.exports = {
    banh_tre_em,
    banh_bong_hoa,
    banh_su_kien,
+   banh_ve_order,
    banh_in_anh
 }

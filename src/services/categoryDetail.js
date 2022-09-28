@@ -1,40 +1,13 @@
 import chatbotService from "./chatbotService"
 const { banh_han_quoc } = require("./products")
 const { banh_vi_dac_biet } = require("./products")
+const { banh_hoa_qua } = require("./products")
+const { banh_tre_em } = require("./products")
+const { banh_bong_hoa } = require("./products")
+const { banh_su_kien } = require("./products")
+const { banh_ve_order } = require("./products")
 const { banh_in_anh } = require("./products")
 
-// BÁNH HOA QUẢ
-const mousse_chanh_leo_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0112-1663560654000.jpeg'
-const banh_sua_chua_hoa_qua_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0197-1663560654266.jpeg'
-const banh_sua_chua_dau_da_lat_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-013-1663560654059.jpeg'
-const banh_socola_dau_da_lat_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0198-1663560654081.jpeg'
-const banh_hong_kem_chay_dau_da_lat_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0116-1663560654105.jpeg'
-const banh_kem_mau_loang_dau_da_lat_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0158-1663560654112.jpeg'
-
-// BÁNH TRẺ EM
-const banh_mango_chick_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0196-1663560682745.jpeg'
-const banh_red_car_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0189-1663560682783.jpeg'
-const banh_choco_bear_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0157-1663560682746.jpeg'
-const banh_pinky_princess_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-014-1663560682767.jpeg'
-
-// BÁNH BÔNG HOA
-const banh_bong_lan_trung_muoi_bong_hoa_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0198-1663560640543.jpeg'
-const banh_hoa_hong_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0127-1663560640562.jpeg'
-const banh_hoa_tim_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0161-1663560640535.jpeg'
-
-// BÁNH SỰ KIỆN
-const banh_hu_vang_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0136-1663560698777.jpeg'
-const banh_choco_forest_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0135-1663560698772.jpeg'
-
-// BÁNH VẼ, BÁNH ORDER
-const banh_thong_diep_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0158-1663560672670.jpeg'
-const banh_coc_bia_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0125-1663560672648.jpeg'
-const banh_2_nguoi_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0125-1663560672626.jpeg'
-const banh_con_ho_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0165-1663560672636.jpeg'
-const banh_tot_nghiep_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0193-1663560672627.jpeg'
-const banh_ve_me_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0170-1663560672576.jpeg'
-const banh_ve_de_to = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0159-1663587991914.jpeg'
-const combo_banh_image = 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0139-1663587991897.jpeg'
 
 
 let sendMenuKoreaCake = (sender_psid) => {
@@ -172,6 +145,18 @@ let sendMenuSpecialCake = (sender_psid) => {
                         ],
                         "image_url": banh_vi_dac_biet.listCakes[5].sampleImage,
                      },
+                     {
+                        "title": banh_vi_dac_biet.listCakes[6].name,
+                        "subtitle": banh_vi_dac_biet.listCakes[6].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_vi_dac_biet.listCakes[6].buttonTitle,
+                              "payload": banh_vi_dac_biet.listCakes[6].buttonPayload,
+                           },
+                        ],
+                        "image_url": banh_vi_dac_biet.listCakes[6].sampleImage,
+                     },
                   ]
                }
             }
@@ -195,7 +180,7 @@ let sendMenuSpecialCake = (sender_psid) => {
 let sendMenuFruitCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Nhóm bánh Hoa Quả sử dụng dâu tây tươi Đà Lạt, chanh leo, hoa quả nhiệt đới kết hợp kem sữa chua cho hương vị ngon lạ" }
+         let response_1 = { "text": banh_hoa_qua.sortDescription }
          let response = {
             "attachment": {
                "type": "template",
@@ -203,76 +188,76 @@ let sendMenuFruitCake = (sender_psid) => {
                   "template_type": "generic",
                   "elements": [
                      {
-                        "title": "Mousse Chanh Leo",
-                        "subtitle": "2 cỡ bánh, giá chỉ từ 180k",
+                        "title": banh_hoa_qua.listCakes[0].name,
+                        "subtitle": banh_hoa_qua.listCakes[0].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM MOUSSE CHANH LEO",
-                              "payload": "SHOW_MOUSSE_CHANH_LEO",
+                              "title": banh_hoa_qua.listCakes[0].buttonTitle,
+                              "payload": banh_hoa_qua.listCakes[0].buttonPayload,
                            },
                         ],
-                        "image_url": mousse_chanh_leo_image,
+                        "image_url": banh_hoa_qua.listCakes[0].sampleImage,
                      },
                      {
-                        "title": "Bánh kem sữa chua hoa quả",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
+                        "title": banh_hoa_qua.listCakes[1].name,
+                        "subtitle": banh_hoa_qua.listCakes[1].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH SC HOA QUẢ",
-                              "payload": "SHOW_KEM_SC_HOA_QUA",
+                              "title": banh_hoa_qua.listCakes[1].buttonTitle,
+                              "payload": banh_hoa_qua.listCakes[1].buttonPayload,
                            },
                         ],
-                        "image_url": banh_sua_chua_hoa_qua_image,
+                        "image_url": banh_hoa_qua.listCakes[1].sampleImage,
                      },
                      {
-                        "title": "Bánh kem sữa chua dâu Đà Lạt",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 180k",
+                        "title": banh_hoa_qua.listCakes[2].name,
+                        "subtitle": banh_hoa_qua.listCakes[2].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH SC DÂU",
-                              "payload": "SHOW_SC_DAU_DALAT",
+                              "title": banh_hoa_qua.listCakes[2].buttonTitle,
+                              "payload": banh_hoa_qua.listCakes[2].buttonPayload,
                            },
                         ],
-                        "image_url": banh_sua_chua_dau_da_lat_image,
+                        "image_url": banh_hoa_qua.listCakes[2].sampleImage,
                      },
                      {
-                        "title": "Bánh socola dâu Đà Lạt",
-                        "subtitle": "3 cỡ bánh, giá chỉ 180k",
+                        "title": banh_hoa_qua.listCakes[3].name,
+                        "subtitle": banh_hoa_qua.listCakes[3].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH SOCOLA DÂU",
-                              "payload": "SHOW_SOCOLA_DAU_DALAT",
+                              "title": banh_hoa_qua.listCakes[3].buttonTitle,
+                              "payload": banh_hoa_qua.listCakes[3].buttonPayload,
                            },
                         ],
-                        "image_url": banh_socola_dau_da_lat_image,
+                        "image_url": banh_hoa_qua.listCakes[3].sampleImage,
                      },
                      {
-                        "title": "Bánh hồng kem chảy dâu Đà Lạt",
-                        "subtitle": "3 cỡ bánh, giá chỉ 180k",
+                        "title": banh_hoa_qua.listCakes[4].name,
+                        "subtitle": banh_hoa_qua.listCakes[4].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH HỒNG KEM CHẢY",
-                              "payload": "SHOW_HONG_KEM_CHAY_DAU",
+                              "title": banh_hoa_qua.listCakes[4].buttonTitle,
+                              "payload": banh_hoa_qua.listCakes[4].buttonPayload,
                            },
                         ],
-                        "image_url": banh_hong_kem_chay_dau_da_lat_image,
+                        "image_url": banh_hoa_qua.listCakes[4].sampleImage,
                      },
                      {
-                        "title": "Bánh kem màu loang dâu Đà Lạt",
-                        "subtitle": "3 cỡ bánh, giá chỉ 150k",
+                        "title": banh_hoa_qua.listCakes[5].name,
+                        "subtitle": banh_hoa_qua.listCakes[5].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH MÀU LOANG DÂU",
-                              "payload": "SHOW_BANH_LOANG_DAU",
+                              "title": banh_hoa_qua.listCakes[5].buttonTitle,
+                              "payload": banh_hoa_qua.listCakes[5].buttonPayload,
                            },
                         ],
-                        "image_url": banh_kem_mau_loang_dau_da_lat_image,
+                        "image_url": banh_hoa_qua.listCakes[5].sampleImage,
                      },
                   ]
                }
@@ -295,7 +280,7 @@ let sendMenuFruitCake = (sender_psid) => {
 let sendMenuChildCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Bánh Trẻ em, Savor xin giới thiệu các bánh tạo hình ngộ nghĩnh, có 3 size phù hợp cho mọi cuộc vui gia đình" }
+         let response_1 = { "text": banh_tre_em.sortDescription }
          let response = {
             "attachment": {
                "type": "template",
@@ -303,52 +288,52 @@ let sendMenuChildCake = (sender_psid) => {
                   "template_type": "generic",
                   "elements": [
                      {
-                        "title": "Bánh kem Mango Chick",
-                        "subtitle": "Giá chỉ từ 150k",
+                        "title": banh_tre_em.listCakes[0].name,
+                        "subtitle": banh_tre_em.listCakes[0].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH MANGO CHICK",
-                              "payload": "SHOW_MANGO_CHICK",
+                              "title": banh_tre_em.listCakes[0].buttonTitle,
+                              "payload": banh_tre_em.listCakes[0].buttonPayload,
                            },
                         ],
-                        "image_url": banh_mango_chick_image,
+                        "image_url": banh_tre_em.listCakes[0].sampleImage,
                      },
                      {
-                        "title": "Bánh kem Red Car",
-                        "subtitle": "2 cỡ bánh, giá chỉ từ 180k",
+                        "title": banh_tre_em.listCakes[1].name,
+                        "subtitle": banh_tre_em.listCakes[1].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH RED CAR",
-                              "payload": "SHOW_RED_CAR",
+                              "title": banh_tre_em.listCakes[1].buttonTitle,
+                              "payload": banh_tre_em.listCakes[1].buttonPayload,
                            },
                         ],
-                        "image_url": banh_red_car_image,
+                        "image_url": banh_tre_em.listCakes[1].sampleImage,
                      },
                      {
-                        "title": "Bánh kem Choco Bear",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 150k",
+                        "title": banh_tre_em.listCakes[2].name,
+                        "subtitle": banh_tre_em.listCakes[2].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH CHOCO BEAR",
-                              "payload": "SHOW_CHOCO_BEAR",
+                              "title": banh_tre_em.listCakes[2].buttonTitle,
+                              "payload": banh_tre_em.listCakes[2].buttonPayload,
                            },
                         ],
-                        "image_url": banh_choco_bear_image,
+                        "image_url": banh_tre_em.listCakes[2].sampleImage,
                      },
                      {
-                        "title": "Bánh kem Pinky princess",
-                        "subtitle": "Giá chỉ 180k",
+                        "title": banh_tre_em.listCakes[3].name,
+                        "subtitle": banh_tre_em.listCakes[3].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH PINKY PRINCESS",
-                              "payload": "SHOW_PINKY_PRINCESS",
+                              "title": banh_tre_em.listCakes[3].buttonTitle,
+                              "payload": banh_tre_em.listCakes[3].buttonPayload,
                            },
                         ],
-                        "image_url": banh_pinky_princess_image,
+                        "image_url": banh_tre_em.listCakes[3].sampleImage,
                      },
                   ]
                }
@@ -370,7 +355,7 @@ let sendMenuChildCake = (sender_psid) => {
 let sendMenuFlowerCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Bánh bông hoa gồm Bánh kem bắt hoa kết hợp màu sắc trang nhã, sang trọng", }
+         let response_1 = { "text": banh_bong_hoa.sortDescription }
          let response = {
             "attachment": {
                "type": "template",
@@ -378,40 +363,40 @@ let sendMenuFlowerCake = (sender_psid) => {
                   "template_type": "generic",
                   "elements": [
                      {
-                        "title": "Bánh bông lan trứng muối Bông Hoa",
-                        "subtitle": "3 cỡ bánh, giá chỉ từ 180k",
+                        "title": banh_bong_hoa.listCakes[0].name,
+                        "subtitle": banh_bong_hoa.listCakes[0].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH BLTM",
-                              "payload": "SHOW_BANH_BLTM",
+                              "title": banh_bong_hoa.listCakes[0].buttonTitle,
+                              "payload": banh_bong_hoa.listCakes[0].buttonPayload,
                            },
                         ],
-                        "image_url": banh_bong_lan_trung_muoi_bong_hoa_image,
+                        "image_url": banh_bong_hoa.listCakes[0].sampleImage,
                      },
                      {
-                        "title": "Bánh kem hoa hồng",
-                        "subtitle": "Giá chỉ từ 220k",
+                        "title": banh_bong_hoa.listCakes[1].name,
+                        "subtitle": banh_banh_bong_hoatre_em.listCakes[1].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH KEM HOA HỒNG",
-                              "payload": "SHOW_BANH_HOA_HONG",
+                              "title": banh_bong_hoa.listCakes[1].buttonTitle,
+                              "payload": banh_bong_hoa.listCakes[1].buttonPayload,
                            },
                         ],
-                        "image_url": banh_hoa_hong_image,
+                        "image_url": banh_bong_hoa.listCakes[1].sampleImage,
                      },
                      {
-                        "title": "Bánh kem hoa tím",
-                        "subtitle": "Giá chỉ từ 220k",
+                        "title": banh_bong_hoa.listCakes[2].name,
+                        "subtitle": banh_bong_hoa.listCakes[2].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH KEM HOA TÍM",
-                              "payload": "SHOW_BANH_HOA_TIM",
+                              "title": banh_bong_hoa.listCakes[2].buttonTitle,
+                              "payload": banh_bong_hoa.listCakes[2].buttonPayload,
                            },
                         ],
-                        "image_url": banh_hoa_tim_image,
+                        "image_url": banh_bong_hoa.listCakes[2].sampleImage,
                      },
                   ]
                }
@@ -434,7 +419,7 @@ let sendMenuFlowerCake = (sender_psid) => {
 let sendMenuEventCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Những chiếc bánh cao cấp, phù hợp cho các bữa tiệc công ty, hội nhóm", }
+         let response_1 = { "text": banh_su_kien.sortDescription }
          let response = {
             "attachment": {
                "type": "template",
@@ -442,28 +427,28 @@ let sendMenuEventCake = (sender_psid) => {
                   "template_type": "generic",
                   "elements": [
                      {
-                        "title": "Bánh hũ vàng",
-                        "subtitle": "Giá chỉ từ 270k",
+                        "title": banh_su_kien.listCakes[0].name,
+                        "subtitle": banh_su_kien.listCakes[0].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH HŨ VÀNG",
-                              "payload": "SHOW_BANH_HU_VANG",
+                              "title": banh_su_kien.listCakes[0].buttonTitle,
+                              "payload": banh_su_kien.listCakes[0].buttonPayload,
                            },
                         ],
-                        "image_url": banh_hu_vang_image,
+                        "image_url": banh_su_kien.listCakes[0].sampleImage,
                      },
                      {
-                        "title": "Bánh choco forest",
-                        "subtitle": "Giá chỉ từ 390k",
+                        "title": banh_su_kien.listCakes[1].name,
+                        "subtitle": banh_su_kien.listCakes[1].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "XEM BÁNH CHOCO FOREST",
-                              "payload": "SHOW_CHOCO_FOREST",
+                              "title": banh_su_kien.listCakes[1].buttonTitle,
+                              "payload": banh_su_kien.listCakes[1].buttonPayload,
                            },
                         ],
-                        "image_url": banh_choco_forest_image,
+                        "image_url": banh_su_kien.listCakes[1].sampleImage,
                      },
                   ]
                }
@@ -485,7 +470,7 @@ let sendMenuEventCake = (sender_psid) => {
 let sendMenuOrderCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": "Dạ Savor gửi các mẫu bánh vẽ minh họa, mình tham khảo nha" }
+         let response_1 = { "text": banh_ve_order.sortDescription }
          let response_2 = {
             "attachment": {
                "type": "template",
@@ -493,100 +478,100 @@ let sendMenuOrderCake = (sender_psid) => {
                   "template_type": "generic",
                   "elements": [
                      {
-                        "title": "Bánh Thông điệp",
-                        "subtitle": "Giá chỉ từ 150k",
+                        "title": banh_ve_order.listCakes[0].name,
+                        "subtitle": banh_ve_order.listCakes[0].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ",
-                              "payload": "ORDER_BANH_VE",
+                              "title": banh_ve_order.listCakes[0].buttonTitle,
+                              "payload": banh_ve_order.listCakes[0].buttonPayload,
                            },
                         ],
-                        "image_url": banh_thong_diep_image,
+                        "image_url": banh_ve_order.listCakes[0].sampleImage,
                      },
                      {
-                        "title": "Bánh Cốc bia",
-                        "subtitle": "Giá chỉ từ 180k",
+                        "title": banh_ve_order.listCakes[1].name,
+                        "subtitle": banh_ve_order.listCakes[1].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH ORDER",
-                              "payload": "ORDER_BANH_VE",
+                              "title": banh_ve_order.listCakes[1].buttonTitle,
+                              "payload": banh_ve_order.listCakes[1].buttonPayload,
                            },
                         ],
-                        "image_url": banh_coc_bia_image,
+                        "image_url": banh_ve_order.listCakes[1].sampleImage,
                      },
                      {
-                        "title": "Bánh Con hổ",
-                        "subtitle": "Giá chỉ từ 180k",
+                        "title": banh_ve_order.listCakes[2].name,
+                        "subtitle": banh_ve_order.listCakes[2].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH ORDER",
-                              "payload": "ORDER_BANH_VE",
+                              "title": banh_ve_order.listCakes[2].buttonTitle,
+                              "payload": banh_ve_order.listCakes[2].buttonPayload,
                            },
                         ],
-                        "image_url": banh_con_ho_image,
+                        "image_url": banh_ve_order.listCakes[2].sampleImage,
                      },
                      {
-                        "title": "Bánh Tốt nghiệp",
-                        "subtitle": "Giá chỉ từ 180k",
+                        "title": banh_ve_order.listCakes[3].name,
+                        "subtitle": banh_ve_order.listCakes[3].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH ORDER",
-                              "payload": "ORDER_BANH_VE",
+                              "title": banh_ve_order.listCakes[3].buttonTitle,
+                              "payload": banh_ve_order.listCakes[3].buttonPayload,
                            },
                         ],
-                        "image_url": banh_tot_nghiep_image,
+                        "image_url": banh_ve_order.listCakes[3].sampleImage,
                      },
                      {
-                        "title": "Bánh Vẽ mẹ",
-                        "subtitle": "Giá chỉ từ 180k",
+                        "title": banh_ve_order.listCakes[4].name,
+                        "subtitle": banh_ve_order.listCakes[4].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH ORDER",
-                              "payload": "ORDER_BANH_VE",
+                              "title": banh_ve_order.listCakes[4].buttonTitle,
+                              "payload": banh_ve_order.listCakes[4].buttonPayload,
                            },
                         ],
-                        "image_url": banh_ve_me_image,
+                        "image_url": banh_ve_order.listCakes[4].sampleImage,
                      },
                      {
-                        "title": "Viết thông điệp trên đế to",
-                        "subtitle": "Đế to, Hộp to: Thêm 20k",
+                        "title": banh_ve_order.listCakes[5].name,
+                        "subtitle": banh_ve_order.listCakes[5].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH VẼ",
-                              "payload": "ORDER_BANH_VE",
+                              "title": banh_ve_order.listCakes[5].buttonTitle,
+                              "payload": banh_ve_order.listCakes[5].buttonPayload,
                            },
                         ],
-                        "image_url": banh_ve_de_to,
+                        "image_url": banh_ve_order.listCakes[5].sampleImage,
                      },
                      {
-                        "title": "Bánh hai người",
-                        "subtitle": "Giá chỉ từ 180k",
+                        "title": banh_ve_order.listCakes[6].name,
+                        "subtitle": banh_ve_order.listCakes[6].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT BÁNH ORDER",
-                              "payload": "ORDER_BANH_VE",
+                              "title": banh_ve_order.listCakes[6].buttonTitle,
+                              "payload": banh_ve_order.listCakes[6].buttonPayload,
                            },
                         ],
-                        "image_url": banh_2_nguoi_image,
+                        "image_url": banh_ve_order.listCakes[6].sampleImage,
                      },
                      {
-                        "title": "Combo 2 bánh",
-                        "subtitle": "Giảm 25% so với giá gốc",
+                        "title": banh_ve_order.listCakes[7].name,
+                        "subtitle": banh_ve_order.listCakes[7].subTitle,
                         "buttons": [
                            {
                               "type": "postback",
-                              "title": "ĐẶT COMBO 2 BÁNH",
-                              "payload": "ORDER_BANH_VE",
+                              "title": banh_ve_order.listCakes[7].buttonTitle,
+                              "payload": banh_ve_order.listCakes[7].buttonPayload,
                            },
                         ],
-                        "image_url": combo_banh_image,
+                        "image_url": banh_ve_order.listCakes[7].sampleImage,
                      },
                   ]
                }
