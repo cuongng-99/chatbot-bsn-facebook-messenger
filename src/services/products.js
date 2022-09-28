@@ -13,6 +13,8 @@ const banh_han_quoc = {
          feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0162-1663572627813.png",
          buttonTitle: "XEM BÁNH GALAXY BLUE",
          buttonPayload: "SHOW_GALAXY_BLUE",
+         buttonTitleOrderCake: "ĐẶT BÁNH GALAXY BLUE",
+         buttonPayloadOrderCake: "ORDER_GALAXY_BLUE",
          sizeAndPrice: [
             { size: "13x7cm", salePrice: "120k", originalPrice: "150k", forNumberUsers: "Phù hợp 2-4 người" },
             { size: "17x8cm", salePrice: "190k", originalPrice: "240k", forNumberUsers: "Phù hợp 5-8 người" }

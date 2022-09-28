@@ -174,9 +174,12 @@ const choco_forest_info = {
 // BÁNH HÀN QUỐC
 let showDetailGalaxyBlue = (sender_psid) => {
    return showDetailCake(
-      sender_psid, galaxy_blue_info.description,
+      sender_psid,
+      galaxy_blue_info.description,
       galaxy_blue_info.feedbackImage || galaxy_blue_info.sampleImage,
-      getSizeAndPrice(galaxy_blue_info)
+      getSizeAndPrice(galaxy_blue_info),
+      galaxy_blue_info.buttonTitleOrderCake,
+      galaxy_blue_info.buttonPayloadOrderCake
    )
 }
 let showDetail3MauPastel = (sender_psid) => {
@@ -273,7 +276,7 @@ let getSizeAndPrice = (cake) => {
    return `Bánh có ${numSize} size:\n - ${text.join("\n - ")}`
 }
 
-let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) => {
+let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price, buttonTitle, buttonPayload) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response_1 = { "text": text_description }
@@ -304,8 +307,8 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price) =
                      // },
                      {
                         "type": "postback",
-                        "title": "Đặt bánh này",
-                        "payload": "ORDER_NOW",
+                        "title": buttonTitle,
+                        "payload": buttonPayload,
                      },
                      {
                         "type": "postback",
