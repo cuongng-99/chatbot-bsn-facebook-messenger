@@ -383,8 +383,7 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
       try {
          let response = {
             "text": `Dạ để hoàn thiện đơn đặt hàng, mình gửi thêm giúp Savor các thông tin sau nhé ạ:\n
-- Tên bánh: *${nameCake}*
-- Cỡ bánh: *${sizeCake}*
+- Tên bánh: ${nameCake}, size: ${sizeCake}
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
 - Thời gian nhận hàng:
@@ -417,10 +416,10 @@ let askingSizeCakes = (sender_psid, cakeName, sizeButton) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": `Dạ ${cakeName} mình muốn đặt cỡ bánh nào ạ:`,
+            "text": `Dạ ${cakeName}, mình muốn đặt cỡ bánh nào ạ:`,
             "quick_replies": sizeButton
          }
-
+         await markMessageRead(sender_psid);
          await sendTypingOn(sender_psid);
          await sendQuickReply(sender_psid, response);
          await sendTypingOff(sender_psid);
@@ -456,11 +455,13 @@ Mình mua thêm món nào thì nhắn Savor nha ^^`}
             }
          };
          await markMessageRead(sender_psid);
-         await sendQuickReply(sender_psid, response_1);
          await sendTypingOn(sender_psid);
-         await markMessageRead(sender_psid);
          await sendQuickReply(sender_psid, response_2);
+
+         await markMessageRead(sender_psid);
+         await sendQuickReply(sender_psid, response_1);
          await sendTypingOff(sender_psid)
+
       } catch (e) {
          reject(e)
       }
