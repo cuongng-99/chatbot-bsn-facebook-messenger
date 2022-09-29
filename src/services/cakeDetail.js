@@ -384,7 +384,7 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price, b
 }
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-console.log(galaxy_blue_info)
+
 module.exports = {
    showDetailGalaxyBlue,
    showDetail3MauPastel,
