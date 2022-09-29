@@ -258,8 +258,14 @@ const banh_hoa_qua = {
          buttonTitleOrderCake: "Đặt mousse Chanh Leo",
          buttonPayloadOrderCake: "ORDER_MOUSSE_CHANH_LEO",
          sizeAndPrice: [
-            { size: "14x6cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
-            { size: "18x6cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" }
+            {
+               title: "14x6cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "18x6cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            }
          ]
       },
       {
@@ -272,9 +278,18 @@ const banh_hoa_qua = {
          buttonTitleOrderCake: "Đặt bánh SC Hoa Quả",
          buttonPayloadOrderCake: "ORDER_BANH_SC_HOA_QUA",
          sizeAndPrice: [
-            { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
-            { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
-            { size: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người" }
+            {
+               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            },
+            {
+               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               payload: "LARGE"
+            }
          ]
       },
       {
@@ -287,9 +302,18 @@ const banh_hoa_qua = {
          buttonTitleOrderCake: "Đặt bánh SC Dâu",
          buttonPayloadOrderCake: "ORDER_SC_DAU_DALAT",
          sizeAndPrice: [
-            { size: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
-            { size: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" },
-            { size: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người" }
+            {
+               title: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            },
+            {
+               title: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người",
+               payload: "LARGE"
+            }
          ]
       },
       {
@@ -302,9 +326,18 @@ const banh_hoa_qua = {
          buttonTitleOrderCake: "Đặt bánh Socola Dâu",
          buttonPayloadOrderCake: "ORDER_SOCOLA_DAU_DALAT",
          sizeAndPrice: [
-            { size: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
-            { size: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" },
-            { size: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người" }
+            {
+               title: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            },
+            {
+               title: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người",
+               payload: "LARGE"
+            }
          ]
       },
       {
@@ -317,9 +350,18 @@ const banh_hoa_qua = {
          buttonTitleOrderCake: "Đặt bánh Hồng Kem Chảy",
          buttonPayloadOrderCake: "ORDER_HONG_KEM_CHAY_DAU",
          sizeAndPrice: [
-            { size: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
-            { size: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" },
-            { size: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người" }
+            {
+               title: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            },
+            {
+               title: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người",
+               payload: "LARGE"
+            }
          ]
       },
       {
@@ -332,9 +374,18 @@ const banh_hoa_qua = {
          buttonTitleOrderCake: "Đặt bánh Màu Loang Dâu",
          buttonPayloadOrderCake: "ORDER_BANH_LOANG_DAU",
          sizeAndPrice: [
-            { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
-            { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
-            { size: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người" }
+            {
+               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            },
+            {
+               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               payload: "LARGE"
+            }
          ]
       },
    ]
@@ -358,7 +409,10 @@ const banh_tre_em = {
          buttonTitleOrderCake: "Đặt bánh Mango Chick",
          buttonPayloadOrderCake: "ORDER_MANGO_CHICK",
          sizeAndPrice: [
-            { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
+            {
+               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
          ]
       },
       {
@@ -371,8 +425,14 @@ const banh_tre_em = {
          buttonTitleOrderCake: "Đặt bánh Red Car",
          buttonPayloadOrderCake: "ORDER_RED_CAR",
          sizeAndPrice: [
-            { size: "16x10x18cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 3-5 người" },
-            { size: "21x13x10cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 6-10 người" },
+            {
+               title: "16x10x18cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 3-5 người",
+               payload: "SMALL"
+            },
+            {
+               title: "21x13x10cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 6-10 người",
+               payload: "MEDIUM"
+            },
          ]
       },
       {
@@ -385,9 +445,18 @@ const banh_tre_em = {
          buttonTitleOrderCake: "Đặt bánh Choco Bear",
          buttonPayloadOrderCake: "ORDER_CHOCO_BEAR",
          sizeAndPrice: [
-            { size: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người" },
-            { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
-            { size: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người" }
+            {
+               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            },
+            {
+               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               payload: "LARGE"
+            }
          ]
       },
       {
@@ -400,7 +469,10 @@ const banh_tre_em = {
          buttonTitleOrderCake: "Đặt bánh Pinky Princess",
          buttonPayloadOrderCake: "ORDER_PINKY_PRINCESS",
          sizeAndPrice: [
-            { size: "13x18cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 3-5 người" },
+            {
+               title: "13x18cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 3-5 người",
+               payload: "SMALL"
+            },
          ]
       },
    ]
@@ -424,9 +496,18 @@ const banh_bong_hoa = {
          buttonTitleOrderCake: "Đặt bánh BLTM",
          buttonPayloadOrderCake: "ORDER_BANH_BLTM",
          sizeAndPrice: [
-            { size: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
-            { size: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" },
-            { size: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người" }
+            {
+               title: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            },
+            {
+               title: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người",
+               payload: "LARGE"
+            }
          ]
       },
       {
@@ -439,7 +520,10 @@ const banh_bong_hoa = {
          buttonTitleOrderCake: "Đặt bánh Kem Hoa Hồng",
          buttonPayloadOrderCake: "ORDER_BANH_HOA_HONG",
          sizeAndPrice: [
-            { size: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
+            {
+               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "SMALL"
+            },
          ]
       },
       {
@@ -452,7 +536,10 @@ const banh_bong_hoa = {
          buttonTitleOrderCake: "Đặt bánh Kem Hoa Tím",
          buttonPayloadOrderCake: "ORDER_BANH_HOA_TIM",
          sizeAndPrice: [
-            { size: "13x12cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người" },
+            {
+               title: "13x12cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               payload: "SMALL"
+            },
          ]
       },
    ]
@@ -476,7 +563,10 @@ const banh_su_kien = {
          buttonTitleOrderCake: "Đặt bánh Hũ Vàng",
          buttonPayloadOrderCake: "ORDER_BANH_HU_VANG",
          sizeAndPrice: [
-            { size: "16x10cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người ăn" },
+            {
+               title: "16x10cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người ăn",
+               payload: "SMALL"
+            },
          ]
       },
       {
@@ -489,7 +579,10 @@ const banh_su_kien = {
          buttonTitleOrderCake: "Đặt bánh Choco Forest",
          buttonPayloadOrderCake: "ORDER_CHOCO_FOREST",
          sizeAndPrice: [
-            { size: "18x18x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 6-10 người ăn" },
+            {
+               title: "18x18x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 6-10 người ăn",
+               payload: "SMALL"
+            },
          ]
       }
    ]

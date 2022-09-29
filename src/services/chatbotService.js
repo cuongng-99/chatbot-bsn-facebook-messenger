@@ -378,13 +378,13 @@ let sendMenuCakes = (sender_psid) => {
 };
 
 
-let requestFillInfo = (nameCake, sender_psid) => {
+let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": `Dạ mình gửi giúp Savor các thông tin sau để hoàn thiện đơn đặt hàng nhé ạ:\n
+            "text": `Dạ để hoàn thiện đơn đặt hàng, mình gửi thêm giúp Savor các thông tin sau nhé ạ:\n
 - Tên bánh: *${nameCake}*
-- Cỡ bánh:
+- Cỡ bánh: *${sizeCake}*
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
 - Thời gian nhận hàng:
@@ -417,7 +417,7 @@ let askingSizeCakes = (sender_psid, cakeName, sizeButton) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": `Mình chọn giúp Savor cỡ ${cakeName} muốn đặt nha:`,
+            "text": `Dạ cỡ ${cakeName} mình muốn đặt là bao nhiêu ạ:`,
             "quick_replies": sizeButton
          }
 

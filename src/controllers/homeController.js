@@ -95,7 +95,7 @@ let handleMessage = async (sender_psid, message) => {
          await chatbotService.sendMenuAccessories(sender_psid)
       }
       else if (["SMALL", "MEDIUM", "LARGE"].includes(message.quick_reply.payload)) {
-         await chatbotService.requestFillInfo(cakeChoosen.name, sender_psid)
+         await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.size, sender_psid)
       }
       return;
    }
