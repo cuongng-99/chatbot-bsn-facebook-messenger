@@ -1,4 +1,5 @@
 require('dotenv').config();
+const _ = require("lodash")
 import request from "request";
 import chatbotService from "../services/chatbotService"
 import categoryDetail from "../services/categoryDetail"
@@ -7,7 +8,8 @@ const { mapPayloadOrder } = require("../services/products")
 
 let cakeChoosen = {
    name: "",
-   size: ""
+   selectedSize: "",
+   sizeButton: []
 }
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
@@ -95,7 +97,8 @@ let handleMessage = async (sender_psid, message) => {
          await chatbotService.sendMenuAccessories(sender_psid)
       }
       else if (["SMALL", "MEDIUM", "LARGE"].includes(message.quick_reply.payload)) {
-         await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.size, sender_psid)
+         cakeChoosen.selectedSize = _.filter(cakeChoosen.sizeButton, { payload: message.quick_reply.payload })[0].title
+         await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.selectedSize, sender_psid)
       }
       return;
    }
@@ -300,9 +303,9 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    else if (payload.includes("ORDER")) {
-      cakeChoosen.size = mapPayloadOrder[payload].sizeButton
+      cakeChoosen.sizeButton = mapPayloadOrder[payload].sizeButton
       cakeChoosen.name = mapPayloadOrder[payload].name
-      await chatbotService.askingSizeCakes(sender_psid, cakeChoosen.name, cakeChoosen.size)
+      await chatbotService.askingSizeCakes(sender_psid, cakeChoosen.name, cakeChoosen.sizeButton)
    }
 
    else if (payload === "BACK_TO_MENU_CAKES") {
