@@ -19,7 +19,7 @@ window.extAsyncInit = function () {
       function error(err) {
          // error
          console.log("Lỗi đặt hàng:", err);
-
+         console.log(senderId);
          $("#psid").val(senderId);
          handleClickButtonOrder();
       }
