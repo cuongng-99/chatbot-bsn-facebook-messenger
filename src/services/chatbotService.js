@@ -417,7 +417,7 @@ let askingSizeCakes = (sender_psid, cakeName, sizeButton) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": `Dạ cỡ ${cakeName} mình muốn đặt là bao nhiêu ạ:`,
+            "text": `Dạ ${cakeName} mình muốn đặt cỡ bánh nào ạ:`,
             "quick_replies": sizeButton
          }
 
