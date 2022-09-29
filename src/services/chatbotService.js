@@ -501,7 +501,7 @@ Mình mua thêm món nào thì nhắn Savor nha ^^`}
    })
 }
 
-let requestOpenForm = (sender_psid) => {
+let requestOpenForm = (senderId) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
@@ -513,7 +513,7 @@ let requestOpenForm = (sender_psid) => {
                   "buttons": [
                      {
                         "type": "web_url",
-                        "url": `${process.env.URL_WEB_VIEW_ORDER}/${sender_psid}`,
+                        "url": `${process.env.URL_WEB_VIEW_ORDER}/${senderId}`,
                         "title": "Oke Shop",
                         "webview_height_ratio": "tail",
                         "messenger_extensions": true //false: open the webview in new tab
@@ -527,8 +527,8 @@ let requestOpenForm = (sender_psid) => {
                },
             }
          };
-         await markMessageRead(sender_psid);
-         await sendMessage(sender_psid, response);
+         // await markMessageRead(sender_psid);
+         // await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {
          reject(e);
