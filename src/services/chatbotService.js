@@ -386,7 +386,7 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
 - Tên bánh: ${nameCake}, size: ${sizeCake}\n
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
-- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt sớm tối thiểu 4 tiếng ạ)
+- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt trước tối thiểu 4 tiếng nhé ạ)
 - Chữ viết trên đế bánh:
 - Hình thức thanh toán: Nếu được mình chọn chuyển khoản trước nhé. Hoặc mình chọn nhận hàng rồi thanh toán ạ`,
             "quick_replies": [
@@ -420,7 +420,7 @@ let orderNow = (sender_psid) => {
 - Cỡ bánh: 
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
-- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt sớm tối thiểu 4 tiếng ạ)
+- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt trước tối thiểu 4 tiếng nhé ạ)
 - Chữ viết trên đế bánh:
 - Hình thức thanh toán: Nếu được mình chọn chuyển khoản trước nhé. Hoặc mình chọn nhận hàng rồi thanh toán ạ`,
             "quick_replies": [

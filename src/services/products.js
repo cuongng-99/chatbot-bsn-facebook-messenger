@@ -89,11 +89,15 @@ const banh_vi_dac_biet = {
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -110,15 +114,21 @@ const banh_vi_dac_biet = {
          buttonPayloadOrderCake: "ORDER_TRIPLE_CHOCO",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -134,8 +144,18 @@ const banh_vi_dac_biet = {
          buttonTitleOrderCake: "Đặt mousse Socola",
          buttonPayloadOrderCake: "ORDER_MOUSSE_SOCOLA",
          sizeAndPrice: [
-            { title: "14x6cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người" },
-            { title: "18x6cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người" }
+            {
+               title: "14x6cm",
+               salePrice: "180k", originalPrice: "230k",
+               forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "18x6cm",
+               salePrice: "270k", originalPrice: "350k",
+               forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            }
          ]
       },
       {
@@ -150,15 +170,21 @@ const banh_vi_dac_biet = {
          buttonPayloadOrderCake: "ORDER_XOAI_DUA",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -175,15 +201,21 @@ const banh_vi_dac_biet = {
          buttonPayloadOrderCake: "ORDER_GREEN_TEA",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -200,15 +232,21 @@ const banh_vi_dac_biet = {
          buttonPayloadOrderCake: "ORDER_CA_PHE",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -218,22 +256,27 @@ const banh_vi_dac_biet = {
          subTitle: "3 cỡ bánh, giá chỉ từ 150k",
          description: "BÁNH KEM CÀ PHÊ CỐT DỪA: Cốt bánh cafe kết hợp cùng kem dừa vị cafe capuchino, phủ bên trên lớp vụn dừa sấy.",
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0157-1663560810612.jpeg",
-         feedbackImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0127-1663572628648.jpeg",
          buttonTitleShowCake: "Xem bánh Cà Phê Cốt Dừa",
          buttonPayloadShowCake: "SHOW_CA_PHE_COT_DUA",
          buttonTitleOrderCake: "Đặt bánh Cà Phê Cốt Dừa",
          buttonPayloadOrderCake: "ORDER_CA_PHE_COT_DUA",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -259,11 +302,15 @@ const banh_hoa_qua = {
          buttonPayloadOrderCake: "ORDER_MOUSSE_CHANH_LEO",
          sizeAndPrice: [
             {
-               title: "14x6cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "14x6cm",
+               salePrice: "180k", originalPrice: "230k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "18x6cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "18x6cm",
+               salePrice: "270k", originalPrice: "350k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             }
          ]
@@ -279,15 +326,21 @@ const banh_hoa_qua = {
          buttonPayloadOrderCake: "ORDER_BANH_SC_HOA_QUA",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -303,15 +356,21 @@ const banh_hoa_qua = {
          buttonPayloadOrderCake: "ORDER_SC_DAU_DALAT",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "180k", originalPrice: "230k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "270k", originalPrice: "350k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "390k", originalPrice: "490k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -327,15 +386,21 @@ const banh_hoa_qua = {
          buttonPayloadOrderCake: "ORDER_SOCOLA_DAU_DALAT",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "180k", originalPrice: "230k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "270k", originalPrice: "350k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "390k", originalPrice: "490k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -351,15 +416,21 @@ const banh_hoa_qua = {
          buttonPayloadOrderCake: "ORDER_HONG_KEM_CHAY_DAU",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "180k", originalPrice: "230k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "270k", originalPrice: "350k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "390k", originalPrice: "490k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -375,15 +446,21 @@ const banh_hoa_qua = {
          buttonPayloadOrderCake: "ORDER_BANH_LOANG_DAU",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -410,7 +487,9 @@ const banh_tre_em = {
          buttonPayloadOrderCake: "ORDER_MANGO_CHICK",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
          ]
@@ -426,11 +505,15 @@ const banh_tre_em = {
          buttonPayloadOrderCake: "ORDER_RED_CAR",
          sizeAndPrice: [
             {
-               title: "16x10x18cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 3-5 người",
+               title: "16x10x18cm",
+               salePrice: "180k", originalPrice: "230k",
+               forNumberUsers: "Phù hợp 3-5 người",
                payload: "SMALL"
             },
             {
-               title: "21x13x10cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 6-10 người",
+               title: "21x13x10cm",
+               salePrice: "270k", originalPrice: "350k",
+               forNumberUsers: "Phù hợp 6-10 người",
                payload: "MEDIUM"
             },
          ]
@@ -446,15 +529,21 @@ const banh_tre_em = {
          buttonPayloadOrderCake: "ORDER_CHOCO_BEAR",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "150k", originalPrice: "190k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "320k", originalPrice: "400k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -470,7 +559,9 @@ const banh_tre_em = {
          buttonPayloadOrderCake: "ORDER_PINKY_PRINCESS",
          sizeAndPrice: [
             {
-               title: "13x18cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 3-5 người",
+               title: "13x18cm",
+               salePrice: "180k", originalPrice: "230k",
+               forNumberUsers: "Phù hợp 3-5 người",
                payload: "SMALL"
             },
          ]
@@ -497,15 +588,21 @@ const banh_bong_hoa = {
          buttonPayloadOrderCake: "ORDER_BANH_BLTM",
          sizeAndPrice: [
             {
-               title: "13x7cm", salePrice: "180k", originalPrice: "230k", forNumberUsers: "Phù hợp 2-4 người",
+               title: "13x7cm",
+               salePrice: "180k", originalPrice: "230k",
+               forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
             {
-               title: "17x8cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "270k", originalPrice: "350k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "MEDIUM"
             },
             {
-               title: "21x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 9-12 người",
+               title: "21x8cm",
+               salePrice: "390k", originalPrice: "490k",
+               forNumberUsers: "Phù hợp 9-12 người",
                payload: "LARGE"
             }
          ]
@@ -521,7 +618,9 @@ const banh_bong_hoa = {
          buttonPayloadOrderCake: "ORDER_BANH_HOA_HONG",
          sizeAndPrice: [
             {
-               title: "17x8cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "SMALL"
             },
          ]
@@ -537,7 +636,9 @@ const banh_bong_hoa = {
          buttonPayloadOrderCake: "ORDER_BANH_HOA_TIM",
          sizeAndPrice: [
             {
-               title: "13x12cm", salePrice: "220k", originalPrice: "275k", forNumberUsers: "Phù hợp 5-8 người",
+               title: "13x12cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
                payload: "SMALL"
             },
          ]
@@ -564,7 +665,9 @@ const banh_su_kien = {
          buttonPayloadOrderCake: "ORDER_BANH_HU_VANG",
          sizeAndPrice: [
             {
-               title: "16x10cm", salePrice: "270k", originalPrice: "350k", forNumberUsers: "Phù hợp 5-8 người ăn",
+               title: "16x10cm",
+               salePrice: "270k", originalPrice: "350k",
+               forNumberUsers: "Phù hợp 5-8 người ăn",
                payload: "SMALL"
             },
          ]
@@ -580,7 +683,9 @@ const banh_su_kien = {
          buttonPayloadOrderCake: "ORDER_CHOCO_FOREST",
          sizeAndPrice: [
             {
-               title: "18x18x8cm", salePrice: "390k", originalPrice: "490k", forNumberUsers: "Phù hợp 6-10 người ăn",
+               title: "18x18x8cm",
+               salePrice: "390k", originalPrice: "490k",
+               forNumberUsers: "Phù hợp 6-10 người ăn",
                payload: "SMALL"
             },
          ]
