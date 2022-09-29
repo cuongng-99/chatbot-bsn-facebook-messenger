@@ -180,7 +180,7 @@ let showDetailSocolaDauDaLat = (sender_psid) => {
    return showDetailCake(
       sender_psid,
       socola_dau_dalat_info.description,
-      socola_dau_dalat_info.feedbackImage || ca_phe_cot_dua_info.sampleImage,
+      socola_dau_dalat_info.feedbackImage || socola_dau_dalat_info.sampleImage,
       getSizeAndPrice(socola_dau_dalat_info),
       socola_dau_dalat_info.buttonTitleOrderCake,
       socola_dau_dalat_info.buttonPayloadOrderCake
