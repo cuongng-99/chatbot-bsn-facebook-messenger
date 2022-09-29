@@ -386,7 +386,7 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
 - Tên bánh: ${nameCake}, size: ${sizeCake}
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
-- Thời gian nhận hàng:
+- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt sớm tối thiểu 4 tiếng nha)
 - Chữ viết trên đế bánh:
 - Hình thức thanh toán: Nếu được mình chọn chuyển khoản trước nhé. Hoặc mình chọn nhận hàng rồi thanh toán ạ`,
             "quick_replies": [
@@ -411,6 +411,39 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
    });
 };
 
+let orderNow = (nameCake, sizeCake, sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "text": `Dạ để hoàn thiện đơn đặt hàng, mình gửi thêm giúp Savor các thông tin sau nhé ạ:\n
+- Tên bánh: 
+- Cỡ bánh: 
+- Tên và số điện thoại người nhận:
+- Địa chỉ nhận hàng:
+- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt sớm tối thiểu 4 tiếng nha)
+- Chữ viết trên đế bánh:
+- Hình thức thanh toán: Nếu được mình chọn chuyển khoản trước nhé. Hoặc mình chọn nhận hàng rồi thanh toán ạ`,
+            "quick_replies": [
+               {
+                  "content_type": "text",
+                  "title": "Phụ kiện sinh nhật",
+                  "payload": "MENU_ACCESSORIES",
+               },
+               {
+                  "content_type": "text",
+                  "title": "Xem phí ship",
+                  "payload": "SHIPING_FEE",
+               }
+            ]
+         }
+         await markMessageRead(sender_psid);
+         await sendQuickReply(sender_psid, response);
+      } catch (e) {
+         reject(e);
+      }
+
+   });
+};
 
 let askingSizeCakes = (sender_psid, cakeName, sizeButton) => {
    return new Promise(async (resolve, reject) => {
@@ -675,6 +708,7 @@ module.exports = {
    setUpMessengerPlatform,
    backToMenuCakes,
    requestFillInfo,
+   orderNow,
    askingSizeCakes,
    requestOpenForm,
    sendCareHelp,

@@ -167,6 +167,10 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.sendCareHelp(sender_psid)
    }
 
+   else if (payload === "ORDER_NOW") {
+      await chatbotService.orderNow(sender_psid)
+   }
+
    else if (payload === "STORE_LOCATION_SHIPPING") {
       await chatbotService.sendStoreLocationAndShipping(sender_psid)
    }
