@@ -441,10 +441,10 @@ let handlePostOrderForm = async (req, res) => {
           `
       };
 
-      await chatbotService.sendMessage("7963952796979199", response1);
+      await chatbotService.sendMessage(req.body.psid, response1);
 
       return res.status(200).json({
-         message: "ok"
+         message: "Lấy thông tin thành công",
       });
    } catch (e) {
       console.log("Lỗi post order form:", e)
