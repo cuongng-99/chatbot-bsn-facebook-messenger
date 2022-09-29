@@ -292,8 +292,10 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    else if (payload.includes("ORDER")) {
-      let nameCake = mapPayloadOrder[payload]
-      await chatbotService.requestFillInfo(nameCake, sender_psid)
+      let sizeButton = mapPayloadOrder[payload].sizeButton
+      await chatbotService.askingSizeCakes(sender_psid, sizeButton)
+      // let nameCake = mapPayloadOrder[payload]
+      // await chatbotService.requestFillInfo(nameCake, sender_psid)
    }
 
    else if (payload === "BACK_TO_MENU_CAKES") {

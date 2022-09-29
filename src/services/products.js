@@ -1,3 +1,5 @@
+const { camelCase, map } = require("lodash")
+
 // BÁNH HÀN QUỐC
 const banh_han_quoc = {
    thumbnail: 'https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0156-1663587838246.jpeg',
@@ -16,8 +18,20 @@ const banh_han_quoc = {
          buttonTitleOrderCake: "Đặt bánh Galaxy Blue",
          buttonPayloadOrderCake: "ORDER_GALAXY_BLUE",
          sizeAndPrice: [
-            { size: "13x7cm", salePrice: "120k", originalPrice: "150k", forNumberUsers: "Phù hợp 2-4 người" },
-            { size: "17x8cm", salePrice: "190k", originalPrice: "240k", forNumberUsers: "Phù hợp 5-8 người" }
+            {
+               title: "13x7cm",
+               salePrice: "120k",
+               originalPrice: "150k",
+               forNumberUsers: "Phù hợp 2-4 người",
+               payload: "SMALL"
+            },
+            {
+               title: "17x8cm",
+               salePrice: "190k",
+               originalPrice: "240k",
+               forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            }
          ]
       },
       {
@@ -522,8 +536,22 @@ const banh_in_anh = {
 
 const allCategories = [banh_han_quoc, banh_vi_dac_biet, banh_hoa_qua, banh_tre_em, banh_bong_hoa, banh_su_kien]
 let mapPayloadOrder = {}
-allCategories.forEach(category => category.listCakes.forEach(cake => mapPayloadOrder[cake.buttonPayloadOrderCake] = cake.name))
-
+allCategories.forEach(category => {
+   category.listCakes.forEach(cake => {
+      let size = cake.sizeAndPrice
+      size.forEach(c => {
+         c.content_type = "text";
+         delete c.salePrice;
+         delete c.originalPrice;
+         delete c.forNumberUsers
+      })
+      mapPayloadOrder[cake.buttonPayloadOrderCake] = {
+         name: cake.name,
+         sizeButton: size
+      }
+   })
+})
+console.log(mapPayloadOrder["ORDER_GALAXY_BLUE"].sizeButton)
 
 module.exports = {
    banh_han_quoc,

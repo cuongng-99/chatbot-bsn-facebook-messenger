@@ -310,7 +310,7 @@ let showDetailChocoForest = (sender_psid) => {
 let getSizeAndPrice = (cake) => {
    let numSize = cake.sizeAndPrice.length
    let text = []
-   cake.sizeAndPrice.forEach(c => text.push(`Size: ${c.size}: Giá sale ${c.salePrice} (giá gốc ${c.originalPrice}) (${c.forNumberUsers})`))
+   cake.sizeAndPrice.forEach(c => text.push(`Size: ${c.title}: Giá sale ${c.salePrice} (giá gốc ${c.originalPrice}) (${c.forNumberUsers})`))
    return `Bánh có ${numSize} size:\n - ${text.join("\n - ")}`
 }
 

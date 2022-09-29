@@ -413,6 +413,24 @@ let requestFillInfo = (nameCake, sender_psid) => {
 };
 
 
+let askingSizeCakes = (sender_psid, sizeButton) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response = {
+            "text": "Bạn muốn đặt cỡ bánh nào?",
+            "quick_replies": sizeButton
+         }
+
+         await sendTypingOn(sender_psid);
+         await sendQuickReply(sender_psid, response);
+
+         resolve("done")
+      } catch (e) {
+         reject(e)
+      }
+   })
+};
+
 let sendMenuAccessories = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
@@ -655,6 +673,7 @@ module.exports = {
    setUpMessengerPlatform,
    backToMenuCakes,
    requestFillInfo,
+   askingSizeCakes,
    requestOpenForm,
    sendCareHelp,
    sendStoreLocationAndShipping,
