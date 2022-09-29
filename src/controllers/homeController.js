@@ -345,7 +345,7 @@ let postPersistentMenu = (sender_psid) => {
                      },
                      {
                         "type": "postback",
-                        "title": "Khởi động lại Bot",
+                        "title": "Chat với Bot",
                         "payload": "RESTART_BOT"
                      }
                   ]

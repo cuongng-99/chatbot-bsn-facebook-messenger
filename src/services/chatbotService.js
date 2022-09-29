@@ -423,6 +423,7 @@ let askingSizeCakes = (sender_psid, cakeName, sizeButton) => {
 
          await sendTypingOn(sender_psid);
          await sendQuickReply(sender_psid, response);
+         await sendTypingOff(sender_psid);
 
          resolve("done")
       } catch (e) {
