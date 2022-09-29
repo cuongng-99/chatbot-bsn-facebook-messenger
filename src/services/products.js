@@ -541,9 +541,9 @@ allCategories.forEach(category => {
       let size = cake.sizeAndPrice
       size.forEach(c => {
          c.content_type = "text";
-         delete c.salePrice;
-         delete c.originalPrice;
-         delete c.forNumberUsers
+         // delete c.salePrice;
+         // delete c.originalPrice;
+         // delete c.forNumberUsers
       })
       mapPayloadOrder[cake.buttonPayloadOrderCake] = {
          name: cake.name,
