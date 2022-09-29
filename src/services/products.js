@@ -538,12 +538,13 @@ const allCategories = [banh_han_quoc, banh_vi_dac_biet, banh_hoa_qua, banh_tre_e
 let mapPayloadOrder = {}
 allCategories.forEach(category => {
    category.listCakes.forEach(cake => {
+
       let size = cake.sizeAndPrice
       size.forEach(c => {
          c.content_type = "text";
-         // delete c.salePrice;
-         // delete c.originalPrice;
-         // delete c.forNumberUsers
+      })
+      size = size.map(s => {
+         return ["title", "content_type", "payload"].reduce((obj, key) => ({ ...obj, [key]: s[key] }), {});
       })
       mapPayloadOrder[cake.buttonPayloadOrderCake] = {
          name: cake.name,
@@ -551,7 +552,7 @@ allCategories.forEach(category => {
       }
    })
 })
-console.log(mapPayloadOrder["ORDER_GALAXY_BLUE"].sizeButton)
+// console.log(mapPayloadOrder["ORDER_GALAXY_BLUE"].sizeButton)
 
 module.exports = {
    banh_han_quoc,
