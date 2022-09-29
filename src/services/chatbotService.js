@@ -501,7 +501,7 @@ Mình mua thêm món nào thì nhắn Savor nha ^^`}
    })
 }
 
-let requestOpenForm = (senderId) => {
+let requestOpenForm = (sender_psid, senderId) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
@@ -527,8 +527,8 @@ let requestOpenForm = (senderId) => {
                },
             }
          };
-         // await markMessageRead(sender_psid);
-         // await sendMessage(sender_psid, response);
+         await markMessageRead(sender_psid);
+         await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {
          reject(e);
