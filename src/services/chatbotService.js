@@ -383,10 +383,10 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
       try {
          let response = {
             "text": `Dạ để hoàn thiện đơn đặt hàng, mình gửi thêm giúp Savor các thông tin sau nhé ạ:\n
-- Tên bánh: ${nameCake}, size: ${sizeCake}
+- Tên bánh: ${nameCake}, size: ${sizeCake}\n
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
-- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt sớm tối thiểu 4 tiếng nha)
+- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt sớm tối thiểu 4 tiếng ạ)
 - Chữ viết trên đế bánh:
 - Hình thức thanh toán: Nếu được mình chọn chuyển khoản trước nhé. Hoặc mình chọn nhận hàng rồi thanh toán ạ`,
             "quick_replies": [
@@ -411,7 +411,7 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
    });
 };
 
-let orderNow = (nameCake, sizeCake, sender_psid) => {
+let orderNow = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
@@ -420,7 +420,7 @@ let orderNow = (nameCake, sizeCake, sender_psid) => {
 - Cỡ bánh: 
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
-- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt sớm tối thiểu 4 tiếng nha)
+- Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt sớm tối thiểu 4 tiếng ạ)
 - Chữ viết trên đế bánh:
 - Hình thức thanh toán: Nếu được mình chọn chuyển khoản trước nhé. Hoặc mình chọn nhận hàng rồi thanh toán ạ`,
             "quick_replies": [
