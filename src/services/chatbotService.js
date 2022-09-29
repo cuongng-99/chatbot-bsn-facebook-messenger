@@ -515,7 +515,7 @@ let requestOpenForm = (sender_psid) => {
                         "type": "web_url",
                         "url": `${process.env.URL_WEB_VIEW_ORDER}/${sender_psid}`,
                         "title": "Oke Shop",
-                        "webview_height_ratio": "tail",
+                        "webview_height_ratio": "tall",
                         "messenger_extensions": true //false: open the webview in new tab
                      },
                      {
