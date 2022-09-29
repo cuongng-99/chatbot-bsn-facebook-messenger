@@ -315,9 +315,9 @@ let handlePostback = async (sender_psid, received_postback) => {
       if (cakeChoosen.sizeButton.length === 1) {
          cakeChoosen.selectedSize = cakeChoosen.sizeButton[0].title
          // await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.selectedSize, sender_psid)
-         await chatbotService.requestOpenForm(sender_psid)
       }
       await chatbotService.askingSizeCakes(sender_psid, cakeChoosen.name, cakeChoosen.sizeButton)
+      await chatbotService.requestOpenForm(sender_psid)
    }
 
    else if (payload === "BACK_TO_MENU_CAKES") {
