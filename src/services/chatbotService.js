@@ -413,11 +413,11 @@ let requestFillInfo = (nameCake, sender_psid) => {
 };
 
 
-let askingSizeCakes = (sender_psid, sizeButton) => {
+let askingSizeCakes = (sender_psid, cakeName, sizeButton) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response = {
-            "text": "Bạn muốn đặt cỡ bánh nào?",
+            "text": `Mình chọn giúp Savor cỡ ${cakeName} muốn đặt nha:`,
             "quick_replies": sizeButton
          }
 

@@ -5,6 +5,11 @@ import categoryDetail from "../services/categoryDetail"
 import cakeDetail from "../services/cakeDetail"
 const { mapPayloadOrder } = require("../services/products")
 
+let cakeChoosen = {
+   name: "",
+   size: ""
+}
+
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
 let getHomepage = (req, res) => {
@@ -88,6 +93,9 @@ let handleMessage = async (sender_psid, message) => {
       }
       else if (message.quick_reply.payload === "MENU_ACCESSORIES") {
          await chatbotService.sendMenuAccessories(sender_psid)
+      }
+      else if (["SMALL", "MEDIUM", "LARGE"].includes(message.quick_reply.payload)) {
+         await chatbotService.requestFillInfo(cakeChoosen.name, sender_psid)
       }
       return;
    }
@@ -292,10 +300,9 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    else if (payload.includes("ORDER")) {
-      let sizeButton = mapPayloadOrder[payload].sizeButton
-      await chatbotService.askingSizeCakes(sender_psid, sizeButton)
-      // let nameCake = mapPayloadOrder[payload]
-      // await chatbotService.requestFillInfo(nameCake, sender_psid)
+      cakeChoosen.size = mapPayloadOrder[payload].sizeButton
+      cakeChoosen.name = mapPayloadOrder[payload].name
+      await chatbotService.askingSizeCakes(sender_psid, cakeChoosen.name, cakeChoosen.size)
    }
 
    else if (payload === "BACK_TO_MENU_CAKES") {
