@@ -29,7 +29,7 @@ window.extAsyncInit = function () {
 
 
 function handleClickButtonOrder() {
-   $("#btnOrderNow").on("click", function (e) {
+   $("#btnOrderNow").submit((e) => {
       let data = {
          psid: $("#psid").val(),
          customerName: $("#customerName").val(),
