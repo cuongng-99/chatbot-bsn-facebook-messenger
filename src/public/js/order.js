@@ -41,13 +41,13 @@ function handleClickButtonOrder() {
       };
 
 
-      //close webview
-      MessengerExtensions.requestCloseBrowser(function success() {
-         // webview closed
-      }, function error(err) {
-         // an error occurred
-         console.log("Lỗi đóng browser: ", err);
-      });
+      // //close webview
+      // MessengerExtensions.requestCloseBrowser(function success() {
+      //    // webview closed
+      // }, function error(err) {
+      //    // an error occurred
+      //    console.log("Lỗi đóng browser: ", err);
+      // });
 
       //send data to node.js server 
 
@@ -57,6 +57,12 @@ function handleClickButtonOrder() {
          data: data,
          success: function (data) {
             console.log(data);
+            window.extAsyncInit = function () {
+               MessengerExtensions.requestCloseBrowser(function success() {
+               }, function error(err) {
+               });
+               return false;
+            };
          },
          error: function (error) {
             console.log(error);
