@@ -44,7 +44,7 @@ function handleClickButtonOrder() {
          // webview closed
       }, function error(err) {
          // an error occurred
-         console.log(err);
+         console.log("Lỗi đóng browser: ", err);
       });
 
       //send data to node.js server 

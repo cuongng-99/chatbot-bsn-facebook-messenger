@@ -529,6 +529,7 @@ let requestOpenForm = (sender_psid) => {
          };
          await markMessageRead(sender_psid);
          await sendMessage(sender_psid, response);
+         console.log(`Link webview: ${process.env.URL_WEB_VIEW_ORDER}/${sender_psid}`)
          resolve("done");
       } catch (e) {
          reject(e);
