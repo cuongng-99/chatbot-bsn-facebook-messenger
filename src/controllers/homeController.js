@@ -169,6 +169,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    else if (payload === "ORDER_NOW") {
+      await chatbotService.requestOpenForm(sender_psid)
       await chatbotService.orderNow(sender_psid)
    }
 
@@ -438,6 +439,8 @@ Tên Khách hàng: ${req.body.customerName}
 Địa chỉ: ${req.body.address}
 Số điện thoại: ${req.body.phoneNumber}
 Thời gian nhận hàng: ${req.body.receivedTime}
+Chữ trên đế bánh: ${req.body.letterOnCake}
+Phương thức thanh toán: ${req.body.paymentType}
 `
       };
 

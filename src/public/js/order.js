@@ -35,7 +35,9 @@ function handleClickButtonOrder() {
          customerName: $("#customerName").val(),
          address: $("#address").val(),
          phoneNumber: $("#phoneNumber").val(),
-         receivedTime: $("#receivedTime").val()
+         receivedTime: $("#receivedTime").val(),
+         letterOnCake: $("#letterOnCake").val(),
+         paymentType: $("#paymentType").val()
       };
 
 
