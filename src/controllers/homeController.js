@@ -325,7 +325,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    // Send the message to acknowledge the postback
-   callSendAPI(sender_psid, response);
+   // callSendAPI(sender_psid, response);
 }
 
 let postPersistentMenu = (sender_psid) => {
@@ -434,11 +434,11 @@ let handlePostOrderForm = async (req, res) => {
 
       let response1 = {
          "text": `---Thông tin đơn hàng đã chốt---\n
-          Tên Khách hàng: ${req.body.customerName}
-          Địa chỉ: ${req.body.address}
-          Số điện thoại: ${req.body.phoneNumber}
-          Thời gian nhận hàng: ${req.body.receivedTime}
-          `
+Tên Khách hàng: ${req.body.customerName}
+Địa chỉ: ${req.body.address}
+Số điện thoại: ${req.body.phoneNumber}
+Thời gian nhận hàng: ${req.body.receivedTime}
+`
       };
 
       await chatbotService.sendMessage(req.body.psid, response1);
