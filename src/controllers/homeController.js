@@ -100,8 +100,8 @@ let handleMessage = async (sender_psid, message) => {
          if (cakeChoosen.sizeButton.length > 1) {
             cakeChoosen.selectedSize = _.filter(cakeChoosen.sizeButton, { payload: message.quick_reply.payload })[0].title
          }
-         // await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.selectedSize, sender_psid)
-         await chatbotService.requestOpenForm(sender_psid)
+         await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.selectedSize, sender_psid)
+         //await chatbotService.requestOpenForm(sender_psid)
       }
       return;
    }
@@ -169,7 +169,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    else if (payload === "ORDER_NOW") {
-      await chatbotService.requestOpenForm(sender_psid)
+      // await chatbotService.requestOpenForm(sender_psid)
       await chatbotService.orderNow(sender_psid)
    }
 
@@ -315,10 +315,10 @@ let handlePostback = async (sender_psid, received_postback) => {
       cakeChoosen.name = mapPayloadOrder[payload].name
       if (cakeChoosen.sizeButton.length === 1) {
          cakeChoosen.selectedSize = cakeChoosen.sizeButton[0].title
-         // await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.selectedSize, sender_psid)
+         await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.selectedSize, sender_psid)
       }
-      // await chatbotService.askingSizeCakes(sender_psid, cakeChoosen.name, cakeChoosen.sizeButton)
-      await chatbotService.requestOpenForm(sender_psid)
+      await chatbotService.askingSizeCakes(sender_psid, cakeChoosen.name, cakeChoosen.sizeButton)
+      // await chatbotService.requestOpenForm(sender_psid)
    }
 
    else if (payload === "BACK_TO_MENU_CAKES") {
