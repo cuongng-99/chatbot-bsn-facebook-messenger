@@ -6,12 +6,12 @@ let router = express.Router();
 let initWebRoutes = (app) => {
    router.get("/", homeController.getHomepage);
 
-   router.post("/setup-profile", homeController.setUpUserFacebookProfile);
+   // router.post("/setup-profile", homeController.setUpUserFacebookProfile);
 
    router.post("/webhook", homeController.postWebhook);
    router.get("/webhook", homeController.getWebhook);
 
-   router.get("/order-form", homeController.handleOrderForm)
+   router.get("/order-form/:senderId", homeController.handleOrderForm)
    router.post("/post-order-form", homeController.handlePostOrderForm)
 
    return app.use("/", router);

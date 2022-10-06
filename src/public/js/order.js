@@ -9,7 +9,7 @@
 window.extAsyncInit = function () {
    // the Messenger Extensions JS SDK is done loading 
 
-   MessengerExtensions.getContext('3298370930452071',
+   MessengerExtensions.getContext('496044859129937',
       function success(thread_context) {
          // success
          //set psid to input
@@ -19,6 +19,9 @@ window.extAsyncInit = function () {
       function error(err) {
          // error
          console.log("Lỗi đặt hàng:", err);
+         console.log(senderId);
+         $("#psid").val(senderId);
+         handleClickButtonOrder();
       }
    );
 };
@@ -32,17 +35,19 @@ function handleClickButtonOrder() {
          customerName: $("#customerName").val(),
          address: $("#address").val(),
          phoneNumber: $("#phoneNumber").val(),
-         receivedTime: $("#receivedTime").val()
+         receivedTime: $("#receivedTime").val(),
+         letterOnCake: $("#letterOnCake").val(),
+         paymentType: $("#paymentType").val()
       };
 
 
-      //close webview
-      MessengerExtensions.requestCloseBrowser(function success() {
-         // webview closed
-      }, function error(err) {
-         // an error occurred
-         console.log(err);
-      });
+      // //close webview
+      // MessengerExtensions.requestCloseBrowser(function success() {
+      //    // webview closed
+      // }, function error(err) {
+      //    // an error occurred
+      //    console.log("Lỗi đóng browser: ", err);
+      // });
 
       //send data to node.js server 
 
@@ -52,6 +57,12 @@ function handleClickButtonOrder() {
          data: data,
          success: function (data) {
             console.log(data);
+            window.extAsyncInit = function () {
+               MessengerExtensions.requestCloseBrowser(function success() {
+               }, function error(err) {
+               });
+               return false;
+            };
          },
          error: function (error) {
             console.log(error);

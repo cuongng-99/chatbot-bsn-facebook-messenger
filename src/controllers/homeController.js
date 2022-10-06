@@ -1,8 +1,16 @@
 require('dotenv').config();
+const _ = require("lodash")
 import request from "request";
 import chatbotService from "../services/chatbotService"
 import categoryDetail from "../services/categoryDetail"
 import cakeDetail from "../services/cakeDetail"
+const { mapPayloadOrder } = require("../services/products")
+
+let cakeChoosen = {
+   name: "",
+   selectedSize: "",
+   sizeButton: []
+}
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
 
@@ -77,6 +85,10 @@ let handleMessage = async (sender_psid, message) => {
 
    let response;
    if (message && message.quick_reply && message.quick_reply.payload) {
+      if (message.quick_reply.payload === "CARE_HELP") {
+         await chatbotService.sendCareHelp(sender_psid)
+         return;
+      }
       if (message.quick_reply.payload === "SHIPING_FEE") {
          await chatbotService.sendShippingFee(sender_psid)
          return;
@@ -87,6 +99,13 @@ let handleMessage = async (sender_psid, message) => {
       }
       else if (message.quick_reply.payload === "MENU_ACCESSORIES") {
          await chatbotService.sendMenuAccessories(sender_psid)
+      }
+      else if (["SMALL", "MEDIUM", "LARGE"].includes(message.quick_reply.payload)) {
+         if (cakeChoosen.sizeButton.length > 1) {
+            cakeChoosen.selectedSize = _.filter(cakeChoosen.sizeButton, { payload: message.quick_reply.payload })[0].title
+         }
+         await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.selectedSize, sender_psid)
+         //await chatbotService.requestOpenForm(sender_psid)
       }
       return;
    }
@@ -139,10 +158,12 @@ let handlePostback = async (sender_psid, received_postback) => {
 
    // Set the response based on the postback payload
 
-   if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
-      let userName = await chatbotService.getUserProfile(sender_psid);
+   if (payload === "GET_STARTED") {
       await postPersistentMenu(sender_psid);
-      await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
+      await chatbotService.sendResponseWelcomeNewCustomer(sender_psid);
+   }
+   else if (payload === "RESTART_BOT") {
+      await chatbotService.sendResponseWelcomeNewCustomer(sender_psid);
    }
 
    else if (payload === "MAIN_MENU") {
@@ -151,6 +172,11 @@ let handlePostback = async (sender_psid, received_postback) => {
 
    else if (payload === "CARE_HELP") {
       await chatbotService.sendCareHelp(sender_psid)
+   }
+
+   else if (payload === "ORDER_NOW") {
+      // await chatbotService.requestOpenForm(sender_psid)
+      await chatbotService.orderNow(sender_psid)
    }
 
    else if (payload === "STORE_LOCATION_SHIPPING") {
@@ -212,7 +238,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    else if (payload == "SHOW_MOUSSE_CHANH_LEO") {
       await cakeDetail.showDetailMousseChanhLeo(sender_psid)
    }
-   else if (payload == "SHOW_KEM_SC_HOA_QUA") {
+   else if (payload == "SHOW_BANH_SC_HOA_QUA") {
       await cakeDetail.showDetailSuaChuaHoaQua(sender_psid)
    }
    else if (payload == "SHOW_SC_DAU_DALAT") {
@@ -283,17 +309,23 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    // BÁNH IN ẢNH
-   else if (payload === "MENU_IMAGE_CAKE") {
+   else if (payload === "MENU_PHOTO_CAKE") {
       await categoryDetail.sendMenuImageCake(sender_psid)
    }
    else if (payload === "ORDER_BANH_IN_ANH") {
       response = { "text": "Dạ mình gửi giúp Savor hình ảnh muốn in lên mặt bánh nha ạ" }
    }
 
-
-
-   else if (payload === "ORDER_NOW") {
-      await chatbotService.requestFillInfo(sender_psid)
+   // LƯU THÔNG TIN BÁNH VÀ CỠ BÁNH KHI BẤM ĐẶT HÀNG
+   else if (payload.includes("ORDER")) {
+      cakeChoosen.sizeButton = mapPayloadOrder[payload].sizeButton
+      cakeChoosen.name = mapPayloadOrder[payload].name
+      if (cakeChoosen.sizeButton.length === 1) {
+         cakeChoosen.selectedSize = cakeChoosen.sizeButton[0].title
+         await chatbotService.requestFillInfo(cakeChoosen.name, cakeChoosen.selectedSize, sender_psid)
+      }
+      await chatbotService.askingSizeCakes(sender_psid, cakeChoosen.name, cakeChoosen.sizeButton)
+      // await chatbotService.requestOpenForm(sender_psid)
    }
 
    else if (payload === "BACK_TO_MENU_CAKES") {
@@ -301,7 +333,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
 
    // Send the message to acknowledge the postback
-   callSendAPI(sender_psid, response);
+   // callSendAPI(sender_psid, response);
 }
 
 let postPersistentMenu = (sender_psid) => {
@@ -356,6 +388,7 @@ let postPersistentMenu = (sender_psid) => {
    });
 }
 
+
 // Sends response messages via the Send API
 function callSendAPI(sender_psid, response) {
    // Construct the message body
@@ -381,24 +414,26 @@ function callSendAPI(sender_psid, response) {
    });
 }
 
-let setUpUserFacebookProfile = async (req, res) => {
-   // Send the HTTP request to the Messenger Platform
-   try {
-      await chatbotService.setUpMessengerPlatform(PAGE_ACCESS_TOKEN);
-      return res.status(200).json({
-         message: "OK"
-      });
-   } catch (e) {
-      console.log(e)
-      return res.status(500).json({
-         "message": "Error from the node server"
-      })
-   }
-};
+// let setUpUserFacebookProfile = async (req, res) => {
+//    // Send the HTTP request to the Messenger Platform
+//    try {
+//       await chatbotService.setUpMessengerPlatform(PAGE_ACCESS_TOKEN);
+//       return res.status(200).json({
+//          message: "OK"
+//       });
+//    } catch (e) {
+//       console.log(e)
+//       return res.status(500).json({
+//          "message": "Error from the node server"
+//       })
+//    }
+// };
 
 
 let handleOrderForm = (req, res) => {
+   let senderId = req.params.senderId
    return res.render("orderForm.ejs", {
+      senderId: senderId,
       facebookAppId: process.env.FACEBOOK_APP_ID
    })
 }
@@ -407,18 +442,20 @@ let handlePostOrderForm = async (req, res) => {
    try {
 
       let response1 = {
-         "text": `---Thông tin đơn hàng đã chốt---
-          \nTên Khách hàng: ${req.body.customerName}
-          \nĐịa chỉ: ${req.body.address}
-          \nSố điện thoại: ${req.body.phoneNumber}
-          \nThời gian nhận hàng: ${req.body.receivedTime}
-          `
+         "text": `---Thông tin đơn hàng đã chốt---\n
+Tên Khách hàng: ${req.body.customerName}
+Địa chỉ: ${req.body.address}
+Số điện thoại: ${req.body.phoneNumber}
+Thời gian nhận hàng: ${req.body.receivedTime}
+Chữ trên đế bánh: ${req.body.letterOnCake}
+Phương thức thanh toán: ${req.body.paymentType}
+`
       };
 
-      await chatbotService.sendMessage("7963952796979199", response1);
+      await chatbotService.sendMessage(req.body.psid, response1);
 
       return res.status(200).json({
-         message: "ok"
+         message: "Lấy thông tin thành công",
       });
    } catch (e) {
       console.log("Lỗi post order form:", e)
@@ -429,13 +466,13 @@ let handlePostOrderForm = async (req, res) => {
 }
 
 module.exports = {
-   getHomepage: getHomepage,
-   postWebhook: postWebhook,
-   getWebhook: getWebhook,
-   handleMessage: handleMessage,
-   handlePostback: handlePostback,
-   callSendAPI: callSendAPI,
-   setUpUserFacebookProfile: setUpUserFacebookProfile,
-   handleOrderForm: handleOrderForm,
-   handlePostOrderForm: handlePostOrderForm
+   getHomepage,
+   postWebhook,
+   getWebhook,
+   handleMessage,
+   handlePostback,
+   callSendAPI,
+   //setUpUserFacebookProfile,
+   handleOrderForm,
+   handlePostOrderForm
 }
