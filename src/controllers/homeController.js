@@ -158,9 +158,11 @@ let handlePostback = async (sender_psid, received_postback) => {
 
    // Set the response based on the postback payload
 
-   if (payload === "GET_STARTED" || payload === "RESTART_BOT" || payload === "WELCOME_MESSAGE") {
-      let userName = await chatbotService.getUserProfile(sender_psid);
+   if (payload === "GET_STARTED") {
       await postPersistentMenu(sender_psid);
+      await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
+   }
+   else if (payload === "RESTART_BOT") {
       await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
    }
 
@@ -314,6 +316,7 @@ let handlePostback = async (sender_psid, received_postback) => {
       response = { "text": "Dạ mình gửi giúp Savor hình ảnh muốn in lên mặt bánh nha ạ" }
    }
 
+   // LƯU THÔNG TIN BÁNH VÀ CỠ BÁNH KHI BẤM ĐẶT HÀNG
    else if (payload.includes("ORDER")) {
       cakeChoosen.sizeButton = mapPayloadOrder[payload].sizeButton
       cakeChoosen.name = mapPayloadOrder[payload].name
@@ -410,20 +413,20 @@ function callSendAPI(sender_psid, response) {
    });
 }
 
-let setUpUserFacebookProfile = async (req, res) => {
-   // Send the HTTP request to the Messenger Platform
-   try {
-      await chatbotService.setUpMessengerPlatform(PAGE_ACCESS_TOKEN);
-      return res.status(200).json({
-         message: "OK"
-      });
-   } catch (e) {
-      console.log(e)
-      return res.status(500).json({
-         "message": "Error from the node server"
-      })
-   }
-};
+// let setUpUserFacebookProfile = async (req, res) => {
+//    // Send the HTTP request to the Messenger Platform
+//    try {
+//       await chatbotService.setUpMessengerPlatform(PAGE_ACCESS_TOKEN);
+//       return res.status(200).json({
+//          message: "OK"
+//       });
+//    } catch (e) {
+//       console.log(e)
+//       return res.status(500).json({
+//          "message": "Error from the node server"
+//       })
+//    }
+// };
 
 
 let handleOrderForm = (req, res) => {
@@ -462,13 +465,13 @@ Phương thức thanh toán: ${req.body.paymentType}
 }
 
 module.exports = {
-   getHomepage: getHomepage,
-   postWebhook: postWebhook,
-   getWebhook: getWebhook,
-   handleMessage: handleMessage,
-   handlePostback: handlePostback,
-   callSendAPI: callSendAPI,
-   setUpUserFacebookProfile: setUpUserFacebookProfile,
-   handleOrderForm: handleOrderForm,
-   handlePostOrderForm: handlePostOrderForm
+   getHomepage,
+   postWebhook,
+   getWebhook,
+   handleMessage,
+   handlePostback,
+   callSendAPI,
+   //setUpUserFacebookProfile,
+   handleOrderForm,
+   handlePostOrderForm
 }

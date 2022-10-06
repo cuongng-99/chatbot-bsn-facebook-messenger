@@ -36,67 +36,67 @@ let getUserProfile = async (sender_psid) => {
    });
 }
 
-let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
-   return new Promise((resolve, reject) => {
-      try {
-         let data = {
-            "get_started": {
-               "payload": "GET_STARTED"
-            },
-            "persistent_menu": [
-               {
-                  "locale": "default",
-                  "composer_input_disabled": false,
-                  "call_to_actions": [
-                     {
-                        "type": "web_url",
-                        "title": "Truy cập website",
-                        "url": "https://www.savor.vn/banh-sinh-nhat/",
-                        "webview_height_ratio": "full"
-                     },
-                     {
-                        "type": "postback",
-                        "title": "Chat với Nhân viên tư vấn",
-                        "payload": "CARE_HELP"
-                     },
-                     // {
-                     //    "type": "web_url",
-                     //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
-                     //    "title": "Đặt ngay",
-                     //    "webview_height_ratio": "full",
-                     //    "messenger_extensions": true,
-                     // },
-                     {
-                        "type": "postback",
-                        "title": "Khởi động lại Bot",
-                        "payload": "RESTART_BOT"
-                     }
-                  ]
-               }
-            ],
-            "whitelisted_domains": [
-               "https://chatbot-bsn.herokuapp.com/"
-            ]
-         };
+// let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
+//    return new Promise((resolve, reject) => {
+//       try {
+//          let data = {
+//             "get_started": {
+//                "payload": "GET_STARTED"
+//             },
+//             "persistent_menu": [
+//                {
+//                   "locale": "default",
+//                   "composer_input_disabled": false,
+//                   "call_to_actions": [
+//                      {
+//                         "type": "web_url",
+//                         "title": "Truy cập website",
+//                         "url": "https://www.savor.vn/banh-sinh-nhat/",
+//                         "webview_height_ratio": "full"
+//                      },
+//                      {
+//                         "type": "postback",
+//                         "title": "Chat với Nhân viên tư vấn",
+//                         "payload": "CARE_HELP"
+//                      },
+//                      // {
+//                      //    "type": "web_url",
+//                      //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+//                      //    "title": "Đặt ngay",
+//                      //    "webview_height_ratio": "full",
+//                      //    "messenger_extensions": true,
+//                      // },
+//                      {
+//                         "type": "postback",
+//                         "title": "Khởi động lại Bot",
+//                         "payload": "RESTART_BOT"
+//                      }
+//                   ]
+//                }
+//             ],
+//             "whitelisted_domains": [
+//                "https://chatbot-bsn.herokuapp.com/"
+//             ]
+//          };
 
-         request({
-            "uri": "https://graph.facebook.com/v14.0/me/messenger_profile",
-            "qs": { "access_token": PAGE_ACCESS_TOKEN },
-            "method": "POST",
-            "json": data
-         }, (err, res, body) => {
-            if (!err) {
-               resolve("setup done!");
-            } else {
-               reject(err);
-            }
-         });
+//          request({
+//             "uri": "https://graph.facebook.com/v14.0/me/messenger_profile",
+//             "qs": { "access_token": PAGE_ACCESS_TOKEN },
+//             "method": "POST",
+//             "json": data
+//          }, (err, res, body) => {
+//             if (!err) {
+//                resolve("setup done!");
+//             } else {
+//                reject(err);
+//             }
+//          });
 
-      } catch (e) {
-         reject(e);
-      }
-   });
-};
+//       } catch (e) {
+//          reject(e);
+//       }
+//    });
+// };
 
 
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
@@ -712,7 +712,7 @@ module.exports = {
    sendMessage,
    sendMenuCakes,
    sendMenuAccessories,
-   setUpMessengerPlatform,
+   // setUpMessengerPlatform,
    backToMenuCakes,
    requestFillInfo,
    orderNow,
