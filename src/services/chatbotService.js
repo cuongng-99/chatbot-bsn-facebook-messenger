@@ -1,5 +1,6 @@
 import request from "request";
 require("dotenv").config()
+const { banh_in_anh } = require("./products")
 
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
@@ -56,7 +57,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                      {
                         "type": "postback",
                         "title": "Chat với Nhân viên tư vấn",
-                        "payload": "CARE_HELP",
+                        "payload": "CARE_HELP"
                      },
                      // {
                      //    "type": "web_url",
@@ -69,7 +70,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                         "type": "postback",
                         "title": "Khởi động lại Bot",
                         "payload": "RESTART_BOT"
-                     },
+                     }
                   ]
                }
             ],
@@ -101,7 +102,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_first = { "text": `Cảm ơn ${username} đã quan tâm đến Bánh sinh nhật Savor Cakes` };
+         let response_first = { "text": `Cảm ơn quý khách đã quan tâm đến Bánh sinh nhật Savor Cakes` };
          let response_second = {
             "attachment": {
                "type": "template",
@@ -158,11 +159,11 @@ let sendCareHelp = (sender_psid) => {
          let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ <3" }
 
          await markMessageRead(sender_psid);
-         await delay(2000)
+         await delay(1000)
          await sendMessage(sender_psid, response_1);
 
          await markMessageRead(sender_psid);
-         await delay(2000)
+         await delay(1000)
          await sendMessage(sender_psid, response_2);
       } catch (e) {
          reject(e)
@@ -226,7 +227,6 @@ let sendListStore = (sender_psid) => {
          }
 
          await markMessageRead(sender_psid);
-         await delay(1500)
          await sendMessage(sender_psid, response);
       } catch (e) {
          reject(e)
@@ -245,11 +245,10 @@ let sendShippingFee = (sender_psid) => {
          }
 
          await markMessageRead(sender_psid);
-         await delay(2000)
          await sendMessage(sender_psid, response_1);
 
          await markMessageRead(sender_psid);
-         await delay(2000)
+         await delay(1000)
          await sendMessage(sender_psid, response_2);
       } catch (e) {
          reject(e)
@@ -350,12 +349,23 @@ let sendMenuCakes = (sender_psid) => {
                            },
                         ],
                      },
+                     {
+                        "title": "BÁNH IN ẢNH",
+                        "subtitle": banh_in_anh.sortDescription,
+                        "image_url": banh_in_anh.thumbnail,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": "Xem Bánh in ảnh",
+                              "payload": "MENU_IMAGE_CAKE",
+                           },
+                        ],
+                     },
                   ]
                }
             }
          };
          await markMessageRead(sender_psid);
-         await delay(2000)
          await sendMessage(sender_psid, response);
          resolve("done");
       } catch (e) {
@@ -596,6 +606,35 @@ let sendTypingOn = (sender_psid) => {
    });
 };
 
+let sendTypingOff = (sender_psid) => {
+   return new Promise((resolve, reject) => {
+      try {
+         let request_body = {
+            "recipient": {
+               "id": sender_psid
+            },
+            "sender_action": "typing_off"
+         };
+
+         // Send the HTTP request to the Messenger Platform
+         request({
+            "uri": "https://graph.facebook.com/v14.0/me/messages",
+            "qs": { "access_token": PAGE_ACCESS_TOKEN },
+            "method": "POST",
+            "json": request_body
+         }, (err, res, body) => {
+            if (!err) {
+               resolve('done!')
+            } else {
+               reject("Unable to send message:" + err);
+            }
+         });
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -603,6 +642,7 @@ module.exports = {
    getUserProfile,
    sendResponseWelcomeNewCustomer,
    sendTypingOn,
+   sendTypingOff,
    markMessageRead,
    sendMessage,
    sendMenuCakes,
