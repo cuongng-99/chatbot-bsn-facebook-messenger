@@ -160,10 +160,10 @@ let handlePostback = async (sender_psid, received_postback) => {
 
    if (payload === "GET_STARTED") {
       await postPersistentMenu(sender_psid);
-      await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
+      await chatbotService.sendResponseWelcomeNewCustomer(sender_psid);
    }
    else if (payload === "RESTART_BOT") {
-      await chatbotService.sendResponseWelcomeNewCustomer(userName, sender_psid);
+      await chatbotService.sendResponseWelcomeNewCustomer(sender_psid);
    }
 
    else if (payload === "MAIN_MENU") {

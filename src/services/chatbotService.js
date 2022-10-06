@@ -99,7 +99,7 @@ let getUserProfile = async (sender_psid) => {
 // };
 
 
-let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
+let sendResponseWelcomeNewCustomer = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response_first = { "text": `Cảm ơn quý khách đã quan tâm đến Bánh sinh nhật Savor Cakes` };
