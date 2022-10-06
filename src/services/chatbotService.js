@@ -156,7 +156,7 @@ let sendCareHelp = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
          let response_1 = { "text": "Dạ <3 Savor xin nghe ạ" }
-         let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ <3" }
+         let response_2 = { "text": "Mình cần gì cứ nhắn Savor nha ạ <3 ahihi" }
 
          await markMessageRead(sender_psid);
          await sendTypingOn(sender_psid);
