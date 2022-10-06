@@ -402,10 +402,10 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
                }
             ]
          }
-         await sendTypingOn(sender_psid);
          await markMessageRead(sender_psid);
          await sendQuickReply(sender_psid, response_1);
-         await delay(1000)
+         await sendTypingOn(sender_psid);
+         await delay(1000);
 
          await markMessageRead(sender_psid);
          await sendQuickReply(sender_psid, response_2);
