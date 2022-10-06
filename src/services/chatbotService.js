@@ -381,10 +381,9 @@ let sendMenuCakes = (sender_psid) => {
 let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response_1 = { "text": `Dạ vâng ạ, Savor ghi nhận bạn vừa chọn ${nameCake} size: ${sizeCake}` }
+         let response_1 = { "text": `Dạ vâng ạ, Savor ghi nhận bạn vừa chọn ${nameCake} size ${sizeCake}` }
          let response_2 = {
             "text": `Để hoàn thiện đơn đặt hàng, mình gửi thêm giúp Savor các thông tin sau nhé ạ:\n
-
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
 - Thời gian nhận hàng: (với các bánh ko sẵn hàng mình cần đặt trước tối thiểu 4 tiếng nhé ạ)
