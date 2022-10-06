@@ -392,8 +392,8 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
             "quick_replies": [
                {
                   "content_type": "text",
-                  "title": "Phụ kiện sinh nhật",
-                  "payload": "MENU_ACCESSORIES",
+                  "title": "Chat với nhân viên",
+                  "payload": "CARE_HELP",
                },
                {
                   "content_type": "text",
