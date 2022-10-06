@@ -381,9 +381,9 @@ let sendMenuCakes = (sender_psid) => {
 let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
    return new Promise(async (resolve, reject) => {
       try {
-         let response = {
-            "text": `Dạ vâng ạ, Savor ghi nhận bạn vừa chọn ${nameCake}, size: ${sizeCake}\n
-Để hoàn thiện đơn đặt hàng, mình gửi thêm giúp Savor các thông tin sau nhé ạ:\n
+         let response_1 = { "text": `Dạ vâng ạ, Savor ghi nhận bạn vừa chọn ${nameCake} size: ${sizeCake}` }
+         let response_2 = {
+            "text": `Để hoàn thiện đơn đặt hàng, mình gửi thêm giúp Savor các thông tin sau nhé ạ:\n
 
 - Tên và số điện thoại người nhận:
 - Địa chỉ nhận hàng:
@@ -403,8 +403,14 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
                }
             ]
          }
+         await sendTypingOn(sender_psid);
          await markMessageRead(sender_psid);
-         await sendQuickReply(sender_psid, response);
+         await sendQuickReply(sender_psid, response_1);
+         await delay(1000)
+
+         await markMessageRead(sender_psid);
+         await sendQuickReply(sender_psid, response_2);
+         await sendTypingOff(sender_psid);
       } catch (e) {
          reject(e);
       }
