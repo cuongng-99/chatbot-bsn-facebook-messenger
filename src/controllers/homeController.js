@@ -85,6 +85,10 @@ let handleMessage = async (sender_psid, message) => {
 
    let response;
    if (message && message.quick_reply && message.quick_reply.payload) {
+      if (message.quick_reply.payload === "CARE_HELP") {
+         await chatbotService.sendCareHelp(sender_psid)
+         return;
+      }
       if (message.quick_reply.payload === "SHIPING_FEE") {
          await chatbotService.sendShippingFee(sender_psid)
          return;
