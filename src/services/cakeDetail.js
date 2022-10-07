@@ -317,7 +317,7 @@ let showDetailChocoForest = (sender_psid) => {
 
 // BÁNH 20-10
 let showDetailRedvelvet2010 = (sender_psid) => {
-   return showDetailCake2010(
+   return showDetailCake(
       sender_psid,
       red_velvet_20_10_info.description,
       red_velvet_20_10_info.feedbackImage || red_velvet_20_10_info.sampleImage,
@@ -327,7 +327,7 @@ let showDetailRedvelvet2010 = (sender_psid) => {
    )
 };
 let showDetailLoangDau2010 = (sender_psid) => {
-   return showDetailCake2010(
+   return showDetailCake(
       sender_psid,
       loang_dau_20_10_info.description,
       loang_dau_20_10_info.feedbackImage || loang_dau_20_10_info.sampleImage,
@@ -337,7 +337,7 @@ let showDetailLoangDau2010 = (sender_psid) => {
    )
 };
 let showDetailMousseCL2010 = (sender_psid) => {
-   return showDetailCake2010(
+   return showDetailCake(
       sender_psid,
       mousse_chanh_leo_20_10_info.description,
       mousse_chanh_leo_20_10_info.feedbackImage || mousse_chanh_leo_20_10_info.sampleImage,
@@ -347,7 +347,7 @@ let showDetailMousseCL2010 = (sender_psid) => {
    )
 };
 let showDetailHoaHong2010 = (sender_psid) => {
-   return showDetailCake2010(
+   return showDetailCake(
       sender_psid,
       hoa_hong_20_10_info.description,
       hoa_hong_20_10_info.feedbackImage || hoa_hong_20_10_info.sampleImage,
@@ -357,7 +357,7 @@ let showDetailHoaHong2010 = (sender_psid) => {
    )
 };
 let showDetailSCLDau2010 = (sender_psid) => {
-   return showDetailCake2010(
+   return showDetailCake(
       sender_psid,
       socola_dau_20_10_info.description,
       socola_dau_20_10_info.feedbackImage || socola_dau_20_10_info.sampleImage,
@@ -450,92 +450,92 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price, b
    });
 }
 
-let showDetailCake2010 = (sender_psid, text_description, imgae_1, text_size_price, buttonTitle, buttonPayload) => {
-   return new Promise(async (resolve, reject) => {
-      try {
-         let response_1 = { "text": text_description }
-         let response_2 = {
-            "attachment": {
-               "type": "image",
-               "payload": {
-                  "url": imgae_1,
-                  "is_reusable": true
-               }
-            }
-         };
-         let response_3 = { "text": text_size_price }
-         let response_4 = {
-            "text": "Tặng ngay 1 Bộ nến nhũ vàng và 1 Thiệp 20/10 siêu ý nghĩa do Savor thiết kế độc quyền nếu mình nhận hàng từ 16-20/10:"
-         }
-         let response_5 = {
-            "attachment": {
-               "type": "image",
-               "payload": {
-                  "url": "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0147-1665044142563.jpeg",
-                  "is_reusable": false
-               }
-            }
-         };
+// let showDetailCake2010 = (sender_psid, text_description, imgae_1, text_size_price, buttonTitle, buttonPayload) => {
+//    return new Promise(async (resolve, reject) => {
+//       try {
+//          let response_1 = { "text": text_description }
+//          let response_2 = {
+//             "attachment": {
+//                "type": "image",
+//                "payload": {
+//                   "url": imgae_1,
+//                   "is_reusable": true
+//                }
+//             }
+//          };
+//          let response_3 = { "text": text_size_price }
+//          let response_4 = {
+//             "text": "Tặng ngay 1 Bộ nến nhũ vàng và 1 Thiệp 20/10 siêu ý nghĩa do Savor thiết kế độc quyền nếu mình nhận hàng từ 16-20/10:"
+//          }
+//          let response_5 = {
+//             "attachment": {
+//                "type": "image",
+//                "payload": {
+//                   "url": "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0147-1665044142563.jpeg",
+//                   "is_reusable": false
+//                }
+//             }
+//          };
 
-         let response_6 = {
-            "attachment": {
-               "type": "template",
-               "payload": {
-                  "template_type": "button",
-                  "text": "Mình có muốn đặt bánh này ko ạ",
-                  "buttons": [
-                     // {
-                     //    "type": "web_url",
-                     //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
-                     //    "title": "Đặt ngay",
-                     //    "webview_height_ratio": "tall",
-                     //    "messenger_extensions": true //false: open the webview in new tab
-                     // },
-                     {
-                        "type": "postback",
-                        "title": buttonTitle,
-                        "payload": buttonPayload,
-                     },
-                     {
-                        "type": "postback",
-                        "title": "Xem bánh 20/10 khác",
-                        "payload": "BACK_TO_MENU_2010_CAKES",
-                     },
-                     {
-                        "type": "postback",
-                        "title": "Chat thêm với Nhân viên",
-                        "payload": "CARE_HELP",
-                     }
-                  ],
-               },
-            }
-         }
-         await chatbotService.markMessageRead(sender_psid);
-         await chatbotService.sendMessage(sender_psid, response_1);
+//          let response_6 = {
+//             "attachment": {
+//                "type": "template",
+//                "payload": {
+//                   "template_type": "button",
+//                   "text": "Mình có muốn đặt bánh này ko ạ",
+//                   "buttons": [
+//                      // {
+//                      //    "type": "web_url",
+//                      //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+//                      //    "title": "Đặt ngay",
+//                      //    "webview_height_ratio": "tall",
+//                      //    "messenger_extensions": true //false: open the webview in new tab
+//                      // },
+//                      {
+//                         "type": "postback",
+//                         "title": buttonTitle,
+//                         "payload": buttonPayload,
+//                      },
+//                      {
+//                         "type": "postback",
+//                         "title": "Xem bánh 20/10 khác",
+//                         "payload": "BACK_TO_MENU_2010_CAKES",
+//                      },
+//                      {
+//                         "type": "postback",
+//                         "title": "Chat thêm với Nhân viên",
+//                         "payload": "CARE_HELP",
+//                      }
+//                   ],
+//                },
+//             }
+//          }
+//          await chatbotService.markMessageRead(sender_psid);
+//          await chatbotService.sendMessage(sender_psid, response_1);
 
-         await chatbotService.markMessageRead(sender_psid);
-         await chatbotService.sendTypingOn(sender_psid)
-         await chatbotService.sendMessage(sender_psid, response_2);
+//          await chatbotService.markMessageRead(sender_psid);
+//          await chatbotService.sendTypingOn(sender_psid)
+//          await chatbotService.sendMessage(sender_psid, response_2);
 
-         await chatbotService.markMessageRead(sender_psid);
-         await chatbotService.sendMessage(sender_psid, response_3);
+//          await chatbotService.markMessageRead(sender_psid);
+//          await chatbotService.sendMessage(sender_psid, response_3);
 
-         await chatbotService.markMessageRead(sender_psid);
-         await chatbotService.sendMessage(sender_psid, response_4);
+//          await chatbotService.markMessageRead(sender_psid);
+//          await chatbotService.sendMessage(sender_psid, response_4);
 
-         await chatbotService.markMessageRead(sender_psid);
-         await chatbotService.sendMessage(sender_psid, response_5);
+//          await chatbotService.markMessageRead(sender_psid);
+//          await chatbotService.sendMessage(sender_psid, response_5);
 
-         await chatbotService.markMessageRead(sender_psid);
-         await chatbotService.sendMessage(sender_psid, response_6);
-         await chatbotService.sendTypingOff(sender_psid)
+//          await chatbotService.markMessageRead(sender_psid);
+//          await chatbotService.sendMessage(sender_psid, response_6);
+//          await chatbotService.sendTypingOff(sender_psid)
 
-         resolve("done");
-      } catch (e) {
-         reject(e);
-      }
-   });
-}
+//          resolve("done");
+//       } catch (e) {
+//          reject(e);
+//       }
+//    });
+// }
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
