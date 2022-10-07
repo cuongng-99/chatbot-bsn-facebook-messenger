@@ -523,11 +523,11 @@ let showDetailCake2010 = (sender_psid, text_description, imgae_1, text_size_pric
          await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response_4);
 
-         await chatbotService.markMessageRead(sender_psid);
-         await chatbotService.sendMessage(sender_psid, response_5);
+         // await chatbotService.markMessageRead(sender_psid);
+         // await chatbotService.sendMessage(sender_psid, response_5);
 
-         await chatbotService.markMessageRead(sender_psid);
-         await chatbotService.sendMessage(sender_psid, response_6);
+         // await chatbotService.markMessageRead(sender_psid);
+         // await chatbotService.sendMessage(sender_psid, response_6);
          await chatbotService.sendTypingOff(sender_psid)
 
          resolve("done");
