@@ -804,7 +804,7 @@ const banh_in_anh = {
 const banh_20_10 = {
    thumbnail: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-010-1665131478475.jpeg",
    sortDescription: "Savor Cakes gợi ý 5 mẫu bánh vô cùng ý nghĩa cho ngày 20/10, mình mua 1 còn được thêm 2 đó ạ <3",
-   buttonTitleShowCake: "Xem Bánh 20-10",
+   buttonTitleShowCake: "Xem Bánh 20/10",
    buttonPayloadShowCake: "MENU_20_10_CAKE",
    listCakes: [
       {
