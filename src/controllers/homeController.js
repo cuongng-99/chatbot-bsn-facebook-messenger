@@ -354,6 +354,9 @@ let handlePostback = async (sender_psid, received_postback) => {
    else if (payload === "BACK_TO_MENU_CAKES") {
       await chatbotService.backToMenuCakes(sender_psid)
    }
+   else if (payload === "BACK_TO_MENU_CAKE_2010") {
+      await categoryDetail.sendMenu2010Cake(sender_psid)
+   }
 }
 
 let postPersistentMenu = (sender_psid) => {
