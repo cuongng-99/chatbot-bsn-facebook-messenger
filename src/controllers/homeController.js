@@ -306,6 +306,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
    else if (payload === "ORDER_BANH_VE") {
       response = { "text": "Dạ mình gửi Savor hình ảnh mẫu bánh bạn muốn đặt nha ạ" }
+      await chatbotService.sendMessage(sender_psid, response)
    }
 
    // BÁNH IN ẢNH
@@ -314,6 +315,7 @@ let handlePostback = async (sender_psid, received_postback) => {
    }
    else if (payload === "ORDER_BANH_IN_ANH") {
       response = { "text": "Dạ mình gửi giúp Savor hình ảnh muốn in lên mặt bánh nha ạ" }
+      await chatbotService.sendMessage(sender_psid, response)
    }
 
    // LƯU THÔNG TIN BÁNH VÀ CỠ BÁNH KHI BẤM ĐẶT HÀNG
@@ -331,9 +333,6 @@ let handlePostback = async (sender_psid, received_postback) => {
    else if (payload === "BACK_TO_MENU_CAKES") {
       await chatbotService.backToMenuCakes(sender_psid)
    }
-
-   // Send the message to acknowledge the postback
-   // callSendAPI(sender_psid, response);
 }
 
 let postPersistentMenu = (sender_psid) => {
