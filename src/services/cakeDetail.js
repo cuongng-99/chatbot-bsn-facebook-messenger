@@ -467,49 +467,49 @@ let showDetailCake2010 = (sender_psid, text_description, imgae_1, text_size_pric
          let response_4 = {
             "text": "Tặng ngay 1 Bộ nến nhũ vàng và 1 Thiệp 20/10 siêu ý nghĩa do Savor thiết kế độc quyền nếu mình nhận hàng từ 16-20/10:"
          }
-         // let response_5 = {
-         //    "attachment": {
-         //       "type": "image",
-         //       "payload": {
-         //          "url": "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0147-1665044142563.jpeg",
-         //          "is_reusable": false
-         //       }
-         //    }
-         // };
+         let response_5 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0147-1665044142563.jpeg",
+                  "is_reusable": false
+               }
+            }
+         };
 
-         // let response_6 = {
-         //    "attachment": {
-         //       "type": "template",
-         //       "payload": {
-         //          "template_type": "button",
-         //          "text": "Mình có muốn đặt bánh này ko ạ",
-         //          "buttons": [
-         //             // {
-         //             //    "type": "web_url",
-         //             //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
-         //             //    "title": "Đặt ngay",
-         //             //    "webview_height_ratio": "tall",
-         //             //    "messenger_extensions": true //false: open the webview in new tab
-         //             // },
-         //             {
-         //                "type": "postback",
-         //                "title": buttonTitle,
-         //                "payload": buttonPayload,
-         //             },
-         //             {
-         //                "type": "postback",
-         //                "title": "Xem bánh 20/10 khác",
-         //                "payload": "BACK_TO_MENU_2010_CAKES",
-         //             },
-         //             {
-         //                "type": "postback",
-         //                "title": "Chat thêm với Nhân viên",
-         //                "payload": "CARE_HELP",
-         //             }
-         //          ],
-         //       },
-         //    }
-         // }
+         let response_6 = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "button",
+                  "text": "Mình có muốn đặt bánh này ko ạ",
+                  "buttons": [
+                     // {
+                     //    "type": "web_url",
+                     //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                     //    "title": "Đặt ngay",
+                     //    "webview_height_ratio": "tall",
+                     //    "messenger_extensions": true //false: open the webview in new tab
+                     // },
+                     {
+                        "type": "postback",
+                        "title": buttonTitle,
+                        "payload": buttonPayload,
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Xem bánh 20/10 khác",
+                        "payload": "BACK_TO_MENU_2010_CAKES",
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Chat thêm với Nhân viên",
+                        "payload": "CARE_HELP",
+                     }
+                  ],
+               },
+            }
+         }
          await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response_1);
 
@@ -523,11 +523,11 @@ let showDetailCake2010 = (sender_psid, text_description, imgae_1, text_size_pric
          await chatbotService.markMessageRead(sender_psid);
          await chatbotService.sendMessage(sender_psid, response_4);
 
-         // await chatbotService.markMessageRead(sender_psid);
-         // await chatbotService.sendMessage(sender_psid, response_5);
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_5);
 
-         // await chatbotService.markMessageRead(sender_psid);
-         // await chatbotService.sendMessage(sender_psid, response_6);
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_6);
          await chatbotService.sendTypingOff(sender_psid)
 
          resolve("done");

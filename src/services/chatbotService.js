@@ -1,5 +1,5 @@
 import request from "request";
-import categoryDetail from "./cakeDetail"
+import categoryDetail from "./categoryDetail"
 require("dotenv").config()
 const {
    banh_han_quoc,
