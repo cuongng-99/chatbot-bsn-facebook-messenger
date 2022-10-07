@@ -374,7 +374,7 @@ let getSizeAndPrice = (cake) => {
    let text = []
    cake.sizeAndPrice.forEach(c => text.push(`Size: ${c.title}: Giá sale ${c.salePrice} (giá gốc ${c.originalPrice}) (${c.forNumberUsers})`))
    if (numSize === 1) {
-      return `Size bánh:\n - ${text.join("\n - ")}`
+      return text[0]
    }
    else {
       return `Bánh có ${numSize} size:\n - ${text.join("\n - ")}`
