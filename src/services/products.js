@@ -829,7 +829,7 @@ const banh_20_10 = {
          name: "Bánh kem màu loang dâu Đà Lạt (cỡ nhỏ)",
          subTitle: "Thêm 2 quà tặng, giá chỉ 150k",
          description: "BÁNH KEM LOANG DÂU ĐÀ LẠT:  Top bánh kem bán chạy nhất của Savor và không thể thiếu trong dịp 20/10. Bánh có cốt vani, xem giữa các lớp cốt là mứt dâu tây. Sắc đỏ nhìn thôi là đê mê nha ạ",
-         sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0135-1663560698772.jpeg",
+         sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0140-1665131478485.jpeg",
          buttonTitleShowCake: "Xem bánh Loang Dâu",
          buttonPayloadShowCake: "SHOW_LOANG_DAU_20_10",
          buttonTitleOrderCake: "Đặt bánh Loang dâu",
