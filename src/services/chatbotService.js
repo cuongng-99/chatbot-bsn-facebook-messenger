@@ -1,13 +1,16 @@
 import request from "request";
 require("dotenv").config()
-const { banh_han_quoc } = require("./products")
-const { banh_vi_dac_biet } = require("./products")
-const { banh_hoa_qua } = require("./products")
-const { banh_tre_em } = require("./products")
-const { banh_bong_hoa } = require("./products")
-const { banh_su_kien } = require("./products")
-const { banh_ve_order } = require("./products")
-const { banh_in_anh } = require("./products")
+const {
+   banh_han_quoc,
+   banh_vi_dac_biet,
+   banh_hoa_qua,
+   banh_tre_em,
+   banh_bong_hoa,
+   banh_su_kien,
+   banh_ve_order,
+   banh_in_anh,
+   banh_20_10
+} = require("./products")
 
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN
@@ -268,6 +271,18 @@ let sendMenuCakes = (sender_psid) => {
                "payload": {
                   "template_type": "generic",
                   "elements": [
+                     {
+                        "title": "BÁNH 20-10",
+                        "subtitle": banh_20_10.sortDescription,
+                        "image_url": banh_20_10.thumbnail,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_20_10.buttonTitleShowCake,
+                              "payload": banh_20_10.buttonPayloadShowCake,
+                           },
+                        ],
+                     },
                      {
                         "title": "BÁNH KEM HÀN QUỐC",
                         "subtitle": banh_han_quoc.sortDescription,

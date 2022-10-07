@@ -799,7 +799,117 @@ const banh_in_anh = {
    ]
 }
 
-const allCategories = [banh_han_quoc, banh_vi_dac_biet, banh_hoa_qua, banh_tre_em, banh_bong_hoa, banh_su_kien]
+// BÁNH 20/10
+
+const banh_20_10 = {
+   thumbnail: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-010-1665131478475.jpeg",
+   sortDescription: "Savor Cakes gợi ý 5 mẫu bánh vô cùng ý nghĩa cho ngày 20/10, mình mua 1 còn được thêm 2 đó ạ <3",
+   buttonTitleShowCake: "Xem Bánh 20-10",
+   buttonPayloadShowCake: "MENU_20_10_CAKE",
+   listCakes: [
+      {
+         name: "Bánh red velvet kem sữa chua (cỡ nhỏ)",
+         subTitle: "Thêm 2 quà tặng, giá chỉ 150k",
+         description: "BÁNH RED VELVET SỮA CHUA: Chiếc bánh hình tim biểu tượng cho tình yêu, phù hợp nhất cho các cặp đôi yêu nhau hoặc muốn thể hiện tình cảm đặc biệt tới đối phương",
+         sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0119-1665131478504.jpeg",
+         buttonTitleShowCake: "Xem bánh Red velvet",
+         buttonPayloadShowCake: "SHOW_RED_VELVET_20_10",
+         buttonTitleOrderCake: "Đặt bánh Red velvet",
+         buttonPayloadOrderCake: "ORDER_RED_VELVET_20_10",
+         sizeAndPrice: [
+            {
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người ăn",
+               payload: "SMALL"
+            },
+         ]
+      },
+      {
+         name: "Bánh kem màu loang dâu Đà Lạt (cỡ nhỏ)",
+         subTitle: "Thêm 2 quà tặng, giá chỉ 150k",
+         description: "BÁNH KEM LOANG DÂU ĐÀ LẠT:  Top bánh kem bán chạy nhất của Savor và không thể thiếu trong dịp 20/10. Bánh có cốt vani, xem giữa các lớp cốt là mứt dâu tây. Sắc đỏ nhìn thôi là đê mê nha ạ",
+         sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0135-1663560698772.jpeg",
+         buttonTitleShowCake: "Xem bánh Loang Dâu",
+         buttonPayloadShowCake: "SHOW_LOANG_DAU_20_10",
+         buttonTitleOrderCake: "Đặt bánh Loang dâu",
+         buttonPayloadOrderCake: "ORDER_LOANG_DAU_20_10",
+         sizeAndPrice: [
+            {
+               title: "13x7cm",
+               salePrice: "150k", originalPrice: "190k",
+               forNumberUsers: "Phù hợp 2-4 người ăn",
+               payload: "SMALL"
+            },
+         ]
+      },
+      {
+         name: "Mousse Chanh Leo (cỡ nhỏ)",
+         subTitle: "Thêm 2 quà tặng, giá chỉ 180k",
+         description: "MOUSSE CHANH LEO:  Mẫu bánh kem cho ai không thích ăn kem tươi. Savor sử dụng 100% whipping kết hợp với quả chanh leo tươi bỏ hạt. Với vị chua thanh thanh, thêm lớp tráng gương dẻo dẻo dai dai",
+         sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0182-1665131478454.jpeg",
+         buttonTitleShowCake: "Xem mousse Chanh leo",
+         buttonPayloadShowCake: "SHOW_MOUSSE_CHANH_LEO_20_10",
+         buttonTitleOrderCake: "Đặt mousse Chanh leo",
+         buttonPayloadOrderCake: "ORDER_MOUSSE_CHANH_LEO_20_10",
+         sizeAndPrice: [
+            {
+               title: "14x6cm",
+               salePrice: "180k", originalPrice: "230k",
+               forNumberUsers: "Phù hợp 2-4 người ăn",
+               payload: "SMALL"
+            },
+         ]
+      },
+      {
+         name: "Bánh kem hoa hồng (cỡ vừa)",
+         subTitle: "Thêm 2 quà tặng, giá chỉ 220k",
+         description: "BÁNH KEM HOA HỒNG: Nếu bạn muốn trao nhau hạnh phúc, tình yêu và một chút rực rỡ, thì chiếc bánh này sẽ là một sự lựa chọn lý tưởng đấy nhé ^^",
+         sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0149-1665131478377.jpeg",
+         buttonTitleShowCake: "Xem bánh Hoa hồng",
+         buttonPayloadShowCake: "SHOW_HOA_HONG_20_10",
+         buttonTitleOrderCake: "Đặt bánh Hoa hồng",
+         buttonPayloadOrderCake: "ORDER_HOA_HONG_20_10",
+         sizeAndPrice: [
+            {
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người ăn",
+               payload: "MEDIUM"
+            },
+         ]
+      },
+      {
+         name: "Bánh socola dâu Đà Lạt (cỡ vừa)",
+         subTitle: "Thêm 2 quà tặng, giá chỉ 270k",
+         description: "BÁNH SOCOLA DÂU ĐÀ LẠT: Trao gửi yêu thương mà không nhắc đến biểu tượng của tình yêu - socola thì quả là thiếu sót. Vị 'must try' của Savor, kết hợp với dâu tây cứ phải gọi là perfect match nha ạ.",
+         sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0180-1665131478300.jpeg",
+         buttonTitleShowCake: "Xem bánh Socola dâu",
+         buttonPayloadShowCake: "SHOW_SOCOLA_DAU_20_10",
+         buttonTitleOrderCake: "Đặt bánh Socola dâu",
+         buttonPayloadOrderCake: "ORDER_SOCOLA_DAU_20_10",
+         sizeAndPrice: [
+            {
+               title: "17x8cm",
+               salePrice: "270k", originalPrice: "350k",
+               forNumberUsers: "Phù hợp 5-8 người ăn",
+               payload: "MEDIUM"
+            },
+         ]
+      }
+   ]
+}
+
+const allCategories = [
+   banh_han_quoc,
+   banh_vi_dac_biet,
+   banh_hoa_qua,
+   banh_tre_em,
+   banh_bong_hoa,
+   banh_su_kien,
+   banh_20_10
+]
+
 let mapPayloadOrder = {}
 allCategories.forEach(category => {
    category.listCakes.forEach(cake => {
@@ -828,5 +938,6 @@ module.exports = {
    banh_su_kien,
    banh_ve_order,
    banh_in_anh,
+   banh_20_10,
    mapPayloadOrder
 }

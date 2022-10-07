@@ -318,6 +318,27 @@ let handlePostback = async (sender_psid, received_postback) => {
       await chatbotService.sendMessage(sender_psid, response)
    }
 
+   // BÁNH 20-10
+   else if (payload === "MENU_20_10_CAKE") {
+      await categoryDetail.sendMenu2010Cake(sender_psid)
+   }
+   else if (payload == "SHOW_RED_VELVET_20_10") {
+      await cakeDetail.showDetailRedvelvet2010(sender_psid)
+   }
+   else if (payload == "SHOW_LOANG_DAU_20_10") {
+      await cakeDetail.showDetailLoangDau2010(sender_psid)
+   }
+   else if (payload == "SHOW_MOUSSE_CHANH_LEO_20_10") {
+      await cakeDetail.showDetailMousseCL2010(sender_psid)
+   }
+   else if (payload == "SHOW_HOA_HONG_20_10") {
+      await cakeDetail.showDetailHoaHong2010(sender_psid)
+   }
+   else if (payload == "SHOW_SOCOLA_DAU_20_10") {
+      await cakeDetail.showDetailSCLDau2010(sender_psid)
+   }
+
+
    // LƯU THÔNG TIN BÁNH VÀ CỠ BÁNH KHI BẤM ĐẶT HÀNG
    else if (payload.includes("ORDER")) {
       cakeChoosen.sizeButton = mapPayloadOrder[payload].sizeButton
