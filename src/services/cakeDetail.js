@@ -498,8 +498,8 @@ let showDetailCake2010 = (sender_psid, text_description, imgae_1, text_size_pric
                      },
                      {
                         "type": "postback",
-                        "title": "Xem nhóm bánh khác",
-                        "payload": "BACK_TO_MENU_CAKES",
+                        "title": "Xem bánh 20/10 khác",
+                        "payload": "BACK_TO_MENU_2010_CAKES",
                      },
                      {
                         "type": "postback",

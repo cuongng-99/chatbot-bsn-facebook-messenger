@@ -1,4 +1,5 @@
 import request from "request";
+import categoryDetail from "./cakeDetail"
 require("dotenv").config()
 const {
    banh_han_quoc,
@@ -565,6 +566,10 @@ let backToMenuCakes = (sender_psid) => {
    sendMenuCakes(sender_psid);
 };
 
+let backToMenu2010Cakes = (sender_psid) => {
+   categoryDetail.sendMenu2010Cake(sender_psid);
+};
+
 
 let sendQuickReply = (sender_psid, response) => {
    return new Promise((resolve, reject) => {
@@ -729,6 +734,7 @@ module.exports = {
    sendMenuAccessories,
    // setUpMessengerPlatform,
    backToMenuCakes,
+   backToMenu2010Cakes,
    requestFillInfo,
    orderNow,
    askingSizeCakes,
