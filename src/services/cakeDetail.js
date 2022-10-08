@@ -464,7 +464,7 @@ let showDetailCake2010 = (sender_psid, text_description, imgae_1, text_size_pric
             }
          };
          let response_3 = { "text": text_size_price }
-         let response_4 = { "text": "Ngoài ra mình còn được tặng 1 Bộ nến nhũ vàng và 1 Thiệp 20/10 siêu ý nghĩa do Savor thiết kế độc quyền" }
+         let response_4 = { "text": "Ngoài ra mình còn được tặng 1 Bộ nến nhũ vàng và 1 Thiệp 20/10 siêu ý nghĩa do Savor thiết kế độc quyền nếu nhận bánh từ 16-20/10" }
          let response_5 = {
             "attachment": {
                "type": "image",
@@ -479,7 +479,7 @@ let showDetailCake2010 = (sender_psid, text_description, imgae_1, text_size_pric
                "type": "template",
                "payload": {
                   "template_type": "button",
-                  "text": "Bạn có muốn đặt bánh này ko?",
+                  "text": "Dạ mình có muốn đặt bánh này ko ạ",
                   "buttons": [
                      // {
                      //    "type": "web_url",
