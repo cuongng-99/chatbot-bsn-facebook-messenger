@@ -1,14 +1,15 @@
 import chatbotService from "./chatbotService"
-const { banh_han_quoc } = require("./products")
-const { banh_vi_dac_biet } = require("./products")
-const { banh_hoa_qua } = require("./products")
-const { banh_tre_em } = require("./products")
-const { banh_bong_hoa } = require("./products")
-const { banh_su_kien } = require("./products")
-const { banh_ve_order } = require("./products")
-const { banh_in_anh } = require("./products")
-
-
+const {
+   banh_han_quoc,
+   banh_vi_dac_biet,
+   banh_hoa_qua,
+   banh_tre_em,
+   banh_bong_hoa,
+   banh_su_kien,
+   banh_ve_order,
+   banh_in_anh,
+   banh_20_10
+} = require("./products")
 
 let sendMenuKoreaCake = (sender_psid) => {
    return new Promise(async (resolve, reject) => {
@@ -667,6 +668,96 @@ let sendMenuImageCake = (sender_psid) => {
    });
 };
 
+
+let sendMenu2010Cake = (sender_psid) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response_1 = { "text": banh_20_10.sortDescription }
+         let response = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "generic",
+                  "elements": [
+                     {
+                        "title": banh_20_10.listCakes[0].name,
+                        "subtitle": banh_20_10.listCakes[0].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_20_10.listCakes[0].buttonTitleShowCake,
+                              "payload": banh_20_10.listCakes[0].buttonPayloadShowCake,
+                           },
+                        ],
+                        "image_url": banh_20_10.listCakes[0].sampleImage,
+                     },
+                     {
+                        "title": banh_20_10.listCakes[1].name,
+                        "subtitle": banh_20_10.listCakes[1].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_20_10.listCakes[1].buttonTitleShowCake,
+                              "payload": banh_20_10.listCakes[1].buttonPayloadShowCake,
+                           },
+                        ],
+                        "image_url": banh_20_10.listCakes[1].sampleImage,
+                     },
+                     {
+                        "title": banh_20_10.listCakes[2].name,
+                        "subtitle": banh_20_10.listCakes[2].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_20_10.listCakes[2].buttonTitleShowCake,
+                              "payload": banh_20_10.listCakes[2].buttonPayloadShowCake,
+                           },
+                        ],
+                        "image_url": banh_20_10.listCakes[2].sampleImage,
+                     },
+                     {
+                        "title": banh_20_10.listCakes[3].name,
+                        "subtitle": banh_20_10.listCakes[3].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_20_10.listCakes[3].buttonTitleShowCake,
+                              "payload": banh_20_10.listCakes[3].buttonPayloadShowCake,
+                           },
+                        ],
+                        "image_url": banh_20_10.listCakes[3].sampleImage,
+                     },
+                     {
+                        "title": banh_20_10.listCakes[4].name,
+                        "subtitle": banh_20_10.listCakes[4].subTitle,
+                        "buttons": [
+                           {
+                              "type": "postback",
+                              "title": banh_20_10.listCakes[4].buttonTitleShowCake,
+                              "payload": banh_20_10.listCakes[4].buttonPayloadShowCake,
+                           },
+                        ],
+                        "image_url": banh_20_10.listCakes[4].sampleImage,
+                     },
+                  ]
+               }
+            }
+         };
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_1);
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response);
+
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
+};
+
+
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 module.exports = {
@@ -677,5 +768,6 @@ module.exports = {
    sendMenuFlowerCake,
    sendMenuEventCake,
    sendMenuOrderCake,
-   sendMenuImageCake
+   sendMenuImageCake,
+   sendMenu2010Cake
 }

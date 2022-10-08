@@ -1,14 +1,17 @@
 const _ = require('lodash');
 import chatbotService from "./chatbotService"
 
-const { banh_han_quoc } = require("./products")
-const { banh_vi_dac_biet } = require("./products")
-const { banh_hoa_qua } = require("./products")
-const { banh_tre_em } = require("./products")
-const { banh_bong_hoa } = require("./products")
-const { banh_su_kien } = require("./products")
-const { banh_ve_order } = require("./products")
-const { banh_in_anh } = require("./products")
+const {
+   banh_han_quoc,
+   banh_vi_dac_biet,
+   banh_hoa_qua,
+   banh_tre_em,
+   banh_bong_hoa,
+   banh_su_kien,
+   banh_ve_order,
+   banh_in_anh,
+   banh_20_10
+} = require("./products")
 
 
 // BÁNH HÀN QUỐC
@@ -47,6 +50,12 @@ const banh_hoa_tim_info = _.filter(banh_bong_hoa.listCakes, { name: "Bánh kem H
 const banh_hu_vang_info = _.filter(banh_su_kien.listCakes, { name: "Bánh hũ vàng" })[0]
 const choco_forest_info = _.filter(banh_su_kien.listCakes, { name: "Bánh choco forest" })[0]
 
+// BÁNH 20-10
+const red_velvet_20_10_info = _.filter(banh_20_10.listCakes, { buttonPayloadShowCake: "SHOW_RED_VELVET_20_10" })[0]
+const loang_dau_20_10_info = _.filter(banh_20_10.listCakes, { buttonPayloadShowCake: "SHOW_LOANG_DAU_20_10", })[0]
+const mousse_chanh_leo_20_10_info = _.filter(banh_20_10.listCakes, { buttonPayloadShowCake: "SHOW_MOUSSE_CHANH_LEO_20_10" })[0]
+const hoa_hong_20_10_info = _.filter(banh_20_10.listCakes, { buttonPayloadShowCake: "SHOW_HOA_HONG_20_10", })[0]
+const socola_dau_20_10_info = _.filter(banh_20_10.listCakes, { buttonPayloadShowCake: "SHOW_SOCOLA_DAU_20_10", })[0]
 
 
 // BÁNH HÀN QUỐC
@@ -306,12 +315,70 @@ let showDetailChocoForest = (sender_psid) => {
    )
 };
 
+// BÁNH 20-10
+let showDetailRedvelvet2010 = (sender_psid) => {
+   return showDetailCake2010(
+      sender_psid,
+      red_velvet_20_10_info.description,
+      red_velvet_20_10_info.feedbackImage || red_velvet_20_10_info.sampleImage,
+      getSizeAndPrice(red_velvet_20_10_info),
+      red_velvet_20_10_info.buttonTitleOrderCake,
+      red_velvet_20_10_info.buttonPayloadOrderCake
+   )
+};
+let showDetailLoangDau2010 = (sender_psid) => {
+   return showDetailCake2010(
+      sender_psid,
+      loang_dau_20_10_info.description,
+      loang_dau_20_10_info.feedbackImage || loang_dau_20_10_info.sampleImage,
+      getSizeAndPrice(loang_dau_20_10_info),
+      loang_dau_20_10_info.buttonTitleOrderCake,
+      loang_dau_20_10_info.buttonPayloadOrderCake
+   )
+};
+let showDetailMousseCL2010 = (sender_psid) => {
+   return showDetailCake2010(
+      sender_psid,
+      mousse_chanh_leo_20_10_info.description,
+      mousse_chanh_leo_20_10_info.feedbackImage || mousse_chanh_leo_20_10_info.sampleImage,
+      getSizeAndPrice(mousse_chanh_leo_20_10_info),
+      mousse_chanh_leo_20_10_info.buttonTitleOrderCake,
+      mousse_chanh_leo_20_10_info.buttonPayloadOrderCake
+   )
+};
+let showDetailHoaHong2010 = (sender_psid) => {
+   return showDetailCake2010(
+      sender_psid,
+      hoa_hong_20_10_info.description,
+      hoa_hong_20_10_info.feedbackImage || hoa_hong_20_10_info.sampleImage,
+      getSizeAndPrice(hoa_hong_20_10_info),
+      hoa_hong_20_10_info.buttonTitleOrderCake,
+      hoa_hong_20_10_info.buttonPayloadOrderCake
+   )
+};
+let showDetailSCLDau2010 = (sender_psid) => {
+   return showDetailCake2010(
+      sender_psid,
+      socola_dau_20_10_info.description,
+      socola_dau_20_10_info.feedbackImage || socola_dau_20_10_info.sampleImage,
+      getSizeAndPrice(socola_dau_20_10_info),
+      socola_dau_20_10_info.buttonTitleOrderCake,
+      socola_dau_20_10_info.buttonPayloadOrderCake
+   )
+};
+
+
 
 let getSizeAndPrice = (cake) => {
    let numSize = cake.sizeAndPrice.length
    let text = []
    cake.sizeAndPrice.forEach(c => text.push(`Size: ${c.title}: Giá sale ${c.salePrice} (giá gốc ${c.originalPrice}) (${c.forNumberUsers})`))
-   return `Bánh có ${numSize} size:\n - ${text.join("\n - ")}`
+   if (numSize === 1) {
+      return text[0]
+   }
+   else {
+      return `Bánh có ${numSize} size:\n - ${text.join("\n - ")}`
+   }
 }
 
 let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price, buttonTitle, buttonPayload) => {
@@ -384,6 +451,90 @@ let showDetailCake = (sender_psid, text_description, imgae_1, text_size_price, b
    });
 }
 
+let showDetailCake2010 = (sender_psid, text_description, imgae_1, text_size_price, buttonTitle, buttonPayload) => {
+   return new Promise(async (resolve, reject) => {
+      try {
+         let response_1 = { "text": text_description }
+         let response_2 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": imgae_1,
+                  "is_reusable": true
+               }
+            }
+         };
+         let response_3 = { "text": text_size_price }
+         let response_4 = { "text": "Ngoài ra mình còn được tặng 1 Bộ nến nhũ vàng và 1 Thiệp 20/10 siêu ý nghĩa do Savor thiết kế độc quyền nếu nhận bánh từ 16-20/10" }
+         let response_5 = {
+            "attachment": {
+               "type": "image",
+               "payload": {
+                  "url": "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/10/USR-0147-1665044142563.jpeg",
+                  "is_reusable": true
+               }
+            }
+         }
+         let response_6 = {
+            "attachment": {
+               "type": "template",
+               "payload": {
+                  "template_type": "button",
+                  "text": "Dạ mình có muốn đặt bánh này ko ạ",
+                  "buttons": [
+                     // {
+                     //    "type": "web_url",
+                     //    "url": `${process.env.URL_WEB_VIEW_ORDER}`,
+                     //    "title": "Đặt ngay",
+                     //    "webview_height_ratio": "tall",
+                     //    "messenger_extensions": true //false: open the webview in new tab
+                     // },
+                     {
+                        "type": "postback",
+                        "title": buttonTitle,
+                        "payload": buttonPayload,
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Xem bánh 20/10 khác",
+                        "payload": "BACK_TO_MENU_CAKE_2010",
+                     },
+                     {
+                        "type": "postback",
+                        "title": "Chat thêm với Nhân viên",
+                        "payload": "CARE_HELP",
+                     }
+                  ],
+               },
+            }
+         }
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_1);
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendTypingOn(sender_psid)
+         await chatbotService.sendMessage(sender_psid, response_2);
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_3);
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_4);
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_5);
+
+         await chatbotService.markMessageRead(sender_psid);
+         await chatbotService.sendMessage(sender_psid, response_6);
+         await chatbotService.sendTypingOff(sender_psid)
+
+         resolve("done");
+      } catch (e) {
+         reject(e);
+      }
+   });
+}
+
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 module.exports = {
@@ -410,5 +561,11 @@ module.exports = {
    showDetailBanhHoaHong,
    showDetailBanhHoaTim,
    showDetailBanhHuVang,
-   showDetailChocoForest
+   showDetailChocoForest,
+
+   showDetailRedvelvet2010,
+   showDetailLoangDau2010,
+   showDetailMousseCL2010,
+   showDetailHoaHong2010,
+   showDetailSCLDau2010
 }
