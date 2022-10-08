@@ -478,7 +478,7 @@ const banh_tre_em = {
    listCakes: [
       {
          name: "Bánh kem Mango Chick",
-         subTitle: "Gá bánh chỉ 150k",
+         subTitle: "3 cỡ bánh, giá chỉ từ 150k",
          description: "BÁNH KEM MANGO CHICK: Cốt bánh vani 2 tầng, kết hợp với mứt xoài, kem tươi vị xoài, tạo hình gà con.",
          sampleImage: "https://web-work.s3.kstorage.vn/uploads/user-photos/cuongnv.1512%40gmail.com/2022/09/USR-0196-1663560682745.jpeg",
          buttonTitleShowCake: "Xem bánh Mango Chick",
@@ -492,6 +492,18 @@ const banh_tre_em = {
                forNumberUsers: "Phù hợp 2-4 người",
                payload: "SMALL"
             },
+            {
+               title: "17x8cm",
+               salePrice: "220k", originalPrice: "275k",
+               forNumberUsers: "Phù hợp 5-8 người",
+               payload: "MEDIUM"
+            },
+            {
+               title: "21x8cm",
+               salePrice: "320k", originalPrice: "400k",
+               forNumberUsers: "Phù hợp 9-12 người",
+               payload: "LARGE"
+            }
          ]
       },
       {

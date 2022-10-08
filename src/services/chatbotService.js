@@ -407,7 +407,7 @@ let requestFillInfo = (nameCake, sizeCake, sender_psid) => {
             "quick_replies": [
                {
                   "content_type": "text",
-                  "title": "Chat với nhân viên",
+                  "title": "Chat thêm với nhân viên",
                   "payload": "CARE_HELP",
                },
                {
@@ -447,7 +447,7 @@ let orderNow = (sender_psid) => {
             "quick_replies": [
                {
                   "content_type": "text",
-                  "title": "Chat với nhân viên",
+                  "title": "Chat thêm với nhân viên",
                   "payload": "CARE_HELP",
                },
                {
