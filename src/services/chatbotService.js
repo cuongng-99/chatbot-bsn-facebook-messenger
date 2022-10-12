@@ -217,9 +217,9 @@ let sendListStore = (sender_psid) => {
 - Số 8 Nguyễn Đổng Chi, Nam Từ Liêm
 - Số 207 Giảng Võ, Đống Đa
 - Số 18, Đặng Xuân Bảng, Hoàng Mai
-- NO-09, Liền Kề 05 Hà Trì, Hà Cầu, Hà Đông (Ngõ 133 Tô Hiệu đi vào 50m)
-- Số 37 Nguyễn Sơn, Ngọc Lâm, Long Biên
-- 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy`,
+- 22 Nguyễn Chánh, Trung Hòa, Cầu Giấy
+- Số 49B Thợ Nhuộm, Hoàn Kiếm
+- Số 34 Phùng Hưng, Phúc La, Hà Đông`,
             "quick_replies": [
                {
                   "content_type": "text",
