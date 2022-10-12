@@ -379,18 +379,6 @@ let sendMenuCakes = (sender_psid) => {
                            },
                         ],
                      },
-                     {
-                        "title": "BÁNH IN ẢNH",
-                        "subtitle": banh_in_anh.sortDescription,
-                        "image_url": banh_in_anh.thumbnail,
-                        "buttons": [
-                           {
-                              "type": "postback",
-                              "title": "Xem Bánh in ảnh",
-                              "payload": "MENU_IMAGE_CAKE",
-                           },
-                        ],
-                     },
                   ]
                }
             }
